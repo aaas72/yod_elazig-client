@@ -1,0 +1,77 @@
+{
+  "hero": {
+    "title": "التطوع في الاتحاد",
+    "breadcrumb": "انضم إلى فريق المتطوعين"
+  },
+  "form": {
+    "title": "نموذج التطوع",
+    "sections": {
+      "personalInfo": "المعلومات الشخصية",
+      "volunteerInfo": "بيانات التطوع"
+    },
+    "fields": {
+      "name": {
+        "label": "الاسم الكامل",
+        "placeholder": "أدخل اسمك الكامل"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "placeholder": "example@email.com"
+      },
+      "phone": {
+        "label": "رقم الهاتف",
+        "placeholder": "+90 5xx xxx xx xx"
+      },
+      "university": {
+        "label": "الجامعة",
+        "placeholder": "اختر الجامعة",
+        "options": [
+          { "value": "fırat", "label": "جامعة الفرات" },
+          { "value": "istanbul", "label": "جامعة إسطنبول" },
+          { "value": "ankara", "label": "جامعة أنقرة" },
+          { "value": "other", "label": "جامعة أخرى" }
+        ]
+      },
+      "faculty": {
+        "label": "الكلية والفرع",
+        "placeholder": "مثلاً: كلية الهندسة – قسم البرمجيات"
+      },
+      "volunteerField": {
+        "label": "مجال التطوع",
+        "placeholder": "اختر مجال التطوع",
+        "options": [
+          { "value": "media", "label": "الإعلام والتصميم" },
+          { "value": "events", "label": "تنظيم الفعاليات" },
+          { "value": "support", "label": "الدعم الطلابي" },
+          { "value": "translation", "label": "الترجمة والكتابة" },
+          { "value": "other", "label": "مجالات أخرى" }
+        ]
+      },
+      "skills": {
+        "label": "المهارات",
+        "hint": "يمكنك تحديد أكثر من مهارة",
+        "options": [
+          { "id": "design", "label": "تصميم جرافيكي" },
+          { "id": "writing", "label": "كتابة وتحرير" },
+          { "id": "communication", "label": "تواصل وتنظيم" },
+          { "id": "translation", "label": "ترجمة" },
+          { "id": "programming", "label": "برمجة" },
+          { "id": "photography", "label": "تصوير وإنتاج" }
+        ]
+      },
+      "message": {
+        "label": "نبذة أو رسالة إضافية",
+        "placeholder": "حدثنا عن مهاراتك أو أسباب رغبتك في التطوع..."
+      }
+    },
+    "buttons": {
+      "submit": "إرسال طلب التطوع",
+      "sending": "جاري الإرسال..."
+    },
+    "messages": {
+      "success": "تم إرسال طلبك بنجاح!",
+      "error": "فشل في إرسال الطلب.",
+      "networkError": "حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "date": "2024/05/10",
+        "title": "Birliğin Kuruluşu",
+        "description": "Yemen Öğrenci Birliği, öğrenci çabalarını birleştirmek ve akademik yolculuklarında gerekli desteği sağlamak amacıyla resmen kuruldu.",
+        "icon": "BookOpen"
+    },
+    {
+        "id": 2,
+        "date": "2024/09/15",
+        "title": "Akademik Danışmanlık Programının Başlatılması",
+        "description": "Yeni öğrencilerin üniversite ortamına uyum sağlamalarına yardımcı olmak ve akademik rehberlik ve danışmanlık sağlamak için özel bir program başlatıldı.",
+        "icon": "BookOpen"
+    },
+    {
+        "id": 3,
+        "date": "2025/02/20",
+        "title": "İlk Kültürel Forumun Düzenlenmesi",
+        "description": "Öğrenciler arasında Yemen kimliğini ve sosyal bağları güçlendirmeyi amaçlayan çeşitli etkinlikleri içeren ilk kültürel forum düzenlendi.",
+        "icon": "BookOpen"
+    }
+]

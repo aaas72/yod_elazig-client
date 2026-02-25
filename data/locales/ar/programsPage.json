@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "برامجنا",
+    "subtitle": "تعرف على أحدث البرامج التي ينظمها الطلاب اليمنيين",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "صورة تعبيرية عن البرامج الطلابية",
+    "breadcrumbs": [
+      { "label": "الرئيسية", "href": "/" },
+      { "label": "برامجنا", "href": "/programs" }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "البرنامج غير موجود",
+    "breadcrumbs": {
+      "home": "الرئيسية",
+      "programs": "برامجنا"
+    },
+    "registerButton": "سجّل الآن",
+    "registrationClosed": "التسجيل مغلق",
+    "locationLabel": "الموقع:",
+    "categoryLabel": "التصنيف:",
+    "startDateLabel": "تاريخ البدء:",
+    "endDateLabel": "تاريخ الانتهاء:",
+    "statusLabel": "الحالة:",
+    "published": "منشور",
+    "draft": "مسودة"
+  }
+}

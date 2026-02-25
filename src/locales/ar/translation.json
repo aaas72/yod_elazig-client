@@ -1,0 +1,51 @@
+{
+    "navigation": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "news": "الأخبار",
+        "events": "الفعاليات",
+        "programs": "برامجنا",
+        "aboutCity": "عن المدينة",
+        "aboutUniversity": "عن الجامعة",
+        "resources": "الارشيف",
+        "contact": "تواصل معنا",
+        "volunteer": "التطوع",
+        "faq": "الدليل"
+    },
+    "faq": {
+        "title": "دليل الطالب",
+        "description": "دليلك الشامل لكل ما يخص الحياة الجامعية والمعيشية في تركيا.",
+        "sectionTitle": "تصفح الأدلة المتاحة",
+        "sectionSubtitle": "اختر الدليل المناسب لاحتياجك",
+        "stillHaveQuestions": "لم تجد ما تبحث عنه؟",
+        "contactSupport": "تواصل معنا مباشرة للحصول على مساعدة خاصة.",
+        "practicalSteps": "الخطوات العملية",
+        "illustrativeImages": "صور توضيحية"
+    },
+    "footer": {
+        "rights": "جميع الحقوق محفوظة © 2025",
+        "aboutText": "منظمة طلابية تهدف إلى خدمة الطلاب اليمنيين، والدفاع عن حقوقهم، وتعزيز التواصل والتعاون بينهم.",
+        "logoAlt": "شعار اتحاد الطلاب اليمنيين",
+        "quickLinksTitle": "روابط سريعة",
+        "contactTitle": "تواصل معنا",
+        "followUsTitle": "تابعنا على",
+        "newsletterTitle": "اشترك في نشرتنا البريدية",
+        "newsletterDescription": "كن على اطلاع بآخر أخبارنا وفعالياتنا.",
+        "newsletterPlaceholder": "أدخل بريدك الإلكتروني",
+        "newsletterButtonAriaLabel": "اشتراك",
+        "copyrightText": "اتحاد الطلاب اليمنيين. جميع الحقوق محفوظة.",
+        "visitCountLabel": "عدد زيارات الموقع"
+    },
+    "buttons": {
+        "readMore": "اقرأ المزيد",
+        "submit": "إرسال",
+        "viewArchive": "استعراض الأرشيف",
+        "viewSpecialties": "عرض التخصصات"
+    },
+    "common": {
+        "loading": "جاري التحميل...",
+        "error": "حدث خطأ ما",
+        "success": "تمت العملية بنجاح",
+        "introduction": "مقدمة"
+    }
+}

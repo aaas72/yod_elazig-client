@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Yemeni students celebrate ten days of open sit-in in front of the embassy",
+    "date": "2025-10-12",
+    "time": "13:23",
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Board",
+    "content": "<p>In an escalatory step, Yemeni students continue their open sit-in for the tenth consecutive day in front of the Yemeni Embassy building in Ankara, protesting the officials' lack of response to their demands. This sit-in comes after months of procrastination and delay in resolving their outstanding issues, foremost of which are overdue financial entitlements and scholarships.</p><p>The students expressed their disappointment with the embassy's disregard for their suffering, confirming that they will not end their sit-in until their legitimate demands are met. Fears are increasing about the deterioration of the humanitarian conditions of the students, who are suffering from difficult living conditions in light of the interruption of financial support.</p>"
+  },
+  {
+    "id": 2,
+    "title": "New initiative to encourage entrepreneurship among youth in Al-Aziziyah",
+    "date": "2025-10-13",
+    "time": "14:00",
+    "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Team",
+    "content": "<p>An ambitious initiative was launched in Al-Aziziyah city aiming to support youth and encourage them to enter the world of entrepreneurship. The initiative includes workshops, training courses, and providing seed funding for promising projects. This step aims to create new job opportunities and reduce unemployment in the region, in addition to stimulating innovation and local economic development.</p>"
+  },
+  {
+    "id": 3,
+    "title": "Opening of a new cultural center aimed at reviving local heritage",
+    "date": "2025-10-14",
+    "time": "15:30",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Board",
+    "content": "<p>The city witnessed the opening of a new cultural center concerned with preserving and reviving local heritage. The center will offer a variety of activities, including art exhibitions, musical performances, and historical seminars. The organizers hope that the center will become a cultural beacon attracting interested people from inside and outside the city, and contribute to enhancing the cultural identity of the region.</p>"
+  },
+  {
+    "id": 4,
+    "title": "Expectations of significant economic growth in the region during the coming year",
+    "date": "2025-10-15",
+    "time": "16:45",
+    "image": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Team",
+    "content": "<p>The Chamber of Commerce issued its annual report which expects significant economic growth in the region during the coming year. This optimism is due to a set of factors, most notably the increase in foreign investments, infrastructure development, and the recovery of the tourism sector. This growth is expected to contribute to improving the standard of living and providing more opportunities for citizens.</p>"
+  },
+  {
+    "id": 5,
+    "title": "Launch of Technology and AI Conference in Istanbul",
+    "date": "2025-10-16",
+    "time": "10:00",
+    "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Board",
+    "content": "<p>The activities of the Technology and Artificial Intelligence Conference kicked off today in Istanbul with the participation of experts and engineers from various countries. The conference discusses the latest AI applications and their impact on the labor market and digital transformation.</p>"
+  },
+  {
+    "id": 6,
+    "title": "Significant improvement in air quality after the recent afforestation campaign",
+    "date": "2025-10-17",
+    "time": "09:45",
+    "image": "https://images.unsplash.com/photo-1506765515384-028b60a970df?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Environment Team",
+    "content": "<p>The Environment Authority announced an 18% decrease in air pollution during the last month, as a result of the extensive afforestation campaign launched by official authorities with the participation of volunteers.</p>"
+  },
+  {
+    "id": 7,
+    "title": "New expansion of the capital's airport to accommodate the increase in travel traffic",
+    "date": "2025-10-18",
+    "time": "12:30",
+    "image": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Board",
+    "content": "<p>Authorities have begun implementing the capital airport expansion project with the aim of increasing its capacity by 40% over the next two years, which will contribute to enhancing tourism and facilitating air transport movement.</p>"
+  },
+  {
+    "id": 8,
+    "title": "Launch of a new digital platform to support farmers",
+    "date": "2025-10-19",
+    "time": "11:20",
+    "image": "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Economy Team",
+    "content": "<p>The Ministry of Agriculture launched an advanced digital platform that provides farmers with extension services, production tracking, and real-time market prices, contributing to improving agricultural production.</p>"
+  },
+  {
+    "id": 9,
+    "title": "Opening of a specialized heart surgery hospital in Al-Aziziyah",
+    "date": "2025-10-20",
+    "time": "08:50",
+    "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Health Administration",
+    "content": "<p>A new hospital specialized in cardiovascular surgery was opened, equipped with the latest medical devices, and aims to provide high-quality services to patients in the region.</p>"
+  },
+  {
+    "id": 10,
+    "title": "Launch of a new project to develop the public transport network",
+    "date": "2025-10-21",
+    "time": "17:05",
+    "image": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Team",
+    "content": "<p>The City Council announced the start of a huge project aimed at developing the public transport network by adding eco-friendly buses and improving current routes.</p>"
+  },
+  {
+    "id": 11,
+    "title": "Art exhibition attracts visitors from various cities",
+    "date": "2025-10-22",
+    "time": "16:10",
+    "image": "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Culture Department",
+    "content": "<p>A new art exhibition featuring works by local and international artists was opened. The exhibition witnessed a large turnout since its first day, reflecting the public's interest in the arts.</p>"
+  },
+  {
+    "id": 12,
+    "title": "City exports increased by 12% during the last quarter",
+    "date": "2025-10-23",
+    "time": "15:40",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Economy Team",
+    "content": "<p>The Trade Authority announced a 12% increase in the city's exports during the last quarter, reflecting the continuous growth in the industrial sector and increased external demand.</p>"
+  },
+  {
+    "id": 13,
+    "title": "Launch of a sports championship bringing together more than 500 young players",
+    "date": "2025-10-24",
+    "time": "18:00",
+    "image": "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Sports Department",
+    "content": "<p>A youth sports championship bringing together more than 500 players from various cities was launched, including multiple competitions in football, swimming, and individual sports.</p>"
+  },
+  {
+    "id": 14,
+    "title": "Developing an old neighborhood and transforming it into a modern tourist destination",
+    "date": "2025-10-25",
+    "time": "19:15",
+    "image": "https://images.unsplash.com/photo-1530099486328-e021101a494a?w=800&h=600&fit=crop",
+    "coverImage": "/imgs/HeroImgs/main-bg.jpg",
+    "author": "Editorial Board",
+    "content": "<p>The municipality revealed a project to develop one of the oldest neighborhoods in the city and transform it into a tourist area including cafes, traditional markets, and walking paths.</p>"
+  }
+]

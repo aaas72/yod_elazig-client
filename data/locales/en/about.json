@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Our Vision",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About Us"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Introduction to the Union",
+    "content": [
+      "The Yemeni Students Union in Turkey - Elazig was established as an extension of the cooperation and brotherhood among members of the Yemeni community. It primarily aims to serve Yemeni students in Elazig city and support them in their academic journey."
+    ]
+  },
+  "sections": {
+    "visionMission": "Our Vision and Mission",
+    "achievements": "Our Achievements",
+    "values": "Our Core Values",
+    "organizationalChart": "Organizational Chart"
+  },
+  "vision": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Our Vision",
+      "description": "To be the leading and trusted student union contributing to building a conscious, educated Yemeni generation capable of leading the future and contributing to the nation's renaissance."
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Our Mission",
+      "description": "To represent Yemeni students effectively, provide academic and social support, and create an environment stimulating success and creativity, while preserving our identity and values."
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "Our Goals",
+      "description": "Promoting academic excellence, organizing cultural and social events, providing support for new students, and defending students' rights and interests."
+    },
+    {
+      "id": 4,
+      "number": 4,
+      "title": "Our Values",
+      "description": "Cooperation, transparency, responsibility, and commitment to serving students with a spirit of brotherhood and belonging to the homeland."
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "title": "Cooperation",
+      "description": "We believe that teamwork is the key to success, and that together we can achieve more.",
+      "gradient": "bg-gradient-to-tr from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 2,
+      "title": "Integrity",
+      "description": "We adhere to the highest standards of honesty and transparency in everything we do.",
+      "gradient": "bg-gradient-to-tl from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 3,
+      "title": "Excellence",
+      "description": "We always strive to provide the best and elevate the level of our services and activities.",
+      "gradient": "bg-gradient-to-br from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 4,
+      "title": "Responsibility",
+      "description": "We sense our responsibility towards students and society, and work hard to achieve our goals.",
+      "gradient": "bg-gradient-to-bl from-[#FFFFFF] to-[#FFD4D4]"
+    }
+  ],
+  "organizationalChart": {
+      "imageSrc": "/imgs/ydeel/Organizational_Chart.svg",
+      "imageAlt": "Organizational Chart of the Union"
+  }
+}

@@ -1,0 +1,114 @@
+{
+    "hero": {
+        "title": "الموقع الرسمي لاتحاد الطلاب اليمنيين في تركيا فرع الازيغ",
+        "backgroundImage": "/imgs/HeroImgs/yodelsty.jpg",
+        "logoUrl": "/imgs/logos/yodellogo.png",
+        "ticker": [
+            {
+                "id": 1,
+                "title": "تركيا- فرنسا İş Gücü Anlaşmasının 60. Yılı Büyü...",
+                "date": "13.10.2025",
+                "image": "/imgs/elazig/Festival_1.jpg"
+            },
+            {
+                "id": 2,
+                "title": "4B Sözleşmeli Personel Alım İlanı",
+                "date": "10.10.2025",
+                "logo": true
+            },
+            {
+                "id": 3,
+                "title": "Sözleşmeli Bilişim Personeli Alım İlanı",
+                "date": "07.10.2025",
+                "logo": true
+            },
+            {
+                "id": 4,
+                "title": "YTB, 15. Kuruluş Yıl Dönümü Programı Ankara'da Ger...",
+                "date": "02.10.2025",
+                "image": "/imgs/un/campus-event.jpg"
+            },
+            {
+                "id": 5,
+                "title": "YTB, 15. Kuruluş Yıl Dönümü Programı Ankara'da Ger...",
+                "date": "02.10.2025",
+                "image": "/imgs/un/campus-sports.jpg"
+            }
+        ]
+    },
+    "stats": [
+        {
+            "id": 1,
+            "icon": "GraduationCap",
+            "value": 50,
+            "label": "طالبا"
+        },
+        {
+            "id": 2,
+            "icon": "CalendarCheck",
+            "value": 30,
+            "label": "نشاط منفذ"
+        },
+        {
+            "id": 3,
+            "icon": "Users",
+            "value": 5,
+            "label": "الهيئة"
+        },
+        {
+            "id": 4,
+            "icon": "FileSignature",
+            "value": 8,
+            "label": "اتفاقيات"
+        },
+        {
+            "id": 5,
+            "icon": "Handshake",
+            "value": 8,
+            "label": "شراكات"
+        }
+    ],
+    "sections": {
+        "stats": {
+            "title": "اتحادنا في أرقام"
+        },
+        "news": {
+            "title": "اخر الاخبار",
+            "buttonText": "عرض المزيد من الأخبار"
+        },
+        "events": {
+            "title": "الانشطة والفعاليات",
+            "buttonText": "عرض المزيد من الانشطة"
+        },
+        "gallery": {
+            "title": "معرض الصور",
+            "images": [
+                {
+                    "id": 1,
+                    "src": "/imgs/PhotoGallery/7.jpg",
+                    "alt": "Photo 1"
+                },
+                {
+                    "id": 2,
+                    "src": "/imgs/PhotoGallery/8.jpg",
+                    "alt": "Photo 2"
+                },
+                {
+                    "id": 3,
+                    "src": "/imgs/PhotoGallery/IMG-20231216-WA0020.jpg",
+                    "alt": "Photo 3"
+                },
+                {
+                    "id": 4,
+                    "src": "/imgs/PhotoGallery/IMG-20241026-WA0019.jpg",
+                    "alt": "Photo 4"
+                },
+                {
+                    "id": 5,
+                    "src": "/imgs/PhotoGallery/IMG-20241027-WA0077.jpg",
+                    "alt": "Photo 5"
+                }
+            ]
+        }
+    }
+}

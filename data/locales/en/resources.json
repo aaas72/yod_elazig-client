@@ -1,0 +1,44 @@
+{
+    "hero": {
+        "title": "Student Archive",
+        "breadcrumb": "Archive"
+    },
+    "categories": [
+        {
+            "id": "library",
+            "title": "Academic Library",
+            "description": "Summaries, past exams, and useful study materials for Euphrates University students.",
+            "iconName": "BookOpen",
+            "link": "/access",
+            "isPrivate": true,
+            "backgroundImage": "/imgs/CardsBg/libaraly_Resources_bg.jpg"
+        },
+        {
+            "id": "photos",
+            "title": "Photo Archive",
+            "description": "Photo gallery of various Union events, activities, and special moments.",
+            "iconName": "ImageIcon",
+            "link": "/resources/photos",
+            "isPrivate": true,
+            "backgroundImage": "/imgs/CardsBg/photos_Resources_bg.jpg "
+        },
+        {
+            "id": "events",
+            "title": "Events Archive",
+            "description": "Video recordings, summaries, and reports of previous seminars and events.",
+            "iconName": "CalendarDays",
+            "link": "/resources/events",
+            "isPrivate": true,
+            "backgroundImage": "/imgs/CardsBg/events_Resources_bg.jpg"
+        },
+        {
+            "id": "admin",
+            "title": "Administrative Files",
+            "description": "Application forms, internal regulations, and official documents relevant to members.",
+            "iconName": "FileArchive",
+            "link": "/resources/admin",
+            "isPrivate": true,
+            "backgroundImage": "/imgs/CardsBg/files_Resources_bg.jpg"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "hero": {
+        "title": "Contact the Union",
+        "breadcrumb": "Contact Us"
+    },
+    "form": {
+        "nameLabel": "Full Name",
+        "namePlaceholder": "Enter your full name",
+        "emailLabel": "Email Address",
+        "emailPlaceholder": "example@email.com",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Message subject",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Write your message here...",
+        "submitButton": "Send Message",
+        "sendingButton": "Sending...",
+        "successMessage": "Your message has been sent successfully!",
+        "errorMessage": "Failed to send the message.",
+        "networkErrorMessage": "Connection error. Please try again.",
+        "directEmailText": "Or email us directly at:"
+    },
+    "options": {
+        "title": "Contact Us",
+        "description": "You can contact us directly via Email or WhatsApp",
+        "emailButton": "Send Email",
+        "whatsappButton": "Contact via WhatsApp",
+        "whatsappLabel": "WhatsApp"
+    }
+}

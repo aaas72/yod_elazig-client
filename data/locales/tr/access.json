@@ -1,0 +1,14 @@
+{
+  "title": "Arşiv Erişimi",
+  "description": "Arşivi görüntülemek, yalnızca Google Drive klasörüne erişim izni olan üyeler için mümkündür.",
+  "logo": {
+    "src": "/imgs/logos/yodellogo.png",
+    "alt": "Dernek Logosu"
+  },
+  "domainNote": {
+    "text": "Alan adıyla biten bir e-posta ile kayıtlı olmalısınız",
+    "prefix": "@"
+  },
+  "buttonText": "Arşivi Google Drive'da Aç",
+  "footerNote": "Erişiminiz yoksa, lütfen erişim listesine eklenmek için yönetimle iletişime geçin."
+}

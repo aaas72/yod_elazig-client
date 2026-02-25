@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "الأرشيف الطلابي",
+    "breadcrumb": "الأرشيف"
+  },
+  "categories": [
+    {
+      "id": "library",
+      "title": "المكتبة الأكاديمية",
+      "description": "ملخصات، امتحانات سابقة، ومواد دراسية مفيدة لطلاب جامعة الفرات.",
+      "iconName": "BookOpen",
+      "link": "/access",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/libaraly_Resources_bg.jpg"
+    },
+    {
+      "id": "photos",
+      "title": "أرشيف الصور",
+      "description": "معرض صور لفعاليات وأنشطة الاتحاد المختلفة واللحظات المميزة.",
+      "iconName": "ImageIcon",
+      "link": "/resources/photos",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/photos_Resources_bg.jpg "
+    },
+    {
+      "id": "events",
+      "title": "أرشيف الفعاليات",
+      "description": "تسجيلات فيديو، ملخصات، وتقارير للندوات والفعاليات السابقة.",
+      "iconName": "CalendarDays",
+      "link": "/resources/events",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/events_Resources_bg.jpg"
+    },
+    {
+      "id": "admin",
+      "title": "ملفات إدارية",
+      "description": "نماذج طلبات، لوائح داخلية، ومستندات رسمية تهم الأعضاء.",
+      "iconName": "FileArchive",
+      "link": "/resources/admin",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/files_Resources_bg.jpg"
+    }
+  ]
+}

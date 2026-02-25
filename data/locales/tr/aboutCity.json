@@ -1,0 +1,188 @@
+{
+  "hero": {
+    "title": "Elazığ Şehri",
+    "subtitle": "Şehrimiz",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageAlt": "Elazığ Şehir Manzarası",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "Şehir Hk"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Şehre Giriş",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageOverlay": {
+      "title": "Stratejik Konum",
+      "description": "Doğu Anadolu'nun Kalbi ve Medeniyetlerin Kavşağı"
+    },
+    "paragraphs": [
+      "Elazığ, Türkiye'nin Doğu Anadolu bölgesinde, Dicle ve Fırat nehirlerinin kaynaklarına yakın bir konumda yer almaktadır. Verimli tarım ovalarını ve maden zengini dağ yaylalarını birleştiren çeşitli bir coğrafi çevreye sahiptir. Şehir ayrıca, ülkedeki hidroelektrik enerji üretiminin ana kaynaklarından biri olan Keban Barajı ve Hazar Gölü gibi önemli su simgelerini de içermektedir.",
+      "Şehir, 19. yüzyılda Osmanlı Padişahı Abdülaziz döneminde bugünkü haliyle kurulmuş ve yeni bir idari merkez olarak 'Mamuret-ül Aziz' adını almış, daha sonra 'Elazığ' olarak kısaltılmıştır. Bu kuruluş, yüksek coğrafi konumu nedeniyle eski Harput şehrinde elde edilmesi zor olan idari ve gelişimsel gereksinimleri karşılamak için gerçekleşmiştir.",
+      "Elazığ, bölgenin kültürel temelini temsil eden tarihi Harput şehri ile yakından bağlantılıdır. Harput, Urartulardan başlayarak Romalılar ve Bizanslılar gibi birçok medeniyetin birbirini izlemesine tanık olmuştur. Selçuklu ve Artuklu dönemlerinde gelişiminin zirvesine ulaşarak önde gelen bir kültür ve bilim merkezi haline gelmiş ve eğri minaresiyle Ulu Cami gibi önemli arkeolojik simgeleri barındırmaktadır.",
+      "Şu anda Elazığ, eğitim, ticaret ve tarım alanlarında önemli bir bölgesel merkez oluşturmaktadır. Fırat Üniversitesi, bölgede önde gelen bir akademik kurum olarak kabul edilmektedir. Eski kültürel mirasın ve modern altyapının birleşimi, Elazığ'ı öğrenciler için akademik başarı ve kişisel gelişim açısından uygun ve ideal bir yer haline getirmektedir."
+    ]
+  },
+  "historicalLandmarksTitle": "Tarihi Simgeler",
+  "historicalLandmarksTag": "Tarihi Simge",
+  "historicalLandmarks": [
+    {
+      "id": 1,
+      "title": "Harput Kalesi",
+      "wikiUrl": "https://tr.wikipedia.org/wiki/Harput_Kalesi",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Ünlü lakabı 'Süt Kalesi' ile bilinen Harput Kalesi, Elazığ'ın en belirgin tarihi simgesidir. Kale, şehre ve çevresindeki ovaya kapsamlı bir panoramik bakış sağlayan stratejik bir tepenin üzerinde oturmaktadır.",
+        "Tarihi Urartu Krallığı'na kadar uzanır ve Bizanslılar, Selçuklular ve Osmanlılar gibi büyük medeniyetleri görmüş, her biri duvarlarında ve iç binalarında izlerini bırakmıştır."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ulu Cami",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Harput'taki Ulu Cami, Artuklu döneminde inşa edilen Anadolu'daki en eski ve en önemli dini yapılardan biridir. Cami, mimari bir şaheser olarak kabul edilen eşsiz eğri minaresiyle ünlüdür.",
+        "Cami, Selçuklu sanatının harika bir örneğini temsil eder ve asırlara meydan okuyan farklı tasarımı ve eski tarihi sayesinde ziyaretçileri kendine çeker."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Meryem Ana Kilisesi",
+      "wikiUrl": "https://tr.wikipedia.org/wiki/Meryem_Ana_Kilisesi_(Harput)",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Meryem Ana Kilisesi, MS 2. yüzyıla kadar uzanan bölgedeki en eski ibadet yerlerinden biri olarak kabul edilir. Yapımında kullanılan taşlar nedeniyle 'Kızıl Kilise' olarak da bilinir.",
+        "Kilise, Süryani topluluğu için önemli bir tarihi ve dini mirası temsil eder ve Harput şehrinin çağlar boyunca yaşadığı kültürel ve dini çeşitliliğe bir tanık olarak durur."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Buzluk Mağarası",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Elazığ'ın doğal harikalarından biri olan Buzluk Mağarası, yazın buz tutan, kışın ise sıcak hava üfleyen yapısıyla bilinir.",
+        "Jeolojik yapısı ve doğal güzelliği ile ziyaretçilerin ilgisini çeken önemli bir turizm noktasıdır."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Hazar Gölü",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Doğu'nun gizli denizi olarak bilinen Hazar Gölü, mavi bayraklı plajları ve berrak suyu ile ünlüdür.",
+        "Su sporları ve kampçılık için ideal bir ortam sunan göl, aynı zamanda batık şehre ev sahipliği yapmaktadır."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Elazığ Arkeoloji ve Etnoğrafya Müzesi",
+      "wikiUrl": "https://tr.wikipedia.org/wiki/Elazığ_Arkeoloji_ve_Etnografya_Müzesi",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Bölgenin zengin tarihini yansıtan binlerce esere ev sahipliği yapmaktadır.",
+        "Urartu, Roma ve Osmanlı dönemlerine ait eserlerin sergilendiği müze, tarih meraklıları için eşsiz bir duraktır."
+      ]
+    }
+  ],
+  "enginesTitle": "Temel Ekonomik Motorlar",
+  "engines": [
+    {
+      "id": 1,
+      "title": "Madencilik ve Sanayi",
+      "content": [
+        "Elazığ, Türkiye'nin en önemli maden başkentlerinden biridir. Krom üretiminde önemli bir merkez olarak ulusal çapta tanınmaktadır.",
+        "Dağları ayrıca bakır, kurşun ve mermer gibi diğer önemli minerallerle doludur. Bu zenginliğe dayanarak 'Ferrokrom' fabrikaları ve çimento tesisleri gibi gelişmiş imalat sanayileri kurulmuştur."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tarım ve Gıda İşleme",
+      "content": [
+        "Şehir, bölgenin gıda sepeti olarak kabul edilen verimli 'Uluova' ovasını kucaklamaktadır. Elazığ, özellikle uluslararası 'Öküzgözü' çeşidi olmak üzere en kaliteli üzüm türlerini üretmesiyle ünlüdür.",
+        "Kayısı, şeker pancarı ve tahıllara ek olarak. Bu tarımsal çeşitlilik, gıda işleme sektörünün refahına yol açmıştır."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Enerji",
+      "content": [
+        "Dicle ve Fırat nehirleri, üzerinde dev 'Keban' ve 'Karakaya' barajlarının inşa edildiği bölgenin can damarını temsil etmektedir.",
+        "Bu iki barajın önemi, sadece Türkiye'deki en büyük hidroelektrik enerji kaynakları arasında olmakla sınırlı değildir, aynı zamanda şehirdeki sanayi ve tarımı desteklemede hayati bir rol oynamaktadır."
+      ]
+    }
+  ],
+  "festivalsTitle": "Yıllık Etkinlikler ve Festivaller",
+  "festivals": [
+    {
+      "id": 1,
+      "title": "Üzüm Hasadı ve Orcik Festivali",
+      "description": "Toprağın bereketinin bir kutlamasıdır. Etkinlikler, üzümlerin geleneksel yöntemlerle hasat edilmesiyle başlar, ardından ünlü 'Orcik' tatlısının hazırlanmasında kullanılan pekmezi yapmak için sıkılır.",
+      "imageUrl": "/Festival_1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Hazar Gölü Şiir Festivali",
+      "description": "Bu yıllık festival, Türkiye'nin ve dünyanın dört bir yanından önemli şairleri, şiirlerin okunduğu ve edebi akşamların düzenlendiği büyüleyici Hazar Gölü kıyısında bir araya getiriyor.",
+      "imageUrl": "/Festival_1.jpg"
+    }
+  ],
+  "activitiesTitle": "Açık Hava Etkinlikleri ve Maceralar",
+  "activities": [
+    {
+      "id": 1,
+      "title": "Hazar Gölü",
+      "description": "Hazar Gölü, 'Doğu'nun Gizli Denizi' olarak bilinir ve sadece nefes kesici bir doğal manzara değil, aynı zamanda tam bir yaşam merkezidir. Plajları ve tatil köyleri yüzme ve dinlenme için ideal bir fırsat sunarken, macera severler su sporları yapabilirler.",
+      "imageUrl": "/elazig_photo.png"
+    },
+    {
+      "id": 2,
+      "title": "Hazar Gölü",
+      "description": "Hazar Gölü, 'Doğu'nun Gizli Denizi' olarak bilinir ve sadece nefes kesici bir doğal manzara değil, aynı zamanda tam bir yaşam merkezidir. Plajları ve tatil köyleri yüzme ve dinlenme için ideal bir fırsat sunarken, macera severler su sporları yapabilirler.",
+      "imageUrl": "/elazig_photo.png"
+    },
+    {
+      "id": 3,
+      "title": "Hazar Gölü",
+      "description": "Hazar Gölü, 'Doğu'nun Gizli Denizi' olarak bilinir ve sadece nefes kesici bir doğal manzara değil, aynı zamanda tam bir yaşam merkezidir. Plajları ve tatil köyleri yüzme ve dinlenme için ideal bir fırsat sunarken, macera severler su sporları yapabilirler.",
+      "imageUrl": "/elazig_photo.png"
+    }
+  ],
+  "dishesTitle": "Yerel Mutfak ve Yemek Kültürü",
+  "dishOfTheMonth": "Ayın Yemeği",
+  "dishes": [
+    {
+      "id": 1,
+      "title": "Harput Köftesi",
+      "description": "Sadece sıradan bir köfte olmayan en ünlü yemek. İnce bulgur, yağsız kıyma, maydanoz ve fesleğen gibi aromatik otların hassas bir karışımı ile hazırlanır. Köfteler tereyağı ve domates salçası ile zengin bir sosta yavaşça pişirilir ve genellikle kavrulmuş soğan ile servis edilir.",
+      "imageUrl": "/elazig-iclikofte.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Orcik",
+      "description": "'Orcik' tatlısı, yerel mutfağın bir simgesi olarak kabul edilir; koyulaştırılmış üzüm pekmezi ile kaplanmış ve güneşte kurutulmuş bütün cevizlerden oluşur, bu da ona eşsiz bir doku ve zengin bir lezzet verir.",
+      "imageUrl": "/elazig-iclikofte.jpg"
+    }
+  ],
+  "dailyLife": {
+    "title": "Günlük Yaşamın Doğası",
+    "modernLife": {
+      "title": "Modern Yaşamın Nabzı",
+      "paragraphs": [
+        "'Gazi Caddesi' gibi ana caddelerinde, yayaların hareketi ve gençlerin uğrak yeri olan modern kafeler aracılığıyla şehrin nabzını hissedersiniz. 'Park 23' gibi modern alışveriş merkezleri (AVM), sinemalar ve restoranların yanı sıra ünlü uluslararası ve yerel markaların yer aldığı eksiksiz bir alışveriş deneyimi sunar.",
+        "Yeni yerleşim mahalleleri ve büyük 'Fethi Sekin' Hastanesi gibi gelişmiş sağlık tesisleri, şehrin sakinlerine en yüksek yaşam kalitesini sağlama taahhüdünü yansıtmaktadır."
+      ]
+    },
+    "traditionalLife": {
+      "title": "Köklü Geleneklerin Ruhu",
+      "paragraphs": [
+        "Ancak Kapalı Çarşı'nın sokaklarında sadece birkaç adım ötede zaman yavaşlar. Burada atmosfer baharat ve ot kokularıyla doludur ve miras aldıkları zanaatları icra eden zanaatkarların sesleriyle yankılanır.",
+        "Sosyal ilişkiler, aile bağlarının ve komşulara saygının temel değerler olduğu şehrin kültürünün temel taşı olmaya devam etmektedir. Burada yaşam, güvenli ve birbirine bağlı bir sosyal ortam yaratarak sadeliğini ve sıcaklığını korumaktadır."
+      ]
+    }
+  }
+}

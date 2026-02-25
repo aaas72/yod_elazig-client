@@ -1,0 +1,36 @@
+// File renamed to programs.json. Content will be moved.
+[
+    {
+        "id": 1,
+        "title": "Yapay Zeka Üzerine Çalıştay",
+        "date": "2025-11-15",
+        "time": "10:00",
+        "location": "Konferans Salonu, Fırat Üniversitesi",
+        "image": "/imgs/HeroImgs/yod-logo.png",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Eğitim ve Geliştirme Komitesi",
+        "content": "<h3>Genel Bakış</h3><p>Yapay Zeka temelleri ve pratik uygulamaları üzerine yoğun bir çalıştay düzenlendi. Çeşitli disiplinlerden çok sayıda öğrencinin katıldığı çalıştayda, bu alandaki en son araçlar ve teknolojiler üzerine teorik anlatımlar ve pratik uygulamalar sunuldu.</p><h3>Çalıştay Hedefleri</h3><ul><li>Katılımcılara Yapay Zeka temel kavramlarını tanıtmak.</li><li>Katılımcılara YZ araçlarını kullanmak için gerekli pratik becerileri kazandırmak.</li><li>YZ'nin geleceğini ve çeşitli sektörlere etkisini tartışmak.</li></ul>"
+    },
+    {
+        "id": 2,
+        "title": "Kan Bağışı Kampanyası",
+        "date": "2025-11-20",
+        "time": "09:00",
+        "location": "Tıp Fakültesi Binası",
+        "image": "/imgs/HeroImgs/yod-logo.png",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Sosyal Komite",
+        "content": "<h3>Kampanya Detayları</h3><p>Yerel kan bankası işbirliği ile kampüste bir kan bağışı kampanyası düzenlendi. Kampanya, öğrencilerden ve öğretim üyelerinden büyük ilgi gördü, kan stokunu desteklemeye ve hastaların ihtiyaçlarını karşılamaya katkıda bulundu.</p>"
+    },
+    {
+        "id": 3,
+        "title": "Yıllık Programlama Yarışması",
+        "date": "2025-12-01",
+        "time": "12:00",
+        "location": "Bilgisayar Laboratuvarları, Mühendislik Fakültesi",
+        "image": "https://fc-barcelona-ar.com/the-history-of-the-creation-of-fc-barcelona-from-humble-beginnings-to-global-football-icon/",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Teknoloji Kulübü",
+        "content": "<h3>Yarışma Hakkında</h3><p>Öğrencilerin programlama becerilerini geliştirmeyi ve inovasyonu teşvik etmeyi amaçlayan Yıllık Programlama Yarışması'nın beşincisi başlatıldı. Yarışma, mantıksal düşünme ve yaratıcı çözümler gerektiren bir dizi programlama zorluğu ve problemi içeriyordu.</p>"
+    }
+]

@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "Our News",
+    "subtitle": "Get to know us better through our ongoing news and activities",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "Union News",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "News"
+      }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "News not found",
+    "breadcrumbs": {
+      "home": "Home",
+      "news": "News"
+    }
+  }
+}

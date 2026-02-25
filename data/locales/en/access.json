@@ -1,0 +1,14 @@
+{
+  "title": "Archive Access",
+  "description": "Viewing the archive is available only to members with access to the Google Drive folder.",
+  "logo": {
+    "src": "/imgs/logos/yodellogo.png",
+    "alt": "Association Logo"
+  },
+  "domainNote": {
+    "text": "You must be registered with an email ending with the domain",
+    "prefix": "@"
+  },
+  "buttonText": "Open Archive on Google Drive",
+  "footerNote": "If you do not have access, please contact the administration to be added to the access list."
+}

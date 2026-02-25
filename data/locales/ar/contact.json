@@ -1,0 +1,29 @@
+{
+    "hero": {
+        "title": "تواصل مع اتحاد",
+        "breadcrumb": "تواصل معنا"
+    },
+    "form": {
+        "nameLabel": "الاسم الكامل",
+        "namePlaceholder": "أدخل اسمك الكامل",
+        "emailLabel": "البريد الإلكتروني",
+        "emailPlaceholder": "example@email.com",
+        "subjectLabel": "الموضوع",
+        "subjectPlaceholder": "موضوع الرسالة",
+        "messageLabel": "نص الرسالة",
+        "messagePlaceholder": "اكتب رسالتك هنا...",
+        "submitButton": "إرسال الرسالة",
+        "sendingButton": "جاري الإرسال...",
+        "successMessage": "تم إرسال رسالتك بنجاح!",
+        "errorMessage": "فشل في إرسال الرسالة.",
+        "networkErrorMessage": "حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.",
+        "directEmailText": "أو راسلنا مباشرة عبر البريد:"
+    },
+    "options": {
+        "title": "تواصل معنا",
+        "description": "يمكنك التواصل معنا مباشرة عبر البريد الإلكتروني أو الواتساب",
+        "emailButton": "إرسال بريد إلكتروني",
+        "whatsappButton": "تواصل عبر واتساب",
+        "whatsappLabel": "واتساب"
+    }
+}

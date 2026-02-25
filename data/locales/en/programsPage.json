@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Programs",
+    "subtitle": "Discover the latest programs organized by Yemeni students",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "Expressive image of student programs",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "Programs", "href": "/programs" }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "Program not found",
+    "breadcrumbs": {
+      "home": "Home",
+      "programs": "Programs"
+    },
+    "registerButton": "Register Now",
+    "registrationClosed": "Registration Closed",
+    "locationLabel": "Location:",
+    "categoryLabel": "Category:",
+    "startDateLabel": "Start Date:",
+    "endDateLabel": "End Date:",
+    "statusLabel": "Status:",
+    "published": "Published",
+    "draft": "Draft"
+  }
+}

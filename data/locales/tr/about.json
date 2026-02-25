@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Vizyonumuz",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "Hakkımızda"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Birlik Hakkında",
+    "content": [
+      "Türkiye'deki Yemenli Öğrenciler Birliği - Elazığ, Yemen toplumu üyeleri arasındaki işbirliği ve kardeşliğin bir uzantısı olarak kurulmuştur. Temel amacı Elazığ şehrindeki Yemenli öğrencilere hizmet etmek ve akademik yolculuklarında onları desteklemektir."
+    ]
+  },
+  "sections": {
+    "visionMission": "Vizyonumuz ve Misyonumuz",
+    "achievements": "Başarılarımız",
+    "values": "Temel Değerlerimiz",
+    "organizationalChart": "Organizasyon Şeması"
+  },
+  "vision": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Vizyonumuz",
+      "description": "Geleceği yönetebilecek ve ülkenin kalkınmasına katkıda bulunabilecek bilinçli, eğitimli bir Yemen neslinin inşasına katkıda bulunan, lider ve güvenilir öğrenci birliği olmak."
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Misyonumuz",
+      "description": "Yemenli öğrencileri etkin bir şekilde temsil etmek, onlara akademik ve sosyal destek sağlamak, kimliğimizi ve değerlerimizi korurken başarı ve yaratıcılığı teşvik eden bir ortam yaratmak."
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "Hedeflerimiz",
+      "description": "Akademik mükemmelliği teşvik etmek, kültürel ve sosyal etkinlikler düzenlemek, yeni öğrencilere destek sağlamak ve öğrencilerin hak ve menfaatlerini savunmak."
+    },
+    {
+      "id": 4,
+      "number": 4,
+      "title": "Değerlerimiz",
+      "description": "İşbirliği, şeffaflık, sorumluluk ve kardeşlik ruhuyla ve vatana aidiyetle öğrencilere hizmet etme taahhüdü."
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "title": "İşbirliği",
+      "description": "Takım çalışmasının başarının anahtarı olduğuna ve birlikte daha fazlasını başarabileceğimize inanıyoruz.",
+      "gradient": "bg-gradient-to-tr from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 2,
+      "title": "Dürüstlük",
+      "description": "Yaptığımız her şeyde en yüksek dürüstlük ve şeffaflık standartlarına bağlıyız.",
+      "gradient": "bg-gradient-to-tl from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 3,
+      "title": "Mükemmellik",
+      "description": "Her zaman en iyisini sunmaya ve hizmetlerimizin ve faaliyetlerimizin seviyesini yükseltmeye çalışıyoruz.",
+      "gradient": "bg-gradient-to-br from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 4,
+      "title": "Sorumluluk",
+      "description": "Öğrencilere ve topluma karşı sorumluluğumuzu hissediyor ve hedeflerimize ulaşmak için çok çalışıyoruz.",
+      "gradient": "bg-gradient-to-bl from-[#FFFFFF] to-[#FFD4D4]"
+    }
+  ],
+  "organizationalChart": {
+      "imageSrc": "/imgs/ydeel/Organizational_Chart.svg",
+      "imageAlt": "Birliğin Organizasyon Şeması"
+  }
+}

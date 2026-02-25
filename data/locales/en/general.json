@@ -1,0 +1,93 @@
+{
+    "navigation": [
+        {
+            "href": "/",
+            "label": "Home"
+        },
+        {
+            "href": "/about",
+            "label": "About Us"
+        },
+        {
+            "href": "/news",
+            "label": "News"
+        },
+        {
+            "href": "/activities",
+            "label": "Activities"
+        },
+        {
+            "href": "/about-city",
+            "label": "About City"
+        },
+        {
+            "href": "/about-university",
+            "label": "About University"
+        },
+        {
+            "href": "/resources",
+            "label": "Archive"
+        },
+        {
+            "href": "/contact",
+            "label": "Contact Us"
+        },
+        {
+            "href": "/volunteer",
+            "label": "Volunteer"
+        }
+    ],
+    "contactInfo": {
+        "email": "info@example.com",
+        "phone": "+1 234 567 890",
+        "address": "Elazig, Turkey",
+        "socialLinks": [
+            {
+                "platform": "facebook",
+                "url": "#"
+            },
+            {
+                "platform": "twitter",
+                "url": "#"
+            },
+            {
+                "platform": "instagram",
+                "url": "#"
+            },
+            {
+                "platform": "linkedin",
+                "url": "#"
+            }
+        ]
+    },
+    "footer": {
+        "aboutText": "A student organization aiming to serve Yemeni students, defend their rights, and enhance communication and cooperation among them.",
+        "logoAlt": "Yemeni Students Union Logo",
+        "quickLinksTitle": "Quick Links",
+        "contactTitle": "Contact Us",
+        "followUsTitle": "Follow Us",
+        "newsletterTitle": "Subscribe to our Newsletter",
+        "newsletterDescription": "Stay updated with our latest news and events.",
+        "newsletterPlaceholder": "Enter your email",
+        "newsletterButtonAriaLabel": "Subscribe",
+        "copyrightText": "Yemeni Students Union. All rights reserved.",
+        "quickLinks": [
+            {
+                "href": "/",
+                "label": "Home"
+            },
+            {
+                "href": "/about",
+                "label": "About Union"
+            },
+            {
+                "href": "/activities",
+                "label": "Events and Activities"
+            },
+            {
+                "href": "/contact",
+                "label": "Contact Us"
+            }
+        ]
+    }
+}

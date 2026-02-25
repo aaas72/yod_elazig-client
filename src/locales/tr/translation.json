@@ -1,0 +1,50 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "news": "Haberler",
+    "events": "Etkinlikler",
+    "programs": "Programlarımız",
+    "aboutCity": "Şehir Hk",
+    "aboutUniversity": "Üniversite Hk",
+    "resources": "Arşiv",
+    "contact": "İletişim",
+    "volunteer": "Gönüllü Ol",
+    "faq": "S.S.S."
+  },
+  "faq": {
+      "title": "Öğrenci Rehberi",
+      "description": "Türkiye'deki üniversite ve günlük yaşamla ilgili her şey için kapsamlı rehberiniz.",
+      "sectionTitle": "Mevcut Rehberlere Göz Atın",
+      "sectionSubtitle": "İhtiyacınıza uygun rehberi seçin",
+      "stillHaveQuestions": "Hala sorularınız mı var?",
+      "contactSupport": "Aradığınızı bulamadınız mı? Doğrudan bizimle iletişime geçin.",
+      "practicalSteps": "Pratik Adımlar",
+      "illustrativeImages": "Açıklayıcı Resimler"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır © 2025",
+    "aboutText": "Yemenli öğrencilere hizmet etmeyi, haklarını savunmayı ve aralarındaki iletişim ve işbirliğini güçlendirmeyi amaçlayan bir öğrenci topluluğu.",
+    "logoAlt": "Yemenli Öğrenciler Birliği Logosu",
+    "quickLinksTitle": "Hızlı Bağlantılar",
+    "contactTitle": "Bize Ulaşın",
+    "followUsTitle": "Bizi Takip Edin",
+    "newsletterTitle": "Bültenimize abone olun",
+    "newsletterDescription": "En son haberlerimizden ve etkinliklerimizden haberdar olun.",
+    "newsletterPlaceholder": "E-postanızı girin",
+    "newsletterButtonAriaLabel": "Abone Ol",
+    "copyrightText": "Yemenli Öğrenciler Birliği. Tüm hakları saklıdır.",
+    "visitCountLabel": "Site ziyaret sayısı"
+  },
+  "buttons": {
+    "readMore": "Daha Fazla Oku",
+    "submit": "Gönder",
+    "viewArchive": "Arşivi Görüntüle",
+    "viewSpecialties": "Bölümleri Görüntüle"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir şeyler yanlış gitti",
+    "success": "İşlem başarılı"
+  }
+}

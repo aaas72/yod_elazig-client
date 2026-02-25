@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "title": "Official Website of Yemeni Students Union in Elazig, Turkey",
+    "backgroundImage": "/imgs/HeroImgs/yodelsty.jpg",
+    "logoUrl": "/imgs/logos/yodellogo.png",
+    "ticker": [
+      {
+        "id": 1,
+        "title": "Turkey-France Labor Agreement 60th Anniversary...",
+        "date": "13.10.2025",
+        "image": "/imgs/elazig/Festival_1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "4B Contracted Personnel Recruitment Announcement",
+        "date": "10.10.2025",
+        "logo": true
+      },
+      {
+        "id": 3,
+        "title": "Contracted IT Personnel Recruitment Announcement",
+        "date": "07.10.2025",
+        "logo": true
+      },
+      {
+        "id": 4,
+        "title": "YTB, 15th Anniversary Program Held in Ankara...",
+        "date": "02.10.2025",
+        "image": "/imgs/un/campus-event.jpg"
+      },
+      {
+        "id": 5,
+        "title": "YTB, 15th Anniversary Program Held in Ankara...",
+        "date": "02.10.2025",
+        "image": "/imgs/un/campus-sports.jpg"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "id": 1,
+      "icon": "GraduationCap",
+      "value": 50,
+      "label": "Students"
+    },
+    {
+      "id": 2,
+      "icon": "CalendarCheck",
+      "value": 30,
+      "label": "Activities Executed"
+    },
+    {
+      "id": 3,
+      "icon": "Users",
+      "value": 5,
+      "label": "Committee Members"
+    },
+    {
+      "id": 4,
+      "icon": "FileSignature",
+      "value": 8,
+      "label": "Agreements"
+    },
+    {
+      "id": 5,
+      "icon": "Handshake",
+      "value": 8,
+      "label": "Partnerships"
+    }
+  ],
+  "sections": {
+    "stats": {
+      "title": "Our Union in Numbers"
+    },
+    "news": {
+      "title": "Latest News",
+      "buttonText": "View More News"
+    },
+    "events": {
+      "title": "Activities & Events",
+      "buttonText": "View More Activities"
+    },
+    "gallery": {
+      "title": "Photo Gallery",
+      "images": [
+        {
+          "id": 1,
+          "src": "/imgs/PhotoGallery/7.jpg",
+          "alt": "Photo 1"
+        },
+        {
+          "id": 2,
+          "src": "/imgs/PhotoGallery/8.jpg",
+          "alt": "Photo 2"
+        },
+        {
+          "id": 3,
+          "src": "/imgs/PhotoGallery/IMG-20231216-WA0020.jpg",
+          "alt": "Photo 3"
+        },
+        {
+          "id": 4,
+          "src": "/imgs/PhotoGallery/IMG-20241026-WA0019.jpg",
+          "alt": "Photo 4"
+        },
+        {
+          "id": 5,
+          "src": "/imgs/PhotoGallery/IMG-20241027-WA0077.jpg",
+          "alt": "Photo 5"
+        }
+      ]
+    }
+  }
+}

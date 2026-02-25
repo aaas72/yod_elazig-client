@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "أخبارنا",
+    "subtitle": "تعرفوا علينا أكثر من خلال أخبارنا وأنشطتنا المستمرة",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "أخبار الاتحاد",
+    "breadcrumbs": [
+      {
+        "label": "الرئيسية",
+        "href": "/"
+      },
+      {
+        "label": "الاخبار"
+      }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "الخبر غير موجود",
+    "breadcrumbs": {
+      "home": "الرئيسية",
+      "news": "الأخبار"
+    }
+  }
+}

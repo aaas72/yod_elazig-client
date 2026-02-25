@@ -1,0 +1,18 @@
+{
+  "hero": {
+    "title": "Volunteer with the Union",
+    "breadcrumb": "Join the Volunteer Team"
+  },
+  "content": {
+    "title": "Be Part of the Change",
+    "description": "Volunteering is not just work; it's an opportunity to make a positive impact on students' lives. Join us and be part of our distinguished team to make a difference together.",
+    "benefits": [
+      "Develop personal and professional skills",
+      "Build extensive social networks",
+      "Contribute to serving the student community",
+      "Receive experience and volunteer certificates"
+    ],
+    "buttonText": "Fill Volunteer Form",
+    "formLink": "https://forms.google.com/your-form-link"
+  }
+}

@@ -1,0 +1,177 @@
+{
+    "hero": {
+        "title": "Fırat Üniversitesi",
+        "subtitle": "Anadolu'nun Kalbinde Bilim Feneri",
+        "imageUrl": "/imgs/HeroImgs/FıratÜniversitesi.jpg",
+        "imageAlt": "Fırat Üniversitesi Kampüsü",
+        "breadcrumbs": [
+            {
+                "label": "Ana Sayfa",
+                "href": "/"
+            },
+            {
+                "label": "Üniversite Hk"
+            }
+        ]
+    },
+    "intro": {
+        "title": "Üniversite Hakkında",
+        "paragraphs": [
+            "Fırat Üniversitesi, Doğu Anadolu bölgesinde önde gelen bir akademik merkez olmak amacıyla 1975 yılında Elazığ'da kurulmuştur. Kuruluşundan bu yana üniversite, yüksek kaliteli eğitim sunmaya ve toplumun bilimsel ve kültürel gelişimine katkıda bulunmaya kendini adamış, bugün Türkiye'nin önde gelen üniversitelerinden biri haline gelmiştir.",
+            "Vizyonumuz, yenilikçiler ve liderler nesilleri yetiştiren, uluslararası alanda tanınan bir araştırma üniversitesi olmaktır. Misyonumuz, teşvik edici bir öğrenme ortamı sağlamak, insanlığa hizmet eden bilimsel araştırmaları desteklemek ve dürüstlük, mükemmellik ve toplumsal sorumluluk değerlerine bağlı kalmaktır."
+        ]
+    },
+    "statsTitle": "Rakamlarla Üniversite",
+    "stats": [
+        {
+            "id": "foundation-year",
+            "icon": "Calendar",
+            "value": 1975,
+            "label": "Kuruluş Yılı"
+        },
+        {
+            "id": "student-count",
+            "icon": "Users",
+            "value": "≈37,000",
+            "label": "Öğrenci Sayısı"
+        },
+        {
+            "id": "faculty-count",
+            "icon": "Building",
+            "value": "17",
+            "label": "Fakülte Sayısı"
+        },
+        {
+            "id": "publications-count",
+            "icon": "BookOpen",
+            "value": "≈23,308",
+            "label": "Yayınlanan Araştırma"
+        }
+    ],
+    "faculties": [
+        {
+            "name": "Tıp Fakültesi",
+            "icon": "Stethoscope",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Mühendislik Fakültesi",
+            "icon": "DraftingCompass",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Fen Edebiyat Fakültesi",
+            "icon": "FlaskConical",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İktisadi ve İdari Bilimler Fakültesi",
+            "icon": "Building",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İlahiyat Fakültesi",
+            "icon": "Landmark",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İletişim Fakültesi",
+            "icon": "Mic2",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Eğitim Fakültesi",
+            "icon": "School",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Spor Bilimleri Fakültesi",
+            "icon": "Trophy",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Teknoloji Fakültesi",
+            "icon": "Cpu",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Mimarlık Fakültesi",
+            "icon": "Ruler",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Diş Hekimliği Fakültesi",
+            "icon": "Smile",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Sağlık Bilimleri Fakültesi",
+            "icon": "HeartPulse",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Veteriner Fakültesi",
+            "icon": "Dog",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Su Ürünleri Fakültesi",
+            "icon": "Fish",
+            "link": "https://disf.firat.edu.tr/en"
+        }
+    ],
+    "facultiesSection": {
+        "title": "Fakülteler ve Bölümler",
+        "description": "Fırat Üniversitesi'ndeki geniş akademik program yelpazesini keşfedin"
+    },
+    "campusLife": {
+        "title": "Kampüs Yaşamı",
+        "images": [
+            {
+                "src": "/campus-library.jpg",
+                "alt": "Merkez Kütüphane"
+            },
+            {
+                "src": "/campus-sports.jpg",
+                "alt": "Spor Kompleksi"
+            },
+            {
+                "src": "/campus-event.jpg",
+                "alt": "Öğrenci Etkinliği"
+            },
+            {
+                "src": "/campus-dorm.jpg",
+                "alt": "Öğrenci Yurdu"
+            }
+        ],
+        "features": [
+            {
+                "title": "Dünya Standartlarında Tesisler",
+                "description": "Üniversite, binlerce kaynağı barındıran devasa merkez kütüphanesinden, modern ve tam donanımlı spor komplekslerine ve yıl boyunca çeşitli etkinliklere ev sahipliği yapan kültür merkezlerine kadar öğrencinin akademik ve kişisel yolculuğunu desteklemek için entegre bir altyapı sağlar."
+            },
+            {
+                "title": "Zengin Öğrenci Aktiviteleri",
+                "description": "Üniversite hayatı sadece ders çalışmaktan ibaret değildir. Öğrenciler spor, sanat, teknoloji ve gönüllülük gibi çeşitli alanlarda onlarca öğrenci kulübüne katılabilirler. Üniversite, öğrencilerin yeteneklerini geliştirmelerine ve ilişkilerini genişletmelerine katkıda bulunan yıllık kültür ve spor festivalleri düzenler."
+            },
+            {
+                "title": "Konforlu Öğrenci Konaklaması",
+                "description": "Üniversite, kampüs içinde ve yakınında, öğrencilerin rahatlığını ve derslerine odaklanmalarını sağlamak için tüm temel hizmetleri sağlayan çeşitli konforlu konaklama seçenekleri sunmaktadır."
+            }
+        ]
+    },
+    "researchSection": {
+        "title": "Bilimsel Araştırma ve İnovasyon",
+        "image": {
+            "src": "/images/research-lab.jpg",
+            "alt": "Araştırma Laboratuvarı"
+        },
+        "paragraphs": [
+            "Fırat Üniversitesi, bilimsel araştırmanın kalkınma ve yeniliğin temeli olduğuna inanmaktadır. Üniversite, mühendislik, sağlık bilimleri ve teknoloji alanlarında öncü projeler üzerinde çalışan birçok gelişmiş araştırma merkezine ev sahipliği yapmaktadır.",
+            "Üniversitenin **Teknokent**i, yenilikçi fikirleri yerel ve ulusal ekonominin büyümesine katkıda bulunan projelere ve girişimlere dönüştürmek için akademisyenleri, öğrencileri ve girişimcileri bir araya getiren hayati bir ortamdır."
+        ],
+        "button": {
+            "text": "Daha Fazlasını Keşfet",
+            "href": "/university/research-centers"
+        }
+    }
+}

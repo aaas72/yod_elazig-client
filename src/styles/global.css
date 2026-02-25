@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Zain:wght@400;700&display=swap");
+
+@theme {
+  --font-sans: "Inter", "Zain", sans-serif;
+  
+  --animate-scroll-news: scroll-news 20s linear infinite;
+
+  @keyframes scroll-news {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-image: url("../../public/pattrens/bg.svg");
+
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+/* TipTap Editor Styles */
+.tiptap {
+  outline: none;
+}
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+.tiptap h1 { font-size: 1.75em; font-weight: 700; margin: 0.6em 0 0.4em; }
+.tiptap h2 { font-size: 1.4em; font-weight: 700; margin: 0.5em 0 0.3em; }
+.tiptap h3 { font-size: 1.15em; font-weight: 600; margin: 0.4em 0 0.3em; }
+.tiptap p { margin: 0.4em 0; }
+.tiptap ul { list-style: disc; padding-inline-start: 1.5em; margin: 0.4em 0; }
+.tiptap ol { list-style: decimal; padding-inline-start: 1.5em; margin: 0.4em 0; }
+.tiptap blockquote {
+  border-inline-start: 3px solid #e5e7eb;
+  padding-inline-start: 1em;
+  color: #6b7280;
+  margin: 0.6em 0;
+}
+.tiptap hr { border-color: #e5e7eb; margin: 1em 0; }
+.tiptap code {
+  background: #f3f4f6;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.tiptap a { color: #2563eb; text-decoration: underline; }
+.tiptap img { max-width: 100%; border-radius: 8px; margin: 0.5em auto; }

@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "title": "Firat University",
+    "subtitle": "A Beacon of Science in the Heart of Anatolia",
+    "imageUrl": "/imgs/HeroImgs/FıratÜniversitesi.jpg",
+    "imageAlt": "Firat University Campus",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About University"
+      }
+    ]
+  },
+  "intro": {
+    "title": "About the University",
+    "paragraphs": [
+      "Firat University was established in 1975 in Elazig to be a leading academic center in the Eastern Anatolia region. Since its inception, the university has been committed to providing high-quality education and contributing to the scientific and cultural development of society, expanding to become one of the prominent universities in Turkey today.",
+      "Our vision is to be an internationally recognized research university, graduating generations of innovators and leaders. Our mission is to provide a stimulating learning environment, support scientific research that serves humanity, and uphold the values of integrity, excellence, and social responsibility."
+    ]
+  },
+  "statsTitle": "University in Numbers",
+  "stats": [
+    {
+      "id": "foundation-year",
+      "icon": "Calendar",
+      "value": 1975,
+      "label": "Founded"
+    },
+    {
+      "id": "student-count",
+      "icon": "Users",
+      "value": "≈37,000",
+      "label": "Students"
+    },
+    {
+      "id": "faculty-count",
+      "icon": "Building",
+      "value": "17",
+      "label": "Faculties"
+    },
+    {
+      "id": "publications-count",
+      "icon": "BookOpen",
+      "value": "≈23,308",
+      "label": "Published Research"
+    }
+  ],
+  "faculties": [
+    {
+      "name": "Faculty of Medicine",
+      "icon": "Stethoscope",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Engineering",
+      "icon": "DraftingCompass",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Science and Arts",
+      "icon": "FlaskConical",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Economics and Admin",
+      "icon": "Building",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Theology",
+      "icon": "Landmark",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Communication",
+      "icon": "Mic2",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Education",
+      "icon": "School",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Sports Sciences",
+      "icon": "Trophy",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Technology",
+      "icon": "Cpu",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Architecture",
+      "icon": "Ruler",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Dentistry",
+      "icon": "Smile",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Health Sciences",
+      "icon": "HeartPulse",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Veterinary Medicine",
+      "icon": "Dog",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Fisheries",
+      "icon": "Fish",
+      "link": "https://disf.firat.edu.tr/en"
+    }
+  ],
+  "facultiesSection": {
+    "title": "Faculties and Departments",
+    "description": "Discover a wide range of academic programs at Firat University"
+  },
+  "campusLife": {
+    "title": "Campus Life",
+    "images": [
+      {
+        "src": "/campus-library.jpg",
+        "alt": "Central Library"
+      },
+      {
+        "src": "/campus-sports.jpg",
+        "alt": "Sports Complex"
+      },
+      {
+        "src": "/campus-event.jpg",
+        "alt": "Student Event"
+      },
+      {
+        "src": "/campus-dorm.jpg",
+        "alt": "Student Dormitory"
+      }
+    ],
+    "features": [
+      {
+        "title": "World-Class Facilities",
+        "description": "The university provides integrated infrastructure to support the student's academic and personal journey, from the huge central library housing thousands of references, to modern and fully equipped sports complexes, and cultural centers hosting various events throughout the year."
+      },
+      {
+        "title": "Rich Student Activities",
+        "description": "University life is more than just studying. Students can join dozens of student clubs in various fields such as sports, art, technology, and volunteering. The university organizes annual cultural and sports festivals that contribute to honing students' talents and expanding their network."
+      },
+      {
+        "title": "Comfortable Student Housing",
+        "description": "The university offers various comfortable housing options within and near the campus, providing all essential services to ensure students' comfort and focus on their studies."
+      }
+    ]
+  },
+  "researchSection": {
+    "title": "Scientific Research and Innovation",
+    "image": {
+      "src": "/images/research-lab.jpg",
+      "alt": "Research Lab"
+    },
+    "paragraphs": [
+      "Firat University believes that scientific research is the foundation of development and innovation. The university hosts many advanced research centers working on pioneering projects in the fields of engineering, health sciences, and technology.",
+      "The university's **Technopolis (Teknokent)** is a vital environment bringing together academics, students, and entrepreneurs to transform innovative ideas into projects and startups that contribute to the growth of the local and national economy."
+    ],
+    "button": {
+      "text": "Discover More",
+      "href": "/university/research-centers"
+    }
+  }
+}

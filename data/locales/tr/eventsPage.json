@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Etkinlikler",
+    "breadcrumbs": [
+      { "label": "Ana Sayfa", "href": "/" },
+      { "label": "Etkinlikler", "href": "/events" }
+    ]
+  },
+  "empty": "Şu anda etkinlik yok."
+}

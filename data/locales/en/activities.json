@@ -1,0 +1,36 @@
+// File renamed to programs.json. Content will be moved.
+[
+    {
+        "id": 1,
+        "title": "Workshop on Artificial Intelligence",
+        "date": "2025-11-15",
+        "time": "10:00",
+        "location": "Conference Hall, Firat University",
+        "image": "/imgs/HeroImgs/yod-logo.png",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Training and Development Committee",
+        "content": "<h3>Overview</h3><p>An intensive workshop on the basics of Artificial Intelligence and its practical applications was organized. A large number of students from various disciplines participated in the workshop, where theoretical explanations and practical applications on the latest tools and technologies in this field were presented.</p><h3>Workshop Objectives</h3><ul><li>Introduce participants to the basic concepts of Artificial Intelligence.</li><li>Equip participants with the practical skills needed to use AI tools.</li><li>Discuss the future of AI and its impact on various sectors.</li></ul>"
+    },
+    {
+        "id": 2,
+        "title": "Blood Donation Campaign",
+        "date": "2025-11-20",
+        "time": "09:00",
+        "location": "Faculty of Medicine Building",
+        "image": "/imgs/HeroImgs/yod-logo.png",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Social Committee",
+        "content": "<h3>Campaign Details</h3><p>In cooperation with the local blood bank, a blood donation campaign was organized on campus. The campaign witnessed a large turnout from students and faculty members, contributing to supporting the blood stock and meeting the needs of patients.</p>"
+    },
+    {
+        "id": 3,
+        "title": "Annual Programming Contest",
+        "date": "2025-12-01",
+        "time": "12:00",
+        "location": "Computer Labs, Faculty of Engineering",
+        "image": "https://fc-barcelona-ar.com/the-history-of-the-creation-of-fc-barcelona-from-humble-beginnings-to-global-football-icon/",
+        "coverImage": "/imgs/HeroImgs/yod-logo.png",
+        "author": "Tech Club",
+        "content": "<h3>About the Contest</h3><p>The fifth edition of the Annual Programming Contest has been launched, aiming to enhance students' programming skills and encourage innovation. The contest included a set of programming challenges and problems that require logical thinking and creative solutions.</p>"
+    }
+]

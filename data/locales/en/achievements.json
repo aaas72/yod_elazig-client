@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "date": "2024/05/10",
+        "title": "Establishment of the Union",
+        "description": "The Yemeni Students Union was officially launched with the aim of uniting student efforts and providing necessary support in their academic journey.",
+        "icon": "BookOpen"
+    },
+    {
+        "id": 2,
+        "date": "2024/09/15",
+        "title": "Launch of Academic Advising Program",
+        "description": "Started a specialized program to help new students adapt to the university environment and provide academic guidance and counseling.",
+        "icon": "BookOpen"
+    },
+    {
+        "id": 3,
+        "date": "2025/02/20",
+        "title": "Organizing the First Cultural Forum",
+        "description": "Held the first cultural forum which included various events aimed at strengthening Yemeni identity and social bonds among students.",
+        "icon": "BookOpen"
+    }
+]

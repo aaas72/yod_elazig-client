@@ -1,0 +1,93 @@
+{
+    "navigation": [
+        {
+            "href": "/",
+            "label": "Ana Sayfa"
+        },
+        {
+            "href": "/about",
+            "label": "Hakkımızda"
+        },
+        {
+            "href": "/news",
+            "label": "Haberler"
+        },
+        {
+            "href": "/activities",
+            "label": "Etkinlikler"
+        },
+        {
+            "href": "/about-city",
+            "label": "Şehir Hk"
+        },
+        {
+            "href": "/about-university",
+            "label": "Üniversite Hk"
+        },
+        {
+            "href": "/resources",
+            "label": "Arşiv"
+        },
+        {
+            "href": "/contact",
+            "label": "İletişim"
+        },
+        {
+            "href": "/volunteer",
+            "label": "Gönüllü Ol"
+        }
+    ],
+    "contactInfo": {
+        "email": "info@example.com",
+        "phone": "+1 234 567 890",
+        "address": "Elazığ, Türkiye",
+        "socialLinks": [
+            {
+                "platform": "facebook",
+                "url": "#"
+            },
+            {
+                "platform": "twitter",
+                "url": "#"
+            },
+            {
+                "platform": "instagram",
+                "url": "#"
+            },
+            {
+                "platform": "linkedin",
+                "url": "#"
+            }
+        ]
+    },
+    "footer": {
+        "aboutText": "Yemenli öğrencilere hizmet etmeyi, haklarını savunmayı ve aralarındaki iletişim ve işbirliğini güçlendirmeyi amaçlayan bir öğrenci topluluğu.",
+        "logoAlt": "Yemenli Öğrenciler Birliği Logosu",
+        "quickLinksTitle": "Hızlı Bağlantılar",
+        "contactTitle": "İletişim",
+        "followUsTitle": "Bizi Takip Edin",
+        "newsletterTitle": "Bültenimize Abone Olun",
+        "newsletterDescription": "En son haberlerimiz ve etkinliklerimizden haberdar olun.",
+        "newsletterPlaceholder": "E-postanızı girin",
+        "newsletterButtonAriaLabel": "Abone Ol",
+        "copyrightText": "Yemenli Öğrenciler Birliği. Tüm hakları saklıdır.",
+        "quickLinks": [
+            {
+                "href": "/",
+                "label": "Ana Sayfa"
+            },
+            {
+                "href": "/about",
+                "label": "Birlik Hakkında"
+            },
+            {
+                "href": "/activities",
+                "label": "Etkinlikler ve Faaliyetler"
+            },
+            {
+                "href": "/contact",
+                "label": "İletişim"
+            }
+        ]
+    }
+}

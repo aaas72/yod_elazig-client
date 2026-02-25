@@ -1,0 +1,26 @@
+// File renamed to programsPage.json. Content will be moved.
+{
+  "hero": {
+    "title": "Aktiviteler ve Etkinlikler",
+    "subtitle": "Yemenli öğrenciler tarafından düzenlenen en son aktiviteleri ve etkinlikleri keşfedin",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "Öğrenci aktivitelerinin temsili resmi",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "Aktiviteler ve Etkinlikler",
+        "href": "/activities"
+      }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "Aktivite bulunamadı",
+    "breadcrumbs": {
+      "home": "Ana Sayfa",
+      "activities": "Aktiviteler"
+    }
+  }
+}

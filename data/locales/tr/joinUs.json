@@ -1,0 +1,27 @@
+{
+    "title": "Değişimin Bir Parçası Olun",
+    "description": "Türkiye'deki Yemenli Öğrenciler Birliği sadece bir kuruluş değil, olumlu bir iz bırakmak isteyen her hırslı öğrenci için bir aile ve bir platformdur. Gücümüzün bireylerimizde, her yeni fikirde ve yardım için uzatılan her elde yattığına inanıyoruz.",
+    "buttonText": "Neden Bize Katılmalısınız?",
+    "benefits": [
+        {
+            "id": 1,
+            "title": "Becerilerinizi Geliştirmek İçin",
+            "description": "Liderlik, etkinlik organizasyonu ve iletişim konularında pratik deneyim kazanın; bu beceriler üniversite diplomanız kadar önemlidir."
+        },
+        {
+            "id": 2,
+            "title": "Ağınızı Genişletmek İçin",
+            "description": "Çeşitli disiplinlerden ve üniversitelerden meslektaşlarınızla tanışın ve ömür boyu sürecek dostluklar ve profesyonel ilişkiler kurun."
+        },
+        {
+            "id": 3,
+            "title": "Meslektaşlarınızın Sesi Olmak İçin",
+            "description": "Karar alma süreçlerine katılın ve öğrencilerin seslerini ve ihtiyaçlarını ilgili makamlara iletmeye katkıda bulunun."
+        },
+        {
+            "id": 4,
+            "title": "Gerçek Bir Etki Yaratmak İçin",
+            "description": "Öğrencilere hizmet eden ve üniversite deneyimlerini iyileştirmeye katkıda bulunan girişimlerin ve projelerin bir parçası olun."
+        }
+    ]
+}

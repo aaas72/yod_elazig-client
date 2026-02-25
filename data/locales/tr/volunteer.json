@@ -1,0 +1,18 @@
+{
+    "hero": {
+        "title": "Birlikte Gönüllü Olun",
+        "breadcrumb": "Gönüllü Ekibine Katılın"
+    },
+    "content": {
+        "title": "Değişimin Bir Parçası Olun",
+        "description": "Gönüllülük sadece bir iş değil, öğrencilerin hayatında olumlu bir etki bırakma fırsatıdır. Seçkin ekibimize katılın ve birlikte fark yaratalım.",
+        "benefits": [
+            "Kişisel ve mesleki becerileri geliştirmek",
+            "Geniş sosyal ağlar kurmak",
+            "Öğrenci topluluğuna hizmet etmek",
+            "Deneyim ve gönüllülük sertifikaları almak"
+        ],
+        "buttonText": "Gönüllü Formunu Doldur",
+        "formLink": "https://forms.google.com/your-form-link"
+    }
+}

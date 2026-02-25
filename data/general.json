@@ -1,0 +1,93 @@
+{
+    "navigation": [
+        {
+            "href": "/",
+            "label": "الرئيسية"
+        },
+        {
+            "href": "/about",
+            "label": "من نحن"
+        },
+        {
+            "href": "/news",
+            "label": "الأخبار"
+        },
+        {
+            "href": "/activities",
+            "label": "الأنشطة"
+        },
+        {
+            "href": "/about-city",
+            "label": "عن المدينة"
+        },
+        {
+            "href": "/about-university",
+            "label": "عن الجامعة"
+        },
+        {
+            "href": "/resources",
+            "label": "الارشيف"
+        },
+        {
+            "href": "/contact",
+            "label": "تواصل معنا"
+        },
+        {
+            "href": "/volunteer",
+            "label": "التطوع"
+        }
+    ],
+    "contactInfo": {
+        "email": "info@example.com",
+        "phone": "+1 234 567 890",
+        "address": "Elazig, Turkey",
+        "socialLinks": [
+            {
+                "platform": "facebook",
+                "url": "#"
+            },
+            {
+                "platform": "twitter",
+                "url": "#"
+            },
+            {
+                "platform": "instagram",
+                "url": "#"
+            },
+            {
+                "platform": "linkedin",
+                "url": "#"
+            }
+        ]
+    },
+    "footer": {
+        "aboutText": "منظمة طلابية تهدف إلى خدمة الطلاب اليمنيين، والدفاع عن حقوقهم، وتعزيز التواصل والتعاون بينهم.",
+        "logoAlt": "شعار اتحاد الطلاب اليمنيين",
+        "quickLinksTitle": "روابط سريعة",
+        "contactTitle": "تواصل معنا",
+        "followUsTitle": "تابعنا على",
+        "newsletterTitle": "اشترك في نشرتنا البريدية",
+        "newsletterDescription": "كن على اطلاع بآخر أخبارنا وفعالياتنا.",
+        "newsletterPlaceholder": "أدخل بريدك الإلكتروني",
+        "newsletterButtonAriaLabel": "اشتراك",
+        "copyrightText": "اتحاد الطلاب اليمنيين. جميع الحقوق محفوظة.",
+        "quickLinks": [
+            {
+                "href": "/",
+                "label": "الرئيسية"
+            },
+            {
+                "href": "/about",
+                "label": "عن الاتحاد"
+            },
+            {
+                "href": "/activities",
+                "label": "الفعاليات والأنشطة"
+            },
+            {
+                "href": "/contact",
+                "label": "اتصل بنا"
+            }
+        ]
+    }
+}

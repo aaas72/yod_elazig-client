@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "title": "Elazığ'daki Yemen Öğrenci Birliği Resmi Web Sitesi",
+    "backgroundImage": "/imgs/HeroImgs/yodelsty.jpg",
+    "logoUrl": "/imgs/logos/yodellogo.png",
+    "ticker": [
+      {
+        "id": 1,
+        "title": "Türkiye-Fransa İş Gücü Anlaşmasının 60. Yılı Büyü...",
+        "date": "13.10.2025",
+        "image": "/imgs/elazig/Festival_1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "4B Sözleşmeli Personel Alım İlanı",
+        "date": "10.10.2025",
+        "logo": true
+      },
+      {
+        "id": 3,
+        "title": "Sözleşmeli Bilişim Personeli Alım İlanı",
+        "date": "07.10.2025",
+        "logo": true
+      },
+      {
+        "id": 4,
+        "title": "YTB, 15. Kuruluş Yıl Dönümü Programı Ankara'da Ger...",
+        "date": "02.10.2025",
+        "image": "/imgs/un/campus-event.jpg"
+      },
+      {
+        "id": 5,
+        "title": "YTB, 15. Kuruluş Yıl Dönümü Programı Ankara'da Ger...",
+        "date": "02.10.2025",
+        "image": "/imgs/un/campus-sports.jpg"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "id": 1,
+      "icon": "GraduationCap",
+      "value": 50,
+      "label": "Öğrenci"
+    },
+    {
+      "id": 2,
+      "icon": "CalendarCheck",
+      "value": 30,
+      "label": "Etkinlik"
+    },
+    {
+      "id": 3,
+      "icon": "Users",
+      "value": 5,
+      "label": "Yönetim Kurulu"
+    },
+    {
+      "id": 4,
+      "icon": "FileSignature",
+      "value": 8,
+      "label": "Anlaşma"
+    },
+    {
+      "id": 5,
+      "icon": "Handshake",
+      "value": 8,
+      "label": "Ortaklık"
+    }
+  ],
+  "sections": {
+    "stats": {
+      "title": "Rakamlarla Birliğimiz"
+    },
+    "news": {
+      "title": "Son Haberler",
+      "buttonText": "Daha Fazla Haber Görüntüle"
+    },
+    "events": {
+      "title": "Etkinlikler ve Faaliyetler",
+      "buttonText": "Daha Fazla Etkinlik Görüntüle"
+    },
+    "gallery": {
+      "title": "Fotoğraf Galerisi",
+      "images": [
+        {
+          "id": 1,
+          "src": "/imgs/PhotoGallery/7.jpg",
+          "alt": "Fotoğraf 1"
+        },
+        {
+          "id": 2,
+          "src": "/imgs/PhotoGallery/8.jpg",
+          "alt": "Fotoğraf 2"
+        },
+        {
+          "id": 3,
+          "src": "/imgs/PhotoGallery/IMG-20231216-WA0020.jpg",
+          "alt": "Fotoğraf 3"
+        },
+        {
+          "id": 4,
+          "src": "/imgs/PhotoGallery/IMG-20241026-WA0019.jpg",
+          "alt": "Fotoğraf 4"
+        },
+        {
+          "id": 5,
+          "src": "/imgs/PhotoGallery/IMG-20241027-WA0077.jpg",
+          "alt": "Fotoğraf 5"
+        }
+      ]
+    }
+  }
+}
