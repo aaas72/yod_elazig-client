@@ -14,14 +14,15 @@ export interface TickerItem {
 }
 
 export const tickerService = {
-  getActive: async () => {
-    const { data } = await api.get('/v1/ticker');
-    return data.data;
+  getPublished: async () => {
+    const { data } = await api.get('/ticker');
+    // Ensure we return the array directly, handling potential wrapper objects
+    return data.data.tickers || data.data || [];
   },
 
   getAll: async () => {
-    const { data } = await api.get('/v1/ticker/admin');
-    return data.data;
+    const { data } = await api.get('/ticker/admin');
+    return data.data.tickers || data.data || [];
   },
 
   getById: async (id: string) => {
@@ -44,7 +45,7 @@ export const tickerService = {
   },
 
   bulkUpdate: async (tickers: Partial<TickerItem>[]) => {
-    const { data } = await api.put('/ticker/bulk', tickers);
-    return data.data;
+    const { data } = await api.put('/ticker/bulk', { items: tickers });
+    return data.data.tickers;
   },
 };

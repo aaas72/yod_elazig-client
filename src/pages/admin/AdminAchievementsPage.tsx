@@ -91,9 +91,8 @@ export default function AdminAchievementsPage() {
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الوصف (إنجليزي)</label><textarea value={formData.descEn} onChange={(e) => setFormData({ ...formData, descEn: e.target.value })} rows={3} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الوصف (تركي)</label><textarea value={formData.descTr} onChange={(e) => setFormData({ ...formData, descTr: e.target.value })} rows={3} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" /></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">القيمة / الرقم</label><input type="number" value={formData.value} onChange={(e) => setFormData({ ...formData, value: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" /></div>
-            <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الأيقونة</label><input value={formData.icon} onChange={(e) => setFormData({ ...formData, icon: e.target.value })} placeholder="e.g. Trophy" className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">التصنيف</label><input value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" /></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

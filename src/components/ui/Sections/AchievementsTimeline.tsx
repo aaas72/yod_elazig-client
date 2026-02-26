@@ -60,13 +60,6 @@ const TimelineItem = ({ achievement, orientation }: TimelineItemProps) => {
 
 const AchievementsTimeline = () => {
   const { achievements, loading, error } = useAchievementsData();
-  
-  const iconMap: Record<string, React.ElementType> = {
-    BookOpen: BookOpen,
-    Trophy: Trophy,
-    Star: Star,
-    Award: Award
-  };
 
   if (loading) {
     return (
@@ -87,10 +80,9 @@ const AchievementsTimeline = () => {
   }
 
   const achievementsData: Achievement[] = achievements.map((item) => {
-    const IconComponent = (typeof item.icon === 'string' ? iconMap[item.icon] : null) || BookOpen;
     return {
       ...item,
-      icon: <IconComponent className="w-8 h-8 text-[#BE141B]" />,
+      icon: <Trophy className="w-8 h-8 text-[#BE141B]" />,
     };
   });
 

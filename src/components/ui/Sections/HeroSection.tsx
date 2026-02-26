@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
+import { tickerService, TickerItem } from "@/services/tickerService";
+import { useTranslation } from "react-i18next";
 
 // صور الخلفية من مجلد HeroSectionImgs
 const heroImages = [
@@ -10,9 +12,35 @@ const heroImages = [
 ];
 
 export default function HeroSection() {
+  const { i18n } = useTranslation();
   const homeData = useHomeData();
-  const news = homeData.hero.ticker;
+  // State for dynamic ticker
+  const [tickerItems, setTickerItems] = useState<any[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Load ticker data
+  useEffect(() => {
+    const fetchTicker = async () => {
+      try {
+        const data = await tickerService.getPublished();
+        // Map to display format
+        const lang = i18n.language as 'ar' | 'en' | 'tr';
+        const mapped = (data || []).map((item: TickerItem) => ({
+          id: item._id,
+          title: item.text[lang] || item.text['ar'] || '',
+          date: item.startDate ? new Date(item.startDate).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US') : new Date(item.createdAt).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US'),
+          logo: true, // For now, use logo for all text tickers
+          image: null // Or support image if added to backend
+        }));
+        setTickerItems(mapped);
+      } catch (err) {
+        console.error('Failed to load ticker', err);
+        // Fallback to static data if API fails
+        setTickerItems(homeData.hero.ticker || []);
+      }
+    };
+    fetchTicker();
+  }, [i18n.language, homeData.hero.ticker]);
 
   // تبديل الصور كل 3 ثواني
   useEffect(() => {
@@ -49,12 +77,13 @@ export default function HeroSection() {
         </FadeIn>
       </div>
 
+      {tickerItems.length > 0 && (
       <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-6xl px-4">
         <FadeIn direction="up" delay={0.5}>
           <div className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-md shadow-2xl max-h-[100px] overflow-hidden">
             <div className="flex animate-scroll-news">
               {/* Duplicate news for seamless loop */}
-              {[...news, ...news].map((item, index) => (
+              {[...tickerItems, ...tickerItems].map((item, index) => (
                 <div
                   key={`${item.id}-${index}`}
                   className="flex items-center gap-3 px-4 py-3 min-w-[350px] border-r border-gray-200 last:border-r-0"
@@ -91,6 +120,7 @@ export default function HeroSection() {
           </div>
         </FadeIn>
       </div>
+      )}
 
       <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 z-10 overflow-hidden">
         <img
@@ -98,6 +128,7 @@ export default function HeroSection() {
           alt=""
           className="w-screen max-w-none h-auto"
         />
+
       </div>
     </section>
   );
