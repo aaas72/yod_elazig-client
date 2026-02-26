@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useSiteSettings } from '@/hooks/useSiteSettings';
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
@@ -148,6 +149,7 @@ const DesktopHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const { settings } = useSiteSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -177,6 +179,7 @@ const DesktopHeader = () => {
             src="/imgs/logos/yodellogo.png"
             alt="YÖSOT Logo"
             className="w-[100px] h-auto object-contain"
+            style={{ background: 'transparent' }}
           />
         </Link>
         <DesktopNav />
@@ -193,6 +196,7 @@ const MobileHeader = ({
   setIsMenuOpen: (v: boolean) => void;
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { settings } = useSiteSettings();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -212,9 +216,10 @@ const MobileHeader = ({
       <div className="flex justify-between items-center h-[100px] px-4 max-w-[1440px] mx-auto">
         <Link to="/">
           <img
-            src="/imgs/logos/yodellogo.png"
+            git remote -v            src="/imgs/logos/yodellogo.png"
             alt="YÖSOT Logo"
             className="w-[120px] my-4 object-contain"
+            style={{ background: 'transparent' }}
           />
         </Link>
         <button

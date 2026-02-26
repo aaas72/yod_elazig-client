@@ -16,7 +16,7 @@ export default function FaqPage() {
 
   useEffect(() => {
     if (faqData.categories.length > 0) {
-      const categoryExists = faqData.categories.some((cat) => cat.id === activeCategory);
+      const categoryExists = faqData.categories.some((cat: { id: string }) => cat.id === activeCategory);
       if (!categoryExists) {
         setActiveCategory(faqData.categories[0].id);
       }
@@ -37,8 +37,8 @@ export default function FaqPage() {
   };
 
   const filteredCategories = faqData.categories
-    .filter((cat) => (searchQuery ? true : cat.id === activeCategory))
-    .map((cat) => ({
+    .filter((cat: { id: string }) => (searchQuery ? true : cat.id === activeCategory))
+    .map((cat: { id: string; title: string; questions: any[] }) => ({
       ...cat,
       questions: cat.questions.filter(
         (q) =>
@@ -46,7 +46,7 @@ export default function FaqPage() {
           q.answer.toLowerCase().includes(searchQuery.toLowerCase())
       ),
     }))
-    .filter((cat) => cat.questions.length > 0);
+    .filter((cat: { questions: any[] }) => cat.questions.length > 0);
 
   return (
     <div className="min-h-screen">
@@ -78,7 +78,7 @@ export default function FaqPage() {
                   Categories
                 </h3>
                 <ul className="space-y-1">
-                  {faqData.categories.map((category) => (
+                  {faqData.categories.map((category: { id: string; title: string }) => (
                     <li key={category.id}>
                       <button
                         onClick={() => handleCategoryClick(category.id)}
@@ -99,7 +99,7 @@ export default function FaqPage() {
               {/* Categories Menu (Mobile) */}
               <nav className="lg:hidden overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
                 <div className="flex gap-2">
-                  {faqData.categories.map((category) => (
+                  {faqData.categories.map((category: { id: string; title: string }) => (
                     <button
                       key={category.id}
                       onClick={() => handleCategoryClick(category.id)}
@@ -121,7 +121,7 @@ export default function FaqPage() {
           {/* Main Content */}
           <main className="lg:w-3/4 space-y-12">
             {filteredCategories.length > 0 ? (
-              filteredCategories.map((category) => (
+              filteredCategories.map((category: { id: string; title: string; questions: any[] }) => (
                 <div
                   key={category.id}
                   id={category.id}
@@ -186,9 +186,23 @@ export default function FaqPage() {
                                           {faqData.labels.steps}
                                         </h4>
                                         <ol className="list-decimal list-inside space-y-2 text-sm">
-                                          {(q as any).steps?.map((step: string, index: number) => (
+                                          {(q as any).steps?.map((step: any, index: number) => (
                                             <li key={index} className="pl-2 marker:text-red-500 marker:font-semibold">
-                                              <span className="text-gray-700"><RichText text={step} /></span>
+                                              <div className="inline-flex flex-col sm:flex-row sm:items-center gap-2">
+                                                <span className="text-gray-700">
+                                                  <RichText text={typeof step === 'string' ? step : step.text} />
+                                                </span>
+                                                {typeof step !== 'string' && step.fileUrl && (
+                                                  <a 
+                                                    href={step.fileUrl} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-1 text-xs font-medium text-red-600 bg-red-50 px-2 py-1 rounded hover:bg-red-100 transition-colors"
+                                                  >
+                                                    <span className="underline">View File</span>
+                                                  </a>
+                                                )}
+                                              </div>
                                             </li>
                                           ))}
                                         </ol>
@@ -231,6 +245,7 @@ export default function FaqPage() {
       {/* Document Preview Modal */}
       {modalData && (
         <FaqDocumentModal
+
           isOpen={modalData.isOpen}
           title={modalData.title}
           image={modalData.image}

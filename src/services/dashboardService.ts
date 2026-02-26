@@ -14,10 +14,9 @@ export interface DashboardStats {
     published: number;
     byStatus: { upcoming: number; ongoing: number; completed: number };
   };
-  contacts: { total: number; new: number; read: number; replied: number };
   volunteers: { total: number; pending: number; accepted: number; rejected: number };
   gallery: { albums: number; photos: number };
-  content: { achievements: number; faqs: number; resources: number; pages: number; tickers: number };
+  content: { achievements: number; faqs: number; pages: number; tickers: number };
 }
 
 export const dashboardService = {

@@ -9,7 +9,7 @@ import {
 import NewsletterForm from "@/components/ui/Forms/NewsletterForm";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { useGeneralData } from "@/hooks/useGeneralData";
+import { useSiteSettings } from '@/hooks/useSiteSettings';
 
 const socialIcons = {
   facebook: Facebook,
@@ -19,14 +19,13 @@ const socialIcons = {
 };
 
 const Footer = () => {
-  const generalData = useGeneralData();
-  const { contactInfo } = generalData;
+  const { settings } = useSiteSettings();
   const { t } = useTranslation();
 
   const quickLinks = [
     { href: "/", label: t("navigation.home") },
     { href: "/about", label: t("navigation.about") },
-    { href: "/activities", label: t("navigation.activities") },
+    { href: "/events", label: t("navigation.events") },
     { href: "/contact", label: t("navigation.contact") },
   ];
 
@@ -52,9 +51,10 @@ const Footer = () => {
             <div className="flex items-end  gap-3">
               <img
                 suppressHydrationWarning
-                src="/imgs/logos/yodellogo.png"
-                alt={t("footer.logoAlt")}
+                src={settings?.logo ? (settings.logo.startsWith('http') ? settings.logo : `${import.meta.env.VITE_API_URL}${settings.logo}`) : "/imgs/logos/yodellogo.png"}
+                alt={settings?.siteName?.ar || t("footer.logoAlt")}
                 className="h-20 object-contain"
+                style={{ background: 'transparent' }}
               />
             </div>
             <p className="text-xs leading-relaxed text-white">
@@ -93,15 +93,15 @@ const Footer = () => {
                   className="bg-linear-to-r from-secondary-dark to-secondary text-white"
                 />
                 <a
-                  href={`mailto:${contactInfo.email}`}
+                  href={`mailto:${settings?.contactInfo?.email || ''}`}
                   className="hover:text-gray-300 text-white"
                 >
-                  {contactInfo.email}
+                  {settings?.contactInfo?.email || ''}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-white" />
-                <span className="text-white">{contactInfo.phone}</span>
+                <span className="text-white">{settings?.contactInfo?.phone || ''}</span>
               </li>
             </ul>
           </div>
@@ -112,16 +112,15 @@ const Footer = () => {
               {t("footer.followUsTitle")}
             </h3>
             <div className="flex gap-4">
-              {contactInfo.socialLinks.map((link, index) => {
-                const Icon =
-                  socialIcons[link.platform as keyof typeof socialIcons];
-                if (!Icon) return null;
+              {settings?.socialLinks && Object.entries(settings.socialLinks).map(([platform, url], index) => {
+                const Icon = socialIcons[platform as keyof typeof socialIcons];
+                if (!Icon || !url) return null;
                 return (
                   <a
                     key={index}
-                    href={link.url}
+                    href={url as string}
                     className="w-10 h-10 flex items-center justify-center bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/40 hover:scale-110 transition-all duration-300 shadow-md"
-                    aria-label={link.platform}
+                    aria-label={platform}
                   >
                     <Icon size={20} />
                   </a>

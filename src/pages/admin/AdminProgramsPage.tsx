@@ -3,10 +3,8 @@ import { type ProgramItem } from '@/services/programsService';
 import { useProgramsData } from '@/hooks/useProgramsData';
 import AdminDataTable from '@/components/admin/AdminDataTable';
 import AdminModal from '@/components/admin/AdminModal';
-import { Edit, Trash2, Eye, EyeOff, Upload, Loader2 } from 'lucide-react';
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Edit, Trash2, Eye, EyeOff, Upload, Loader2, Languages } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 import { uploadService } from '@/services/uploadService';
 import { formatFileSize } from '@/utils/imageCompressor';
@@ -320,7 +318,7 @@ export default function AdminProgramsPage() {
           <div className="flex justify-end gap-3 pt-4 border-t"><button onClick={() => setModalOpen(false)} className="px-5 py-2.5 text-sm text-gray-600 hover:bg-gray-100 rounded-xl">إلغاء</button><button onClick={handleSave} disabled={saving} className="px-5 py-2.5 text-sm bg-red-600 text-white rounded-xl hover:bg-red-700 disabled:opacity-50">{saving ? 'جاري الحفظ...' : editingItem ? 'تحديث' : 'إنشاء'}</button></div>
         </div>
       </AdminModal>
-      <ToastContainer />
+{/* ToastContainer is imported and rendered by the root layout or _app; no need to duplicate it here */}
     </>
   );
 }

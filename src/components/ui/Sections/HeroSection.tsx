@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
 import { tickerService, TickerItem } from "@/services/tickerService";
-import { galleryService, GalleryAlbum } from "@/services/galleryService";
 import { useTranslation } from "react-i18next";
 
 import { BASE_URL } from '@/lib/api';
 
-// Fallback images if no gallery images found
-const fallbackImages = [
+// صور الهيدر الثابتة من مجلد HeroSectionImgs
+const heroImagesStatic = [
   "/imgs/HeroSectionImgs/yodelsty.jpg",
   "/imgs/HeroSectionImgs/20251221_170500.jpg",
+  // أضف هنا أي صورة جديدة تضعها في المجلد
 ];
 
 export default function HeroSection() {
@@ -23,41 +23,9 @@ export default function HeroSection() {
   const [heroImages, setHeroImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // 1. Load Hero Images from Gallery
+  // استخدم الصور الثابتة فقط من مجلد HeroSectionImgs
   useEffect(() => {
-    const fetchGallery = async () => {
-      try {
-        const albums = await galleryService.getPublished();
-        // Flatten all photos from all albums, or pick specific "Hero" album if you want
-        // Here we take up to 5 latest photos from published albums
-        const allPhotos: string[] = [];
-        
-        if (Array.isArray(albums)) {
-          albums.forEach((album: GalleryAlbum) => {
-            if (album.photos && album.photos.length > 0) {
-              album.photos.forEach(photo => {
-                const fullUrl = photo.url.startsWith('http') ? photo.url : `${BASE_URL}${photo.url.startsWith('/') ? '' : '/'}${photo.url}`;
-                allPhotos.push(fullUrl);
-              });
-            } else if (album.coverImage) {
-               const fullUrl = album.coverImage.startsWith('http') ? album.coverImage : `${BASE_URL}${album.coverImage.startsWith('/') ? '' : '/'}${album.coverImage}`;
-               allPhotos.push(fullUrl);
-            }
-          });
-        }
-
-        if (allPhotos.length > 0) {
-          // Shuffle or take first 5
-          setHeroImages(allPhotos.slice(0, 5));
-        } else {
-          setHeroImages(fallbackImages);
-        }
-      } catch (err) {
-        console.error('Failed to load gallery for hero', err);
-        setHeroImages(fallbackImages);
-      }
-    };
-    fetchGallery();
+    setHeroImages(heroImagesStatic);
   }, []);
 
   // 2. Load ticker data
@@ -96,7 +64,7 @@ export default function HeroSection() {
   }, [heroImages]);
 
   // Ensure we have images to show
-  const currentImage = heroImages.length > 0 ? heroImages[currentImageIndex] : fallbackImages[0];
+  const currentImage = heroImages.length > 0 ? heroImages[currentImageIndex] : heroImagesStatic[0];
 
   return (
     <section className="relative w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">

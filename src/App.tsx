@@ -24,6 +24,7 @@ import VolunteerPage from "./pages/VolunteerPage";
 import FaqPage from "./pages/FaqPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import JoinMembershipPage from "./pages/JoinMembershipPage";
+import PublicFormPage from "./pages/PublicFormPage";
 
 // Admin
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -35,13 +36,15 @@ import AdminEventsPage from "./pages/admin/AdminEventsPage";
 import AdminProgramsPage from "./pages/admin/AdminProgramsPage";
 import AdminAchievementsPage from "./pages/admin/AdminAchievementsPage";
 import AdminFaqPage from "./pages/admin/AdminFaqPage";
-import AdminResourcesPage from "./pages/admin/AdminResourcesPage";
 import AdminGalleryPage from "./pages/admin/AdminGalleryPage";
 import AdminTickerPage from "./pages/admin/AdminTickerPage";
-import AdminContactsPage from "./pages/admin/AdminContactsPage";
 import AdminMembersPage from "./pages/admin/AdminMembersPage";
 import AdminVolunteersPage from "./pages/admin/AdminVolunteersPage";
 import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
+import AdminFormsPage from "./pages/admin/AdminFormsPage";
+import AdminFormSubmissionsPage from "./pages/admin/AdminFormSubmissionsPage";
+
+
 
 function App() {
     const [visitCount, setVisitCount] = useState(0);
@@ -119,9 +122,9 @@ function App() {
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/volunteer" element={<VolunteerPage />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/forms/:slug" element={<PublicFormPage />} />
           </Route>
           <Route path="/join-membership" element={<JoinMembershipPage />} />
-
           <Route path="/access" element={<AccessPage />} />
 
           {/* Admin Routes */}
@@ -133,11 +136,11 @@ function App() {
               <Route path="programs" element={<AdminProgramsPage />} />
               <Route path="achievements" element={<AdminAchievementsPage />} />
               <Route path="faq" element={<AdminFaqPage />} />
-              <Route path="resources" element={<AdminResourcesPage />} />
               <Route path="gallery" element={<AdminGalleryPage />} />
               <Route path="ticker" element={<AdminTickerPage />} />
-              <Route path="contacts" element={<AdminContactsPage />} />
               <Route path="members" element={<AdminMembersPage />} />
+              <Route path="forms" element={<AdminFormsPage />} />
+              <Route path="forms/:formId/submissions" element={<AdminFormSubmissionsPage />} />
             <Route path="volunteers" element={<AdminVolunteersPage />} />
             <Route path="settings" element={<AdminSettingsPage />} />
           </Route>

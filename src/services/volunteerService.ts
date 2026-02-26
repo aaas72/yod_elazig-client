@@ -19,12 +19,12 @@ export const volunteerService = {
 
   // Admin
   getAll: async (params?: { page?: number; limit?: number; status?: string }) => {
-    const { data } = await api.get('/v1/volunteers', { params });
+    const { data } = await api.get('/volunteers', { params });
     return data.data;
   },
 
   getStats: async () => {
-    const { data } = await api.get('/v1/volunteers/stats');
+    const { data } = await api.get('/volunteers/stats');
     return data.data;
   },
 

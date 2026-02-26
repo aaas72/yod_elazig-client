@@ -10,15 +10,14 @@ import {
 const sidebarLinks = [
   { to: '/admin', label: 'لوحة التحكم', icon: LayoutDashboard, exact: true },
   { to: '/admin/members', label: 'الأعضاء', icon: Users },
+  { to: '/admin/forms', label: 'نماذج التسجيل', icon: FolderOpen },
   { to: '/admin/news', label: 'الأخبار', icon: Newspaper },
   { to: '/admin/events', label: 'الفعاليات', icon: CalendarDays },
   { to: '/admin/programs', label: 'البرامج', icon: GraduationCap },
   { to: '/admin/achievements', label: 'الإنجازات', icon: Trophy },
   { to: '/admin/faq', label: 'الأسئلة الشائعة', icon: HelpCircle },
-  { to: '/admin/resources', label: 'الموارد', icon: FolderOpen },
   { to: '/admin/gallery', label: 'معرض الصور', icon: Image },
   { to: '/admin/ticker', label: 'الشريط الإخباري', icon: TicketIcon },
-  { to: '/admin/contacts', label: 'رسائل التواصل', icon: Mail },
   { to: '/admin/volunteers', label: 'طلبات التطوع', icon: Users },
   { to: '/admin/settings', label: 'الإعدادات', icon: Settings },
 ];
@@ -48,7 +47,7 @@ export default function AdminLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 h-full w-72 bg-white border-l border-gray-200 z-50 transform transition-transform duration-300 lg:translate-x-0 lg:static lg:z-0 ${
+        className={`fixed top-0 right-0 h-screen w-72 bg-white border-l border-gray-200 shadow-xl z-50 transform transition-transform duration-300 lg:translate-x-0 lg:static lg:z-0 ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
         }`}
       >

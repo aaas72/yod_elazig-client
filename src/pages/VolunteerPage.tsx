@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useVolunteerData } from "@/hooks/useVolunteerData";
+import { useVolunteerFormLink } from "@/hooks/useVolunteerFormLink";
 import FadeIn from "@/components/animations/FadeIn";
 import { useGeneralData } from "@/hooks/useGeneralData";
 import Button from "@/components/ui/Button";
@@ -8,6 +9,7 @@ import SimplePageHero from "@/components/ui/Sections/SimplePageHero";
 export default function Volunteer() {
   const generalData = useGeneralData();
   const volunteerData = useVolunteerData();
+  const { formLink, loading, error } = useVolunteerFormLink();
 
   return (
     <div>
@@ -51,13 +53,22 @@ export default function Volunteer() {
                   )}
                 </div>
 
-                <Button
-                  href={volunteerData.content.formLink}
-                  variant="primary"
-                  icon={<ExternalLink size={20} />}
-                >
-                  {volunteerData.content.buttonText}
-                </Button>
+                {formLink ? (
+                  <Button
+                    href={formLink}
+                    variant="primary"
+                    icon={<ExternalLink size={20} />}
+                  >
+                    {volunteerData.content.buttonText}
+                  </Button>
+                ) : (
+                  <button
+                    className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed"
+                    
+                  >
+                    {volunteerData.content.buttonText}
+                  </button>
+                )}
               </div>
             </div>
           </FadeIn>

@@ -3,7 +3,7 @@ import { settingsService } from '@/services/settingsService';
 import { Save, Link2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-export default function AdminVolunteersPage() {
+export default function AdminVolunteerSettingsPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [formLink, setFormLink] = useState('');

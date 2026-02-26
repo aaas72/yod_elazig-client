@@ -34,7 +34,11 @@ export const galleryService = {
 
   getAll: async (params?: { page?: number; limit?: number }) => {
     const { data } = await api.get('/gallery/admin', { params });
-    return data.data.albums || data.data;
+    // Handle PaginatedResult { data: [...], pagination: {...} }
+    if (data.data && Array.isArray(data.data.data)) {
+      return data.data.data;
+    }
+    return data.data.albums || data.data || [];
   },
 
   getById: async (id: string) => {
