@@ -6,5 +6,18 @@
       { "label": "Etkinlikler", "href": "/events" }
     ]
   },
-  "empty": "Şu anda etkinlik yok."
+  "empty": "Şu anda etkinlik yok.",
+  "detail": {
+    "location": "Konum",
+    "category": "Kategori",
+    "capacity": "Kapasite",
+    "startDate": "Başlangıç Tarihi",
+    "endDate": "Bitiş Tarihi",
+    "status": "Durum",
+    "published": "Yayınlandı",
+    "draft": "Taslak",
+    "featured": "Öne Çıkan",
+    "yes": "Evet",
+    "notFoundMessage": "Etkinlik bulunamadı"
+  }
 }

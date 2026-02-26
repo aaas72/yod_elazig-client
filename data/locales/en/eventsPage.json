@@ -6,5 +6,18 @@
       { "label": "Events", "href": "/events" }
     ]
   },
-  "empty": "No events currently available."
+  "empty": "No events currently available.",
+  "detail": {
+    "location": "Location",
+    "category": "Category",
+    "capacity": "Capacity",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "status": "Status",
+    "published": "Published",
+    "draft": "Draft",
+    "featured": "Featured",
+    "yes": "Yes",
+    "notFoundMessage": "Event not found"
+  }
 }

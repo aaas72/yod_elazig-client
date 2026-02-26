@@ -116,6 +116,8 @@ export default function EventDetailPage() {
     { name: eventItem.title, href: `/events/${eventItem.slug || eventItem.id}` },
   ];
 
+  const labels = pageData.detail || {};
+
   return (
     <ArticleLayout
       title={eventItem.title}
@@ -134,25 +136,25 @@ export default function EventDetailPage() {
       <div className="mt-8 pt-6 border-t border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
           {eventItem.location && (
-            <div><span className="font-bold text-gray-900">المكان:</span> {eventItem.location}</div>
+            <div><span className="font-bold text-gray-900">{labels.location}:</span> {eventItem.location}</div>
           )}
           {eventItem.category && (
-            <div><span className="font-bold text-gray-900">التصنيف:</span> {eventItem.category}</div>
+            <div><span className="font-bold text-gray-900">{labels.category}:</span> {eventItem.category}</div>
           )}
           {eventItem.capacity && (
-            <div><span className="font-bold text-gray-900">السعة:</span> {eventItem.capacity}</div>
+            <div><span className="font-bold text-gray-900">{labels.capacity}:</span> {eventItem.capacity}</div>
           )}
           {eventItem.startDate && (
-            <div><span className="font-bold text-gray-900">تاريخ البداية:</span> {new Date(eventItem.startDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
+            <div><span className="font-bold text-gray-900">{labels.startDate}:</span> {new Date(eventItem.startDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
           )}
           {eventItem.endDate && (
-            <div><span className="font-bold text-gray-900">تاريخ النهاية:</span> {new Date(eventItem.endDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
+            <div><span className="font-bold text-gray-900">{labels.endDate}:</span> {new Date(eventItem.endDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
           )}
           {typeof eventItem.isPublished !== 'undefined' && (
-            <div><span className="font-bold text-gray-900">الحالة:</span> {eventItem.isPublished ? 'منشور' : 'مسودة'}</div>
+            <div><span className="font-bold text-gray-900">{labels.status}:</span> {eventItem.isPublished ? labels.published : labels.draft}</div>
           )}
           {eventItem.isFeatured && (
-            <div><span className="font-bold text-gray-900">مميز:</span> <span className="text-green-600">نعم</span></div>
+            <div><span className="font-bold text-gray-900">{labels.featured}:</span> <span className="text-green-600">{labels.yes}</span></div>
           )}
         </div>
         {/* التصنيف والوسوم */}
