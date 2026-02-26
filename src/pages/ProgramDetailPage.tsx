@@ -12,7 +12,7 @@ import { resolveImage, resolveContentImages } from "@/utils/resolveImage";
 export default function ProgramDetailPage() {
   const { id } = useParams();
   const { i18n } = useTranslation();
-  const { programs, loading: listLoading } = useProgramsData({ admin: true });
+  const { programs, loading: listLoading } = useProgramsData({ admin: false });
   const lang = i18n.language as 'ar' | 'en' | 'tr';
   const pageData = lang === 'ar' ? arPage : lang === 'en' ? enPage : trPage;
   const [programItem, setProgramItem] = useState<any>(null);
