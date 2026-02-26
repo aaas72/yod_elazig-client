@@ -272,12 +272,12 @@ const AdminMembersPage: React.FC = () => {
                 footer={typeof editForm.profileImage === 'string' && editForm.profileImage ? (
                    <div className="mt-1 flex items-center gap-3 px-1">
                      <img 
-                       src={`http://localhost:5000${editForm.profileImage}`} 
+                       src={`${BASE_URL}${editForm.profileImage}`} 
                        alt="صورة الملف الشخصي" 
                        className="w-10 h-10 object-cover rounded-full border border-gray-200"
                      />
                      <a 
-                       href={`http://localhost:5000${editForm.profileImage}`} 
+                       href={`${BASE_URL}${editForm.profileImage}`} 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        className="text-sm text-blue-600 hover:underline flex items-center gap-1" 
@@ -303,7 +303,7 @@ const AdminMembersPage: React.FC = () => {
                 footer={typeof editForm.studentDocument === 'string' && editForm.studentDocument ? (
                    <div className="mt-1 flex items-center gap-2 px-1">
                      <a 
-                     href={`${BASE_URL}/${UPLOAD_DIR}${editForm.studentDocument}`} 
+                     href={`${BASE_URL}${editForm.studentDocument}`} 
                      target="_blank" 
                      rel="noopener noreferrer" 
                        className="text-sm text-blue-600 hover:underline flex items-center gap-1" 
