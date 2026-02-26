@@ -55,7 +55,7 @@ export const programsService = {
     try {
       const { data } = await api.get('/programs', { params }); // Use the public endpoint for users
       console.log("API Response Data for Users:", data); // Debugging: Log the API response data for users
-      return data.data.data || []; // Return only the array of programs
+      return data.data; // Return the full data object { data: [], pagination: {} }
     } catch (error) {
       console.error("Error fetching programs for users:", error);
       throw error;

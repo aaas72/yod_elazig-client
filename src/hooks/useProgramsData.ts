@@ -39,25 +39,35 @@ export function useProgramsData(options: UseProgramsDataOptions = {}): UseProgra
         } else {
           response = await programsService.getAllForUsers({ page, limit: 10, search });
         }
-        // Always extract from response.data.data.data or response.data.data.programs
+        // Extract items and pagination
         let items: any[] = [];
-        if (Array.isArray(response?.data?.data?.data)) {
-          items = response.data.data.data;
-        } else if (Array.isArray(response?.data?.data?.programs)) {
-          items = response.data.data.programs;
-        } else if (Array.isArray(response?.data?.data)) {
-          items = response.data.data;
-        } else if (Array.isArray(response?.data)) {
-          items = response.data;
-        } else if (response?.data?.data && typeof response.data.data === 'object') {
-          // If it's a single object, wrap it in an array
-          items = [response.data.data];
-        } else if (response?.data && typeof response.data === 'object') {
-          items = [response.data];
-        } else {
-          items = [];
+        let paginationData = { page: 1, pages: 1, total: 0, limit: 10 };
+
+        if (response && typeof response === 'object') {
+          // Check for { data: [...], pagination: {...} } structure (Standard)
+          if (Array.isArray(response.data)) {
+            items = response.data;
+          } 
+          // Check for direct array
+          else if (Array.isArray(response)) {
+            items = response;
+          }
+          // Check for nested data structures (legacy support)
+          else if (response.data && Array.isArray(response.data.data)) {
+            items = response.data.data;
+          }
+          else if (response.data && Array.isArray(response.data.programs)) {
+            items = response.data.programs;
+          }
+
+          // Extract pagination
+          if (response.pagination) {
+            paginationData = response.pagination;
+          } else if (response.data?.pagination) {
+            paginationData = response.data.pagination;
+          }
         }
-        const paginationData = response?.data?.data?.pagination || { page: 1, pages: 1, total: 0, limit: 10 };
+        
         const lang = i18n.language as "ar" | "en" | "tr";
         const mapped = items.map((item: any) => {
           const t = item.title && typeof item.title === "object" ? item.title[lang] || item.title.ar || "" : item.title || "";
