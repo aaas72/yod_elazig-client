@@ -11,7 +11,7 @@ import ProgramCard from "@/components/ui/Cards/ProgramCard";
 
 export default function ProgramsPage() {
   const { i18n } = useTranslation();
-  const { programs, loading } = useProgramsData({ admin: true });
+  const { programs, loading } = useProgramsData({ admin: false });
   const lang = i18n.language as 'ar' | 'en' | 'tr';
   const pageMap: Record<string, any> = { ar: arPage, en: enPage, tr: trPage };
   const pageData = pageMap[lang] || pageMap['ar'];
