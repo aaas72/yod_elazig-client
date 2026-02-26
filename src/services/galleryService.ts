@@ -23,8 +23,8 @@ export interface GalleryPhoto {
 
 export const galleryService = {
   getPublished: async () => {
-    const { data } = await api.get('/v1/gallery');
-    return data.data;
+    const { data } = await api.get('/gallery');
+    return data.data.albums || data.data || [];
   },
 
   getBySlug: async (slug: string) => {
@@ -33,8 +33,8 @@ export const galleryService = {
   },
 
   getAll: async (params?: { page?: number; limit?: number }) => {
-    const { data } = await api.get('/v1/gallery/admin', { params });
-    return data.data;
+    const { data } = await api.get('/gallery/admin', { params });
+    return data.data.albums || data.data;
   },
 
   getById: async (id: string) => {

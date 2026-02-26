@@ -3,10 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
 import { tickerService, TickerItem } from "@/services/tickerService";
+import { galleryService, GalleryAlbum } from "@/services/galleryService";
 import { useTranslation } from "react-i18next";
 
-// صور الخلفية من مجلد HeroSectionImgs
-const heroImages = [
+import { BASE_URL } from '@/lib/api';
+
+// Fallback images if no gallery images found
+const fallbackImages = [
   "/imgs/HeroSectionImgs/yodelsty.jpg",
   "/imgs/HeroSectionImgs/20251221_170500.jpg",
 ];
@@ -14,11 +17,50 @@ const heroImages = [
 export default function HeroSection() {
   const { i18n } = useTranslation();
   const homeData = useHomeData();
-  // State for dynamic ticker
+  
+  // State for dynamic ticker & hero images
   const [tickerItems, setTickerItems] = useState<any[]>([]);
+  const [heroImages, setHeroImages] = useState<string[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Load ticker data
+  // 1. Load Hero Images from Gallery
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const albums = await galleryService.getPublished();
+        // Flatten all photos from all albums, or pick specific "Hero" album if you want
+        // Here we take up to 5 latest photos from published albums
+        const allPhotos: string[] = [];
+        
+        if (Array.isArray(albums)) {
+          albums.forEach((album: GalleryAlbum) => {
+            if (album.photos && album.photos.length > 0) {
+              album.photos.forEach(photo => {
+                const fullUrl = photo.url.startsWith('http') ? photo.url : `${BASE_URL}${photo.url.startsWith('/') ? '' : '/'}${photo.url}`;
+                allPhotos.push(fullUrl);
+              });
+            } else if (album.coverImage) {
+               const fullUrl = album.coverImage.startsWith('http') ? album.coverImage : `${BASE_URL}${album.coverImage.startsWith('/') ? '' : '/'}${album.coverImage}`;
+               allPhotos.push(fullUrl);
+            }
+          });
+        }
+
+        if (allPhotos.length > 0) {
+          // Shuffle or take first 5
+          setHeroImages(allPhotos.slice(0, 5));
+        } else {
+          setHeroImages(fallbackImages);
+        }
+      } catch (err) {
+        console.error('Failed to load gallery for hero', err);
+        setHeroImages(fallbackImages);
+      }
+    };
+    fetchGallery();
+  }, []);
+
+  // 2. Load ticker data
   useEffect(() => {
     const fetchTicker = async () => {
       try {
@@ -29,8 +71,8 @@ export default function HeroSection() {
           id: item._id,
           title: item.text[lang] || item.text['ar'] || '',
           date: item.startDate ? new Date(item.startDate).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US') : new Date(item.createdAt).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US'),
-          logo: true, // For now, use logo for all text tickers
-          image: null // Or support image if added to backend
+          logo: !item.image, // Use logo only if no image provided
+          image: item.image ? (item.image.startsWith('http') ? item.image : `${BASE_URL}${item.image.startsWith('/') ? '' : '/'}${item.image}`) : null
         }));
         setTickerItems(mapped);
       } catch (err) {
@@ -42,28 +84,31 @@ export default function HeroSection() {
     fetchTicker();
   }, [i18n.language, homeData.hero.ticker]);
 
-  // تبديل الصور كل 3 ثواني
+  // 3. Auto-rotate images
   useEffect(() => {
     if (heroImages.length <= 1) return;
 
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
+    }, 5000); // Slower rotation for better UX
 
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages]);
+
+  // Ensure we have images to show
+  const currentImage = heroImages.length > 0 ? heroImages[currentImageIndex] : fallbackImages[0];
 
   return (
     <section className="relative w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
-          key={currentImageIndex}
+          key={currentImage}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          style={{ backgroundImage: `url('${currentImage}')` }}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         />
       </AnimatePresence>
 

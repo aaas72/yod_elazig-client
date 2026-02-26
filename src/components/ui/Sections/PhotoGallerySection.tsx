@@ -1,14 +1,52 @@
 import { useState, useEffect } from "react";
 import Image from "../Image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useGalleryData } from "@/hooks/useGalleryData";
 import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
 
 export default function PhotoGallerySection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const { albums, loading } = useGalleryData();
   const homeData = useHomeData();
-  const photos = homeData.sections.gallery.images;
+  
+  // Use dynamic images if available, otherwise fallback to static homeData
+  const [photos, setPhotos] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!loading && albums.length > 0) {
+      // Flatten all photos from all albums
+      const allPhotos = albums.flatMap(album => 
+        album.images.map(img => ({
+          id: img.id,
+          src: img.url,
+          alt: img.caption || album.title
+        }))
+      );
+      
+      // If no photos in albums, try cover images
+      if (allPhotos.length === 0) {
+         const covers = albums.filter(a => a.coverImage).map(album => ({
+            id: album.id,
+            src: album.coverImage,
+            alt: album.title
+         }));
+         if (covers.length > 0) {
+            setPhotos(covers);
+            return;
+         }
+      }
+
+      if (allPhotos.length > 0) {
+        setPhotos(allPhotos);
+      } else {
+        setPhotos(homeData.sections.gallery.images);
+      }
+    } else if (!loading) {
+       setPhotos(homeData.sections.gallery.images);
+    }
+  }, [albums, loading, homeData.sections.gallery.images]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1));
@@ -19,11 +57,13 @@ export default function PhotoGallerySection() {
   };
 
   useEffect(() => {
-    if (!isHovered) {
+    if (!isHovered && photos.length > 1) {
       const interval = setInterval(nextSlide, 3000);
       return () => clearInterval(interval);
     }
-  }, [isHovered]);
+  }, [isHovered, photos.length]);
+
+  if (photos.length === 0) return null;
 
   return (
     <FadeIn direction="up" fullWidth>
@@ -37,34 +77,43 @@ export default function PhotoGallerySection() {
           className="flex transition-transform duration-700 ease-in-out h-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {photos.map((photo) => (
-            <div key={photo.id} className="shrink-0 w-full h-full relative">
+          {photos.map((photo, index) => (
+            <div key={`${photo.id}-${index}`} className="shrink-0 w-full h-full relative">
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 sizes="100vw"
                 className="object-cover"
-                priority
+                priority={index === 0}
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
+              {photo.alt && (
+                <div className="absolute bottom-10 left-10 text-white z-10 max-w-2xl">
+                  <h3 className="text-xl font-bold">{photo.alt}</h3>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-5 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-full text-gray-800 hover:bg-white/60 hover:scale-110 transition-all duration-300 shadow-lg z-10"
-        >
-          <ChevronLeft />
-        </button>
+        {photos.length > 1 && (
+          <>
+            <button
+              onClick={prevSlide}
+              className="absolute top-1/2 left-5 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-full text-gray-800 hover:bg-white/60 hover:scale-110 transition-all duration-300 shadow-lg z-10"
+            >
+              <ChevronLeft />
+            </button>
 
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-5 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-full text-gray-800 hover:bg-white/60 hover:scale-110 transition-all duration-300 shadow-lg z-10"
-        >
-          <ChevronRight />
-        </button>
+            <button
+              onClick={nextSlide}
+              className="absolute top-1/2 right-5 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/40 backdrop-blur-md rounded-full text-gray-800 hover:bg-white/60 hover:scale-110 transition-all duration-300 shadow-lg z-10"
+            >
+              <ChevronRight />
+            </button>
+          </>
+        )}
       </section>
     </FadeIn>
   );

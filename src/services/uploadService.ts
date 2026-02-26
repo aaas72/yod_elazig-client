@@ -30,7 +30,7 @@ export const uploadService = {
     }
 
     const { data } = await api.post<{ success: boolean; data: UploadResult }>(
-      '/v1/upload/image',
+      '/upload/image',
       formData,
       { headers: { 'Content-Type': 'multipart/form-data' }, timeout: 30000 }
     );
@@ -38,17 +38,16 @@ export const uploadService = {
   },
 
   /**
-   * Upload multiple images
+   * Upload multiple images in parallel
    */
   uploadImages: async (
     files: File[],
     options?: { maxWidth?: number; maxHeight?: number; quality?: number; folder?: string }
   ): Promise<UploadResult[]> => {
-    const results: UploadResult[] = [];
-    for (const file of files) {
-      const result = await uploadService.uploadImage(file, options);
-      results.push(result);
-    }
-    return results;
+    // Process all uploads in parallel
+    const uploadPromises = files.map(file => uploadService.uploadImage(file, options));
+
+    // Wait for all to complete
+    return Promise.all(uploadPromises);
   },
 };

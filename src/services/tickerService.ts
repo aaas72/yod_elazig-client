@@ -6,6 +6,7 @@ export interface TickerItem {
   text: I18nText;
   url?: string;
   link?: string;
+  image?: string;
   order: number;
   isActive: boolean;
   startDate?: string;

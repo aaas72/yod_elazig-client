@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { galleryService, type GalleryAlbum } from '@/services/galleryService';
+import { uploadService } from '@/services/uploadService';
+import { BASE_URL } from '@/lib/api';
 import AdminModal from '@/components/admin/AdminModal';
-import { Edit, Trash2, Plus, Image, X, Eye } from 'lucide-react';
+import { Edit, Trash2, Plus, Image, X, Eye, Upload, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 type AlbumItem = GalleryAlbum;
@@ -14,12 +16,20 @@ export default function AdminGalleryPage() {
   const [editingItem, setEditingItem] = useState<AlbumItem | null>(null);
   const [selectedAlbum, setSelectedAlbum] = useState<AlbumItem | null>(null);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [photoUploading, setPhotoUploading] = useState(false);
   const [newPhotoUrl, setNewPhotoUrl] = useState('');
   const [newPhotoCaption, setNewPhotoCaption] = useState('');
+  
+  const coverImageInputRef = useRef<HTMLInputElement>(null);
+  const photoInputRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState({
     titleAr: '', titleEn: '', titleTr: '',
     descAr: '', descEn: '', descTr: '',
     coverImage: '',
+    isPublished: false,
+    order: '0'
   });
 
   const loadData = useCallback(async () => {
@@ -30,7 +40,7 @@ export default function AdminGalleryPage() {
 
   const openCreate = () => {
     setEditingItem(null);
-    setFormData({ titleAr: '', titleEn: '', titleTr: '', descAr: '', descEn: '', descTr: '', coverImage: '' });
+    setFormData({ titleAr: '', titleEn: '', titleTr: '', descAr: '', descEn: '', descTr: '', coverImage: '', isPublished: true, order: String(albums.length) });
     setModalOpen(true);
   };
 
@@ -40,6 +50,8 @@ export default function AdminGalleryPage() {
       titleAr: item.title.ar, titleEn: item.title.en, titleTr: item.title.tr,
       descAr: item.description?.ar || '', descEn: item.description?.en || '', descTr: item.description?.tr || '',
       coverImage: item.coverImage || '',
+      isPublished: item.isPublished || false,
+      order: String(item.order || 0)
     });
     setModalOpen(true);
   };
@@ -49,6 +61,76 @@ export default function AdminGalleryPage() {
     setPhotosModalOpen(true);
   };
 
+  const handleCoverUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploading(true);
+      const result = await uploadService.uploadImage(file, { folder: 'gallery/covers' });
+      setFormData(prev => ({ ...prev, coverImage: result.url }));
+      toast.success('تم رفع الغلاف');
+    } catch (error: any) { toast.error(error.message || 'فشل الرفع'); } 
+    finally { setUploading(false); if (coverImageInputRef.current) coverImageInputRef.current.value = ''; }
+  };
+
+  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    
+    if (files.length > 5) {
+      toast.error('يمكنك رفع 5 صور كحد أقصى في المرة الواحدة');
+      return;
+    }
+
+    try {
+      setPhotoUploading(true);
+      // Convert FileList to Array
+      const fileList = Array.from(files);
+      
+      // Upload all images in parallel
+      const results = await uploadService.uploadImages(fileList, { folder: 'gallery/photos' });
+      
+      // Add photos to album immediately
+      if (selectedAlbum) {
+        const newPhotos = results.map(res => ({
+          url: res.url,
+          caption: { ar: '', en: '', tr: '' } // Empty caption by default
+        }));
+        
+        // We need to call an API to add these photos to the album
+        // Since we don't have a specific bulk add endpoint, we'll update the album
+        // Or if your addPhoto endpoint supports bulk, use that. 
+        // For now, let's assume we loop through or the backend handles it.
+        // Actually, let's call addPhoto for each one or update the album structure.
+        
+        // Better approach: Call addPhoto sequentially or parallel
+        // Assuming galleryService.addPhoto adds one photo
+        
+        const addPromises = newPhotos.map(photo => 
+          galleryService.addPhoto(selectedAlbum._id, photo)
+        );
+        
+        await Promise.all(addPromises);
+        
+        toast.success('تم رفع الصور وإضافتها للألبوم');
+        
+        // Refresh data
+        const updatedData = await galleryService.getAll();
+        const updatedAlbums = Array.isArray(updatedData?.albums) ? updatedData.albums : Array.isArray(updatedData) ? updatedData : [];
+        setAlbums(updatedAlbums);
+        
+        // Update selected album view
+        const updatedAlbum = updatedAlbums.find((a: AlbumItem) => a._id === selectedAlbum._id);
+        if (updatedAlbum) setSelectedAlbum(updatedAlbum);
+      }
+    } catch (error: any) { 
+      toast.error(error.message || 'فشل الرفع'); 
+    } finally { 
+      setPhotoUploading(false); 
+      if (photoInputRef.current) photoInputRef.current.value = ''; 
+    }
+  };
+
   const handleSave = async () => {
     try {
       setSaving(true);
@@ -56,6 +138,8 @@ export default function AdminGalleryPage() {
         title: { ar: formData.titleAr, en: formData.titleEn, tr: formData.titleTr },
         description: { ar: formData.descAr, en: formData.descEn, tr: formData.descTr },
         coverImage: formData.coverImage,
+        isPublished: formData.isPublished,
+        order: Number(formData.order)
       };
       if (editingItem) { await galleryService.updateAlbum(editingItem._id, payload); toast.success('تم التحديث'); }
       else { await galleryService.createAlbum(payload); toast.success('تم الإنشاء'); }
@@ -146,35 +230,89 @@ export default function AdminGalleryPage() {
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الوصف (إنجليزي)</label><textarea value={formData.descEn} onChange={(e) => setFormData({ ...formData, descEn: e.target.value })} rows={3} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الوصف (تركي)</label><textarea value={formData.descTr} onChange={(e) => setFormData({ ...formData, descTr: e.target.value })} rows={3} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" /></div>
           </div>
-          <div><label className="block text-sm font-medium text-gray-700 mb-1.5">صورة الغلاف</label><input value={formData.coverImage} onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" /></div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">صورة الغلاف</label>
+            {formData.coverImage && (
+              <div className="relative mb-3 rounded-xl overflow-hidden border border-gray-200 w-fit group">
+                <img 
+                  src={formData.coverImage.startsWith('http') ? formData.coverImage : `${BASE_URL}${formData.coverImage.startsWith('/') ? '' : '/'}${formData.coverImage}`} 
+                  alt="معاينة" 
+                  className="h-32 w-auto object-cover" 
+                />
+                <button
+                  type="button"
+                  onClick={() => setFormData(prev => ({ ...prev, coverImage: '' }))}
+                  className="absolute top-1 right-1 bg-red-600 text-white rounded-full hover:bg-red-700 w-6 h-6 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <X size={14} />
+                </button>
+              </div>
+            )}
+            <div className="flex gap-2">
+              <input value={formData.coverImage} onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })} placeholder="رابط الصورة أو المسار" className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" />
+              <input ref={coverImageInputRef} type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" />
+              <button
+                type="button"
+                onClick={() => coverImageInputRef.current?.click()}
+                disabled={uploading}
+                className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-sm transition-colors disabled:opacity-50"
+              >
+                {uploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+                رفع
+              </button>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <label className="flex items-center gap-2 cursor-pointer"><input type="checkbox" checked={formData.isPublished} onChange={(e) => setFormData({ ...formData, isPublished: e.target.checked })} className="w-4 h-4 text-red-600 rounded" /><span className="text-sm text-gray-700">منشور</span></label>
+            <div className="flex-1"><label className="text-sm font-medium text-gray-700 mr-2">الترتيب:</label><input type="number" value={formData.order} onChange={(e) => setFormData({ ...formData, order: e.target.value })} className="w-20 px-3 py-1.5 border border-gray-200 rounded-lg text-sm outline-none" dir="ltr" /></div>
+          </div>
           <div className="flex justify-end gap-3 pt-4 border-t"><button onClick={() => setModalOpen(false)} className="px-5 py-2.5 text-sm text-gray-600 hover:bg-gray-100 rounded-xl">إلغاء</button><button onClick={handleSave} disabled={saving} className="px-5 py-2.5 text-sm bg-red-600 text-white rounded-xl hover:bg-red-700 disabled:opacity-50">{saving ? 'جاري الحفظ...' : editingItem ? 'تحديث' : 'إنشاء'}</button></div>
         </div>
       </AdminModal>
 
       {/* Photos Management Modal */}
-      <AdminModal isOpen={photosModalOpen} onClose={() => setPhotosModalOpen(false)} title={`صور: ${selectedAlbum?.title.ar || ''}`} size="xl">
-        <div className="space-y-5">
-          {/* Add Photo */}
-          <div className="flex items-end gap-3 p-4 bg-gray-50 rounded-xl">
-            <div className="flex-1"><label className="block text-xs font-medium text-gray-600 mb-1">رابط الصورة *</label><input value={newPhotoUrl} onChange={(e) => setNewPhotoUrl(e.target.value)} placeholder="https://..." className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none" dir="ltr" /></div>
-            <div className="flex-1"><label className="block text-xs font-medium text-gray-600 mb-1">وصف</label><input value={newPhotoCaption} onChange={(e) => setNewPhotoCaption(e.target.value)} className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none" /></div>
-            <button onClick={handleAddPhoto} disabled={!newPhotoUrl} className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 disabled:opacity-50"><Plus size={16} /></button>
+      <AdminModal isOpen={photosModalOpen} onClose={() => setPhotosModalOpen(false)} title={`إدارة الصور - ${selectedAlbum?.title?.ar || selectedAlbum?.title?.en}`} size="xl">
+        <div className="space-y-6">
+          <div className="flex gap-2 items-end bg-gray-50 p-4 rounded-xl border border-gray-100">
+            <div className="flex-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">رفع صور جديدة (يمكنك اختيار حتى 5 صور)</label>
+              <div className="flex gap-2 items-center">
+                <input 
+                  ref={photoInputRef} 
+                  type="file" 
+                  accept="image/*" 
+                  multiple 
+                  onChange={handlePhotoUpload} 
+                  className="hidden" 
+                />
+                <button
+                  onClick={() => photoInputRef.current?.click()}
+                  disabled={photoUploading}
+                  className="flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 disabled:opacity-50 transition-colors w-full justify-center"
+                >
+                  {photoUploading ? <Loader2 size={20} className="animate-spin" /> : <Upload size={20} />}
+                  <span>اختر الصور من جهازك</span>
+                </button>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">سيتم رفع الصور وإضافتها للألبوم تلقائياً.</p>
+            </div>
           </div>
 
-          {/* Photos Grid */}
-          {selectedAlbum?.photos && selectedAlbum.photos.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {selectedAlbum.photos.map((photo: any) => (
-                <div key={photo._id} className="relative group rounded-lg overflow-hidden bg-gray-100 aspect-square">
-                  <img src={photo.url} alt={photo.caption || ''} className="w-full h-full object-cover" />
-                  <button onClick={() => handleRemovePhoto(photo._id)} className="absolute top-2 right-2 p-1.5 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"><X size={12} /></button>
-                  {photo.caption && <div className="absolute bottom-0 inset-x-0 bg-black/60 text-white text-xs p-2 opacity-0 group-hover:opacity-100 transition-opacity">{photo.caption}</div>}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-h-[400px] overflow-y-auto pr-2">
+            {selectedAlbum?.photos?.map((photo) => (
+              <div key={photo._id} className="relative group aspect-square bg-gray-100 rounded-xl overflow-hidden border border-gray-200">
+                <img src={photo.url.startsWith('http') ? photo.url : `${BASE_URL}${photo.url.startsWith('/') ? '' : '/'}${photo.url}`} alt="" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                  <a href={photo.url.startsWith('http') ? photo.url : `${BASE_URL}${photo.url.startsWith('/') ? '' : '/'}${photo.url}`} target="_blank" rel="noreferrer" className="p-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30"><Eye size={16} /></a>
+                  <button onClick={() => handleRemovePhoto(photo._id)} className="p-2 bg-red-500/80 backdrop-blur-sm text-white rounded-lg hover:bg-red-600"><Trash2 size={16} /></button>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-10 text-gray-400"><Image size={32} className="mx-auto mb-2 opacity-50" /><p className="text-sm">لا توجد صور في هذا الألبوم</p></div>
-          )}
+                {photo.caption?.ar && <div className="absolute bottom-0 inset-x-0 bg-black/60 p-2 text-white text-xs truncate text-center">{photo.caption.ar}</div>}
+              </div>
+            ))}
+            {(!selectedAlbum?.photos || selectedAlbum.photos.length === 0) && (
+              <div className="col-span-full py-10 text-center text-gray-400">لا توجد صور في هذا الألبوم</div>
+            )}
+          </div>
         </div>
       </AdminModal>
     </div>
