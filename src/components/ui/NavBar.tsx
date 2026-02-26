@@ -43,7 +43,11 @@ const DesktopNav = () => {
     <nav className="hidden lg:flex justify-center items-center text-white">
       <ul className="flex items-center gap-2 list-none">
         {navLinks.map((link) => {
-          const isActive = pathname === link.href;
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
+
           return (
             <li key={link.href}>
               <Link
@@ -111,7 +115,11 @@ const MobileNavMenu = ({
     >
       <ul className="flex flex-col items-center gap-y-10 list-none">
         {navLinks.map((link) => {
-          const isActive = pathname === link.href;
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
+
           return (
             <li key={link.href}>
               <Link
