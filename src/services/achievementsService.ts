@@ -17,12 +17,13 @@ export interface AchievementItem {
 
 export const achievementsService = {
   getPublished: async () => {
-    const { data } = await api.get('/v1/achievements');
-    return data.data;
+    const { data } = await api.get('/achievements');
+    // Ensure we return the array directly
+    return data.data.achievements || [];
   },
 
   getAll: async (params?: { page?: number; limit?: number; search?: string }) => {
-    const { data } = await api.get('/v1/achievements/admin', { params });
+    const { data } = await api.get('/achievements/admin', { params });
     return data.data;
   },
 

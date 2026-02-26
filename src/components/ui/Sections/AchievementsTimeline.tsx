@@ -1,12 +1,12 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen, Trophy, Star, Award } from "lucide-react";
 import { useAchievementsData } from "@/hooks/useAchievementsData";
 
 interface Achievement {
-  id: number;
+  id: string;
   date: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: string | React.ReactNode;
 }
 
 interface TimelineItemProps {
@@ -16,6 +16,8 @@ interface TimelineItemProps {
 
 const TimelineItem = ({ achievement, orientation }: TimelineItemProps) => {
   const isLeft = orientation === "left";
+  // If icon is a string, we might need to render it dynamically, but here we already converted it in the parent or use a default
+  // Ideally, the parent should pass a ReactNode. But let's handle it if it's passed as a node.
 
   return (
     <div
@@ -47,7 +49,7 @@ const TimelineItem = ({ achievement, orientation }: TimelineItemProps) => {
             </div>
             {/* الأيقونة */}
             <div className="shrink-0 p-4 bg-red-50 rounded-full">
-              {achievement.icon}
+              {typeof achievement.icon === 'string' ? <BookOpen className="w-8 h-8 text-[#BE141B]" /> : achievement.icon}
             </div>
           </div>
         </div>
@@ -57,13 +59,35 @@ const TimelineItem = ({ achievement, orientation }: TimelineItemProps) => {
 };
 
 const AchievementsTimeline = () => {
-  const achievementsRawData = useAchievementsData();
+  const { achievements, loading, error } = useAchievementsData();
+  
   const iconMap: Record<string, React.ElementType> = {
     BookOpen: BookOpen,
+    Trophy: Trophy,
+    Star: Star,
+    Award: Award
   };
 
-  const achievementsData: Achievement[] = achievementsRawData.map((item) => {
-    const IconComponent = iconMap[item.icon] || BookOpen;
+  if (loading) {
+    return (
+      <section className="w-full py-16 px-4">
+        <div className="max-w-6xl mx-auto flex justify-center">
+           <div className="w-10 h-10 border-4 border-red-200 border-t-red-600 rounded-full animate-spin"></div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return null; // Or show error message
+  }
+
+  if (!achievements || achievements.length === 0) {
+    return null;
+  }
+
+  const achievementsData: Achievement[] = achievements.map((item) => {
+    const IconComponent = (typeof item.icon === 'string' ? iconMap[item.icon] : null) || BookOpen;
     return {
       ...item,
       icon: <IconComponent className="w-8 h-8 text-[#BE141B]" />,

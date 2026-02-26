@@ -272,7 +272,7 @@ const AdminMembersPage: React.FC = () => {
                 footer={typeof editForm.profileImage === 'string' && editForm.profileImage ? (
                    <div className="mt-1 flex items-center gap-3 px-1">
                      <img 
-                       src={editForm.profileImage.startsWith('http') ? editForm.profileImage : `${BASE_URL}${editForm.profileImage.startsWith('/') ? '' : '/'}${editForm.profileImage}`} 
+                       src={`${BASE_URL}${editForm.profileImage}`} 
                        alt="صورة الملف الشخصي" 
                        className="w-10 h-10 object-cover rounded-full border border-gray-200"
                      />

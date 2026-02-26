@@ -18,17 +18,18 @@ export default function AdminAchievementsPage() {
     titleAr: '', titleEn: '', titleTr: '',
     descAr: '', descEn: '', descTr: '',
     value: '', icon: '', category: '',
+    date: '', isPublished: false,
   });
 
   const loadData = useCallback(async () => {
-    try { setLoading(true); const data = await achievementsService.getAll({ page, limit: 10, search }); setItems(data?.achievements || []); setPagination(data?.pagination || { page: 1, pages: 1, total: 0, limit: 10 }); } catch { toast.error('فشل التحميل'); } finally { setLoading(false); }
+    try { setLoading(true); const data = await achievementsService.getAll({ page, limit: 10, search }); setItems(data?.data || []); setPagination(data?.pagination || { page: 1, pages: 1, total: 0, limit: 10 }); } catch { toast.error('فشل التحميل'); } finally { setLoading(false); }
   }, [page, search]);
 
   useEffect(() => { loadData(); }, [loadData]);
 
   const openCreate = () => {
     setEditingItem(null);
-    setFormData({ titleAr: '', titleEn: '', titleTr: '', descAr: '', descEn: '', descTr: '', value: '', icon: '', category: '' });
+    setFormData({ titleAr: '', titleEn: '', titleTr: '', descAr: '', descEn: '', descTr: '', value: '', icon: '', category: '', date: new Date().toISOString().split('T')[0], isPublished: true });
     setModalOpen(true);
   };
 
@@ -38,6 +39,8 @@ export default function AdminAchievementsPage() {
       titleAr: item.title.ar, titleEn: item.title.en, titleTr: item.title.tr,
       descAr: item.description?.ar || '', descEn: item.description?.en || '', descTr: item.description?.tr || '',
       value: item.value?.toString() || '', icon: item.icon || '', category: item.category || '',
+      date: item.date ? new Date(item.date).toISOString().split('T')[0] : '',
+      isPublished: item.isPublished || false,
     });
     setModalOpen(true);
   };
@@ -49,6 +52,7 @@ export default function AdminAchievementsPage() {
         title: { ar: formData.titleAr, en: formData.titleEn, tr: formData.titleTr },
         description: { ar: formData.descAr, en: formData.descEn, tr: formData.descTr },
         icon: formData.icon, category: formData.category,
+        date: formData.date, isPublished: formData.isPublished,
       };
       if (formData.value) payload.value = Number(formData.value);
       if (editingItem) { await achievementsService.update(editingItem._id, payload); toast.success('تم التحديث'); }
@@ -91,6 +95,18 @@ export default function AdminAchievementsPage() {
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">القيمة / الرقم</label><input type="number" value={formData.value} onChange={(e) => setFormData({ ...formData, value: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">الأيقونة</label><input value={formData.icon} onChange={(e) => setFormData({ ...formData, icon: e.target.value })} placeholder="e.g. Trophy" className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" dir="ltr" /></div>
             <div><label className="block text-sm font-medium text-gray-700 mb-1.5">التصنيف</label><input value={formData.category} onChange={(e) => setFormData({ ...formData, category: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" /></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">التاريخ</label>
+                <input type="date" value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none" />
+            </div>
+            <div className="flex items-center pt-6">
+                <label className="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" checked={formData.isPublished} onChange={(e) => setFormData({ ...formData, isPublished: e.target.checked })} className="w-5 h-5 rounded text-red-600 focus:ring-red-500" />
+                    <span className="text-sm font-medium text-gray-700">نشر الإنجاز</span>
+                </label>
+            </div>
           </div>
           <div className="flex justify-end gap-3 pt-4 border-t"><button onClick={() => setModalOpen(false)} className="px-5 py-2.5 text-sm text-gray-600 hover:bg-gray-100 rounded-xl">إلغاء</button><button onClick={handleSave} disabled={saving} className="px-5 py-2.5 text-sm bg-red-600 text-white rounded-xl hover:bg-red-700 disabled:opacity-50">{saving ? 'جاري الحفظ...' : editingItem ? 'تحديث' : 'إنشاء'}</button></div>
         </div>
