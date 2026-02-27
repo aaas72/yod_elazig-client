@@ -128,19 +128,19 @@
         "title": "Kampüs Yaşamı",
         "images": [
             {
-                "src": "/campus-library.jpg",
+                "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
                 "alt": "Merkez Kütüphane"
             },
             {
-                "src": "/campus-sports.jpg",
+                "src": "https://images.unsplash.com/photo-1464983953574-0892a7167e67?auto=format&fit=crop&w=800&q=80",
                 "alt": "Spor Kompleksi"
             },
             {
-                "src": "/campus-event.jpg",
+                "src": "https://images.unsplash.com/photo-1517520287167-4bbf64a7c7e6?auto=format&fit=crop&w=800&q=80",
                 "alt": "Öğrenci Etkinliği"
             },
             {
-                "src": "/campus-dorm.jpg",
+                "src": "https://images.unsplash.com/photo-1503676382389-8bfa1673b3a4?auto=format&fit=crop&w=800&q=80",
                 "alt": "Öğrenci Yurdu"
             }
         ],
@@ -162,7 +162,7 @@
     "researchSection": {
         "title": "Bilimsel Araştırma ve İnovasyon",
         "image": {
-            "src": "/images/research-lab.jpg",
+            "src": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
             "alt": "Araştırma Laboratuvarı"
         },
         "paragraphs": [

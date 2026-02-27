@@ -39,6 +39,7 @@ import AdminFaqPage from "./pages/admin/AdminFaqPage";
 import AdminGalleryPage from "./pages/admin/AdminGalleryPage";
 import AdminTickerPage from "./pages/admin/AdminTickerPage";
 import AdminMembersPage from "./pages/admin/AdminMembersPage";
+import AdminUsersPage from "./pages/admin/AdminUsersPage";
 import AdminVolunteersPage from "./pages/admin/AdminVolunteersPage";
 import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
 import AdminFormsPage from "./pages/admin/AdminFormsPage";
@@ -125,7 +126,9 @@ function App() {
             <Route path="/forms/:slug" element={<PublicFormPage />} />
           </Route>
           <Route path="/join-membership" element={<JoinMembershipPage />} />
-          <Route path="/access" element={<AccessPage />} />
+{/* archive access page (alias "archive" as well) */}
+            <Route path="/access" element={<AccessPage />} />
+            <Route path="/archive" element={<AccessPage />} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<LoginPage />} />
@@ -139,6 +142,7 @@ function App() {
               <Route path="gallery" element={<AdminGalleryPage />} />
               <Route path="ticker" element={<AdminTickerPage />} />
               <Route path="members" element={<AdminMembersPage />} />
+              <Route path="users" element={<AdminUsersPage />} />
               <Route path="forms" element={<AdminFormsPage />} />
               <Route path="forms/:formId/submissions" element={<AdminFormSubmissionsPage />} />
             <Route path="volunteers" element={<AdminVolunteersPage />} />

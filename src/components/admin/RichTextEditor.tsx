@@ -96,7 +96,7 @@ export default function RichTextEditor({ content, onChange, placeholder = 'اك�
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden bg-white">
       {/* Toolbar */}
-      <div className="flex flex-wrap items-center gap-0.5 px-2 py-1.5 border-b border-gray-100 bg-gray-50/80">
+      <div className="flex flex-wrap items-center gap-0.5 px-2 py-1.5 border-b border-gray-100 bg-gray-50/80 overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
         {/* Undo / Redo */}
         <ToolBtn onClick={() => editor.chain().focus().undo().run()} title="تراجع">
           <Undo size={16} />

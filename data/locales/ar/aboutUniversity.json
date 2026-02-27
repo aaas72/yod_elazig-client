@@ -126,24 +126,24 @@
   },
   "campusLife": {
     "title": "الحياة في الحرم الجامعي",
-    "images": [
-      {
-        "src": "/campus-library.jpg",
-        "alt": "المكتبة المركزية لجامعة الفرات"
-      },
-      {
-        "src": "/campus-sports.jpg",
-        "alt": "المجمع الرياضي في الجامعة"
-      },
-      {
-        "src": "/campus-event.jpg",
-        "alt": "فعالية طلابية في الحرم الجامعي"
-      },
-      {
-        "src": "/campus-dorm.jpg",
-        "alt": "السكن الطلابي"
-      }
-    ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+            "alt": "المكتبة المركزية لجامعة الفرات"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1464983953574-0892a7167e67?auto=format&fit=crop&w=800&q=80",
+            "alt": "المجمع الرياضي في الجامعة"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1517520287167-4bbf64a7c7e6?auto=format&fit=crop&w=800&q=80",
+            "alt": "فعالية طلابية في الحرم الجامعي"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1503676382389-8bfa1673b3a4?auto=format&fit=crop&w=800&q=80",
+            "alt": "السكن الطلابي"
+          }
+        ],
     "features": [
       {
         "title": "مرافق على مستوى عالمي",
@@ -161,10 +161,10 @@
   },
   "researchSection": {
     "title": "البحث العلمي والابتكار",
-    "image": {
-      "src": "/images/research-lab.jpg",
-      "alt": "مختبر بحثي في جامعة الفرات"
-    },
+        "image": {
+          "src": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+          "alt": "مختبر بحثي في جامعة الفرات"
+        },
     "paragraphs": [
       "تؤمن جامعة الفرات بأن البحث العلمي هو أساس التطور والابتكار. تحتضن الجامعة العديد من المراكز البحثية المتطورة التي تعمل على مشاريع رائدة في مجالات الهندسة، والعلوم الصحية، والتكنولوجيا.",
       "يعتبر **مجمع التكنولوجيا (Teknokent)** التابع للجامعة بيئة حيوية تجمع بين الأكاديميين والطلاب ورواد الأعمال، لتحويل الأفكار المبتكرة إلى مشاريع وشركات ناشئة تساهم في نمو الاقتصاد المحلي والوطني."

@@ -103,7 +103,7 @@ export default function DashboardPage() {
 
   if (!stats) return null;
 
-  // Safe defaults — cast to any to avoid TS "specified more than once" warnings
+  // Safe defaults when merging API response
   const raw = stats as Record<string, any>;
   const s = {
     news: { total: 0, published: 0, ...(raw.news || {}) },
@@ -111,41 +111,15 @@ export default function DashboardPage() {
     programs: {
       total: 0,
       published: 0,
-      byStatus: {
-        upcoming: 0,
-        ongoing: 0,
-        completed: 0,
-        ...(raw.programs?.byStatus || {}),
-      },
+      byStatus: { upcoming: 0, ongoing: 0, completed: 0, ...(raw.programs?.byStatus || {}) },
       ...(raw.programs || {}),
     },
     students: { total: 0, active: 0, ...(raw.students || {}) },
-    volunteers: {
-      total: 0,
-      pending: 0,
-      accepted: 0,
-      rejected: 0,
-      ...(raw.volunteers || {}),
-    },
+    volunteers: { total: 0, pending: 0, accepted: 0, rejected: 0, ...(raw.volunteers || {}) },
     gallery: { albums: 0, photos: 0, ...(raw.gallery || {}) },
-    content: {
-      achievements: 0,
-      faqs: 0,
-      pages: 0,
-      tickers: 0,
-      ...(raw.content || {}),
-    },
-    users: {
-      total: 0,
-      active: 0,
-      byRole: {} as Record<string, number>,
-      ...(raw.users || {}),
-    },
+    content: { achievements: 0, faqs: 0, pages: 0, tickers: 0, ...(raw.content || {}) },
+    users: { total: 0, active: 0, byRole: {}, ...(raw.users || {}) },
   };
-  // Ensure byStatus survives the programs spread
-  if (!s.programs.byStatus) {
-    s.programs.byStatus = { upcoming: 0, ongoing: 0, completed: 0 };
-  }
 
   return (
     <div className="space-y-8">
@@ -193,7 +167,7 @@ export default function DashboardPage() {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Programs Status */}
         <div className="bg-white rounded-2xl border border-gray-100 p-6">
           <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">

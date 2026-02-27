@@ -20,7 +20,9 @@
       "stillHaveQuestions": "Hala sorularınız mı var?",
       "contactSupport": "Aradığınızı bulamadınız mı? Doğrudan bizimle iletişime geçin.",
       "practicalSteps": "Pratik Adımlar",
-      "illustrativeImages": "Açıklayıcı Resimler"
+      "illustrativeImages": "Açıklayıcı Resimler",
+      "noResults": "Sonuç bulunamadı",
+      "trySearch": "Arama sorgunuzu ayarlamayı deneyin"
   },
   "footer": {
     "rights": "Tüm hakları saklıdır © 2025",
@@ -45,6 +47,9 @@
   "common": {
     "loading": "Yükleniyor...",
     "error": "Bir şeyler yanlış gitti",
-    "success": "İşlem başarılı"
+    "success": "İşlem başarılı",
+    "searchPlaceholder": "Ara...",
+    "noResults": "Sonuç bulunamadı",
+    "trySearch": "Arama sorgunuzu ayarlamayı deneyin"
   }
 }

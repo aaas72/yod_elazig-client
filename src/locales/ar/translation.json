@@ -20,7 +20,9 @@
         "stillHaveQuestions": "لم تجد ما تبحث عنه؟",
         "contactSupport": "تواصل معنا مباشرة للحصول على مساعدة خاصة.",
         "practicalSteps": "الخطوات العملية",
-        "illustrativeImages": "صور توضيحية"
+        "illustrativeImages": "صور توضيحية",
+        "noResults": "لا توجد نتائج",
+        "trySearch": "حاول تعديل طلب البحث"
     },
     "footer": {
         "rights": "جميع الحقوق محفوظة © 2025",
@@ -46,6 +48,9 @@
         "loading": "جاري التحميل...",
         "error": "حدث خطأ ما",
         "success": "تمت العملية بنجاح",
+        "searchPlaceholder": "بحث...",
+        "noResults": "لا توجد نتائج",
+        "trySearch": "حاول تعديل طلب البحث",
         "introduction": "مقدمة"
     }
 }

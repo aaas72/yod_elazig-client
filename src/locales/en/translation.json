@@ -20,7 +20,9 @@
     "stillHaveQuestions": "Still have questions?",
     "contactSupport": "Can't find what you're looking for? Contact us directly.",
     "practicalSteps": "Practical Steps",
-    "illustrativeImages": "Illustrative Images"
+    "illustrativeImages": "Illustrative Images",
+    "noResults": "No results found",
+    "trySearch": "Try adjusting your search query"
   },
   "footer": {
     "rights": "All rights reserved © 2025",
@@ -45,6 +47,9 @@
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong",
-    "success": "Operation successful"
+    "success": "Operation successful",
+    "searchPlaceholder": "Search...",
+    "noResults": "No results found",
+    "trySearch": "Try adjusting your search query"
   }
 }

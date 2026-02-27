@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
@@ -39,6 +39,19 @@ export default function LanguageSwitcher() {
   };
 
   const currentLang = i18n.language;
+  const [open, setOpen] = useState(false);
+
+  // close menu when clicking outside
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest(".lang-switcher")) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   return (
     <>
@@ -46,15 +59,22 @@ export default function LanguageSwitcher() {
         {isChanging && <LoadingSpinner fullScreen text={getLoadingText(targetLang)} />}
       </AnimatePresence>
       
-      <div className="relative group z-50">
-        <button className="flex items-center gap-2 text-white hover:text-red-200 transition-colors p-2">
+      <div className="relative z-50 lang-switcher">
+        <button
+          onClick={() => setOpen((o) => !o)}
+          className="flex items-center gap-2 text-white hover:text-red-200 transition-colors p-2"
+        >
           <Globe size={20} />
           <span className="uppercase">{currentLang}</span>
         </button>
 
-        <div className="absolute ltr:right-0 rtl:left-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform ltr:origin-top-right rtl:origin-top-left">
+        <div
+          className={`absolute ltr:right-0 rtl:left-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 transition-all duration-200 transform ltr:origin-top-right rtl:origin-top-left ${
+            open ? "block opacity-100 visible" : "hidden opacity-0 invisible"
+          }`}
+        >
           <button
-            onClick={() => changeLanguage("ar")}
+            onClick={() => { changeLanguage("ar"); setOpen(false); }}
             className={`block w-full text-right px-4 py-2 text-sm ${
               currentLang === "ar"
                 ? "bg-red-50 text-red-600"
@@ -64,7 +84,7 @@ export default function LanguageSwitcher() {
             العربية
           </button>
           <button
-            onClick={() => changeLanguage("tr")}
+            onClick={() => { changeLanguage("tr"); setOpen(false); }}
             className={`block w-full text-left px-4 py-2 text-sm ${
               currentLang === "tr"
                 ? "bg-red-50 text-red-600"
@@ -74,7 +94,7 @@ export default function LanguageSwitcher() {
             Türkçe
           </button>
           <button
-            onClick={() => changeLanguage("en")}
+            onClick={() => { changeLanguage("en"); setOpen(false); }}
             className={`block w-full text-left px-4 py-2 text-sm ${
               currentLang === "en"
                 ? "bg-red-50 text-red-600"

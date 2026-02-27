@@ -110,7 +110,7 @@ export default function AboutCity() {
           </FadeIn>
           <FadeIn direction="up" delay={0.2}>
             <div className="py-8 text-gray-700 text-justify text-md md:text-lg space-y-4 leading-relaxed">
-              {aboutCityData.intro.paragraphs.map((paragraph, index) => (
+              {aboutCityData.intro.paragraphs.map((paragraph: string, index: number) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -137,7 +137,7 @@ export default function AboutCity() {
               msOverflowStyle: "none",
             }}
           >
-            {historicalLandmarks.map((landmark) => (
+            {historicalLandmarks.map((landmark: any) => (
               <StaggerItem
                 key={landmark.id}
                 className="shrink-0 w-[85vw] md:w-[calc((100%-4rem)/3)] snap-center group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:border-red-800 border-2 border-transparent transition-all duration-300"
@@ -164,7 +164,7 @@ export default function AboutCity() {
                       {landmark.title}
                     </h3>
                     <div className="space-y-4">
-                      {landmark.description.map((desc, i) => (
+                      {landmark.description.map((desc: string, i: number) => (
                         <p
                           key={i}
                           className="text-gray-600 leading-relaxed text-sm"
@@ -181,7 +181,7 @@ export default function AboutCity() {
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-8 gap-2">
-            {historicalLandmarks.map((_, index) => (
+            {historicalLandmarks.map((_: any, index: number) => (
               <button
                 key={index}
                 onClick={() => scrollToLandmark(index)}
@@ -211,10 +211,10 @@ export default function AboutCity() {
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {engines.map((engine) => (
+            {engines.map((engine: any) => (
               <StaggerItem key={engine.id}>
                 <EngineCard title={engine.title}>
-                  {engine.content.map((p, i) => (
+                  {engine.content.map((p: string, i: number) => (
                     <p key={i}>{p}</p>
                   ))}
                 </EngineCard>
@@ -241,7 +241,7 @@ export default function AboutCity() {
                   {dailyLife.modernLife.title}
                 </h2>
                 <div className="text-gray-700 leading-loose space-y-4">
-                  {dailyLife.modernLife.paragraphs.map((p, i) => (
+                  {dailyLife.modernLife.paragraphs.map((p: string, i: number) => (
                     <p key={i}>{p}</p>
                   ))}
                 </div>
@@ -255,7 +255,7 @@ export default function AboutCity() {
                   {dailyLife.traditionalLife.title}
                 </h2>
                 <div className="text-gray-700 leading-loose space-y-4">
-                  {dailyLife.traditionalLife.paragraphs.map((p, i) => (
+                  {dailyLife.traditionalLife.paragraphs.map((p: string, i: number) => (
                     <p key={i}>{p}</p>
                   ))}
                 </div>
@@ -275,7 +275,7 @@ export default function AboutCity() {
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {festivals.map((festival) => (
+            {festivals.map((festival: any) => (
               <StaggerItem key={festival.id}>
                 <FestivalCard
                   title={festival.title}
@@ -298,7 +298,7 @@ export default function AboutCity() {
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {activities.map((activity) => (
+            {activities.map((activity: any) => (
               <StaggerItem key={activity.id}>
                 <ActivityCard
                   title={activity.title}
@@ -330,7 +330,7 @@ export default function AboutCity() {
                     <span className="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">
                       {aboutCityData.dishOfTheMonth}
                     </span>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                       {currentDish.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed text-lg">
@@ -341,13 +341,13 @@ export default function AboutCity() {
                   <div className="flex items-center gap-4 mt-8 justify-center md:justify-start">
                     <button
                       onClick={prevDish}
-                      className="bg-gray-100 text-gray-600 p-2 rounded-full hover:bg-gray-200 transition-colors"
+                      className="bg-gray-100 text-gray-600 p-1 md:p-2 rounded-full hover:bg-gray-200 transition-colors"
                       aria-label="Previous Dish"
                     >
                       <ChevronLeft className="rtl:rotate-180" />
                     </button>
                     <div className="flex gap-2">
-                      {dishes.map((_, idx) => (
+                      {dishes.map((_: any, idx: number) => (
                         <div
                           key={idx}
                           className={`h-2 rounded-full transition-all duration-300 ${
@@ -360,7 +360,7 @@ export default function AboutCity() {
                     </div>
                     <button
                       onClick={nextDish}
-                      className="bg-red-100 text-red-700 p-2 rounded-full hover:bg-red-200 transition-colors"
+                      className="bg-red-100 text-red-700 p-1 md:p-2 rounded-full hover:bg-red-200 transition-colors"
                       aria-label="Next Dish"
                     >
                       <ChevronRight className="rtl:rotate-180" />

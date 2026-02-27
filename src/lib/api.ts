@@ -14,8 +14,11 @@ const api = axios.create({
 // ── Attach token + language to every request ────────────
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('accessToken');
+  console.log('[API] Request: attaching accessToken:', token);
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
+  } else {
+    delete config.headers.Authorization;
   }
 
   const lang = localStorage.getItem('i18nextLng') || 'ar';
@@ -48,6 +51,7 @@ api.interceptors.response.use(
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
+      console.log('[API] Response 401, originalRequest:', originalRequest.url);
       if (isRefreshing) {
         return new Promise((resolve, reject) => {
           failedQueue.push({ resolve, reject });
@@ -75,11 +79,16 @@ api.interceptors.response.use(
         const newAccessToken = data.data.accessToken;
         const newRefreshToken = data.data.refreshToken;
 
+        // Always update tokens in localStorage
         localStorage.setItem('accessToken', newAccessToken);
         localStorage.setItem('refreshToken', newRefreshToken);
 
+        // Update Authorization header for retried request
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
         processQueue(null, newAccessToken);
+
+        // Also update Authorization header for future requests
+        api.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
 
         return api(originalRequest);
       } catch (refreshError) {

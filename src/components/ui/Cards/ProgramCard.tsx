@@ -14,7 +14,7 @@ const ProgramCard = ({ title, date, time, description, imageUrl }: ProgramCardPr
     const bgUrl = resolveImage(imageUrl);
     return (
         <div
-            className="relative rounded-lg overflow-hidden h-64 group"
+            className="relative rounded-lg overflow-hidden h-48 sm:h-56 md:h-64 lg:h-72 group"
             style={{
                 backgroundImage: `url(${bgUrl})`,
                 backgroundSize: 'cover',

@@ -34,7 +34,7 @@
     {
       "id": 1,
       "title": "قلعة هاربوت",
-      "imageUrl": "/hatput.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Harput_Kalesi_Elazig_Turkey.jpg",
       "description": [
         "تعتبر قلعة هاربوت، المعروفة بلقبها الشهير 'قلعة الحليب'، المعلم التاريخي الأبرز في العزيز. تتربع القلعة على قمة تل استراتيجي يوفر إطلالة بانورامية شاملة على المدينة والسهل المحيط بها.",
         "يعود تاريخها إلى مملكة أورارتو، وقد تعاقبت عليها حضارات كبرى كالبيزنطيين والسلاجقة والعثمانيين، الذين ترك كل منهم بصمته على أسوارها ومبانيها الداخلية."
@@ -43,7 +43,7 @@
     {
       "id": 2,
       "title": "الجامع الكبير (أولو جامع)",
-      "imageUrl": "/hatput.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Harput_Ulu_Cami_Elazig_Turkey.jpg",
       "description": [
         "يعد الجامع الكبير في هاربوت من أقدم وأهم الصروح الدينية في الأناضول، حيث تم بناؤه في عهد الدولة الأرتقية. يشتهر الجامع بمنارته المائلة الفريدة التي تعتبر تحفة معمارية.",
         "يمثل الجامع نموذجًا رائعًا للفن السلجوقي، ويستقطب الزوار بفضل تاريخه العريق وتصميمه المتميز الذي صمد عبر القرون."
@@ -52,7 +52,7 @@
     {
       "id": 3,
       "title": "كنيسة مريم العذراء",
-      "imageUrl": "/hatput.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Meryem_Ana_Kilisesi_Harput_Elazig_Turkey.jpg",
       "description": [
         "تعتبر كنيسة مريم العذراء (Meryem Ana Kilisesi) من أقدم دور العبادة في المنطقة، حيث يعود تاريخها إلى القرن الثاني الميلادي. تُعرف أيضًا باسم 'الكنيسة الحمراء' نظرًا للحجارة التي بنيت بها.",
         "تمثل الكنيسة إرثًا تاريخيًا ودينيًا هامًا للطائفة السريانية، وتقف شاهدًا على التنوع الحضاري والديني الذي مرت به مدينة هاربوت عبر العصور."
@@ -92,13 +92,13 @@
       "id": 1,
       "title": "مهرجان حصاد العنب والأورجيك",
       "description": "هو احتفال بخصوبة الأرض، تبدأ الفعاليات بقطف العنب بالطرق التقليدية، ثم يتم عصره لصنع الدبس الذي يستخدم في إعداد حلوى 'الأورجيك' الشهيرة.",
-      "imageUrl": "/Festival_1.jpg"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Elazig_Grape_Festival.jpg"
     },
     {
       "id": 2,
       "title": "مهرجان بحيرة الهزار للشعر",
       "description": "يجمع هذا المهرجان السنوي كبار الشعراء من مختلف أنحاء تركيا والعالم على ضفاف بحيرة الهزار الساحرة، حيث تُلقى القصائد وتُقام الأمسيات الأدبية.",
-      "imageUrl": "/Festival_1.jpg"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Hazar_Lake_Poetry_Festival.jpg"
     }
   ],
   "activitiesTitle": "أنشطة في الهواء الطلق ومغامرات",
@@ -107,19 +107,19 @@
       "id": 1,
       "title": "بحيرة الهزار",
       "description": "تُعرف بحيرة الهزار بأنها 'بحر الشرق الخفي'، وهي ليست مجرد منظر طبيعي أخاذ، بل وجهة حيوية متكاملة. توفر شواطئها ومنتجعاتها فرصة مثالية للسباحة والاسترخاء، بينما يمكن لعشاق المغامرة ممارسة الرياضات المائية.",
-      "imageUrl": "/elazig_photo.png"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Hazar_Lake_Elazig_Turkey.jpg"
     },
     {
       "id": 2,
       "title": "بحيرة الهزار",
       "description": "تُعرف بحيرة الهزار بأنها 'بحر الشرق الخفي'، وهي ليست مجرد منظر طبيعي أخاذ، بل وجهة حيوية متكاملة. توفر شواطئها ومنتجعاتها فرصة مثالية للسباحة والاسترخاء، بينما يمكن لعشاق المغامرة ممارسة الرياضات المائية.",
-      "imageUrl": "/elazig_photo.png"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Hazar_Lake_Elazig_Turkey.jpg"
     },
     {
       "id": 3,
       "title": "بحيرة الهزار",
       "description": "تُعرف بحيرة الهزار بأنها 'بحر الشرق الخفي'، وهي ليست مجرد منظر طبيعي أخاذ، بل وجهة حيوية متكاملة. توفر شواطئها ومنتجعاتها فرصة مثالية للسباحة والاسترخاء، بينما يمكن لعشاق المغامرة ممارسة الرياضات المائية.",
-      "imageUrl": "/elazig_photo.png"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Hazar_Lake_Elazig_Turkey.jpg"
     }
   ],
   "dishesTitle": "المطبخ المحلي وثقافة الطعام",
@@ -128,13 +128,13 @@
       "id": 1,
       "title": "هاربوت كفتة (Harput Köftesi)",
       "description": "الطبق الأكثر شهرة، وهو ليس مجرد كرات لحم عادية. يتم تحضيره بمزيج دقيق من البرغل الناعم، اللحم المفروم قليل الدهن، الأعشاب العطرية كالبقدونس والريحان. تُطهى الكفتة ببطء في صلصة غنية من الزبدة ومعجون الطماطم، وغالباً ما تُقدم مع البصل المشوي.",
-      "imageUrl": "/elazig-iclikofte.jpg"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Harput_K%C3%B6ftesi_Elazig_Turkey.jpg"
     },
     {
       "id": 2,
       "title": "الأورجيك (Orcik)",
       "description": "تعتبر حلوى 'الأورجيك' أيقونة المطبخ المحلي، وهي عبارة عن حبات الجوز الكاملة المغطاة بدبس العنب المعقود والمجففة بالشمس، مما يمنحها قواماً فريداً ونكهة غنية.",
-      "imageUrl": "/elazig-iclikofte.jpg"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Orcik_Elazig_Turkey.jpg"
     }
   ],
   "dailyLife": {

@@ -32,21 +32,27 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 px-4">
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-red-900 via-gray-800 to-gray-900 text-white" dir="rtl">
+      <div className="absolute inset-0">
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      </div>
+      <div className="relative z-10 w-full max-w-md mx-auto flex items-center justify-center min-h-screen">
+      
+
+        {/* Login Form */}
+        <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl w-full">
+            {/* Logo */}
+        <div className="text-center mb-8 w-full">
           <img
             src="/imgs/logos/yodellogo.png"
             alt="YOD Logo"
             className="w-24 h-24 mx-auto mb-4 object-contain"
           />
           <h1 className="text-2xl font-bold text-white">لوحة التحكم</h1>
-          <p className="text-gray-400 mt-1">اتحاد الطلاب اليمنيين - فرع إلاذغ</p>
+          <p className="text-gray-300 mt-1">اتحاد الطلاب اليمنيين - فرع الازيغ</p>
         </div>
-
-        {/* Login Form */}
-        <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-2xl">
+          
           {error && (
             <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-200 text-sm text-center">
               {error}
@@ -56,35 +62,35 @@ export default function LoginPage() {
           <div className="space-y-5">
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">البريد الإلكتروني</label>
+              <label className="block text-sm font-medium text-white mb-2">البريد الإلكتروني</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@yod-elazig.org"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                placeholder="@yod-elazig.org ادخل بريد"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:ring-2 focus:ring-white focus:border-transparent outline-none transition-all"
                 dir="ltr"
               />
             </div>
 
             {/* Password */}
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">كلمة المرور</label>
+              <label className="block text-sm font-medium text-white mb-2">كلمة المرور</label>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  placeholder="••••••••"
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                  placeholder="     ••••••••"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-200 focus:ring-2 focus:ring-white focus:border-transparent outline-none transition-all"
                   dir="ltr"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-white hover:text-gray-200 transition-colors"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
@@ -96,7 +102,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-8 py-3.5 bg-red-600 hover:bg-red-700 disabled:bg-red-800 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-900/30"
+            className="w-full mt-8 py-3.5 bg-white/80 hover:bg-white/50 disabled:bg-red-800 disabled:cursor-not-allowed text-red-700 font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-red-900/30"
           >
             {isLoading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -108,10 +114,6 @@ export default function LoginPage() {
             )}
           </button>
         </form>
-
-        <p className="text-center text-gray-500 text-sm mt-6">
-          © 2026 YOD Elazığ — Admin Panel
-        </p>
       </div>
     </div>
   );

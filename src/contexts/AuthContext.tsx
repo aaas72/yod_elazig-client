@@ -29,21 +29,53 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isLoading, setIsLoading] = useState(true);
 
   const checkAuth = useCallback(async () => {
+    console.log('[Auth] checkAuth started');
     try {
       const token = localStorage.getItem('accessToken');
       if (!token) {
+        console.log('[Auth] No accessToken found');
         setUser(null);
         setIsLoading(false);
         return;
       }
 
+      console.log('[Auth] accessToken exists, checking /auth/me');
       const { data } = await api.get('/auth/me');
       setUser(data.data.user);
-    } catch {
-      setUser(null);
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('refreshToken');
-      localStorage.removeItem('user');
+    } catch (err: any) {
+      console.log('[Auth] /auth/me failed, error:', err);
+      // محاولة التجديد إذا فشل التحقق
+      const refreshToken = localStorage.getItem('refreshToken');
+      if (refreshToken) {
+        console.log('[Auth] Trying refresh with refreshToken:', refreshToken);
+        try {
+          const res = await api.post('/auth/refresh-token', { refreshToken });
+          const { accessToken, refreshToken: newRefreshToken } = res.data.data;
+          console.log('[Auth] Refresh success, new accessToken:', accessToken);
+          localStorage.setItem('accessToken', accessToken);
+          localStorage.setItem('refreshToken', newRefreshToken);
+          // تحديث header الخاص بـ axios
+          api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+          // إعادة محاولة التحقق بعد التجديد
+          const { data } = await api.get('/auth/me');
+          setUser(data.data.user);
+          setIsLoading(false);
+          return;
+        } catch (refreshErr) {
+          console.log('[Auth] Refresh failed:', refreshErr);
+          // إذا فشل التجديد، حذف التوكنات وتسجيل الخروج
+          setUser(null);
+          localStorage.removeItem('accessToken');
+          localStorage.removeItem('refreshToken');
+          localStorage.removeItem('user');
+        }
+      } else {
+        console.log('[Auth] No refreshToken found, logging out');
+        setUser(null);
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('user');
+      }
     } finally {
       setIsLoading(false);
     }

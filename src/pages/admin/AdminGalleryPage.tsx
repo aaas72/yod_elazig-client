@@ -304,7 +304,7 @@ export default function AdminGalleryPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {albums.map((album) => (
             <div key={album._id} className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-all group">
-              <div className="relative h-48 bg-gray-100">
+              <div className="relative h-32 sm:h-40 md:h-48 bg-gray-100">
                 {album.coverImage ? (
                   <img src={getImageUrl(album.coverImage)} alt="" className="w-full h-full object-cover" />
                 ) : (

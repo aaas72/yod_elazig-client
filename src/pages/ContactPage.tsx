@@ -3,15 +3,21 @@ import { FaWhatsapp } from "react-icons/fa";
 import FadeIn from "@/components/animations/FadeIn";
 import { useContactData } from "@/hooks/useContactData";
 import { useGeneralData } from "@/hooks/useGeneralData";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 import SimplePageHero from "@/components/ui/Sections/SimplePageHero";
 
 export default function Contact() {
   const contactData = useContactData();
   const generalData = useGeneralData();
+  const { settings } = useSiteSettings();
 
+  // prefer settings contact info when available
   const contactEmail =
-    import.meta.env.VITE_CONTACT_EMAIL || generalData.contactInfo.email;
-  const contactPhone = generalData.contactInfo.phone;
+    import.meta.env.VITE_CONTACT_EMAIL ||
+    settings?.contactInfo?.email ||
+    generalData.contactInfo.email;
+  const contactPhone =
+    settings?.contactInfo?.phone || generalData.contactInfo.phone;
 
   return (
     <div>

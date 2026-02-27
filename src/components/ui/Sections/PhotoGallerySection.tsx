@@ -78,7 +78,7 @@ export default function PhotoGallerySection() {
     <FadeIn direction="up" fullWidth>
       <section
         dir="ltr"
-        className="relative w-full h-[450px] overflow-hidden"
+        className="relative w-full h-[300px] sm:h-[350px] md:h-[450px] overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

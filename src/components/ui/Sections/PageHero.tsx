@@ -39,7 +39,14 @@ export default function PageHero({
     const actualImageUrl = imageUrl || image || "";
 
     return (
-        <section dir={direction} className="relative h-[60vh] md:h-[80vh] w-full text-white rounded-b-[36px] overflow-hidden">
+        <section
+      dir={direction}
+      className={`relative w-full text-white rounded-b-[36px] overflow-hidden ${
+        actualImageUrl
+          ? 'h-[60vh] md:h-[80vh]'
+          : 'py-16 bg-gradient-to-l from-red-600 to-red-800'
+      }`}
+    >
             {/* 3. استخدام next/image لتحسين أداء الصورة */}
             {actualImageUrl && (
                 <Image
@@ -53,22 +60,22 @@ export default function PageHero({
                 className={`absolute inset-0 bg-linear-to-t ${gradientFrom} ${gradientTo} rounded-b-[36px] overflow-hidden`}></div>
 
             {/* 5. استخدام متغيرات العناوين */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 sm:px-8 py-4">
                 {subtitle && (
                     <FadeIn direction="up">
-                        <h2 className="text-xl md:text-2xl  text-white">
+                        <h2 className="text-h4 md:text-h3 text-white">
                             {subtitle}
                         </h2>
                     </FadeIn>
                 )}
                 <FadeIn direction="up" delay={0.2}>
-                    <h1 className="text-xl md:text-4xl font-extrabold mt-2 drop-shadow-lg">
+                    <h1 className="text-h1 font-extrabold mt-2 drop-shadow-lg whitespace-normal break-words">
                         {title}
                     </h1>
                 </FadeIn>
                  {description && (
                     <FadeIn direction="up" delay={0.3}>
-                        <p className="text-lg md:text-xl mt-4 max-w-2xl mx-auto drop-shadow-md opacity-90">
+                        <p className="text-body md:text-card mt-4 max-w-2xl mx-auto drop-shadow-md opacity-90">
                             {description}
                         </p>
                     </FadeIn>

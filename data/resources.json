@@ -9,7 +9,7 @@
       "title": "المكتبة الأكاديمية",
       "description": "ملخصات، امتحانات سابقة، ومواد دراسية مفيدة لطلاب جامعة الفرات.",
       "iconName": "BookOpen",
-      "link": "/access",
+      "link": "/archive",
       "isPrivate": true,
       "backgroundImage": "/imgs/CardsBg/libaraly_Resources_bg.jpg"
     },

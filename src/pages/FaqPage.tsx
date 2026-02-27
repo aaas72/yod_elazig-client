@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useFaqData } from "@/hooks/useFaqData";
+import { useTranslation } from "react-i18next";
 import SimplePageHero from "@/components/ui/Sections/SimplePageHero";
 import FadeIn from "@/components/animations/FadeIn";
 import { ChevronDown, Search, Hash } from "lucide-react";
@@ -8,6 +9,7 @@ import FaqDocumentModal from "@/components/ui/Faq/FaqDocumentModal";
 import RichText from "@/components/ui/RichText";
 
 export default function FaqPage() {
+  const { t } = useTranslation();
   const faqData = useFaqData();
   const [activeCategory, setActiveCategory] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -55,7 +57,7 @@ export default function FaqPage() {
         breadcrumbs={faqData.hero.breadcrumbs}
       />
 
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:w-1/4 self-start">
@@ -64,10 +66,10 @@ export default function FaqPage() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder={t('common.searchPlaceholder')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all"
+                  className="w-full pl-10 pr-4 py-3 sm:py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all text-base"
                 />
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               </div>
@@ -82,7 +84,7 @@ export default function FaqPage() {
                     <li key={category.id}>
                       <button
                         onClick={() => handleCategoryClick(category.id)}
-                        className={`w-full text-start px-4 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-3 ${
+                        className={`w-full text-start px-4 py-4 sm:py-3 rounded-lg text-base sm:text-sm font-medium transition-all flex items-center gap-3 ${
                           activeCategory === category.id
                             ? "bg-red-50 text-red-700"
                             : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -97,13 +99,13 @@ export default function FaqPage() {
               </nav>
 
               {/* Categories Menu (Mobile) */}
-              <nav className="lg:hidden overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
-                <div className="flex gap-2">
+              <nav className="lg:hidden  w-100 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide whitespace-nowrap">
+                <div className="flex gap-2 flex-nowrap w-max">
                   {faqData.categories.map((category: { id: string; title: string }) => (
                     <button
                       key={category.id}
                       onClick={() => handleCategoryClick(category.id)}
-                      className={`whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-medium transition-all border flex items-center gap-2 ${
+                      className={`flex-shrink-0 whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-medium transition-all border flex items-center gap-2 ${
                         activeCategory === category.id
                           ? "bg-red-600 text-white border-red-600 shadow-lg shadow-red-200"
                           : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
@@ -130,7 +132,7 @@ export default function FaqPage() {
                   <FadeIn direction="up">
                     <div className="bg-white rounded-3xl border border-gray-200 overflow-hidden">
                       <div className="border-b border-gray-100 bg-gray-50/50 p-6">
-                        <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-3">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center gap-3">
                           <span className="w-2 h-8 bg-red-600 rounded-full"></span>
                           {category.title}
                         </h2>
@@ -153,7 +155,7 @@ export default function FaqPage() {
                               onClick={() => toggleQuestion(q.id)}
                               className="w-full text-start px-6 py-5 flex items-start justify-between gap-4 group"
                             >
-                              <span className="font-semibold text-gray-800 group-hover:text-red-700 transition-colors pt-1">
+                              <span className="font-semibold text-gray-800 group-hover:text-red-700 transition-colors pt-1 text-lg sm:text-xl">
                                 {q.question}
                               </span>
                               <span
@@ -175,7 +177,7 @@ export default function FaqPage() {
                             >
                               <div className="overflow-hidden">
                                 <div className="px-6 pb-6 pt-0">
-                                  <div className="text-gray-600 leading-relaxed border-t border-red-100/50 pt-4">
+<div className="text-gray-600 leading-relaxed border-t border-red-100/50 pt-4 text-base sm:text-lg">
                                     <p className="mb-4"><RichText text={q.answer} /></p>
                                     
                                     {/* Steps Section */}
@@ -232,10 +234,10 @@ export default function FaqPage() {
               <div className="text-center py-20 bg-white rounded-3xl border border-gray-100">
                 <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900">
-                  No results found
+                  {t('faq.noResults')}
                 </h3>
                 <p className="text-gray-500">
-                  Try adjusting your search query
+                  {t('faq.trySearch')}
                 </p>
               </div>
             )}

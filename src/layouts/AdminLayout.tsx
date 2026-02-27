@@ -10,6 +10,7 @@ import {
 const sidebarLinks = [
   { to: '/admin', label: 'لوحة التحكم', icon: LayoutDashboard, exact: true },
   { to: '/admin/members', label: 'الأعضاء', icon: Users },
+  { to: '/admin/users', label: 'المستخدمون', icon: Users },
   { to: '/admin/forms', label: 'نماذج التسجيل', icon: FolderOpen },
   { to: '/admin/news', label: 'الأخبار', icon: Newspaper },
   { to: '/admin/events', label: 'الفعاليات', icon: CalendarDays },
@@ -39,7 +40,7 @@ export default function AdminLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex" dir="rtl">
+    <div className="min-h-screen  flex" dir="rtl">
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />
@@ -47,7 +48,7 @@ export default function AdminLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 h-screen w-72 bg-white border-l border-gray-200 shadow-xl z-50 transform transition-transform duration-300 lg:translate-x-0 lg:static lg:z-0 ${
+        className={`fixed top-0 bottom-0 right-0 w-72 bg-white border-l border-gray-200 shadow-xl z-50 transform transition-transform duration-300 pb-10 overflow-y-auto lg:translate-x-0 lg:static lg:z-0 ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
         }`}
       >
@@ -56,7 +57,7 @@ export default function AdminLayout() {
           <div className="p-5 border-b border-gray-100">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img src="/imgs/logos/yodellogo.png" alt="Logo" className="w-10 h-10 object-contain" />
+                <img src="/imgs/logos/logo_v2.png" alt="Logo" className="w-10 h-10 object-contain" />
                 <div>
                   <h2 className="font-bold text-gray-800 text-sm">لوحة التحكم</h2>
                   <p className="text-xs text-gray-400">YOD Elazığ</p>
@@ -138,7 +139,9 @@ export default function AdminLayout() {
 
         {/* Page Content */}
         <main className="flex-1 p-4 lg:p-8">
-          <Outlet />
+          <div className="container mx-auto w-full">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

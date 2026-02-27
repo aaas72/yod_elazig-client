@@ -126,24 +126,24 @@
   },
   "campusLife": {
     "title": "Campus Life",
-    "images": [
-      {
-        "src": "/campus-library.jpg",
-        "alt": "Central Library"
-      },
-      {
-        "src": "/campus-sports.jpg",
-        "alt": "Sports Complex"
-      },
-      {
-        "src": "/campus-event.jpg",
-        "alt": "Student Event"
-      },
-      {
-        "src": "/campus-dorm.jpg",
-        "alt": "Student Dormitory"
-      }
-    ],
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+            "alt": "Central Library"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1464983953574-0892a7167e67?auto=format&fit=crop&w=800&q=80",
+            "alt": "Sports Complex"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1517520287167-4bbf64a7c7e6?auto=format&fit=crop&w=800&q=80",
+            "alt": "Student Event"
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1503676382389-8bfa1673b3a4?auto=format&fit=crop&w=800&q=80",
+            "alt": "Student Dormitory"
+          }
+        ],
     "features": [
       {
         "title": "World-Class Facilities",
@@ -161,10 +161,10 @@
   },
   "researchSection": {
     "title": "Scientific Research and Innovation",
-    "image": {
-      "src": "/images/research-lab.jpg",
-      "alt": "Research Lab"
-    },
+        "image": {
+          "src": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80",
+          "alt": "Research Lab"
+        },
     "paragraphs": [
       "Firat University believes that scientific research is the foundation of development and innovation. The university hosts many advanced research centers working on pioneering projects in the fields of engineering, health sciences, and technology.",
       "The university's **Technopolis (Teknokent)** is a vital environment bringing together academics, students, and entrepreneurs to transform innovative ideas into projects and startups that contribute to the growth of the local and national economy."

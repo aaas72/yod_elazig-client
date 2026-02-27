@@ -49,9 +49,9 @@ export default function AdminDataTable<T extends { _id: string }>({
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <h2 className="text-xl font-bold text-gray-800">{title}</h2>
-        <div className="flex items-center gap-3 w-full sm:w-auto">
+        <div className="flex flex-row flex-wrap items-center gap-3 w-full sm:w-auto">
           {onSearchChange && (
-            <div className="relative flex-1 sm:w-64">
+            <div className="relative flex-1 min-w-0 sm:w-64">
               <Search size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
@@ -75,7 +75,7 @@ export default function AdminDataTable<T extends { _id: string }>({
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+      <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="w-8 h-8 border-4 border-red-200 border-t-red-600 rounded-full animate-spin" />
@@ -86,8 +86,8 @@ export default function AdminDataTable<T extends { _id: string }>({
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
+            <table className="w-full min-w-max text-sm">
+              <thead className="hidden sm:table-header-group">
                 <tr className="border-b border-gray-100 bg-gray-50/50">
                   {columns.map((col) => (
                     <th key={col.key} className={`text-right px-5 py-3.5 font-medium text-gray-500 ${col.className || ''}`}>
@@ -99,13 +99,15 @@ export default function AdminDataTable<T extends { _id: string }>({
               </thead>
               <tbody className="divide-y divide-gray-50">
                 {data.map((item) => (
-                  <tr key={item._id} className="hover:bg-gray-50/50 transition-colors">
+                  <tr key={item._id} className="hover:bg-gray-50/50 transition-colors block sm:table-row odd:bg-white even:bg-gray-50 border-b sm:border-none border-gray-400">
                     {columns.map((col) => (
-                      <td key={col.key} className={`px-5 py-4 ${col.className || ''}`}>
+                      <td key={col.key} data-label={col.label}
+                        className={`px-5 py-4 break-words whitespace-nowrap relative block sm:table-cell ${col.className || ''}`}
+                      >
                         {col.render ? col.render(item) : (item as any)[col.key]}
                       </td>
                     ))}
-                    {actions && <td className="px-5 py-4">{actions(item)}</td>}
+                    {actions && <td data-label="إجراءات" className="px-5 py-4 relative block sm:table-cell">{actions(item)}</td>}
                   </tr>
                 ))}
               </tbody>

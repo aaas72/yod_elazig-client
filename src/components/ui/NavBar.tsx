@@ -44,16 +44,17 @@ const DesktopNav = () => {
     <nav className="hidden lg:flex justify-center items-center text-white">
       <ul className="flex items-center gap-2 list-none">
         {navLinks.map((link) => {
+          // تمييز الصفحة النشطة بدقة
           const isActive =
             link.href === "/"
               ? pathname === "/"
-              : pathname.startsWith(link.href);
+              : pathname === link.href;
 
           return (
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={` xl:px-3 py-2  rounded-full text-sm xl:text-md font-medium transition-all duration-300  ${
+                className={` xl:px-2 py-2  rounded-full text-sm xl:text-md font-medium transition-all duration-300  ${
                   isActive
                     ? "bg-white text-red-700"
                     : "bg-transparent hover:bg-white/20"
@@ -83,12 +84,13 @@ const MobileNavMenu = ({
   const { pathname } = useLocation();
   const { t } = useTranslation();
 
+  // mobile menu links mirror the desktop ones (plus activities)
   const navLinks = [
     { href: "/", label: t("navigation.home") },
     { href: "/about", label: t("navigation.about") },
     { href: "/news", label: t("navigation.news") },
-    { href: "/events", label: "الفعاليات" },
-    { href: "/activities", label: t("navigation.activities") },
+    { href: "/events", label: t("navigation.events") },
+    { href: "/programs", label: t("navigation.programs") },
     { href: "/about-city", label: t("navigation.aboutCity") },
     { href: "/about-university", label: t("navigation.aboutUniversity") },
     { href: "/resources", label: t("navigation.resources") },
@@ -116,10 +118,11 @@ const MobileNavMenu = ({
     >
       <ul className="flex flex-col items-center gap-y-10 list-none">
         {navLinks.map((link) => {
+          // تمييز الصفحة النشطة بدقة
           const isActive =
             link.href === "/"
               ? pathname === "/"
-              : pathname.startsWith(link.href);
+              : pathname === link.href;
 
           return (
             <li key={link.href}>
@@ -218,15 +221,15 @@ const MobileHeader = ({
           <img
             src="/imgs/logos/yodellogo.png"
             alt="YÖSOT Logo"
-            className="w-[120px] my-4 object-contain"
+            className="w-[100px] my-4 object-contain"
             style={{ background: 'transparent' }}
           />
         </Link>
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-white bg-white/20 backdrop-blur-lg border border-white rounded-full p-3 hover:bg-white/30 transition-all"
+          className="text-white bg-white/20 backdrop-blur-lg border border-white rounded-full p-2 hover:bg-white/30 transition-all"
         >
-          <HiMenu className="w-8 h-8" />
+          <HiMenu className="w-6 h-6" />
         </button>
       </div>
     </header>

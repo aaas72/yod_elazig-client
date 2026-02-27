@@ -322,7 +322,7 @@ export default function AdminFaqPage() {
       >
         <div className="space-y-6 max-h-[70vh] overflow-y-auto p-1">
           {/* Top Fields: Category & Order */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">التصنيف</label>
               <div className="flex gap-2">

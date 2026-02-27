@@ -13,16 +13,16 @@ export default function AdminModal({ isOpen, onClose, title, children, size = 'l
   if (!isOpen) return null;
 
   const sizeClasses = {
-    sm: 'max-w-md',
-    md: 'max-w-lg',
-    lg: 'max-w-2xl',
-    xl: 'max-w-4xl',
+    sm: 'max-w-xs sm:max-w-md',
+    md: 'max-w-sm sm:max-w-lg',
+    lg: 'max-w-lg md:max-w-2xl',
+    xl: 'max-w-xl md:max-w-4xl',
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir="rtl">
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      <div className={`relative bg-white rounded-2xl shadow-2xl w-full ${sizeClasses[size]} max-h-[90vh] overflow-hidden flex flex-col`}>
+      <div className={`relative bg-white rounded-2xl shadow-2xl w-full px-2 sm:px-4 ${sizeClasses[size]} max-h-[90vh] overflow-hidden flex flex-col`}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-100">
           <h3 className="text-lg font-bold text-gray-800">{title}</h3>

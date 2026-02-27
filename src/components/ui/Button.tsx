@@ -12,7 +12,7 @@ interface ButtonProps {
 }
 
 export default function Button({children, variant = 'primary', icon, onClick, className = '', href}: ButtonProps) {
-    const baseStyles = "px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 text-base cursor-pointer justify-center";
+    const baseStyles = "px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 sm:gap-3 text-sm sm:text-base cursor-pointer justify-center shadow";
 
     const variantStyles: Record<'primary' | 'secondary', string> = {
         primary: "text-red-800 border-2 hover:bg-[#FFC0C0] hover:px-8",
