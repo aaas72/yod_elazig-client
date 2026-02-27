@@ -44,11 +44,12 @@ const Image = ({
     style.objectFit = objectFit;
   }
 
-  const resolved = resolveImage(src as string, FALLBACK_IMG);
+  // use options object to pass fallback explicitly
+  const resolved = resolveImage(src as string, { fallback: FALLBACK_IMG });
   const [imgSrc, setImgSrc] = useState(resolved);
 
   useEffect(() => {
-    setImgSrc(resolveImage(src as string, FALLBACK_IMG));
+    setImgSrc(resolveImage(src as string, { fallback: FALLBACK_IMG }));
   }, [src]);
 
   const handleError = () => {

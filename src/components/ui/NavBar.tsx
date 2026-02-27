@@ -216,7 +216,7 @@ const MobileHeader = ({
       <div className="flex justify-between items-center h-[100px] px-4 max-w-[1440px] mx-auto">
         <Link to="/">
           <img
-            git remote -v            src="/imgs/logos/yodellogo.png"
+            src="/imgs/logos/yodellogo.png"
             alt="YÖSOT Logo"
             className="w-[120px] my-4 object-contain"
             style={{ background: 'transparent' }}

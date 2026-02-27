@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useGalleryData } from "@/hooks/useGalleryData";
 import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
+import { resolveImage } from "@/utils/resolveImage";
 
 export default function PhotoGallerySection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,24 +19,32 @@ export default function PhotoGallerySection() {
     if (!loading && albums.length > 0) {
       // Flatten all photos from all albums
       const allPhotos = albums.flatMap(album => 
-        album.images.map(img => ({
-          id: img.id,
-          src: img.url,
-          alt: img.caption || album.title
-        }))
+        album.images.map(img => {
+          const fileName = typeof img === "string" ? img : img.url;
+          const src = resolveImage(fileName, 'gallery/photos');
+          return {
+            id: img.id,
+            src: src,
+            alt: img.caption || album.title
+          };
+        })
       );
-      
+
       // If no photos in albums, try cover images
       if (allPhotos.length === 0) {
-         const covers = albums.filter(a => a.coverImage).map(album => ({
+        const covers = albums.filter(a => a.coverImage).map(album => {
+          const fileName = album.coverImage;
+          const src = resolveImage(fileName, 'gallery/photos');
+          return {
             id: album.id,
-            src: album.coverImage,
+            src: src,
             alt: album.title
-         }));
-         if (covers.length > 0) {
-            setPhotos(covers);
-            return;
-         }
+          };
+        });
+        if (covers.length > 0) {
+          setPhotos(covers);
+          return;
+        }
       }
 
       if (allPhotos.length > 0) {

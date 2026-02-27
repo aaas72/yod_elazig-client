@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { galleryService, type GalleryAlbum } from '@/services/galleryService';
 import { uploadService } from '@/services/uploadService';
 import { BASE_URL } from '@/lib/api';
+import { resolveImage } from '@/utils/resolveImage';
 import AdminModal from '@/components/admin/AdminModal';
 import { Edit, Trash2, Plus, Image, X, Eye, Upload, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -277,10 +278,10 @@ export default function AdminGalleryPage() {
     } catch { toast.error('فشل حذف الصورة'); }
   };
 
+  // build image URL using resolveImage to include folder and base URL correctly
   const getImageUrl = (url?: string) => {
     if (!url) return '';
-    if (url.startsWith('http') || url.startsWith('data:')) return url;
-    return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+    return resolveImage(url, 'gallery/photos');
   };
 
   return (

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { galleryService, GalleryAlbum } from '../services/galleryService';
 import { BASE_URL } from '../lib/api';
+import { resolveImage } from '../utils/resolveImage';
 
 export interface GalleryItem {
   id: string;
@@ -34,10 +35,11 @@ export const useGalleryData = () => {
           id: album._id,
           title: album.title[lang] || album.title['ar'] || '',
           description: album.description?.[lang] || album.description?.['ar'] || '',
-          coverImage: album.coverImage ? (album.coverImage.startsWith('http') ? album.coverImage : `${BASE_URL}${album.coverImage.startsWith('/') ? '' : '/'}${album.coverImage}`) : '',
+          // coverImage may be just filename or full path
+          coverImage: album.coverImage ? resolveImage(album.coverImage, 'gallery/photos') : '',
           images: (album.photos || []).map(photo => ({
             id: photo._id,
-            url: photo.url.startsWith('http') ? photo.url : `${BASE_URL}${photo.url.startsWith('/') ? '' : '/'}${photo.url}`,
+            url: resolveImage(photo.url, 'gallery/photos'),
             caption: photo.caption?.[lang] || photo.caption?.['ar'] || ''
           }))
         }));
