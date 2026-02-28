@@ -127,27 +127,6 @@ const Footer = () => {
                 );
               })}
             </div>
-
-            {/* Elegant visit counter below social links */}
-            <div className="flex flex-col items-center mt-8">
-              <span
-                style={{
-                  fontSize: '3rem',
-                  fontWeight: 'normal',
-                  color: 'transparent',
-                  WebkitTextStroke: '1px #fff',
-                  letterSpacing: '2px',
-                  textShadow: '0 2px 8px #0002',
-                  opacity: 0.35,
-                  display: 'block',
-                }}
-              >
-                {typeof window !== 'undefined' && localStorage.getItem('siteVisitCount') ? localStorage.getItem('siteVisitCount') : '0'}
-              </span>
-              <span style={{fontSize:'0.9rem',color:'#fff',opacity:0.45,marginTop:'-8px',fontWeight:'400',letterSpacing:'1px'}}>
-                {t('footer.visitCountLabel')}
-              </span>
-            </div>
           </div>
         </div>
         <div className="mt-12 pt-8 text-center">

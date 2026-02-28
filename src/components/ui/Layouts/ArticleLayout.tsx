@@ -32,11 +32,16 @@ export default function ArticleLayout({
   const authorLabel = i18n.language === 'tr' ? 'Yazar' : i18n.language === 'en' ? 'Author' : 'الكاتب';
   return (
     <div>
-      <header className="relative flex items-center bg-linear-to-bl from-red-900 via-red-800 to-red-900 text-white py-32 rounded-b-[36px] px-16 overflow-hidden">
+      <header className="relative flex items-center bg-linear-to-bl from-red-900 via-red-800 to-red-900 text-white pb-10 pt-30 rounded-b-[36px] px-8 overflow-hidden">
         <div className="max-w-6xl w-full mx-auto px-4 relative z-10">
           <FadeIn direction="up">
             <div className="max-w-4xl rtl:text-right ltr:text-left">
-              <h1 className="text-xl md:text-3xl font-bold mb-6">{title}</h1>
+              <h1
+                className="text-xl md:text-3xl font-bold mb-6 break-words overflow-wrap break-word"
+                style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}
+              >
+                {title}
+              </h1>
               {breadcrumbs && breadcrumbs.length > 0 && (
                 <nav className="text-sm text-red-200">
                   {breadcrumbs.map((crumb, index) => (
@@ -81,11 +86,15 @@ export default function ArticleLayout({
       <article className="pb-32">
         <main className="max-w-6xl mx-auto p-8 md:px-16 py-8">
           <FadeIn direction="up" delay={0.2}>
-            <div className="w-full h-[500px] overflow-hidden shadow-xl rounded-[22px] mb-6">
+            <div
+              className="w-full mx-auto overflow-hidden shadow-xl rounded-[22px] mb-6"
+              style={{ maxWidth: '100%' }}
+            >
               <img
                 src={resolveImage(coverImage)}
                 alt="الصورة الرئيسية للمقال"
-                className="w-full h-full object-cover block"
+                className="w-full object-cover block"
+                style={{ width: '100%', height: 'auto', maxHeight: 'none' }}
               />
             </div>
             {children}

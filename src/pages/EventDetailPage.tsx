@@ -127,41 +127,43 @@ export default function EventDetailPage() {
       date={eventItem.date}
       latestNews={latestEvents}
     >
+      {/* ضبط النصوص والعناوين */}
       <div
         dangerouslySetInnerHTML={{ __html: resolveContentImages(eventItem.description || "") }}
-        className="prose lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed"
+        className="prose lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed break-words overflow-wrap break-word"
+        style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}
       />
 
       {/* تفاصيل الحدث */}
       <div className="mt-8 pt-6 border-t border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
           {eventItem.location && (
-            <div><span className="font-bold text-gray-900">{labels.location}:</span> {eventItem.location}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.location}:</span> {eventItem.location}</div>
           )}
           {eventItem.category && (
-            <div><span className="font-bold text-gray-900">{labels.category}:</span> {eventItem.category}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.category}:</span> {eventItem.category}</div>
           )}
           {eventItem.capacity && (
-            <div><span className="font-bold text-gray-900">{labels.capacity}:</span> {eventItem.capacity}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.capacity}:</span> {eventItem.capacity}</div>
           )}
           {eventItem.startDate && (
-            <div><span className="font-bold text-gray-900">{labels.startDate}:</span> {new Date(eventItem.startDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.startDate}:</span> {new Date(eventItem.startDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
           )}
           {eventItem.endDate && (
-            <div><span className="font-bold text-gray-900">{labels.endDate}:</span> {new Date(eventItem.endDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.endDate}:</span> {new Date(eventItem.endDate).toLocaleString(lang === 'ar' ? 'ar-EG' : lang)}</div>
           )}
           {typeof eventItem.isPublished !== 'undefined' && (
-            <div><span className="font-bold text-gray-900">{labels.status}:</span> {eventItem.isPublished ? labels.published : labels.draft}</div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.status}:</span> {eventItem.isPublished ? labels.published : labels.draft}</div>
           )}
           {eventItem.isFeatured && (
-            <div><span className="font-bold text-gray-900">{labels.featured}:</span> <span className="text-green-600">{labels.yes}</span></div>
+            <div className="break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}><span className="font-bold text-gray-900">{labels.featured}:</span> <span className="text-green-600">{labels.yes}</span></div>
           )}
         </div>
         {/* التصنيف والوسوم */}
         {(eventItem.tags && eventItem.tags.length > 0) && (
           <div className="flex flex-wrap gap-2 mt-4">
             {(Array.isArray(eventItem.tags) ? eventItem.tags : [eventItem.tags]).map((tag: string, idx: number) => (
-              <span key={idx} className="text-xs bg-red-50 text-red-600 px-2 py-1 rounded-full">#{tag}</span>
+              <span key={idx} className="text-xs bg-red-50 text-red-600 px-2 py-1 rounded-full break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}>#{tag}</span>
             ))}
           </div>
         )}

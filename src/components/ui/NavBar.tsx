@@ -1,9 +1,11 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useSiteSettings } from '@/hooks/useSiteSettings';
+import MobileLanguageButtons from "./MobileLanguageButtons";
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
@@ -117,7 +119,7 @@ const MobileNavMenu = ({
       onClick={() => setIsMenuOpen(false)}
     >
       <ul className="flex flex-col items-center gap-y-10 list-none">
-        {navLinks.map((link) => {
+        {navLinks.map((link, idx) => {
           // تمييز الصفحة النشطة بدقة
           const isActive =
             link.href === "/"
@@ -125,25 +127,29 @@ const MobileNavMenu = ({
               : pathname === link.href;
 
           return (
-            <li key={link.href}>
-              <Link
-                to={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-xl font-bold px-6 py-3 rounded-full transition-all ${
-                  isActive
-                    ? "bg-white text-black"
-                    : "text-white hover:bg-white/20"
-                }`}
-              >
-                {link.label}
-              </Link>
-            </li>
+            <React.Fragment key={link.href}>
+              <li>
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-xl font-bold px-6 py-3 rounded-full transition-all ${
+                    isActive
+                      ? "bg-white text-black"
+                      : "text-white hover:bg-white/20"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+              {/* بعد آخر رابط للصفحات أضف أزرار اللغة */}
+              {idx === navLinks.length - 1 && (
+                <li className="pt-4" onClick={(e) => e.stopPropagation()}>
+                  <MobileLanguageButtons />
+                </li>
+              )}
+            </React.Fragment>
           );
         })}
-
-        <li className="pt-4" onClick={(e) => e.stopPropagation()}>
-          <LanguageSwitcher />
-        </li>
       </ul>
     </div>
   );

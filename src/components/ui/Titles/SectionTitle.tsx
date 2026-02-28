@@ -10,7 +10,7 @@ interface SectionTitleProps {
 export default function SectionTitle({ title, subtitle, className = '', center = false }: SectionTitleProps) {
   return (
     <div className={`flex flex-col ${center ? 'items-center text-center' : 'items-start text-start'} ${className}`}>
-      <h1 className="font-bold text-sm md:text-md lg:text-2xl">{title}</h1>
+      <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">{title}</h1>
       {subtitle && <p className="text-body text-gray-600 mt-2">{subtitle}</p>}
     </div>
   );

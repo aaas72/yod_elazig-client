@@ -60,6 +60,9 @@ const TimelineItem = ({ achievement, orientation }: TimelineItemProps) => {
 
 const AchievementsTimeline = () => {
   const { achievements, loading, error } = useAchievementsData();
+  // دعم اتجاه اللغة
+  const lang = typeof window !== 'undefined' ? document.documentElement.lang : 'ar';
+  const isRTL = lang === 'ar';
 
   if (loading) {
     return (
@@ -87,24 +90,26 @@ const AchievementsTimeline = () => {
   });
 
   return (
-    <section className="w-full py-16 px-4">
+    <section className="w-full py-16 px-4" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-6xl mx-auto">
         <div className="relative">
+          {/* خط التايم لاين يظهر فقط على md وما فوق */}
           <div
             className="absolute h-full border border-dashed border-red-300 hidden md:block"
-            style={{ left: "50%", transform: "translateX(-50%)" }}
+            style={isRTL ? { right: "50%", transform: "translateX(50%)" } : { left: "50%", transform: "translateX(-50%)" }}
           ></div>
-          <div
-            className="absolute h-full border border-dashed border-red-300 md:hidden"
-            style={{ right: "1.5rem" }}
-          ></div>
-          {achievementsData.map((achievement, index) => (
-            <TimelineItem
-              key={achievement.id}
-              achievement={achievement}
-              orientation={index % 2 === 0 ? "left" : "right"}
-            />
-          ))}
+          {/* لا تعرض أي خط على الجوال */}
+          <div className="md:hidden"></div>
+          {/* عرض الإنجازات كمكونات عادية في الجوال */}
+          <div className="flex flex-col gap-8 md:gap-0">
+            {achievementsData.map((achievement, index) => (
+              <TimelineItem
+                key={achievement.id}
+                achievement={achievement}
+                orientation={window.innerWidth < 768 ? 'left' : (isRTL ? (index % 2 === 0 ? "right" : "left") : (index % 2 === 0 ? "left" : "right"))}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

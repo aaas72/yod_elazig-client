@@ -130,23 +130,25 @@ export default function SingleNewsPage() {
       date={newsItem.date}
       latestNews={latestNews}
     >
+      {/* ضبط النصوص والعناوين */}
       <div
         dangerouslySetInnerHTML={{ __html: resolveContentImages(newsItem.content || "") }}
-        className="prose lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed"
+        className="prose lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed break-words overflow-wrap break-word"
+        style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}
       />
 
       {/* التصنيف والوسوم */}
       {(newsItem.category || (newsItem.tags && newsItem.tags.length > 0)) && (
         <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap items-center gap-3">
           {newsItem.category && (
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-gray-500 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}>
               {newsItem.category}
             </span>
           )}
           {newsItem.tags && newsItem.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {(Array.isArray(newsItem.tags) ? newsItem.tags : [newsItem.tags]).map((tag: string, idx: number) => (
-                <span key={idx} className="text-sm text-red-600">
+                <span key={idx} className="text-sm text-red-600 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}>
                   #{tag}
                 </span>
               ))}
