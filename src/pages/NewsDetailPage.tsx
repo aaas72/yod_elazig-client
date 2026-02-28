@@ -22,13 +22,14 @@ export default function SingleNewsPage() {
 
     // Try finding in already-loaded list first (works for both static and API data)
     const fromList = newsData.find(
-      (item: any) => String(item.id) === id || String(item._id) === id || item.slug === id
+      (item: any) =>
+        String(item.id) === id || String(item._id) === id || item.slug === id,
     );
 
     if (fromList) {
       setNewsItem({
         ...fromList,
-        category: fromList.category || '',
+        category: fromList.category || "",
         tags: fromList.tags || [],
       });
       setLoading(false);
@@ -40,8 +41,9 @@ export default function SingleNewsPage() {
       .getBySlug(id)
       .then((apiItem) => {
         if (!cancelled && apiItem) {
-          const lang = i18n.language as 'ar' | 'en' | 'tr';
-          const t = apiItem.translations?.[lang] || apiItem.translations?.ar || {};
+          const lang = i18n.language as "ar" | "en" | "tr";
+          const t =
+            apiItem.translations?.[lang] || apiItem.translations?.ar || {};
           setNewsItem({
             id: apiItem.slug || apiItem._id,
             _id: apiItem._id,
@@ -49,10 +51,14 @@ export default function SingleNewsPage() {
             title: t.title || apiItem.title,
             date: apiItem.publishedAt || apiItem.createdAt,
             coverImage: resolveImage(apiItem.coverImage),
-            author: apiItem.author?.name || '',
-            content: t.content || apiItem.content || '',
-            category: t.category || apiItem.category || '',
-            tags: t.tags ? (typeof t.tags === 'string' ? t.tags.split(',').map((x: string) => x.trim()) : t.tags) : apiItem.tags || [],
+            author: apiItem.author?.name || "",
+            content: t.content || apiItem.content || "",
+            category: t.category || apiItem.category || "",
+            tags: t.tags
+              ? typeof t.tags === "string"
+                ? t.tags.split(",").map((x: string) => x.trim())
+                : t.tags
+              : apiItem.tags || [],
           });
         }
       })
@@ -62,8 +68,9 @@ export default function SingleNewsPage() {
           .getById(id)
           .then((apiItem) => {
             if (!cancelled && apiItem) {
-              const lang = i18n.language as 'ar' | 'en' | 'tr';
-              const t = apiItem.translations?.[lang] || apiItem.translations?.ar || {};
+              const lang = i18n.language as "ar" | "en" | "tr";
+              const t =
+                apiItem.translations?.[lang] || apiItem.translations?.ar || {};
               setNewsItem({
                 id: apiItem.slug || apiItem._id,
                 _id: apiItem._id,
@@ -71,10 +78,14 @@ export default function SingleNewsPage() {
                 title: t.title || apiItem.title,
                 date: apiItem.publishedAt || apiItem.createdAt,
                 coverImage: resolveImage(apiItem.coverImage),
-                author: apiItem.author?.name || '',
-                content: t.content || apiItem.content || '',
-                category: t.category || apiItem.category || '',
-                tags: t.tags ? (typeof t.tags === 'string' ? t.tags.split(',').map((x: string) => x.trim()) : t.tags) : apiItem.tags || [],
+                author: apiItem.author?.name || "",
+                content: t.content || apiItem.content || "",
+                category: t.category || apiItem.category || "",
+                tags: t.tags
+                  ? typeof t.tags === "string"
+                    ? t.tags.split(",").map((x: string) => x.trim())
+                    : t.tags
+                  : apiItem.tags || [],
               });
             }
           })
@@ -86,7 +97,9 @@ export default function SingleNewsPage() {
         if (!cancelled) setLoading(false);
       });
 
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [id, newsData]);
 
   if (loading || listLoading) {
@@ -110,10 +123,13 @@ export default function SingleNewsPage() {
   const latestNews = [...newsData]
     .sort(
       (a: any, b: any) =>
-        new Date(b.date).getTime() - new Date(a.date).getTime()
+        new Date(b.date).getTime() - new Date(a.date).getTime(),
     )
     .slice(0, 4)
-    .map((item: any) => ({ title: item.title, href: `/news/${item.slug || item.id}` }));
+    .map((item: any) => ({
+      title: item.title,
+      href: `/news/${item.slug || item.id}`,
+    }));
 
   const breadcrumbs = [
     { name: newsPageData.detail.breadcrumbs.home, href: "/" },
@@ -132,23 +148,42 @@ export default function SingleNewsPage() {
     >
       {/* ضبط النصوص والعناوين */}
       <div
-        dangerouslySetInnerHTML={{ __html: resolveContentImages(newsItem.content || "") }}
-        className="prose lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:text-lg prose-p:leading-relaxed break-words overflow-wrap break-word"
-        style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}
+        className="prose lg:prose-lg max-w-none text-gray-800 prose-headings:font-bold prose-p:leading-relaxed"
+        dangerouslySetInnerHTML={{
+          __html: resolveContentImages(newsItem.content || ""),
+        }}
       />
 
       {/* التصنيف والوسوم */}
       {(newsItem.category || (newsItem.tags && newsItem.tags.length > 0)) && (
         <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap items-center gap-3">
           {newsItem.category && (
-            <span className="text-sm text-gray-500 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}>
+            <span
+              className="text-sm text-gray-500 break-words"
+              style={{
+                wordBreak: "break-word",
+                overflowWrap: "break-word",
+                whiteSpace: "normal",
+              }}
+            >
               {newsItem.category}
             </span>
           )}
           {newsItem.tags && newsItem.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {(Array.isArray(newsItem.tags) ? newsItem.tags : [newsItem.tags]).map((tag: string, idx: number) => (
-                <span key={idx} className="text-sm text-red-600 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: 'normal' }}>
+              {(Array.isArray(newsItem.tags)
+                ? newsItem.tags
+                : [newsItem.tags]
+              ).map((tag: string, idx: number) => (
+                <span
+                  key={idx}
+                  className="text-sm text-red-600 break-words"
+                  style={{
+                    wordBreak: "break-word",
+                    overflowWrap: "break-word",
+                    whiteSpace: "normal",
+                  }}
+                >
                   #{tag}
                 </span>
               ))}

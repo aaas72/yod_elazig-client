@@ -6,7 +6,9 @@ import TextAlign from '@tiptap/extension-text-align';
 import Link from '@tiptap/extension-link';
 import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
+
 import { uploadService } from '@/services/uploadService';
+import { resolveImage } from '@/utils/resolveImage';
 import toast from 'react-hot-toast';
 import {
   Bold, Italic, Underline as UnderlineIcon, Strikethrough,
@@ -68,10 +70,28 @@ export default function RichTextEditor({ content, onChange, placeholder = 'اك�
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+    // 1. أضف الصورة مؤقتًا باستخدام blob URL
+    const tempUrl = URL.createObjectURL(file);
+    editor.chain().focus().setImage({ src: tempUrl }).run();
     try {
       toast.loading('جاري رفع الصورة...', { id: 'img-upload' });
       const result = await uploadService.uploadImage(file, { maxWidth: 600, maxHeight: 400, quality: 0.8, folder: 'news-content' });
-      editor.chain().focus().setImage({ src: result.url }).run();
+      // 2. استبدل src المؤقت (blob) برابط السيرفر فقط للصورة المطلوبة
+      const { state, view } = editor;
+      // اجمع كل مواضع الصور التي srcها tempUrl
+      const positions: number[] = [];
+      state.doc.descendants((node, pos) => {
+        if (node.type.name === 'image' && node.attrs.src === tempUrl) {
+          positions.push(pos);
+        }
+        return true;
+      });
+      // حدث src لكل صورة مطابقة
+      positions.forEach(pos => {
+        editor.commands.focus();
+        editor.commands.setNodeSelection(pos);
+        editor.commands.updateAttributes('image', { src: resolveImage(result.url, 'news-content') });
+      });
       toast.success('تم إدراج الصورة', { id: 'img-upload' });
     } catch (err: any) {
       toast.error(err?.message || 'فشل رفع الصورة', { id: 'img-upload' });
@@ -93,10 +113,12 @@ export default function RichTextEditor({ content, onChange, placeholder = 'اك�
 
   const Divider = () => <div className="w-px h-6 bg-gray-200 mx-0.5" />;
 
+
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden bg-white">
       {/* Toolbar */}
       <div className="flex flex-wrap items-center gap-0.5 px-2 py-1.5 border-b border-gray-100 bg-gray-50/80 overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
+
         {/* Undo / Redo */}
         <ToolBtn onClick={() => editor.chain().focus().undo().run()} title="تراجع">
           <Undo size={16} />

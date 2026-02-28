@@ -57,11 +57,11 @@ export default function AdminLayout() {
           <div className="p-5 border-b border-gray-100">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img src="/imgs/logos/logo_v2.png" alt="Logo" className="w-10 h-10 object-contain" />
+                <img src="/imgs/logos/logo_v2.png" alt="Logo" className="w-20 object-contain" />
                 <div>
-                  <h2 className="font-bold text-gray-800 text-sm">لوحة التحكم</h2>
-                  <p className="text-xs text-gray-400">YOD Elazığ</p>
-                </div>
+                <h1 className="font-bold text-red-800 text-md">لوحة التحكم</h1>             
+                <p className="text-xs text-gray-400">YOD Elazığ</p>                
+              </div>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="lg:hidden p-1 hover:bg-gray-100 rounded-lg">
                 <X size={20} className="text-gray-500" />

@@ -1,9 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Zain:wght@400;700&display=swap");
 
 @theme {
   --font-sans: "Inter", "Zain", sans-serif;
-  
   --animate-scroll-news: scroll-news 20s linear infinite;
 
   @keyframes scroll-news {
@@ -20,15 +20,26 @@ html {
 body {
   font-family: var(--font-sans);
   background-image: url("../../public/pattrens/bg.svg");
-
   background-attachment: fixed;
   background-position: center center;
+  font-size: 18px; /* حجم خط أساسي أكبر */
+}
+
+/* تكبير حجم الخط في جميع عناصر prose */
+.prose {
+  font-size: 1.1em;
+}
+
+/* تكبير حجم الخط في محرر النصوص */
+.tiptap {
+  font-size: 1.1em;
 }
 
 /* TipTap Editor Styles */
 .tiptap {
   outline: none;
 }
+
 .tiptap p.is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   float: left;
@@ -57,3 +68,5 @@ body {
 }
 .tiptap a { color: #2563eb; text-decoration: underline; }
 .tiptap img { max-width: 100%; border-radius: 8px; margin: 0.5em auto; }
+
+
