@@ -6,7 +6,7 @@ import { useHomeData } from "@/hooks/useHomeData";
 import FadeIn from "@/components/animations/FadeIn";
 
 export default function NewsSection() {
-  const { news: DataNews, loading } = useNewsData();
+  const { news: DataNews, loading } = useNewsData(6);
   const newsItems = DataNews.slice(0, 6);
   const homeData = useHomeData();
 

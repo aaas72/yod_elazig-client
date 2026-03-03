@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { newsService } from '@/services/newsService';
 import { resolveImage } from '@/utils/resolveImage';
 
-export const useNewsData = () => {
+export const useNewsData = (limit = 100) => {
   const { i18n } = useTranslation();
   const [news, setNews] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ export const useNewsData = () => {
     setLoading(true);
 
     newsService
-      .getPublished({ limit: 100 })
+      .getPublished({ limit })
       .then((res) => {
         const items = Array.isArray(res) ? res : res?.news;
         if (!cancelled && items?.length) {
@@ -63,7 +63,7 @@ export const useNewsData = () => {
       });
 
     return () => { cancelled = true; };
-  }, [i18n.language]);
+  }, [i18n.language, limit]);
 
   return { news, loading };
 };

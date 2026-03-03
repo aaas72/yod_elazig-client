@@ -11,7 +11,7 @@ import StaggerContainer, {
 import { useEventsData } from "@/hooks/useEventsData";
 
 export default function EventsSection() {
-  const DataActivities = useEventsData(); // Use events data instead of programs data
+  const DataActivities = useEventsData(6); // Use events data instead of programs data
   const activitiesItems = (DataActivities.events as Array<{
     slug: string;
     title: string | { tr?: string };
