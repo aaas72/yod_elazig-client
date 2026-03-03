@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import {
   LayoutDashboard, Newspaper, CalendarDays, GraduationCap, Trophy, HelpCircle,
-  FolderOpen, Settings, Mail, Users, Image, TicketIcon,
+  FolderOpen, Settings, Mail, Users, Image, TicketIcon, FileBarChart,
   LogOut, Menu, X, ChevronDown, Globe, Home
 } from 'lucide-react';
 
@@ -19,7 +19,8 @@ const sidebarLinks = [
   { to: '/admin/faq', label: 'الأسئلة الشائعة', icon: HelpCircle },
   { to: '/admin/gallery', label: 'معرض الصور', icon: Image },
   { to: '/admin/ticker', label: 'الشريط الإخباري', icon: TicketIcon },
-  { to: '/admin/volunteers', label: 'طلبات التطوع', icon: Users },
+  { to: '/admin/volunteers', label: ' التطوع', icon: Users },
+  { to: '/admin/reports', label: 'التقارير', icon: FileBarChart },
   { to: '/admin/settings', label: 'الإعدادات', icon: Settings },
 ];
 
@@ -48,20 +49,16 @@ export default function AdminLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 bottom-0 right-0 w-72 bg-white border-l border-gray-200 shadow-xl z-50 transform transition-transform duration-300 pb-10 overflow-y-auto lg:translate-x-0 lg:static lg:z-0 ${
+        className={`fixed top-0 bottom-0 right-0 w-72 bg-white border-l border-gray-200 shadow-xl z-50 transform transition-transform duration-300 overflow-hidden lg:translate-x-0 lg:sticky lg:top-0 lg:h-screen lg:z-0 ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
         }`}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="p-5 border-b border-gray-100">
+          <div className="p-3 border-b border-gray-100">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <img src="/imgs/logos/logo_v2.png" alt="Logo" className="w-20 object-contain" />
-                <div>
-                <h1 className="font-bold text-red-800 text-md">لوحة التحكم</h1>             
-                <p className="text-xs text-gray-400">YOD Elazığ</p>                
-              </div>
+              <div className="flex items-center gap-0">
+                <img src="/imgs/logos/logo_v2.png" alt="Logo" className="w-23 mr-4 object-contain"/>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="lg:hidden p-1 hover:bg-gray-100 rounded-lg">
                 <X size={20} className="text-gray-500" />
@@ -70,7 +67,7 @@ export default function AdminLayout() {
           </div>
 
           {/* Nav Links */}
-          <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+          <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1 scrollbar-thin-red">
             {sidebarLinks.map((link) => {
               const Icon = link.icon;
               const active = isActive(link.to, link.exact);

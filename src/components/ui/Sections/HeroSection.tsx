@@ -7,10 +7,9 @@ import { useTranslation } from "react-i18next";
 
 import { BASE_URL } from '@/lib/api';
 
-// صور الهيدر الثابتة من مجلد HeroSectionImgs
 const heroImagesStatic = [
-  "/imgs/HeroSectionImgs/yodelsty.jpg",
-  "/imgs/HeroSectionImgs/20251221_170500.jpg",
+  "/imgs/HeroSectionImgs/yodelsty.webp",
+  "/imgs/HeroSectionImgs/20251221_170500.webp",
   // أضف هنا أي صورة جديدة تضعها في المجلد
 ];
 
@@ -68,7 +67,16 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full min-h-[400px] md:min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
+      {/* Preload first image with <img> for LCP discovery */}
+      <img
+        src={heroImagesStatic[0]}
+        alt=""
+        fetchPriority="high"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ display: currentImageIndex === 0 ? 'block' : 'none' }}
+      />
       <AnimatePresence mode="wait">
+        {currentImageIndex > 0 && (
         <motion.div
           key={currentImage}
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -78,6 +86,7 @@ export default function HeroSection() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
         />
+        )}
       </AnimatePresence>
 
       <div className="absolute inset-0 z-1 bg-linear-to-t from-[#BE141B]/80 to-[#940a0e]/70" />

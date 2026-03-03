@@ -118,7 +118,7 @@ export default function AdminFormsPage() {
   return (
     <>
       <AdminDataTable
-        title="إدارة نماذج التسجيل"
+        title=""
         data={forms}
         columns={columns}
         loading={loading}

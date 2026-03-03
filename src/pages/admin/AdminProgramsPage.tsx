@@ -170,7 +170,7 @@ export default function AdminProgramsPage() {
   return (
     <>
       <AdminDataTable
-        title="إدارة البرامج"
+        title=""
         data={programsData}
         columns={columns}
         loading={loading}

@@ -2,7 +2,7 @@
   "title": "Arşiv Erişimi",
   "description": "Arşivi görüntülemek, yalnızca Google Drive klasörüne erişim izni olan üyeler için mümkündür.",
   "logo": {
-    "src": "/imgs/logos/yodellogo.png",
+    "src": "/imgs/logos/yodellogo.webp",
     "alt": "Dernek Logosu"
   },
   "domainNote": {

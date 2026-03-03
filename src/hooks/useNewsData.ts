@@ -2,11 +2,6 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { newsService } from '@/services/newsService';
 import { resolveImage } from '@/utils/resolveImage';
-import ar from '../../data/locales/ar/news.json';
-import en from '../../data/locales/en/news.json';
-import tr from '../../data/locales/tr/news.json';
-
-const staticMap: Record<string, any[]> = { ar, en, tr };
 
 export const useNewsData = () => {
   const { i18n } = useTranslation();

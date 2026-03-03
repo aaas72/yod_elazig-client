@@ -296,7 +296,7 @@ export default function AdminFaqPage() {
   return (
     <>
       <AdminDataTable
-        title="إدارة الأسئلة الشائعة"
+        title=""
         data={items}
         columns={columns}
         loading={loading}

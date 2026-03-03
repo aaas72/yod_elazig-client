@@ -109,52 +109,36 @@ export default function AdminUsersPage() {
     }
   };
 
-  const toggleActive = async (id: string) => {
-    await userService.toggleActive(id);
-    reload();
-  };
-
-  const columns = [
-    { key: 'name', label: 'Name' },
-    { key: 'email', label: 'Email' },
-    { key: 'role', label: 'Role' },
-    { key: 'isActive', label: 'Active' },
-    { key: 'actions', label: 'Actions' },
-  ];
-
-  const rows = (users && Array.isArray(users) ? users : []).map(u => ({
-    ...u,
-    actions: (
-      <div className="flex gap-2">
-        <button onClick={() => openEdit(u)}>
-          <Edit size={16} color="#16a34a" />
-        </button>
-        <button onClick={() => handleDelete(u._id)}>
-          <Trash2 size={16} color="#dc2626" />
-        </button>
-      </div>
-    ),
-  }));
-
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-xl font-bold">إدارة المستخدمين</h1>
-        <button onClick={openCreate} className="px-4 py-2 bg-red-600 text-white rounded-lg">إضافة مستخدم</button>
-      </div>
-
+    <div>
       <AdminDataTable
-        columns={columns}
-        data={rows}
+        title=""
+        data={users}
+        columns={[
+          { key: 'name', label: 'الاسم', render: (u: User) => <span className="font-medium">{u.name}</span> },
+          { key: 'email', label: 'البريد الإلكتروني' },
+          { key: 'role', label: 'الدور', render: (u: User) => <span className="px-2 py-1 bg-gray-100 rounded text-xs">{u.role}</span> },
+          { key: 'isActive', label: 'الحالة', render: (u: User) => <span className={`px-2 py-1 rounded-full text-xs ${u.isActive ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>{u.isActive ? 'نشط' : 'غير نشط'}</span> },
+        ]}
         loading={loading}
         search={search}
+        onSearchChange={(v) => { setSearch(v); setPage(1); }}
+        onAdd={openCreate}
+        addLabel="مستخدم جديد"
         pagination={pagination}
         onPageChange={setPage}
-        title=""
-
+        actions={(u) => (
+          <div className="flex gap-1">
+            <button onClick={() => openEdit(u)} className="p-1.5 hover:bg-gray-100 rounded text-green-600"><Edit size={16} /></button>
+            <button onClick={() => handleDelete(u._id)} className="p-1.5 hover:bg-gray-100 rounded text-red-500"><Trash2 size={16} /></button>
+          </div>
+        )}
       />
-
-      <AdminModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editUser ? 'تعديل مستخدم' : 'مستخدم جديد'}>
+      <AdminModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={editUser ? 'تعديل المستخدم' : 'مستخدم جديد'}
+      >
         <div className="space-y-4">
           <FormInput label="الاسم" name="name" value={form.name || ''} onChange={e => handleChange('name', e.target.value)} />
           <FormInput label="البريد الإلكتروني" name="email" type="email" value={form.email || ''} onChange={e => handleChange('email', e.target.value)} />
@@ -178,7 +162,7 @@ export default function AdminUsersPage() {
           </div>
         </div>
       </AdminModal>
-    </div>
+    </div >
   );
 }
 function useUsersData({

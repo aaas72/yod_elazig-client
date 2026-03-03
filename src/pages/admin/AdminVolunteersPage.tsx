@@ -37,19 +37,19 @@ export default function AdminVolunteersPage() {
 
   return (
     <div className="max-w-xl mx-auto p-8 bg-white rounded-xl shadow">
-      <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-        <Link2 size={24} /> رابط نموذج التطوع
+      <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+        <Link2 size={22} /> رابط نموذج التطوع
       </h2>
       <input
         type="url"
-        className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4"
+        className="w-full border-2 border-red-800 rounded-lg px-4 py-2 mb-4"
         placeholder="https://..."
         value={formLink}
         onChange={e => setFormLink(e.target.value)}
         disabled={loading || saving}
       />
       <button
-        className="bg-red-700 text-white px-6 py-2 rounded-lg font-bold flex items-center gap-2 disabled:opacity-60"
+        className="bg-red-700 text-white px-3 py-2 rounded-lg flex items-center gap-2 disabled:opacity-60"
         onClick={handleSave}
         disabled={loading || saving}
       >

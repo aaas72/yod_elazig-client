@@ -248,7 +248,7 @@ export default function AdminNewsPage() {
   return (
     <>
       <AdminDataTable
-        title="إدارة الأخبار"
+        title=""
         data={news}
         columns={columns}
         loading={loading}

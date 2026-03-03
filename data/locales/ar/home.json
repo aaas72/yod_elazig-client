@@ -2,7 +2,7 @@
     "hero": {
         "title": "الموقع الرسمي لاتحاد الطلاب اليمنيين في تركيا فرع الازيغ",
         "backgroundImage": "/imgs/HeroImgs/yodelsty.jpg",
-        "logoUrl": "/imgs/logos/yodellogo.png",
+        "logoUrl": "/imgs/logos/yodellogo.webp",
         "ticker": [
             {
                 "id": 1,

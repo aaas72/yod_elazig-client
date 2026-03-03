@@ -127,7 +127,7 @@ export default function DashboardPage() {
       <div className="bg-gradient-to-l from-red-600 to-red-800 rounded-2xl p-8 text-white">
         <h2 className="text-2xl font-bold mb-2">مرحباً بك في لوحة التحكم</h2>
         <p className="text-red-100">
-          إدارة محتوى موقع اتحاد الطلاب اليمنيين - فرع إلاذغ
+          إدارة محتوى موقع اتحاد الطلاب اليمنيين - فرع الازيغ
         </p>
       </div>
 

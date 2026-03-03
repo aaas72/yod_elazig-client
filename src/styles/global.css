@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Zain:wght@400;700&display=swap");
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans: "Inter", "Zain", sans-serif;
@@ -68,5 +68,22 @@ body {
 }
 .tiptap a { color: #2563eb; text-decoration: underline; }
 .tiptap img { max-width: 100%; border-radius: 8px; margin: 0.5em auto; }
+
+/* Custom Scrollbar */
+.scrollbar-thin-red::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scrollbar-thin-red::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin-red::-webkit-scrollbar-thumb {
+  background-color: #991b1b; /* red-800 */
+  border-radius: 20px;
+}
+.scrollbar-thin-red {
+  scrollbar-width: thin;
+  scrollbar-color: #991b1b transparent;
+}
 
 

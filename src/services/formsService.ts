@@ -33,9 +33,20 @@ export const formsService = {
     return data.data.form;
   },
 
-  submit: async (formId: string, submissionData: Record<string, any>) => {
-    const { data } = await api.post('/forms/submit', { formId, data: submissionData });
-    return data.data.submission;
+  submit: async (formId: string, data: Record<string, any> | FormData) => {
+    // If FormData, use multipart/form-data
+    if (data instanceof FormData) {
+      data.append('formId', formId);
+      // Let axios set the Content-Type header with boundary automatically
+      // We must unset the default 'application/json' content type by setting it to undefined
+      const res = await api.post('/forms/submit', data, {
+        headers: { 'Content-Type': undefined }
+      });
+      return res.data;
+    }
+    // Else use JSON
+    const res = await api.post('/forms/submit', { formId, data });
+    return res.data;
   },
 
   // Admin

@@ -69,7 +69,7 @@ export default function AdminResourcesPage() {
 
   return (
     <>
-      <AdminDataTable title="إدارة الموارد" data={items} columns={columns} loading={loading} search={search} onSearchChange={(v) => { setSearch(v); setPage(1); }} onAdd={openCreate} addLabel="مورد جديد" pagination={pagination} onPageChange={setPage} actions={(item) => (
+      <AdminDataTable title="" data={items} columns={columns} loading={loading} search={search} onSearchChange={(v) => { setSearch(v); setPage(1); }} onAdd={openCreate} addLabel="مورد جديد" pagination={pagination} onPageChange={setPage} actions={(item) => (
         <div className="flex items-center gap-1">
           <button onClick={() => openEdit(item)} className="p-1.5 hover:bg-gray-100 rounded-lg"><Edit size={16} className="text-blue-600" /></button>
           <button onClick={() => handleDelete(item._id)} className="p-1.5 hover:bg-red-50 rounded-lg"><Trash2 size={16} className="text-red-500" /></button>

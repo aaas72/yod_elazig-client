@@ -185,7 +185,7 @@ const DesktopHeader = () => {
       <div className="container max-w-[1440px] h-[70px] m-auto flex justify-between items-center md:px-8">
         <Link to="/">
           <img
-            src="/imgs/logos/yodellogo.png"
+            src="/imgs/logos/yodellogo.webp"
             alt="YÖSOT Logo"
             className="w-[100px] h-auto object-contain"
             style={{ background: 'transparent' }}
@@ -225,7 +225,7 @@ const MobileHeader = ({
       <div className="flex justify-between items-center h-[100px] px-4 max-w-[1440px] mx-auto">
         <Link to="/">
           <img
-            src="/imgs/logos/yodellogo.png"
+            src="/imgs/logos/yodellogo.webp"
             alt="YÖSOT Logo"
             className="w-[100px] my-4 object-contain"
             style={{ background: 'transparent' }}

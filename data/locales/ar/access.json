@@ -2,7 +2,7 @@
   "title": "وصول الأرشيف",
   "description": "عرض الأرشيف متاح فقط للأعضاء الذين لديهم صلاحية الوصول إلى مجلد Google Drive.",
   "logo": {
-    "src": "/imgs/logos/yodellogo.png",
+    "src": "/imgs/logos/yodellogo.webp",
     "alt": "شعار الاتحاد"
   },
   "domainNote": {

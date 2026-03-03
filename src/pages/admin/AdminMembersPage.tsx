@@ -179,7 +179,7 @@ const AdminMembersPage: React.FC = () => {
   return (
     <div className="p-6">
       <AdminDataTable
-        title="إدارة العضويات"
+        title=""
         data={Array.isArray(members) ? members : []}
         columns={columns}
         loading={loading}

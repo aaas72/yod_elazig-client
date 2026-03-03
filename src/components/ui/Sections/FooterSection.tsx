@@ -51,7 +51,7 @@ const Footer = () => {
             <div className="flex items-end  gap-3">
               <img
                 suppressHydrationWarning
-                src={settings?.logo ? (settings.logo.startsWith('http') ? settings.logo : `${import.meta.env.VITE_API_URL}${settings.logo}`) : "/imgs/logos/yodellogo.png"}
+                src={settings?.logo ? (settings.logo.startsWith('http') ? settings.logo : `${import.meta.env.VITE_API_URL}${settings.logo}`) : "/imgs/logos/yodellogo.webp"}
                 alt={settings?.siteName?.ar || t("footer.logoAlt")}
                 className="h-20 object-contain"
                 style={{ background: 'transparent' }}

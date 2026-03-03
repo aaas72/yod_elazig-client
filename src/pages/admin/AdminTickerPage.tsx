@@ -82,7 +82,7 @@ export default function AdminTickerPage() {
 
   return (
     <>
-      <AdminDataTable title="إدارة شريط الأخبار" data={items} columns={columns} loading={loading} search="" onSearchChange={() => {}} onAdd={openCreate} addLabel="عنصر جديد" pagination={{ page: 1, pages: 1, total: items.length }} onPageChange={() => {}} actions={(item) => (
+      <AdminDataTable title="" data={items} columns={columns} loading={loading} search="" onSearchChange={() => {}} onAdd={openCreate} addLabel="عنصر جديد" pagination={{ page: 1, pages: 1, total: items.length }} onPageChange={() => {}} actions={(item) => (
         <div className="flex items-center gap-1">
           <button onClick={() => openEdit(item)} className="p-1.5 hover:bg-gray-100 rounded-lg"><Edit size={16} className="text-blue-600" /></button>
           <button onClick={() => handleDelete(item._id)} className="p-1.5 hover:bg-red-50 rounded-lg"><Trash2 size={16} className="text-red-500" /></button>

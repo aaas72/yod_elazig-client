@@ -45,7 +45,7 @@ export default function LoginPage() {
             {/* Logo */}
         <div className="text-center mb-8 w-full">
           <img
-            src="/imgs/logos/yodellogo.png"
+            src="/imgs/logos/yodellogo.webp"
             alt="YOD Logo"
             className="w-24 h-24 mx-auto mb-4 object-contain"
           />

@@ -18,15 +18,18 @@
     <link rel="canonical" href="https://yod-elazig.com" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/imgs/logos/logo_v2.png" />
-    <link rel="apple-touch-icon" href="/imgs/logos/logo_v2.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yod-elazig.com" />
     <meta property="og:title" content="اتحاد الطلاب اليمنيين في تركيا - فرع إلازيغ" />
     <meta property="og:description" content="الموقع الرسمي لاتحاد الطلاب اليمنيين في تركيا فرع إلازيغ. نقدم الدعم والمساعدة للطلاب اليمنيين، ننظم الأنشطة والفعاليات." />
-    <meta property="og:image" content="/imgs/logos/logo_v2.png" />
+    <meta property="og:image" content="/imgs/logos/yodellogo.png" />
     <meta property="og:locale" content="ar_YE" />
     <meta property="og:locale:alternate" content="tr_TR" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -37,7 +40,7 @@
     <meta name="twitter:url" content="https://yod-elazig.com" />
     <meta name="twitter:title" content="اتحاد الطلاب اليمنيين في تركيا - فرع إلازيغ" />
     <meta name="twitter:description" content="الموقع الرسمي لاتحاد الطلاب اليمنيين في تركيا فرع إلازيغ. نقدم الدعم والمساعدة للطلاب اليمنيين." />
-    <meta name="twitter:image" content="/imgs/logos/logo_v2.png" />
+    <meta name="twitter:image" content="/imgs/logos/yodellogo.png" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -47,7 +50,7 @@
       "name": "اتحاد الطلاب اليمنيين في تركيا - فرع إلازيغ",
       "alternateName": "YOD Elazig",
       "url": "https://yod-elazig.com",
-      "logo": "/imgs/logos/logo_v2.png",
+      "logo": "/imgs/logos/yodellogo.png",
       "description": "منظمة طلابية تهدف إلى خدمة الطلاب اليمنيين، والدفاع عن حقوقهم، وتعزيز التواصل والتعاون بينهم في مدينة إلازيغ التركية.",
       "address": {
         "@type": "PostalAddress",
@@ -65,6 +68,10 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical assets for LCP -->
+    <link rel="preload" as="image" type="image/webp" href="/imgs/HeroSectionImgs/yodelsty.webp" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="/imgs/logos/yodellogo.webp" />
   </head>
   <body>
     <div id="root"></div>

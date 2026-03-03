@@ -177,7 +177,7 @@ export default function AdminEventsPage() {
 
   return (
     <>
-      <AdminDataTable title="إدارة الفعاليات" data={events} columns={columns} loading={loading} search={search} onSearchChange={(v) => { setSearch(v); setPage(1); }} onAdd={openCreate} addLabel="فعالية جديدة" pagination={pagination} onPageChange={setPage} actions={(item) => (
+      <AdminDataTable title="" data={events} columns={columns} loading={loading} search={search} onSearchChange={(v) => { setSearch(v); setPage(1); }} onAdd={openCreate} addLabel="فعالية جديدة" pagination={pagination} onPageChange={setPage} actions={(item) => (
         <div className="flex items-center gap-1">
           <button onClick={() => handleToggle(item._id)} className="p-1.5 hover:bg-gray-100 rounded-lg">{item.isPublished ? <EyeOff size={16} className="text-gray-400" /> : <Eye size={16} className="text-green-600" />}</button>
           <button onClick={() => openEdit(item)} className="p-1.5 hover:bg-gray-100 rounded-lg"><Edit size={16} className="text-blue-600" /></button>
@@ -326,6 +326,6 @@ export default function AdminEventsPage() {
           </div>
         </div>
       </AdminModal>
-      </>
-    );
-  }
+    </>
+  );
+}

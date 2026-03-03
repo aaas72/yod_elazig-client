@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { formsService, type FormItem } from '@/services/formsService';
-import { uploadService } from '@/services/uploadService';
 import SimplePageHero from '@/components/ui/Sections/SimplePageHero';
 import FadeIn from '@/components/animations/FadeIn';
 import { toast } from 'react-hot-toast';
@@ -42,14 +41,8 @@ export default function PublicFormPage() {
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const handleFileUpload = async (name: string, file: File) => {
-    try {
-      // Show loading indicator for file
-      const result = await uploadService.uploadImage(file);
-      handleInputChange(name, result.url);
-    } catch {
-      toast.error('Failed to upload file');
-    }
+  const handleFileUpload = (name: string, file: File) => {
+    handleInputChange(name, file);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -72,11 +65,28 @@ export default function PublicFormPage() {
 
     try {
       setSubmitting(true);
-      await formsService.submit(form._id, formData);
+
+      // Check if there are any files
+      const hasFiles = Object.values(formData).some(val => val instanceof File);
+
+      let payload: any = formData;
+      if (hasFiles) {
+        const fd = new FormData();
+        Object.keys(formData).forEach(key => {
+          if (formData[key] !== undefined && formData[key] !== null) {
+            fd.append(key, formData[key]);
+          }
+        });
+        payload = fd;
+      }
+
+      await formsService.submit(form._id, payload);
       setSuccess(true);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch {
-      toast.error(lang === 'ar' ? 'حدث خطأ أثناء الإرسال' : 'Error submitting form');
+    } catch (err: any) {
+      console.error('Submission Error:', err);
+      const msg = err.response?.data?.message || (lang === 'ar' ? 'حدث خطأ أثناء الإرسال' : 'Error submitting form');
+      toast.error(msg);
     } finally {
       setSubmitting(false);
     }
@@ -129,23 +139,23 @@ export default function PublicFormPage() {
                 {form.fields.map((field) => (
                   <div key={field.name} className="col-span-1">
                     {/* استخدم FormInput إن أمكن */}
-                    {['text','email','number','date','tel','file'].includes(field.type) ? (
+                    {['text', 'email', 'number', 'date', 'tel', 'file'].includes(field.type) ? (
                       <FormInput
                         label={field.label[lang] || field.label.ar}
                         type={field.type as any}
                         name={field.name}
-                        value={field.type === 'file' ? undefined : (formData[field.name] || '')}
+                        value={formData[field.name] || ''}
                         onChange={field.type === 'file'
                           ? (e: React.ChangeEvent<HTMLInputElement>) => {
-                              if (e.target.files?.[0]) handleFileUpload(field.name, e.target.files[0]);
-                            }
+                            if (e.target.files?.[0]) handleFileUpload(field.name, e.target.files[0]);
+                          }
                           : (e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(field.name, e.target.value)
                         }
                         required={field.required}
                         className="bg-white"
                         placeholder={field.placeholder?.[lang]}
                         error={errors[field.name]}
-                        accept={field.type === 'file' ? undefined : undefined}
+                        accept={field.type === 'file' ? "image/png, image/jpeg, image/jpg, image/webp" : undefined}
                         inputMode={field.type === 'number' ? 'numeric' : undefined}
                       />
                     ) : field.type === 'textarea' ? (

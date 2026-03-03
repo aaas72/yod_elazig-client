@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
@@ -6,44 +6,45 @@ import MainLayout from "./layouts/MainLayout";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingSpinner from "./components/ui/LoadingSpinner";
 
-// Public Pages
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import AboutCityPage from "./pages/AboutCityPage";
-import AboutUniversityPage from "./pages/AboutUniversityPage";
-import AccessPage from "./pages/AccessPage";
-import ProgramsPage from "./pages/ProgramsPage";
-import ActivityDetailPage from "./pages/ProgramDetailPage";
-import ContactPage from "./pages/ContactPage";
-import NewsPage from "./pages/NewsPage";
-import EventsPage from "./pages/EventsPage";
-import EventDetailPage from "./pages/EventDetailPage";
-import NewsDetailPage from "./pages/NewsDetailPage";
-import ResourcesPage from "./pages/ResourcesPage";
-import VolunteerPage from "./pages/VolunteerPage";
-import FaqPage from "./pages/FaqPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import JoinMembershipPage from "./pages/JoinMembershipPage";
-import PublicFormPage from "./pages/PublicFormPage";
+// Public Pages — lazy loaded
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const AboutCityPage = lazy(() => import("./pages/AboutCityPage"));
+const AboutUniversityPage = lazy(() => import("./pages/AboutUniversityPage"));
+const AccessPage = lazy(() => import("./pages/AccessPage"));
+const ProgramsPage = lazy(() => import("./pages/ProgramsPage"));
+const ActivityDetailPage = lazy(() => import("./pages/ProgramDetailPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const NewsPage = lazy(() => import("./pages/NewsPage"));
+const EventsPage = lazy(() => import("./pages/EventsPage"));
+const EventDetailPage = lazy(() => import("./pages/EventDetailPage"));
+const NewsDetailPage = lazy(() => import("./pages/NewsDetailPage"));
+const ResourcesPage = lazy(() => import("./pages/ResourcesPage"));
+const VolunteerPage = lazy(() => import("./pages/VolunteerPage"));
+const FaqPage = lazy(() => import("./pages/FaqPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const JoinMembershipPage = lazy(() => import("./pages/JoinMembershipPage"));
+const PublicFormPage = lazy(() => import("./pages/PublicFormPage"));
 
-// Admin
+// Admin — lazy loaded
 import ProtectedRoute from "./components/ProtectedRoute";
-import AdminLayout from "./layouts/AdminLayout";
-import LoginPage from "./pages/admin/LoginPage";
-import DashboardPage from "./pages/admin/DashboardPage";
-import AdminNewsPage from "./pages/admin/AdminNewsPage";
-import AdminEventsPage from "./pages/admin/AdminEventsPage";
-import AdminProgramsPage from "./pages/admin/AdminProgramsPage";
-import AdminAchievementsPage from "./pages/admin/AdminAchievementsPage";
-import AdminFaqPage from "./pages/admin/AdminFaqPage";
-import AdminGalleryPage from "./pages/admin/AdminGalleryPage";
-import AdminTickerPage from "./pages/admin/AdminTickerPage";
-import AdminMembersPage from "./pages/admin/AdminMembersPage";
-import AdminUsersPage from "./pages/admin/AdminUsersPage";
-import AdminVolunteersPage from "./pages/admin/AdminVolunteersPage";
-import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
-import AdminFormsPage from "./pages/admin/AdminFormsPage";
-import AdminFormSubmissionsPage from "./pages/admin/AdminFormSubmissionsPage";
+const AdminLayout = lazy(() => import("./layouts/AdminLayout"));
+const LoginPage = lazy(() => import("./pages/admin/LoginPage"));
+const DashboardPage = lazy(() => import("./pages/admin/DashboardPage"));
+const AdminNewsPage = lazy(() => import("./pages/admin/AdminNewsPage"));
+const AdminEventsPage = lazy(() => import("./pages/admin/AdminEventsPage"));
+const AdminProgramsPage = lazy(() => import("./pages/admin/AdminProgramsPage"));
+const AdminAchievementsPage = lazy(() => import("./pages/admin/AdminAchievementsPage"));
+const AdminFaqPage = lazy(() => import("./pages/admin/AdminFaqPage"));
+const AdminGalleryPage = lazy(() => import("./pages/admin/AdminGalleryPage"));
+const AdminTickerPage = lazy(() => import("./pages/admin/AdminTickerPage"));
+const AdminMembersPage = lazy(() => import("./pages/admin/AdminMembersPage"));
+const AdminUsersPage = lazy(() => import("./pages/admin/AdminUsersPage"));
+const AdminVolunteersPage = lazy(() => import("./pages/admin/AdminVolunteersPage"));
+const AdminSettingsPage = lazy(() => import("./pages/admin/AdminSettingsPage"));
+const AdminFormsPage = lazy(() => import("./pages/admin/AdminFormsPage"));
+const AdminFormSubmissionsPage = lazy(() => import("./pages/admin/AdminFormSubmissionsPage"));
+const AdminReportsPage = lazy(() => import("./pages/admin/AdminReportsPage"));
 
 
 
@@ -64,7 +65,7 @@ function App() {
 
     // Set tab title based on language
     if (i18n.language === "ar") {
-      document.title = "اتحاد الطلاب اليمنيين في تركيا - فرع إلاذغ";
+      document.title = "اتحاد الطلاب اليمنيين في تركيا - فرع الازيغ";
     } else if (i18n.language === "tr") {
       document.title = "Türkiye'deki Yemenli Öğrenciler Birliği - Elazığ Şubesi";
     } else {
@@ -107,6 +108,7 @@ function App() {
       </AnimatePresence>
       <BrowserRouter>
         <ScrollToTop />
+        <Suspense fallback={<LoadingSpinner fullScreen text={getLoadingText()} />}>
         <Routes>
           <Route element={<MainLayout><Outlet /></MainLayout>}>
             <Route path="/" element={<HomePage />} />
@@ -146,11 +148,13 @@ function App() {
               <Route path="forms" element={<AdminFormsPage />} />
               <Route path="forms/:formId/submissions" element={<AdminFormSubmissionsPage />} />
             <Route path="volunteers" element={<AdminVolunteersPage />} />
+              <Route path="reports" element={<AdminReportsPage />} />
             <Route path="settings" element={<AdminSettingsPage />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </>
   );
