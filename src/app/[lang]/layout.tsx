@@ -4,6 +4,7 @@ import { locales, getDirection, isValidLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import NavBar from "@/components/ui/NavBar";
 import Footer from "@/components/ui/Sections/FooterSection";
+import HtmlDirSetter from "@/components/HtmlDirSetter";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -58,6 +59,7 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
 
   return (
     <div lang={locale} dir={direction} className="flex flex-col min-h-screen">
+      <HtmlDirSetter lang={locale} dir={direction} />
       <NavBar lang={locale} dictionary={dictionary} />
       <main className="grow">{children}</main>
       <Footer lang={locale} dictionary={dictionary} />

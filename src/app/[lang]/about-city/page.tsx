@@ -96,10 +96,10 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
       {/* Economic Engines */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <FadeIn direction="up" className="rtl:text-right ltr:text-left">
+          <FadeIn direction="up" className="text-start">
             <SectionTitle
               title={data.enginesTitle}
-              className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-12"
+              className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-12"
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -119,15 +119,15 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
       {/* Daily Life */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <FadeIn direction="up" className="rtl:text-right ltr:text-left">
+          <FadeIn direction="up" className="text-start">
             <SectionTitle
               title={data.dailyLife.title}
-              className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-12"
+              className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-12"
             />
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 rtl:pr-6 ltr:pl-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ps-6">
             <FadeIn direction="right" delay={0.2}>
-              <div className="rtl:text-right ltr:text-left">
+              <div className="text-start">
                 <h2 className="text-xl font-bold text-gray-800 mb-6">
                   {data.dailyLife.modernLife.title}
                 </h2>
@@ -139,7 +139,7 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
               </div>
             </FadeIn>
             <FadeIn direction="left" delay={0.2}>
-              <div className="rtl:text-right ltr:text-left">
+              <div className="text-start">
                 <h2 className="text-xl font-bold text-gray-800 mb-6">
                   {data.dailyLife.traditionalLife.title}
                 </h2>
@@ -157,10 +157,10 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
       {/* Festivals */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <FadeIn direction="up" className="rtl:text-right ltr:text-left">
+          <FadeIn direction="up" className="text-start">
             <SectionTitle
               title={data.festivalsTitle}
-              className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-12"
+              className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-12"
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -180,10 +180,10 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
       {/* Activities */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <FadeIn direction="up" className="rtl:text-right ltr:text-left">
+          <FadeIn direction="up" className="text-start">
             <SectionTitle
               title={data.activitiesTitle}
-              className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-12"
+              className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-12"
             />
           </FadeIn>
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -203,10 +203,10 @@ export default async function AboutCityPage({ params }: AboutCityPageProps) {
       {/* Dishes */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <FadeIn direction="up" className="rtl:text-right ltr:text-left">
+          <FadeIn direction="up" className="text-start">
             <SectionTitle
               title={data.dishesTitle}
-              className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-12"
+              className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-12"
             />
           </FadeIn>
           <DishesCarousel dishes={data.dishes} dishOfTheMonth={data.dishOfTheMonth} />

@@ -101,7 +101,7 @@ export default async function AboutUniversityPage({ params }: AboutUniversityPag
             <FadeIn direction="up">
               <SectionTitle
                 title={data.intro.title}
-                className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800"
+                className="inline-block border-s-4 ps-2 text-red-800 border-red-800"
               />
               <div className="p-8 text-[#383838] text-justify md:text-xl leading-relaxed space-y-4">
                 {data.intro.paragraphs.map((paragraph: string, index: number) => (
@@ -124,7 +124,7 @@ export default async function AboutUniversityPage({ params }: AboutUniversityPag
               <FadeIn direction="up">
                 <SectionTitle
                   title={data.facultiesSection.title}
-                  className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800"
+                  className="inline-block border-s-4 ps-2 text-red-800 border-red-800"
                 />
                 <p className="p-8 text-[#383838] md:text-xl leading-relaxed space-y-4">
                   {data.facultiesSection.description}
@@ -159,7 +159,7 @@ export default async function AboutUniversityPage({ params }: AboutUniversityPag
               <div className="p-8">
                 <SectionTitle
                   title={data.researchSection.title}
-                  className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800 mb-6"
+                  className="inline-block border-s-4 ps-2 text-red-800 border-red-800 mb-6"
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

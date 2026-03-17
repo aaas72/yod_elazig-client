@@ -34,7 +34,7 @@ export default function DishesCarousel({ dishes, dishOfTheMonth }: DishesCarouse
       <div className="relative bg-transparent rounded-3xl overflow-hidden border border-gray-400">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Content */}
-          <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 rtl:text-right ltr:text-left">
+          <div className="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1 text-start">
             <div className="mb-6">
               <span className="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">
                 {dishOfTheMonth}

@@ -6,7 +6,7 @@ interface BenefitCardProps {
 }
 
 const BenefitCard = ({ title, description }: BenefitCardProps) => (
-  <div className="text-center rtl:md:text-right ltr:md:text-left px-6">
+  <div className="text-center md:text-start px-6">
     <h3 className="text-white font-bold text-md md:text-xl mb-3">{title}</h3>
     <p className="leading-relaxed text-white/80 text-md md:text-md">
       {description}
@@ -120,10 +120,10 @@ const JoinUsSection = ({ lang }: JoinUsSectionProps) => {
         <div className="bg-linear-to-br from-[#BE141B] to-[#58090D] text-white rounded-3xl p-10 md:p-16">
           {/* Top section */}
           <div className="text-center mx-auto">
-            <h2 className="text-xl rtl:text-right ltr:text-left md:text-2xl font-extrabold mb-4 text-white">
+            <h2 className="text-xl text-start md:text-2xl font-extrabold mb-4 text-white">
               {data.title}
             </h2>
-            <p className="rtl:text-right ltr:text-left leading-relaxed mb-8 text-white/80 text-md md:text-md">
+            <p className="text-start leading-relaxed mb-8 text-white/80 text-md md:text-md">
               {data.description}
             </p>
             <button className="bg-white h-[50px] text-[#BE141B] text-2xl font-bold py-3 px-8">
@@ -141,9 +141,9 @@ const JoinUsSection = ({ lang }: JoinUsSectionProps) => {
                 key={benefit.id}
                 className={`relative ${
                   index < data.benefits.length - 1
-                    ? "rtl:sm:border-l ltr:sm:border-r sm:border-white/40"
+                    ? "sm:border-e sm:border-white/40"
                     : ""
-                } ${index < 2 ? "rtl:lg:border-l ltr:lg:border-r lg:border-white/20" : ""}`}
+                } ${index < 2 ? "lg:border-e lg:border-white/20" : ""}`}
               >
                 <BenefitCard title={benefit.title} description={benefit.description} />
               </div>

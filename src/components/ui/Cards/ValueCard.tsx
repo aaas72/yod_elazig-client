@@ -8,7 +8,7 @@ interface ValueCardProps {
 
 const ValueCard = ({ title, description, gradient }: ValueCardProps) => (
   <div
-    className={` bg-white p-8 rounded-2xl text-center rtl:md:text-right ltr:md:text-left ${gradient}`}
+    className={` bg-white p-8 rounded-2xl text-center md:text-start ${gradient}`}
   >
     <h3 className="card-title text-red-800 font-bold text-md md:text-xl mb-4">
       {title}

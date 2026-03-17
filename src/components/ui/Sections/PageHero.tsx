@@ -33,7 +33,6 @@ export default function PageHero({
   imageAlt = "Hero Image",
   breadcrumbs = [],
   lang = "ar",
-  direction = "rtl",
   gradientFrom = "from-[#8B0F14]/100",
   gradientTo = "to-[#BE141B]/50",
 }: PageHeroProps) {
@@ -41,7 +40,6 @@ export default function PageHero({
 
   return (
     <section
-      dir={direction}
       className={`relative w-full text-white rounded-b-[36px] overflow-hidden ${
         actualImageUrl
           ? "h-[60vh] md:h-[80vh]"

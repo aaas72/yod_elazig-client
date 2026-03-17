@@ -41,13 +41,13 @@ export default function ArchiveCategoryCard({
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 to-black/10  flex flex-col justify-end p-6">
                     {/* Lock icon for private categories */}
                     {isPrivate && (
-                        <div className="absolute top-4 rtl:left-4 ltr:right-4 text-white/80 z-10" title="Private content">
+                        <div className="absolute top-4 end-4 text-white/80 z-10" title="Private content">
                             <Lock size={20} />
                         </div>
                     )}
 
                     {/* Main icon */}
-                    <div className="absolute top-4 rtl:right-4 ltr:left-4 text-white/80 text-3xl z-10">
+                    <div className="absolute top-4 start-4 text-white/80 text-3xl z-10">
                         {icon}
                     </div>
 

@@ -78,10 +78,10 @@ export default function AboutCityClient({
   return (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <FadeIn className="mb-16 rtl:text-right ltr:text-left" direction="up">
+        <FadeIn className="mb-16 text-start" direction="up">
           <SectionTitle
             title={historicalLandmarksTitle}
-            className="inline-block rtl:border-r-4 rtl:pr-2 ltr:border-l-4 ltr:pl-2 text-red-800 border-red-800"
+            className="inline-block border-s-4 ps-2 text-red-800 border-red-800"
           />
         </FadeIn>
 

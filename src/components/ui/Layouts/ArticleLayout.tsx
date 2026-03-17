@@ -37,7 +37,7 @@ export default function ArticleLayout({
         <div className="max-w-6xl w-full mx-auto px-4 relative z-10">
           <FadeIn direction="up">
             <div
-              className="max-w-4xl rtl:text-right ltr:text-left"
+              className="max-w-4xl text-start"
             >
               <h1
                 className="text-xl md:text-3xl font-bold mb-6 break-words"
@@ -94,8 +94,8 @@ export default function ArticleLayout({
             </div>
           </FadeIn>
         </div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 start-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 end-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
       </header>
       <article className="pb-32">
         <main className="max-w-6xl mx-auto p-8 md:px-16 py-8">
