@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import { galleryService, GalleryAlbum } from '@/services/galleryService';
 import { resolveImage } from '@/utils/resolveImage';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
 export interface GalleryItem {
   id: string;
   title: string;

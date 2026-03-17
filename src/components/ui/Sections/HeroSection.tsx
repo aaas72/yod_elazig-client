@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
 import Link from "next/link";
 
-const RAW_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-const BASE_URL = RAW_BASE.replace(/\/$/, "");
+// In production, use relative paths. In development, use localhost.
+const isProduction = process.env.NODE_ENV === 'production';
+const API_BASE_URL = isProduction ? '/api/v1' : 'http://localhost:5000/api/v1';
+const BASE_URL = isProduction ? '' : 'http://localhost:5000';
 
 function toAbsoluteUrl(img: string): string {
   if (!img) return "";
@@ -62,7 +64,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
   useEffect(() => {
     // Fetch ticker from API
-    fetch(`${BASE_URL}/api/v1/ticker`, {
+    fetch(`${API_BASE_URL}/ticker`, {
       headers: { "Accept-Language": lang },
     })
       .then((r) => r.json())

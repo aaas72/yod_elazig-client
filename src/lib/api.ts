@@ -257,6 +257,8 @@ export function resolveImageUrl(path?: string): string {
     } catch {}
   }
   if (path.startsWith("https://") || path.startsWith("http://")) return path;
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+  // In production, use relative paths. In development, use localhost.
+  const isProduction = process.env.NODE_ENV === 'production';
+  const baseUrl = isProduction ? '' : 'http://localhost:5000';
   return `${baseUrl}/${path.replace(/^\//, "")}`;
 }
