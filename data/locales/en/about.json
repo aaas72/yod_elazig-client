@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "title": "Our Vision",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About Us"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Introduction to the Union",
+    "content": [
+      "The Yemeni Students Union in Elazig is a student trade union and voluntary organization, representing the official umbrella and unifying home for all Yemeni students at Fırat University. We are the entity that aims to unite and channel Yemeni energies to strengthen brotherly bonds, preserve religious and national identity, and present the Yemeni student as an honorable model in academic and moral achievement within Turkish society."
+    ]
+  },
+  "sections": {
+    "visionMission": "Our Vision and Mission",
+    "achievements": "Our Achievements",
+    "studentAchievements": "Our Students' Achievements",
+    "executiveBoard": "Executive Board",
+    "values": "Our Core Values",
+    "organizationalChart": "Organizational Chart"
+  },
+  "vision": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Our Vision",
+      "description": "A pioneering Yemeni generation — academically, intellectually, and morally. We aspire to be the primary platform and driving force for Yemeni student excellence in Turkey, by building an integrated student community that combines academic achievement, intellectual awareness, and a deep connection to roots."
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Our Mission",
+      "description": "To represent Yemeni students effectively, provide academic and social support, and create an environment stimulating success and creativity, while preserving our identity and values."
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "Our Comprehensive Goals",
+      "description": "We have set goals that cover all aspects of student life:",
+      "subItems": [
+        { "title": "Academic Excellence", "description": "Supporting students in their academic journey at Fırat University by providing educational resources, sharing expertise, and honoring high achievers." },
+        { "title": "Intellectual & Cultural Development", "description": "Cultivating cultural awareness through seminars and activities that foster mature thinking and a strong connection to identity." },
+        { "title": "Sports & Physical Activity", "description": "Promoting physical health and sportsmanship through periodic tournaments and sports events." },
+        { "title": "Social Solidarity", "description": "Strengthening brotherhood bonds, welcoming new students, and facilitating their integration into the city and university." },
+        { "title": "Identity Reinforcement", "description": "Instilling pride in religious values and Yemeni national spirit, and commemorating occasions that connect students to their homeland." },
+        { "title": "Professional Development", "description": "Organizing training courses to develop leadership, technical, and language skills that serve students’ futures after graduation." }
+      ]
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "title": "Authenticity",
+      "description": "Commitment to religious and national values.",
+      "gradient": "bg-gradient-to-tr from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 2,
+      "title": "Inclusivity",
+      "description": "We are an entity that serves all students without exception.",
+      "gradient": "bg-gradient-to-tl from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 3,
+      "title": "Initiative",
+      "description": "Encouraging voluntary work and a spirit of giving.",
+      "gradient": "bg-gradient-to-br from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 4,
+      "title": "Professionalism",
+      "description": "Organized work and transparency in all our activities.",
+      "gradient": "bg-gradient-to-bl from-[#FFFFFF] to-[#FFD4D4]"
+    }
+  ],
+  "organizationalChart": {
+      "imageSrc": "/imgs/ydeel/Organizational_Chart.svg",
+      "imageAlt": "Organizational Chart of the Union"
+  }
+}

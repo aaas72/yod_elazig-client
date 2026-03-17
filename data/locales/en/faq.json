@@ -1,0 +1,175 @@
+{
+  "labels": {
+    "steps": "Steps",
+    "documents": "Required Documents"
+  },
+  "hero": {
+    "title": "FAQ",
+    "subtitle": "Help Center",
+    "image": "/imgs/HeroImgs/library.jpg",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "general",
+      "title": "General Questions",
+      "questions": [
+        {
+          "id": "gen1",
+          "question": "What is the Yemeni Students Union in Elazig?",
+          "answer": "It is an elected student body aiming to represent Yemeni students at Firat University and Elazig city, look after their interests, and organize cultural, academic, and social activities serving them."
+        },
+        {
+          "id": "gen2",
+          "question": "Who is eligible to join the Union?",
+          "answer": "All Yemeni students studying in Elazig (Firat University) are eligible to join the Union and participate in its activities and events."
+        },
+        {
+          "id": "gen3",
+          "question": "How can I contact the Union administration?",
+          "answer": "You can contact us via the 'Contact Us' page on the website, through our official social media accounts, or by visiting the Union headquarters during official working hours."
+        }
+      ]
+    },
+    {
+      "id": "residency",
+      "title": "Residency & Immigration",
+      "questions": [
+        {
+          "id": "res_first",
+          "question": "How to apply for residency for the first time",
+          "answer": "New students must apply for residency within the visa period or within 90 days of entry. Make sure to prepare all documents before the appointment.",
+          "steps": [
+            "Visit the [Migration Management website (e-ikamet)](https://e-ikamet.goc.gov.tr/) and fill out the 'First Application' form.",
+            "Print the form and prepare the required documents.",
+            "Pay the residency card fee via the [official payment website](https://dijital.gib.gov.tr/hizliOdemeler/gocIdaresiIkametTezkeresiHarciOdeme).",
+            "Go to the appointment at the Migration Management office on time with all documents."
+          ],
+          "documents": [
+            {
+              "name": "Appointment Form",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770491941/Extracted_fromBasvuru_Formu-Application_Form_adllwv.png"
+            },
+            {
+              "name": "Student Certificate (Öğrenci Belgesi)",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770490086/ogrenci-belgesi-sorgulama_c4qdxo.png"
+            },
+            {
+              "name": "Health Insurance (Sigorta)",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494672/spas-mustahaklik-sorgulama_00_dewnkc.png"
+            },
+            {
+              "name": "2 Biometric Photos",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770495373/Chinese_passport_photo_requirements_ilngrv.png"
+            },
+            {
+              "name": "Rental Contract or Residence Document",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494135/nvi-yerlesim-yeri-ve-diger-adres-belgesi-sorgulama_00_tjjhrl.png"
+            },
+            {
+              "name": "Passport and Visa Copy",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770495185/pngtree-passport-and-visa-stamps-in-a-travel-document-png-image_18213463_mz36ig.webp"
+            },
+            {
+              "name": "Tax Payment Receipt",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770493118/IVD-Alindi-b3DVK82N5CGN_00_ayj7om.png"
+            }
+          ]
+        },
+        {
+          "id": "res_renew",
+          "question": "How to renew residency",
+          "answer": "Renewal applications must be submitted at most 60 days before the current residency expires.",
+          "steps": [
+            "Follow the exact same steps as the first-time application, but select 'Extension Application' (Uzatma Başvurusu) on the website.",
+            "If you are in your final year of university, you must add the Transcript (Transkript) to the documents submitted to the Migration Management."
+          ],
+          "documents": [
+            {
+              "name": "Transcript (For Final Year Students)",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494462/yok-ogrenci-belgesi-sorgulama_00_mdl60j.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "Academic Affairs",
+      "questions": [
+        {
+          "id": "acad1",
+          "question": "How can I access study references?",
+          "answer": "The Union provides a comprehensive electronic library containing summaries, past exam papers, and textbooks. You can access it via the 'Archive' -> 'Academic Library' section on the website."
+        },
+        {
+          "id": "acad2",
+          "question": "Does the Union help with university registration procedures?",
+          "answer": "Yes, the Union provides consultation and guidance for new students regarding registration procedures, enrollment confirmation, and course selection through the Public Relations and Academic Committees."
+        }
+      ]
+    },
+    {
+      "id": "living",
+      "title": "Living and Housing",
+      "questions": [
+        {
+          "id": "liv_male",
+          "question": "Male Student Housing (KYK & Private)",
+          "answer": "There are multiple options for male students:\n\n**State Dormitories (KYK):**\n1. **Ahmet Kabaklı Dormitory:** Located in Çayda Çıra neighborhood, it is the largest and newest.\n2. **Ömer Bilginoğlu Dormitory:** Located in Ataşehir neighborhood.\n3. **Elazığ Dormitory:** Located inside the campus (Engineering Faculty).\n\n**Private Dormitories:** Available in the city center and neighborhoods like Kültür Mah and Ataşehir."
+        },
+        {
+          "id": "liv_female",
+          "question": "Female Student Housing (KYK & Private)",
+          "answer": "Housing options for female students are diverse and safe:\n\n**State Dormitories (KYK):**\n1. **Sare Ana Dormitory:** At the main entrance of the university (Üniversite Mah).\n2. **Harput Dormitory:** Next to the Engineering Faculty (inside campus).\n3. **Fethi Sekin Dormitory:** Located in Ataşehir neighborhood.\n\n**Private Dormitories:** Concentrated in Üniversite Mah and the city center (Nailbey)."
+        },
+        {
+          "id": "liv_rent",
+          "question": "House Rentals (Apartments)",
+          "answer": "Many students prefer renting shared apartments. Here are the best areas:\n\n1. **Çayda Çıra:** The most preferred area for students, modern buildings (complexes) and close to transport.\n2. **Üniversite Mah:** The biggest advantage is proximity (walking distance to university), but buildings are often old.\n3. **Ataşehir:** An upscale and quiet area.\n\n*Tip:* Renting usually requires paying a deposit (Depozito) and a real estate agent fee (Emlakçı)."
+        }
+      ]
+    },
+    {
+      "id": "membership",
+      "title": "Membership and Elections",
+      "questions": [
+        {
+          "id": "mem1",
+          "question": "How can I run for Union elections?",
+          "answer": "Candidacy opens annually according to the Union's internal regulations. The candidate must be a Yemeni student at the university and meet the conditions announced by the Election Committee."
+        },
+        {
+          "id": "mem2",
+          "question": "Are there membership fees?",
+          "answer": "Membership in the Union is free for all Yemeni students, but there may be nominal fees for participating in certain special activities or trips."
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "title": "Technical Support",
+      "questions": [
+        {
+          "id": "tech1",
+          "question": "How do I create an account on the website?",
+          "answer": "Currently, registration is available for administrators and committee members. Registration for students will open soon to benefit from advanced electronic services."
+        },
+        {
+          "id": "tech2",
+          "question": "I faced a problem browsing the website, what should I do?",
+          "answer": "Please contact us via the 'Contact Us' page and select 'Technical Support' as the subject, explaining the issue you encountered, and our technical team will assist you as soon as possible."
+        }
+      ]
+    }
+  ]
+}

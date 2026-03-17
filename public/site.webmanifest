@@ -1,0 +1,50 @@
+{
+  "name": "اتحاد الطلاب اليمنيين في تركيا - فرع إلازيغ",
+  "short_name": "YOD Elazig",
+  "description": "الموقع الرسمي لاتحاد الطلاب اليمنيين في تركيا فرع إلازيغ - نقدم الدعم والمساعدة للطلاب اليمنيين",
+  "icons": [
+    {
+      "src": "/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/imgs/logos/yodellogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#991b1b",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/ar",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["education", "social"],
+  "screenshots": [
+    {
+      "src": "/imgs/logos/logo500.jpg",
+      "sizes": "500x500",
+      "type": "image/jpeg"
+    }
+  ]
+}

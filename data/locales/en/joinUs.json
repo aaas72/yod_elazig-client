@@ -1,0 +1,27 @@
+{
+    "title": "Be Part of the Change",
+    "description": "The Yemeni Students Union in Turkey is not just an entity, but a family and a platform for every ambitious student seeking to leave a positive mark. We believe that our strength lies in our individuals, in every new idea, and in every hand extended to help.",
+    "buttonText": "Why Join Us?",
+    "benefits": [
+        {
+            "id": 1,
+            "title": "To Develop Your Skills",
+            "description": "Gain practical experience in leadership, event organization, and communication, skills that are no less important than your university degree."
+        },
+        {
+            "id": 2,
+            "title": "To Expand Your Network",
+            "description": "Meet colleagues from various disciplines and universities, and build friendships and professional relationships that last a lifetime."
+        },
+        {
+            "id": 3,
+            "title": "To Be a Voice for Your Colleagues",
+            "description": "Participate in decision-making and contribute to delivering students' voices and needs to the relevant authorities."
+        },
+        {
+            "id": 4,
+            "title": "To Make a Real Impact",
+            "description": "Be part of initiatives and projects that serve students and contribute to improving their university experience."
+        }
+    ]
+}

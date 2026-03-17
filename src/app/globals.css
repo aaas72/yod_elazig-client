@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", "Zain", sans-serif;
+  --animate-scroll-news: scroll-news 20s linear infinite;
+
+  @keyframes scroll-news {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-image: url("/pattrens/bg.svg");
+  background-attachment: fixed;
+  background-position: center center;
+  font-size: 18px;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* تكبير حجم الخط في جميع عناصر prose */
+.prose {
+  font-size: 1.1em;
+}
+
+/* تكبير حجم الخط في محرر النصوص */
+.tiptap {
+  font-size: 0.9em;
+}
+
+/* TipTap Editor Styles */
+.tiptap {
+  outline: none;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+  float: left;
+}
+
+.tiptap[dir="rtl"] p.is-editor-empty:first-child::before {
+  float: right;
+}
+
+.tiptap[dir="ltr"] p.is-editor-empty:first-child::before {
+  float: left;
+}
+.tiptap h1 { font-size: 1.75em; font-weight: 700; margin: 0.6em 0 0.4em; }
+.tiptap h2 { font-size: 1.4em; font-weight: 700; margin: 0.5em 0 0.3em; }
+.tiptap h3 { font-size: 1.15em; font-weight: 600; margin: 0.4em 0 0.3em; }
+.tiptap p { margin: 0.4em 0; }
+.tiptap ul { list-style: disc; padding-inline-start: 1.5em; margin: 0.4em 0; }
+.tiptap ol { list-style: decimal; padding-inline-start: 1.5em; margin: 0.4em 0; }
+.tiptap blockquote {
+  border-inline-start: 3px solid #e5e7eb;
+  padding-inline-start: 1em;
+  color: #6b7280;
+  margin: 0.6em 0;
+}
+.tiptap hr { border-color: #e5e7eb; margin: 1em 0; }
+.tiptap code {
+  background: #f3f4f6;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.tiptap a { color: #2563eb; text-decoration: underline; }
+.tiptap img { max-width: 100%; border-radius: 8px; margin: 0.5em auto; }
+
+/* Placeholder style for all inputs */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  opacity: 1;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin-red::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scrollbar-thin-red::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin-red::-webkit-scrollbar-thumb {
+  background-color: #991b1b;
+  border-radius: 20px;
+}
+.scrollbar-thin-red {
+  scrollbar-width: thin;
+  scrollbar-color: #991b1b transparent;
+}

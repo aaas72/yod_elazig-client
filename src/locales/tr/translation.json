@@ -1,0 +1,64 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "news": "Haberler",
+    "events": "Etkinlikler",
+    "programs": "Programlarımız",
+    "aboutCity": "Şehir Hk",
+    "aboutUniversity": "Üniversite Hk",
+    "resources": "Arşiv",
+    "contact": "İletişim",
+    "volunteer": "Gönüllü Ol",
+    "faq": "S.S.S."
+  },
+  "faq": {
+      "title": "Öğrenci Rehberi",
+      "description": "Türkiye'deki üniversite ve günlük yaşamla ilgili her şey için kapsamlı rehberiniz.",
+      "sectionTitle": "Mevcut Rehberlere Göz Atın",
+      "sectionSubtitle": "İhtiyacınıza uygun rehberi seçin",
+      "stillHaveQuestions": "Hala sorularınız mı var?",
+      "contactSupport": "Aradığınızı bulamadınız mı? Doğrudan bizimle iletişime geçin.",
+      "practicalSteps": "Pratik Adımlar",
+      "illustrativeImages": "Açıklayıcı Resimler",
+      "noResults": "Sonuç bulunamadı",
+      "trySearch": "Arama sorgunuzu ayarlamayı deneyin"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır © 2025",
+    "aboutText": "Fırat Üniversitesi'ndeki Yemenli öğrencileri temsil eden resmi ve gönüllü öğrenci birliğidir.",
+    "logoAlt": "Yemenli Öğrenciler Birliği Logosu",
+    "quickLinksTitle": "Hızlı Bağlantılar",
+    "contactTitle": "Bize Ulaşın",
+    "followUsTitle": "Bizi Takip Edin",
+    "newsletterTitle": "Bültenimize abone olun",
+    "newsletterDescription": "En son haberlerimizden ve etkinliklerimizden haberdar olun.",
+    "newsletterPlaceholder": "E-postanızı girin",
+    "newsletterButtonAriaLabel": "Abone Ol",
+    "copyrightText": "Yemenli Öğrenciler Birliği. Tüm hakları saklıdır.",
+    "visitCountLabel": "Site ziyaret sayısı",
+    "address": "Türkiye - Elazığ - Merkez",
+    "quickLinks": [
+      { "href": "/", "label": "Ana Sayfa" },
+      { "href": "/about", "label": "Hakkımızda" },
+      { "href": "/programs", "label": "Programlar" },
+      { "href": "/events", "label": "Etkinlikler" },
+      { "href": "/volunteer", "label": "Gönüllü Ol" },
+      { "href": "/contact", "label": "İletişim" }
+    ]
+  },
+  "buttons": {
+    "readMore": "Daha Fazla Oku",
+    "submit": "Gönder",
+    "viewArchive": "Arşivi Görüntüle",
+    "viewSpecialties": "Bölümleri Görüntüle"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir şeyler yanlış gitti",
+    "success": "İşlem başarılı",
+    "searchPlaceholder": "Ara...",
+    "noResults": "Sonuç bulunamadı",
+    "trySearch": "Arama sorgunuzu ayarlamayı deneyin"
+  }
+}

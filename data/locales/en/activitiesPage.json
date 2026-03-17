@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "Activities and Events",
+    "subtitle": "Discover the latest activities and events organized by Yemeni students",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "Expressive image of student activities",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Activities and Events",
+        "href": "/activities"
+      }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "Activity not found",
+    "breadcrumbs": {
+      "home": "Home",
+      "activities": "Activities"
+    }
+  }
+}

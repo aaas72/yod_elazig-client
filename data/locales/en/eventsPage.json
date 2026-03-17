@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Events",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "Events", "href": "/events" }
+    ]
+  },
+  "empty": "No events currently available.",
+  "detail": {
+    "location": "Location",
+    "category": "Category",
+    "capacity": "Capacity",
+    "startDate": "Date",
+    "endDate": "End Date",
+    "status": "Status",
+    "published": "Published",
+    "draft": "Draft",
+    "featured": "Featured",
+    "yes": "Yes",
+    "notFoundMessage": "Event not found"
+  }
+}

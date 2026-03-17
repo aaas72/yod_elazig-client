@@ -1,0 +1,145 @@
+{
+  "hero": {
+    "title": "Firat University",
+    "subtitle": "A Beacon of Science in the Heart of Anatolia",
+    "imageUrl": "/imgs/HeroImgs/FıratÜniversitesi.jpg",
+    "imageAlt": "Firat University Campus",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About University"
+      }
+    ]
+  },
+  "intro": {
+    "title": "About the University",
+    "paragraphs": [
+      "Firat University was established in 1975 in Elazig to be a leading academic center in the Eastern Anatolia region. Since its inception, the university has been committed to providing high-quality education and contributing to the scientific and cultural development of society, expanding to become one of the prominent universities in Turkey today.",
+      "Our vision is to be an internationally recognized research university, graduating generations of innovators and leaders. Our mission is to provide a stimulating learning environment, support scientific research that serves humanity, and uphold the values of integrity, excellence, and social responsibility."
+    ]
+  },
+  "statsTitle": "University in Numbers",
+  "stats": [
+    {
+      "id": "foundation-year",
+      "icon": "Calendar",
+      "value": 1975,
+      "label": "Founded"
+    },
+    {
+      "id": "student-count",
+      "icon": "Users",
+      "value": "≈42,246",
+      "label": "Students"
+    },
+    {
+      "id": "faculty-count",
+      "icon": "Building",
+      "value": "17",
+      "label": "Faculties"
+    },
+    {
+      "id": "publications-count",
+      "icon": "BookOpen",
+      "value": "≈23,308",
+      "label": "Published Research"
+    }
+  ],
+  "faculties": [
+    {
+      "name": "Faculty of Medicine",
+      "icon": "Stethoscope",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Engineering",
+      "icon": "DraftingCompass",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Science and Arts",
+      "icon": "FlaskConical",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Economics and Admin",
+      "icon": "Building",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Theology",
+      "icon": "Landmark",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Communication",
+      "icon": "Mic2",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Education",
+      "icon": "School",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Sports Sciences",
+      "icon": "Trophy",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Technology",
+      "icon": "Cpu",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Architecture",
+      "icon": "Ruler",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Dentistry",
+      "icon": "Smile",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Health Sciences",
+      "icon": "HeartPulse",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Veterinary Medicine",
+      "icon": "Dog",
+      "link": "https://disf.firat.edu.tr/en"
+    },
+    {
+      "name": "Faculty of Fisheries",
+      "icon": "Fish",
+      "link": "https://disf.firat.edu.tr/en"
+    }
+  ],
+  "facultiesSection": {
+    "title": "Faculties and Departments",
+    "description": "Discover a wide range of academic programs at Firat University"
+  },
+  "researchSection": {
+    "title": "Fırat University: A Pillar of Research and Innovation",
+    "image": {
+      "src": "/imgs/un/firat.jpg",
+      "alt": "Fırat University Research Universities Ranking 2025"
+    },
+    "paragraphs": [
+      "Fırat University stands not only as a prestigious educational institution, but as one of the leading Research Universities (Araştırma Üniversiteleri) in the Republic of Turkey. This elite classification, granted by the Council of Higher Education (YÖK) to a select group of universities, reflects the institution's academic strength and its high capacity for knowledge production and technological advancement.",
+      "Academic Excellence: The university provides a fertile environment for postgraduate studies and scientific research, supported by state-of-the-art laboratories and research centers with international accreditations, especially in engineering, medicine, and technological sciences.",
+      "Degree Value: Graduating from a classified research university enhances students' prospects for admission to top global universities for further studies, and gives graduates a competitive edge in technical and professional job markets.",
+      "Innovation & Awards: Fırat University consistently ranks among the top 10 Turkish universities in fields such as computer software, cybersecurity, and engineering, making it a destination for creative and distinguished minds.",
+      "International Projects: The university opens broad horizons for students to participate in scientific exchange programs and joint research projects with the European Union and international organizations, sharpening research skills and connecting students with the latest global advancements."
+    ],
+    "button": {
+      "text": "Discover More",
+      "href": "https://www.firat.edu.tr/en"
+    }
+  }
+}

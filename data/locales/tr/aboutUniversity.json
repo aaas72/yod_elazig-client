@@ -1,0 +1,145 @@
+{
+    "hero": {
+        "title": "Fırat Üniversitesi",
+        "subtitle": "Anadolu'nun Kalbinde Bilim Feneri",
+        "imageUrl": "/imgs/HeroImgs/FıratÜniversitesi.jpg",
+        "imageAlt": "Fırat Üniversitesi Kampüsü",
+        "breadcrumbs": [
+            {
+                "label": "Ana Sayfa",
+                "href": "/"
+            },
+            {
+                "label": "Üniversite Hk"
+            }
+        ]
+    },
+    "intro": {
+        "title": "Üniversite Hakkında",
+        "paragraphs": [
+            "Fırat Üniversitesi, Doğu Anadolu bölgesinde önde gelen bir akademik merkez olmak amacıyla 1975 yılında Elazığ'da kurulmuştur. Kuruluşundan bu yana üniversite, yüksek kaliteli eğitim sunmaya ve toplumun bilimsel ve kültürel gelişimine katkıda bulunmaya kendini adamış, bugün Türkiye'nin önde gelen üniversitelerinden biri haline gelmiştir.",
+            "Vizyonumuz, yenilikçiler ve liderler nesilleri yetiştiren, uluslararası alanda tanınan bir araştırma üniversitesi olmaktır. Misyonumuz, teşvik edici bir öğrenme ortamı sağlamak, insanlığa hizmet eden bilimsel araştırmaları desteklemek ve dürüstlük, mükemmellik ve toplumsal sorumluluk değerlerine bağlı kalmaktır."
+        ]
+    },
+    "statsTitle": "Rakamlarla Üniversite",
+    "stats": [
+        {
+            "id": "foundation-year",
+            "icon": "Calendar",
+            "value": 1975,
+            "label": "Kuruluş Yılı"
+        },
+        {
+            "id": "student-count",
+            "icon": "Users",
+            "value": "≈42,246",
+            "label": "Öğrenci Sayısı"
+        },
+        {
+            "id": "faculty-count",
+            "icon": "Building",
+            "value": "17",
+            "label": "Fakülte Sayısı"
+        },
+        {
+            "id": "publications-count",
+            "icon": "BookOpen",
+            "value": "≈23,308",
+            "label": "Yayınlanan Araştırma"
+        }
+    ],
+    "faculties": [
+        {
+            "name": "Tıp Fakültesi",
+            "icon": "Stethoscope",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Mühendislik Fakültesi",
+            "icon": "DraftingCompass",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Fen Edebiyat Fakültesi",
+            "icon": "FlaskConical",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İktisadi ve İdari Bilimler Fakültesi",
+            "icon": "Building",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İlahiyat Fakültesi",
+            "icon": "Landmark",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "İletişim Fakültesi",
+            "icon": "Mic2",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Eğitim Fakültesi",
+            "icon": "School",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Spor Bilimleri Fakültesi",
+            "icon": "Trophy",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Teknoloji Fakültesi",
+            "icon": "Cpu",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Mimarlık Fakültesi",
+            "icon": "Ruler",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Diş Hekimliği Fakültesi",
+            "icon": "Smile",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Sağlık Bilimleri Fakültesi",
+            "icon": "HeartPulse",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Veteriner Fakültesi",
+            "icon": "Dog",
+            "link": "https://disf.firat.edu.tr/en"
+        },
+        {
+            "name": "Su Ürünleri Fakültesi",
+            "icon": "Fish",
+            "link": "https://disf.firat.edu.tr/en"
+        }
+    ],
+    "facultiesSection": {
+        "title": "Fakülteler ve Bölümler",
+        "description": "Fırat Üniversitesi'ndeki geniş akademik program yelpazesini keşfedin"
+    },
+    "researchSection": {
+        "title": "Fırat Üniversitesi: Araştırma ve İnovasyonun Kalesi",
+        "image": {
+            "src": "/imgs/un/firat.jpg",
+            "alt": "Fırat Üniversitesi Araştırma Üniversiteleri Sıralaması 2025"
+        },
+        "paragraphs": [
+            "Fırat Üniversitesi yalnızca köklü bir eğitim kurumu olmanın ötesinde, Türkiye Cumhuriyeti'nin önde gelen Araştırma Üniversiteleri'nden biri olarak öne çıkmaktadır. Yükseköğretim Kurulu (YÖK) tarafından sınırlı sayıda üniversiteye verilen bu seçkin statü, kurumun akademik gücünü ve bilgi üretme ile teknoloji geliştirme kapasitesinin yüksekliğini yansıtmaktadır.",
+            "Akademik Liderlik: Üniversite, başta mühendislik, tıp ve teknik bilimler olmak üzere uluslararası akreditasyona sahip ileri düzey laboratuvarlar ve araştırma merkezleriyle desteklenen lisansüstü çalışmalar ve bilimsel araştırmalar için verimli bir ortam sunmaktadır.",
+            "Diploma Değeri: Araştırma üniversitesi olarak sınıflandırılmış bir kurumdan mezun olmak, öğrencilerin dünyanın önde gelen üniversitelerinde lisansüstü eğitime kabul şansını artırmakta ve mezunlara teknik ve profesyonel iş piyasasında rekabet avantajı sağlamaktadır.",
+            "İnovasyon ve Ödüller: Fırat Üniversitesi, bilgisayar yazılımı, siber güvenlik ve mühendislik alanlarında sürekli olarak Türkiye'nin ilk 10 üniversitesi arasında yer almakta; bu durum üniversiteyi yaratıcı ve üstün yetenekli bireylerin gözdesi haline getirmektedir.",
+            "Uluslararası Projeler: Üniversite, öğrencilerine Avrupa Birliği ve uluslararası kuruluşlarla bilimsel değişim programlarına ve ortak araştırma projelerine katılma imkânı sunarak araştırma becerilerini geliştirmekte ve onları modern bilimin son gelişmeleriyle buluşturmaktadır."
+        ],
+        "button": {
+            "text": "Daha Fazlasını Keşfet",
+            "href": "https://www.firat.edu.tr/en"
+        }
+    }
+}

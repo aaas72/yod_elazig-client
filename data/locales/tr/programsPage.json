@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Programlarımız",
+    "subtitle": "Yemenli öğrenciler tarafından düzenlenen en son programları keşfedin",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "Öğrenci programlarının temsili resmi",
+    "breadcrumbs": [
+      { "label": "Ana Sayfa", "href": "/" },
+      { "label": "Programlarımız", "href": "/programs" }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "Program bulunamadı",
+    "breadcrumbs": {
+      "home": "Ana Sayfa",
+      "programs": "Programlarımız"
+    },
+    "registerButton": "Şimdi Kaydolun",
+    "registrationClosed": "Kayıt Kapandı",
+    "locationLabel": "Konum:",
+    "categoryLabel": "Kategori:",
+    "startDateLabel": "Başlangıç Tarihi:",
+    "endDateLabel": "Bitiş Tarihi:",
+    "statusLabel": "Durum:",
+    "published": "Yayında",
+    "draft": "Taslak"
+  }
+}

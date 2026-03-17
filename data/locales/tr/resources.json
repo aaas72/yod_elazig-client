@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "Öğrenci Arşivi",
+    "breadcrumb": "Arşiv"
+  },
+  "categories": [
+    {
+      "id": "library",
+      "title": "Akademik Kütüphane",
+      "description": "Fırat Üniversitesi öğrencileri için özetler, çıkmış sorular ve faydalı ders materyalleri.",
+      "iconName": "BookOpen",
+      "link": "/access",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/libaraly_Resources_bg.jpg"
+    },
+    {
+      "id": "photos",
+      "title": "Fotoğraf Arşivi",
+      "description": "Birliğin çeşitli etkinlikleri, faaliyetleri ve özel anlarına ait fotoğraf galerisi.",
+      "iconName": "ImageIcon",
+      "link": "/resources/photos",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/photos_Resources_bg.jpg "
+    },
+    {
+      "id": "events",
+      "title": "Etkinlik Arşivi",
+      "description": "Geçmiş seminer ve etkinliklerin video kayıtları, özetleri ve raporları.",
+      "iconName": "CalendarDays",
+      "link": "/resources/events",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/events_Resources_bg.jpg"
+    },
+    {
+      "id": "admin",
+      "title": "İdari Dosyalar",
+      "description": "Üyeleri ilgilendiren başvuru formları, iç tüzükler ve resmi belgeler.",
+      "iconName": "FileArchive",
+      "link": "/resources/admin",
+      "isPrivate": true,
+      "backgroundImage": "/imgs/CardsBg/files_Resources_bg.jpg"
+    }
+  ]
+}

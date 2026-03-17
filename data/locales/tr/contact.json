@@ -1,0 +1,29 @@
+{
+    "hero": {
+        "title": "Birlikle İletişime Geçin",
+        "breadcrumb": "Bize Ulaşın"
+    },
+    "form": {
+        "nameLabel": "Ad Soyad",
+        "namePlaceholder": "Adınızı ve soyadınızı girin",
+        "emailLabel": "E-posta Adresi",
+        "emailPlaceholder": "ornek@email.com",
+        "subjectLabel": "Konu",
+        "subjectPlaceholder": "Mesaj konusu",
+        "messageLabel": "Mesaj",
+        "messagePlaceholder": "Mesajınızı buraya yazın...",
+        "submitButton": "Mesajı Gönder",
+        "sendingButton": "Gönderiliyor...",
+        "successMessage": "Mesajınız başarıyla gönderildi!",
+        "errorMessage": "Mesaj gönderilemedi.",
+        "networkErrorMessage": "Bağlantı hatası. Lütfen tekrar deneyin.",
+        "directEmailText": "Veya doğrudan bize e-posta gönderin:"
+    },
+    "options": {
+        "title": "Bize Ulaşın",
+        "description": "Bize doğrudan E-posta veya WhatsApp üzerinden ulaşabilirsiniz",
+        "emailButton": "E-posta Gönder",
+        "whatsappButton": "WhatsApp ile İletişime Geç",
+        "whatsappLabel": "WhatsApp"
+    }
+}

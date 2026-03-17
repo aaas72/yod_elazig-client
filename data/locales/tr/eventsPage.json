@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Etkinlikler",
+    "breadcrumbs": [
+      { "label": "Ana Sayfa", "href": "/" },
+      { "label": "Etkinlikler", "href": "/events" }
+    ]
+  },
+  "empty": "Şu anda etkinlik yok.",
+  "detail": {
+    "location": "Konum",
+    "category": "Kategori",
+    "capacity": "Kapasite",
+    "startDate": "Tarih",
+    "endDate": "Bitiş Tarihi",
+    "status": "Durum",
+    "published": "Yayınlandı",
+    "draft": "Taslak",
+    "featured": "Öne Çıkan",
+    "yes": "Evet",
+    "notFoundMessage": "Etkinlik bulunamadı"
+  }
+}

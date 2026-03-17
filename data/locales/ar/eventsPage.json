@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "الفعاليات",
+    "breadcrumbs": [
+      { "label": "الرئيسية", "href": "/" },
+      { "label": "الفعاليات", "href": "/events" }
+    ]
+  },
+  "empty": "لا توجد فعاليات حالياً",
+  "detail": {
+    "location": "المكان",
+    "category": "التصنيف",
+    "capacity": "السعة",
+    "startDate": "تاريخ",
+    "endDate": "تاريخ النهاية",
+    "status": "الحالة",
+    "published": "منشور",
+    "draft": "مسودة",
+    "featured": "مميز",
+    "yes": "نعم",
+    "notFoundMessage": "لم يتم العثور على الفعالية"
+  }
+}

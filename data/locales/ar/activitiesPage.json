@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "الأنشطة والفعاليات",
+    "subtitle": "تعرف على أحدث الأنشطة والفعاليات التي ينظمها الطلاب اليمنيين",
+    "imageUrl": "/imgs/HeroImgs/yodelsty.jpg",
+    "imageAlt": "صورة تعبيرية عن الأنشطة الطلابية",
+    "breadcrumbs": [
+      {
+        "label": "الرئيسية",
+        "href": "/"
+      },
+      {
+        "label": "الأنشطة والفعاليات",
+        "href": "/activities"
+      }
+    ]
+  },
+  "detail": {
+    "notFoundMessage": "النشاط غير موجود",
+    "breadcrumbs": {
+      "home": "الرئيسية",
+      "activities": "الأنشطة"
+    }
+  }
+}

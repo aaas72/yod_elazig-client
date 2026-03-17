@@ -1,0 +1,64 @@
+{
+    "hero": {
+        "title": "Birlikte Gönüllü Olun",
+        "breadcrumb": "Gönüllü Ekibine Katılın"
+    },
+    "content": {
+        "title": "Değişimin Bir Parçası Olun",
+        "description": "Gönüllülük sadece bir iş değil, öğrencilerin hayatında olumlu bir etki bırakma fırsatıdır. Seçkin ekibimize katılın ve birlikte fark yaratalım.",
+        "benefits": [
+            "Kişisel ve mesleki becerileri geliştirmek",
+            "Geniş sosyal ağlar kurmak",
+            "Öğrenci topluluğuna hizmet etmek",
+            "Deneyim ve gönüllülük sertifikaları almak"
+        ],
+        "buttonText": "Gönüllü Formunu Doldur"
+    },
+    "form": {
+        "title": "Gönüllü Başvuru Formu",
+        "sections": {
+            "personal": "Kişisel Bilgiler",
+            "education": "Eğitim Bilgileri (İsteğe Bağlı)",
+            "skills": "Beceriler ve Motivasyon"
+        },
+        "labels": {
+            "name": "Ad Soyad",
+            "email": "E-posta Adresi",
+            "phone": "Telefon Numarası",
+            "availableHours": "Haftalık Müsait Saatler",
+            "university": "Üniversite",
+            "department": "Bölüm",
+            "yearOfStudy": "Öğrenim Yılı",
+            "skills": "Beceriler (virgülle ayırın)",
+            "motivation": "Neden bizimle gönüllü olmak istiyorsunuz?"
+        },
+        "placeholders": {
+            "name": "örn. Ahmet Yılmaz",
+            "email": "örn. ahmet@example.com",
+            "phone": "5XXXXXXXXX",
+            "availableHours": "örn. 10",
+            "university": "Fırat Üniversitesi",
+            "department": "örn. Bilgisayar Mühendisliği",
+            "yearOfStudy": "örn. 3",
+            "skills": "örn. Tasarım, Fotoğrafçılık, Yazarlık, Organizasyon",
+            "motivation": "Gönüllü olma motivasyonunuzu ve neler sunabileceğinizi yazın..."
+        },
+        "validation": {
+            "nameRequired": "Lütfen tam adınızı girin",
+            "emailInvalid": "Lütfen geçerli bir e-posta adresi girin",
+            "phoneInvalid": "Lütfen geçerli bir Türk telefon numarası girin (5 ile başlayan 10 haneli)",
+            "motivationRequired": "Lütfen neden gönüllü olmak istediğinizi yazın (en az 20 karakter)"
+        },
+        "submit": "Başvuruyu Gönder",
+        "submitting": "Gönderiliyor...",
+        "errors": {
+            "alreadySubmitted": "Bu e-posta adresiyle daha önce başvuru yapılmış",
+            "generic": "Bir hata oluştu, lütfen tekrar deneyin"
+        },
+        "success": {
+            "title": "Başvurunuz başarıyla alındı!",
+            "message": "Bizimle gönüllü olmak istediğiniz için teşekkürler. Başvurunuz incelenecek ve en kısa sürede sizinle iletişime geçilecektir.",
+            "backHome": "Ana Sayfaya Dön"
+        }
+    }
+}

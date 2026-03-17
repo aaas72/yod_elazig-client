@@ -1,0 +1,231 @@
+{
+  "hero": {
+    "title": "Elazig City",
+    "subtitle": "Our City",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageAlt": "Landscape of Elazig City",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About City"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Introduction to the City",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageOverlay": {
+      "title": "Strategic Location",
+      "description": "The Heart of Eastern Anatolia and a Crossroads of Civilizations"
+    },
+    "paragraphs": [      "The city of Elazığ, historically known as 'Al-Aziz', sits at the heart of Eastern Anatolia like a gem overlooking the headwaters of the Tigris and Euphrates rivers, where fertile plains embrace mountain highlands to form a unique natural landscape. It is home to majestic water features such as Lake Hazar and the Keban Dam, which stands as one of the country's main sources of hydroelectric power.",
+      "The city's deep historical roots extend through the ancient citadel of Harput, a fortress that witnessed the rise and fall of civilizations from the Urartians and Romans to the Seljuks and Ottomans. To this day, the leaning minaret of its Great Mosque continues to tell stories of the region's artistic and cultural glory.",
+      "The city underwent a qualitative transformation in the 19th century when it was established in its current location as an administrative and developmental center under the name 'Ma'muret-ul-Aziz', evolving in the modern era into a leading scientific and cultural beacon guided by the prestigious Fırat University.",
+      "What makes 'Al-Aziz' an exceptional destination for Yemeni students is a harmonious blend of an advanced educational environment, safe and economically affordable living, alongside the generosity and authenticity of its people — making the city a truly ideal environment for academic achievement, personal growth, and building the future."
+    ]
+  },
+  "historicalLandmarksTitle": "Historical Landmarks",
+  "historicalLandmarksTag": "Historical Landmark",
+  "historicalLandmarks": [
+    {
+      "id": 1,
+      "title": "Harput Castle",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Harput_Castle",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Harput Castle, known by its famous nickname 'Milk Castle', is the most prominent historical landmark in Elazig. The castle sits atop a strategic hill that provides a comprehensive panoramic view of the city and the surrounding plain.",
+        "Its history dates back to the Urartu Kingdom, and it has seen major civilizations such as the Byzantines, Seljuks, and Ottomans, each of whom left their mark on its walls and internal buildings."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Grand Mosque (Ulu Cami)",
+      "imageUrl": "/imgs/elazig/UluCami.png",
+      "description": [
+        "The Grand Mosque in Harput is one of the oldest and most important religious structures in Anatolia, built during the Artuqid era. The mosque is famous for its unique leaning minaret, which is considered an architectural masterpiece.",
+        "The mosque represents a wonderful example of Seljuk art and attracts visitors thanks to its ancient history and distinct design that has withstood the centuries."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Church of the Virgin Mary",
+      "wikiUrl": "https://en.wikipedia.org/wiki/St._Mary_Church_(Harput)",
+      "imageUrl": "/imgs/elazig/MeryemAnaKilisesi.png",
+      "description": [
+        "The Church of the Virgin Mary (Meryem Ana Kilisesi) is considered one of the oldest places of worship in the region, dating back to the second century AD. It is also known as the 'Red Church' due to the stones used in its construction.",
+        "The church represents an important historical and religious heritage for the Syriac community and stands as a witness to the cultural and religious diversity that the city of Harput has experienced through the ages."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Buzluk Cave",
+      "imageUrl": "/imgs/elazig/BuzlukMagara.png",
+      "description": [
+        "One of Elazig's natural wonders, Buzluk Cave is known for freezing in summer and blowing warm air in winter.",
+        "With its geological structure and natural beauty, it is an important tourism spot attracting visitors."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Lake Hazar",
+      "imageUrl": "/imgs/elazig/HazarGolu.png",
+      "description": [
+        "Known as the hidden sea of the East, Lake Hazar is famous for its blue flag beaches and clear water.",
+        "Offering an ideal environment for water sports and camping, the lake also hosts a sunken city."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Pertek Castle",
+      "imageUrl": "/imgs/elazig/PertekKalesi.webp",
+      "description": [
+        "Pertek Castle is one of the most fascinating historical landmarks in Elazig, perched on a majestic rocky island in the middle of the artificial Keban Lake. Built in the Middle Ages, it witnessed the succession of Seljuk and Ottoman civilizations.",
+        "The castle became isolated from the mainland after the waters of Keban Lake rose following the construction of the dam in 1974, giving it a legendary and unique character that attracts visitors and photographers from near and far."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Keban Dam and Lake",
+      "imageUrl": "/imgs/elazig/keban-baraji.jpg",
+      "description": [
+        "The Keban Dam, built on the Euphrates River, is one of the largest dams in Turkey, completed in 1974. Its artificial lake stretches over a vast area of approximately 675 square kilometers, making it an extraordinary aquatic landmark.",
+        "The dam is a cornerstone of hydroelectric power generation in Turkey, while its shores have become a popular tourist destination bustling with recreation facilities, fishing, and camping."
+      ]
+    }
+  ],
+  "enginesTitle": "Key Economic Engines",
+  "engines": [
+    {
+      "id": 1,
+      "title": "Mining and Industries",
+      "content": [
+        "Elazig is one of the most important mineral capitals in Turkey. It is nationally renowned as a major center for chrome production.",
+        "Its mountains also abound with other important minerals such as copper, lead, and marble. Advanced manufacturing industries such as 'Ferrochrome' factories and cement plants have been established on the basis of this wealth."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Agriculture and Food Processing",
+      "content": [
+        "The city embraces the fertile 'Uluova' plain, considered the food basket of the region. Elazig is famous for producing the finest types of grapes, especially the international 'Öküzgözü' variety.",
+        "In addition to apricots, sugar beets, and grains. This agricultural diversity has led to the prosperity of the food processing sector."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Energy",
+      "content": [
+        "The Tigris and Euphrates rivers represent the lifeline of the region, on which the giant 'Keban' and 'Karakaya' dams were built.",
+        "The importance of these two dams is not limited to being among the largest sources of hydroelectric power in Turkey, but they also play a vital role in supporting industry and agriculture in the city."
+      ]
+    }
+  ],
+  "festivalsTitle": "Annual Events and Festivals",
+  "festivals": [
+    {
+      "id": 1,
+      "title": "Grape Harvest and Orcik Festival",
+      "description": "An autumn celebration of traditional grape harvesting and molasses-making, used to craft the iconic 'Orcik' dessert.",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdIfM5yQB5-xyK4HFd6gXCXEfKUJ86KuX0kw&s"
+    },
+    {
+      "id": 2,
+      "title": "Lake Hazar Poetry Festival",
+      "description": "Annual literary gathering on the shores of Lake Hazar, bringing poets from Turkey and beyond for evenings of verse and nature.",
+      "imageUrl": "https://elazig.ktb.gov.tr/Resim/46869,img2770kopyajpg.png?0"
+    },
+    {
+      "id": 3,
+      "title": "Harput Culture and Tourism Festival",
+      "description": "Archaeological tours, folk arts, traditional music, and handicraft workshops celebrating Harput's ancient heritage.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Harput_-_panoramio.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Karakaya Water Sports Festival",
+      "description": "Lake Karakaya hosts thrilling summer competitions in rowing, sailing, and boat racing amid stunning scenery.",
+      "imageUrl": "https://elazigsonhabercom.teimg.com/elazigsonhaber-com/uploads/2025/08/karakaya-baraj-golunde-kano-etkinligi-yapildi.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Elazığ Folk Culture Days",
+      "description": "Folk dances, traditional music, and exhibitions of costumes and crafts celebrating Elazığ's rich cultural heritage.",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQxhmLTobsOalOGho3Ji5_cBc2rAcYNXrgRsnTDUzVSIsevpj9"
+    }
+  ],
+  "activitiesTitle": "Outdoor Activities & Adventures",
+  "activities": [
+    {
+      "id": 1,
+      "title": "Lake Hazar",
+      "description": "Swimming, water sports, and beaches on the shores of the 'Hidden Sea of the East'.",
+      "imageUrl": "https://www.firat.edu.tr/images/news/1750326599.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Harput Castle",
+      "description": "Hike up to ancient hilltop ruins with sweeping panoramic views over Elazığ.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Harput_-_panoramio.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Keban Dam & Camping",
+      "description": "Fishing, camping, and nature walks along the vast shores of Keban Reservoir.",
+      "imageUrl": "/imgs/elazig/keban-baraji.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Buzluk Cave",
+      "description": "Explore a unique cave that freezes in summer and breathes warm air in winter.",
+      "imageUrl": "/imgs/elazig/BuzlukMagara.png"
+    }
+  ],
+  "dishesTitle": "Local Cuisine and Food Culture",
+  "dishOfTheMonth": "Featured Dish",
+  "dishes": [
+    {
+      "id": 1,
+      "title": "Harput Meatballs",
+      "description": "Bulgur and minced meat patties slow-cooked in butter and tomato sauce — the most iconic dish of Elazığ.",
+      "imageUrl": "https://hasata.com.tr/Data/Blog/31.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Orcik",
+      "description": "Whole walnuts coated in thick grape molasses and sun-dried — the emblematic sweet of Elazığ's culinary heritage.",
+      "imageUrl": "https://www.neyivar.com/upload/productsImage/1000x1000/0006584_cevizli-sucuk-orcik-1-kg_550-16.webp"
+    },
+    {
+      "id": 3,
+      "title": "Mantı",
+      "description": "Tiny spiced-meat dumplings served with garlic yogurt and browned butter — a beloved Turkish classic.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Manti.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Cacık",
+      "description": "Chilled yogurt with cucumber, garlic, and fresh mint — a refreshing side dish enjoyed with every meal.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cacik.jpg"
+    }
+  ],
+  "dailyLife": {
+    "title": "Nature of Daily Life",
+    "modernLife": {
+      "title": "Pulse of Modern Life",
+      "paragraphs": [
+        "In its main streets like 'Gazi Street' (Gazi Caddesi), you feel the city's pulse extending through the movement of pedestrians and modern cafes frequented by youth. Modern shopping centers (AVM) like 'Park 23' offer a complete shopping experience featuring famous international and local brands, as well as cinemas and restaurants.",
+        "New residential neighborhoods and advanced health facilities, such as the large 'Fethi Sekin' Hospital, reflect the city's commitment to providing the highest quality of life for its residents."
+      ]
+    },
+    "traditionalLife": {
+      "title": "Spirit of Deep-Rooted Traditions",
+      "paragraphs": [
+        "But just a few steps away, in the alleys of the Covered Bazaar (Kapalı Çarşı), time slows down. Here, the atmosphere is fragrant with the scents of spices and herbs, and echoes with the sounds of artisans practicing their inherited trades.",
+        "Social relationships remain the cornerstone of the city's culture, where family ties and respect for neighbors are fundamental values. Life here retains its simplicity and warmth, creating a safe and interconnected social environment."
+      ]
+    }
+  }
+}

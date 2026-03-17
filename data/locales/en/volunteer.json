@@ -1,0 +1,64 @@
+{
+    "hero": {
+        "title": "Volunteer with the Union",
+        "breadcrumb": "Join the Volunteer Team"
+    },
+    "content": {
+        "title": "Be Part of the Change",
+        "description": "Volunteering is not just work; it's an opportunity to make a positive impact on students' lives. Join us and be part of our distinguished team to make a difference together.",
+        "benefits": [
+            "Develop personal and professional skills",
+            "Build extensive social networks",
+            "Contribute to serving the student community",
+            "Receive experience and volunteer certificates"
+        ],
+        "buttonText": "Fill Volunteer Form"
+    },
+    "form": {
+        "title": "Volunteer Application Form",
+        "sections": {
+            "personal": "Personal Information",
+            "education": "Educational Information (Optional)",
+            "skills": "Skills & Motivation"
+        },
+        "labels": {
+            "name": "Full Name",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "availableHours": "Available Hours per Week",
+            "university": "University",
+            "department": "Department",
+            "yearOfStudy": "Year of Study",
+            "skills": "Skills (separate with commas)",
+            "motivation": "Why do you want to volunteer with us?"
+        },
+        "placeholders": {
+            "name": "e.g. John Smith",
+            "email": "e.g. john@example.com",
+            "phone": "5XXXXXXXXX",
+            "availableHours": "e.g. 10",
+            "university": "Firat University",
+            "department": "e.g. Computer Engineering",
+            "yearOfStudy": "e.g. 3",
+            "skills": "e.g. Design, Photography, Writing, Organizing",
+            "motivation": "Write about your motivation to volunteer and what you can offer..."
+        },
+        "validation": {
+            "nameRequired": "Please enter your full name",
+            "emailInvalid": "Please enter a valid email address",
+            "phoneInvalid": "Please enter a valid Turkish phone number (10 digits starting with 5)",
+            "motivationRequired": "Please write why you want to volunteer (at least 20 characters)"
+        },
+        "submit": "Submit Application",
+        "submitting": "Submitting...",
+        "errors": {
+            "alreadySubmitted": "An application has already been submitted with this email",
+            "generic": "Something went wrong, please try again"
+        },
+        "success": {
+            "title": "Your application has been received!",
+            "message": "Thank you for your interest in volunteering with us. Your application will be reviewed and we will contact you soon.",
+            "backHome": "Back to Home"
+        }
+    }
+}

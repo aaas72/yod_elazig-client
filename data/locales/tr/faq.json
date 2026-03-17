@@ -1,0 +1,175 @@
+{
+  "labels": {
+    "steps": "Adımlar",
+    "documents": "Gerekli Belgeler"
+  },
+  "hero": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Yardım Merkezi",
+    "image": "/imgs/HeroImgs/library.jpg",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "SSS",
+        "href": "/faq"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "general",
+      "title": "Genel Sorular",
+      "questions": [
+        {
+          "id": "gen1",
+          "question": "Elazığ Yemenli Öğrenciler Birliği nedir?",
+          "answer": "Fırat Üniversitesi ve Elazığ şehrindeki Yemenli öğrencileri temsil etmeyi, çıkarlarını gözetmeyi ve onlara hizmet eden kültürel, akademik ve sosyal etkinlikler düzenlemeyi amaçlayan seçilmiş bir öğrenci kuruluşudur."
+        },
+        {
+          "id": "gen2",
+          "question": "Kimler Birliğe katılabilir?",
+          "answer": "Elazığ'da (Fırat Üniversitesi) okuyan tüm Yemenli öğrenciler Birliğe katılma ve etkinliklerine iştirak etme hakkına sahiptir."
+        },
+        {
+          "id": "gen3",
+          "question": "Birlik yönetimiyle nasıl iletişime geçebilirim?",
+          "answer": "Web sitesindeki 'Bize Ulaşın' sayfası üzerinden, resmi sosyal medya hesaplarımızdan veya mesai saatleri içinde Birlik merkezini ziyaret ederek bizimle iletişime geçebilirsiniz."
+        }
+      ]
+    },
+    {
+      "id": "residency",
+      "title": "İkamet ve Göç",
+      "questions": [
+        {
+          "id": "res_first",
+          "question": "İlk kez ikamet başvurusu nasıl yapılır?",
+          "answer": "Yeni öğrenciler, vize süresi içinde veya girişten itibaren 90 gün içinde ikamet başvurusunda bulunmalıdır. Randevudan önce tüm belgeleri hazırladığınızdan emin olun.",
+          "steps": [
+            "[Göç İdaresi web sitesini (e-ikamet)](https://e-ikamet.goc.gov.tr/) ziyaret edin ve 'İlk Başvuru' formunu doldurun.",
+            "Formu yazdırın ve gerekli belgeleri hazırlayın.",
+            "İkamet kartı ücretini [resmi ödeme sitesi](https://dijital.gib.gov.tr/hizliOdemeler/gocIdaresiIkametTezkeresiHarciOdeme) üzerinden ödeyin.",
+            "Tüm belgelerle birlikte belirtilen saatte Göç İdaresi'ndeki randevuya gidin."
+          ],
+          "documents": [
+            {
+              "name": "Randevu Formu",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770491941/Extracted_fromBasvuru_Formu-Application_Form_adllwv.png"
+            },
+            {
+              "name": "Öğrenci Belgesi",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494462/yok-ogrenci-belgesi-sorgulama_00_mdl60j.png"
+            },
+            {
+              "name": "Sağlık Sigortası",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494672/spas-mustahaklik-sorgulama_00_dewnkc.png"
+            },
+            {
+              "name": "2 Biyometrik Fotoğraf",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770495373/Chinese_passport_photo_requirements_ilngrv.png"
+            },
+            {
+              "name": "Kira Kontratı veya Yerleşim Yeri Belgesi",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494135/nvi-yerlesim-yeri-ve-diger-adres-belgesi-sorgulama_00_tjjhrl.png"
+            },
+            {
+              "name": "Pasaport ve Vize Fotokopisi",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770495185/pngtree-passport-and-visa-stamps-in-a-travel-document-png-image_18213463_mz36ig.webp"
+            },
+            {
+              "name": "Vergi Ödeme Makbuzu",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770493118/IVD-Alindi-b3DVK82N5CGN_00_ayj7om.png"
+            }
+          ]
+        },
+        {
+          "id": "res_renew",
+          "question": "İkamet nasıl yenilenir?",
+          "answer": "Yenileme başvuruları, mevcut ikamet süresi dolmadan en fazla 60 gün önce yapılmalıdır.",
+          "steps": [
+            "İlk başvuru ile tamamen aynı adımları izleyin, ancak web sitesinde 'Uzatma Başvurusu'nu seçin.",
+            "Üniversitenin son sınıfındaysanız, Göç İdaresi'ne teslim edilecek belgelere Transkript eklemelisiniz."
+          ],
+          "documents": [
+            {
+              "name": "Transkript (Son Sınıf Öğrencileri İçin)",
+              "image": "https://res.cloudinary.com/asdev1/image/upload/v1770494462/yok-ogrenci-belgesi-sorgulama_00_mdl60j.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "academic",
+      "title": "Akademik İşler",
+      "questions": [
+        {
+          "id": "acad1",
+          "question": "Ders kaynaklarına nasıl ulaşabilirim?",
+          "answer": "Birlik, özetler, çıkmış sınav soruları ve ders kitaplarını içeren kapsamlı bir elektronik kütüphane sunmaktadır. Web sitesindeki 'Arşiv' -> 'Akademik Kütüphane' bölümünden erişebilirsiniz."
+        },
+        {
+          "id": "acad2",
+          "question": "Birlik, üniversite kayıt işlemlerinde yardımcı oluyor mu?",
+          "answer": "Evet, Birlik, Halkla İlişkiler ve Akademik Komiteler aracılığıyla yeni öğrencilere kayıt işlemleri, kayıt dondurma ve ders seçimi konularında danışmanlık ve rehberlik hizmeti sunmaktadır."
+        }
+      ]
+    },
+    {
+      "id": "living",
+      "title": "Yaşam ve Barınma",
+      "questions": [
+        {
+          "id": "liv_male",
+          "question": "Erkek Öğrenci Yurtları (KYK & Özel)",
+          "answer": "Erkek öğrenciler için çeşitli seçenekler mevcuttur:\n\n**KYK Yurtları:**\n1. **Ahmet Kabaklı Yurdu:** Çayda Çıra mahallesinde bulunur, en büyük ve en yeni yurttur.\n2. **Ömer Bilginoğlu Yurdu:** Ataşehir mahallesinde bulunur.\n3. **Elazığ Yurdu:** Kampüs içinde (Mühendislik Fakültesi) bulunur.\n\n**Özel Yurtlar:** Şehir merkezi, Kültür Mah ve Ataşehir gibi bölgelerde mevcuttur."
+        },
+        {
+          "id": "liv_female",
+          "question": "Kız Öğrenci Yurtları (KYK & Özel)",
+          "answer": "Kız öğrenciler için barınma seçenekleri çeşitli ve güvenlidir:\n\n**KYK Yurtları:**\n1. **Sare Ana Yurdu:** Üniversitenin ana girişindedir (Üniversite Mah).\n2. **Harput Yurdu:** Mühendislik Fakültesi yanındadır (Kampüs içi).\n3. **Fethi Sekin Yurdu:** Ataşehir mahallesinde bulunur.\n\n**Özel Yurtlar:** Genellikle Üniversite Mah ve şehir merkezinde (Nailbey) yoğunlaşmıştır."
+        },
+        {
+          "id": "liv_rent",
+          "question": "Ev Kiralama (Öğrenci Evi)",
+          "answer": "Birçok öğrenci ortak ev kiralamayı tercih eder. İşte en iyi bölgeler:\n\n1. **Çayda Çıra:** Öğrenciler için en çok tercih edilen bölge, modern binalar (siteler) ve ulaşıma yakın.\n2. **Üniversite Mah:** En büyük avantajı yakınlıktır (üniversiteye yürüme mesafesi), ancak binalar genellikle eskidir.\n3. **Ataşehir:** Nezih ve sakin bir bölgedir.\n\n*İpucu:* Kiralama genellikle depozito ve emlakçı komisyonu gerektirir."
+        }
+      ]
+    },
+    {
+      "id": "membership",
+      "title": "Üyelik ve Seçimler",
+      "questions": [
+        {
+          "id": "mem1",
+          "question": "Birlik seçimlerine nasıl aday olabilirim?",
+          "answer": "Adaylık başvuruları, Birliğin iç tüzüğüne göre her yıl açılır. Adayın üniversitede Yemenli bir öğrenci olması ve Seçim Komitesi tarafından ilan edilen şartları taşıması gerekir."
+        },
+        {
+          "id": "mem2",
+          "question": "Üyelik ücreti var mı?",
+          "answer": "Birliğe üyelik tüm Yemenli öğrenciler için ücretsizdir, ancak bazı özel etkinliklere veya gezilere katılım için sembolik ücretler olabilir."
+        }
+      ]
+    },
+    {
+      "id": "technical",
+      "title": "Teknik Destek",
+      "questions": [
+        {
+          "id": "tech1",
+          "question": "Web sitesinde nasıl hesap oluşturabilirim?",
+          "answer": "Şu anda kayıt işlemi yöneticiler ve komite üyeleri için açıktır. Gelişmiş elektronik hizmetlerden yararlanmaları için kayıtlar yakında öğrencilere de açılacaktır."
+        },
+        {
+          "id": "tech2",
+          "question": "Web sitesinde gezinirken bir sorunla karşılaştım, ne yapmalıyım?",
+          "answer": "Lütfen 'Bize Ulaşın' sayfası üzerinden 'Teknik Destek' konusunu seçerek karşılaştığınız sorunu açıklayan bir mesaj gönderin, teknik ekibimiz en kısa sürede size yardımcı olacaktır."
+        }
+      ]
+    }
+  ]
+}

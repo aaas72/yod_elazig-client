@@ -1,0 +1,42 @@
+# Robots.txt for YOD Elazig - اتحاد الطلاب اليمنيين
+# https://yodelazig.org
+
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login
+
+# Block private/member-only pages
+Disallow: /ar/access
+Disallow: /en/access
+Disallow: /tr/access
+Disallow: /ar/archive
+Disallow: /en/archive
+Disallow: /tr/archive
+
+# Sitemap location
+Sitemap: https://yodelazig.org/sitemap.xml
+
+# Google - no crawl delay needed, handled via Search Console
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /ar/access
+Disallow: /en/access
+Disallow: /tr/access
+Disallow: /ar/archive
+Disallow: /en/archive
+Disallow: /tr/archive
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+Disallow: /admin/
+Disallow: /api/

@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Vizyonumuz",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "Hakkımızda"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Birlik Hakkında",
+    "content": [
+      "Elazığ'daki Yemenli Öğrenciler Birliği, Fırat Üniversitesi'ndeki tüm Yemenli öğrenciler için resmi çatı ve birleştirici bir yapıyı temsil eden bir öğrenci sendikası ve gönüllü kuruluştur. Yemenli enerjileri bir araya getirip yönlendirerek kardeşlik bağlarını güçlendirmeyi, dinî ve millî kimliği korumayı ve Yemenli öğrenciyi Türk toplumundaki akademik ve ahlaki başarının onurlu bir örneği olarak sunmayı hedefleyen bir birliğiz."
+    ]
+  },
+  "sections": {
+    "visionMission": "Vizyonumuz ve Misyonumuz",
+    "achievements": "Başarılarımız",
+    "studentAchievements": "Öğrencilerimizin Başarıları",
+    "executiveBoard": "Yönetim Kurulu",
+    "values": "Temel Değerlerimiz",
+    "organizationalChart": "Organizasyon Şeması"
+  },
+  "vision": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Vizyonumuz",
+      "description": "Öncü bir Yemenli nesil... akademik, entelektüel ve ahlaki açıdan. Türkiye'deki Yemenli öğrencilerin mükemmeliyeti için birincil platform ve temel itici güç olmayı hedefliyoruz; akademik başarı, entelektüel farkındalık ve köklere derin bağlılığı bir araya getiren bütüncül bir öğrenci topluluğu inşa ederek."
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Misyonumuz",
+      "description": "Yemenli öğrencileri etkin bir şekilde temsil etmek, onlara akademik ve sosyal destek sağlamak, kimliğimizi ve değerlerimizi korurken başarı ve yaratıcılığı teşvik eden bir ortam yaratmak."
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "Kapsamlı Hedeflerimiz",
+      "description": "Öğrenci yaşamının tüm yönlerini kapsayan hedefler belirledik:",
+      "subItems": [
+        { "title": "Akademik Mükemmellik", "description": "Fırat Üniversitesi'ndeki akademik yolculuklarında öğrencilere eğitim kaynakları sunarak, deneyim paylaşımı sağlayarak ve başarılı öğrencileri ödüllendirerek destek vermek." },
+        { "title": "Entelektül ve Kültürel Gelişim", "description": "Olgun düşünceyi ve kimlikle bağlantıyı güçlendiren seminer ve etkinlikler aracılığıyla kültürel farkındalığı geliştirmek." },
+        { "title": "Spor ve Beden Eğitimi", "description": "Düzeyli turnuvalar ve spor etkinlikleri düzenleyerek fiziksel sağlığı ve sportmenliği teşvik etmek." },
+        { "title": "Sosyal Dayanışma", "description": "Kardeşlik bağlarını güçlendirmek, yeni öğrencileri karşılamak ve şehre ile üniversiteye uyum sağlamalarını kolaylaştırmak." },
+        { "title": "Kimlik Pekiştirme", "description": "Dinî değerlerle ve Yemenli milli ruhla gurur duygusunu aşılamak ve öğrencileri vatanlarıyla bağlayan etkinlikleri canlandırmak." },
+        { "title": "Mesleki Gelişim", "description": "Mezuniyet sonrası öğrencilerin geleceğine hizmet eden liderlik, teknik ve dil becerilerini geliştirmek için eğitim kursları düzenlemek." }
+      ]
+
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "title": "Otantiklik",
+      "description": "Dinî ve millî değerlere bağlılık.",
+      "gradient": "bg-gradient-to-tr from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 2,
+      "title": "Kapsayıcılık",
+      "description": "Tüm öğrencilere istisnasız hizmet eden bir yapıyız.",
+      "gradient": "bg-gradient-to-tl from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 3,
+      "title": "Girişimcilik",
+      "description": "Gönüllü çalışmayı ve verme ruhunu teşvik etmek.",
+      "gradient": "bg-gradient-to-br from-[#FFFFFF] to-[#FFD4D4]"
+    },
+    {
+      "id": 4,
+      "title": "Profesyonellik",
+      "description": "Tüm faaliyetlerimizde organize çalışma ve şeffaflık.",
+      "gradient": "bg-gradient-to-bl from-[#FFFFFF] to-[#FFD4D4]"
+    }
+  ],
+  "organizationalChart": {
+      "imageSrc": "/imgs/ydeel/Organizational_Chart.svg",
+      "imageAlt": "Birliğin Organizasyon Şeması"
+  }
+}

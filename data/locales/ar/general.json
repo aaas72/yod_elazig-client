@@ -1,0 +1,102 @@
+{
+    "navigation": [
+        {
+            "href": "/",
+            "label": "الرئيسية"
+        },
+        {
+            "href": "/about",
+            "label": "من نحن"
+        },
+        {
+            "href": "/news",
+            "label": "الأخبار"
+        },
+        {
+            "href": "/activities",
+            "label": "الأنشطة"
+        },
+        {
+            "href": "/about-city",
+            "label": "عن المدينة"
+        },
+        {
+            "href": "/about-university",
+            "label": "عن الجامعة"
+        },
+        {
+            "href": "/resources",
+            "label": "الارشيف"
+        },
+        {
+            "href": "/contact",
+            "label": "تواصل معنا"
+        },
+        {
+            "href": "/volunteer",
+            "label": "التطوع"
+        }
+    ],
+    "contactInfo": {
+        "email": "info@example.com",
+        "phone": "+1 234 567 890",
+        "address": "Elazig, Turkey",
+        "socialLinks": [
+            {
+                "platform": "facebook",
+                "url": "#"
+            },
+            {
+                "platform": "twitter",
+                "url": "#"
+            },
+            {
+                "platform": "instagram",
+                "url": "#"
+            },
+            {
+                "platform": "linkedin",
+                "url": "#"
+            }
+        ]
+    },
+    "footer": {
+        "aboutText": "اتحاد طلابي تطوعي يمثل المظلة الرسمية للطلاب اليمنيين في جامعة فرات.",
+        "logoAlt": "شعار اتحاد الطلاب اليمنيين",
+        "quickLinksTitle": "روابط سريعة",
+        "contactTitle": "تواصل معنا",
+        "followUsTitle": "تابعنا على",
+        "newsletterTitle": "اشترك في نشرتنا البريدية",
+        "newsletterDescription": "كن على اطلاع بآخر أخبارنا وفعالياتنا.",
+        "newsletterPlaceholder": "أدخل بريدك الإلكتروني",
+        "newsletterButtonAriaLabel": "اشتراك",
+        "copyrightText": "اتحاد الطلاب اليمنيين. جميع الحقوق محفوظة.",
+        "address": "تركيا - إلازيغ - المركز",
+        "quickLinks": [
+            {
+                "href": "/",
+                "label": "الرئيسية"
+            },
+            {
+                "href": "/about",
+                "label": "من نحن"
+            },
+            {
+                "href": "/programs",
+                "label": "البرامج"
+            },
+            {
+                "href": "/events",
+                "label": "الفعاليات والأنشطة"
+            },
+            {
+                "href": "/volunteer",
+                "label": "التطوع"
+            },
+            {
+                "href": "/contact",
+                "label": "تواصل معنا"
+            }
+        ]
+    }
+}

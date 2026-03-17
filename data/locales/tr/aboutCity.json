@@ -1,0 +1,233 @@
+{
+  "hero": {
+    "title": "Elazığ Şehri",
+    "subtitle": "Şehrimiz",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageAlt": "Elazığ Şehir Manzarası",
+    "breadcrumbs": [
+      {
+        "label": "Ana Sayfa",
+        "href": "/"
+      },
+      {
+        "label": "Şehir Hk"
+      }
+    ]
+  },
+  "intro": {
+    "title": "Şehir Hakkında",
+    "imageUrl": "/imgs/HeroImgs/elazig_photo.png",
+    "imageOverlay": {
+      "title": "Stratejik Konum",
+      "description": "Doğu Anadolu'nun Kalbi ve Medeniyetlerin Kavuşma Noktası"
+    },
+    "paragraphs": [
+      "Tarihsel olarak 'Al-Aziz' olarak bilinen Elazığ, Doğu Anadolu'nun kalbinde, Dicle ve Fırat nehirlerinin kaynaklarına bakan bir mücevher gibi yer almaktadır. Verimli ovalar ile dağlık yükseltilerin kucaklaştığı bu şehirde, Hazar Gölü ve ülkenin başlıca hidroelektrik enerji kaynağı olan Keban Barajı gibi görkemli su yapıları bulunmaktadır.",
+      "Şehrin tarihsel kökleri, Urarturlular ve Romalılardan Selçuklulara ve Osmanlılara uzanan uygarlıklara tanıklık etmiş Harput Kalesi'ne dek uzanır. Büyük Cami'nin eğik minaresi, bölgenin sanatsal ve kültürel ihtişamının hikayelerini anlatmaya devam etmektedir.",
+      "Şehir, 19. yüzyılda 'Ma'muret-ül-Aziz' adıyla idari ve gelişim merkezi olarak kurulmasıyla niteliksel bir dönüşüm geçirmiş; günümüzde ise köklü Fırat Üniversitesi öncülüğünde önde gelen bir bilim ve kültür merkezi haline gelmiştir.",
+      "Elazığ'ı Yemenli öğrenciler için istisnai bir destinasyon kılan şey; gelişmiş eğitim ortamı, güvenli ve ekonomik açıdan uygun yaşamın yanı sıra halkının sıcak misafirperverliği ve ozanlığının bir araya geldiği bu uyumlu bileşimdir. Bu özellikler, şehri akademik başarı, kişisel gelişim ve geleceği inşa etmek için gerçekten ideal bir ortam haline getirmektedir."
+    ]
+  },
+  "historicalLandmarksTitle": "Tarihi Simgeler",
+  "historicalLandmarksTag": "Tarihi Simge",
+  "historicalLandmarks": [
+    {
+      "id": 1,
+      "title": "Harput Kalesi",
+      "wikiUrl": "https://tr.wikipedia.org/wiki/Harput_Kalesi",
+      "imageUrl": "/imgs/elazig/hatput.jpg",
+      "description": [
+        "Ünlü lakabı 'Süt Kalesi' ile bilinen Harput Kalesi, Elazığ'ın en belirgin tarihi simgesidir. Kale, şehre ve çevresindeki ovaya kapsamlı bir panoramik bakış sağlayan stratejik bir tepenin üzerinde oturmaktadır.",
+        "Tarihi Urartu Krallığı'na kadar uzanır ve Bizanslılar, Selçuklular ve Osmanlılar gibi büyük medeniyetleri görmüş, her biri duvarlarında ve iç binalarında izlerini bırakmıştır."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ulu Cami",
+      "imageUrl": "/imgs/elazig/UluCami.png",
+      "description": [
+        "Harput'taki Ulu Cami, Artuklu döneminde inşa edilen Anadolu'daki en eski ve en önemli dini yapılardan biridir. Cami, mimari bir şaheser olarak kabul edilen eşsiz eğri minaresiyle ünlüdür.",
+        "Cami, Selçuklu sanatının harika bir örneğini temsil eder ve asırlara meydan okuyan farklı tasarımı ve eski tarihi sayesinde ziyaretçileri kendine çeker."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Meryem Ana Kilisesi",
+      "wikiUrl": "https://tr.wikipedia.org/wiki/Meryem_Ana_Kilisesi_(Harput)",
+      "imageUrl": "/imgs/elazig/MeryemAnaKilisesi.png",
+      "description": [
+        "Meryem Ana Kilisesi, MS 2. yüzyıla kadar uzanan bölgedeki en eski ibadet yerlerinden biri olarak kabul edilir. Yapımında kullanılan taşlar nedeniyle 'Kızıl Kilise' olarak da bilinir.",
+        "Kilise, Süryani topluluğu için önemli bir tarihi ve dini mirası temsil eder ve Harput şehrinin çağlar boyunca yaşadığı kültürel ve dini çeşitliliğe bir tanık olarak durur."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Buzluk Mağarası",
+      "imageUrl": "/imgs/elazig/BuzlukMagara.png",
+      "description": [
+        "Elazığ'ın doğal harikalarından biri olan Buzluk Mağarası, yazın buz tutan, kışın ise sıcak hava üfleyen yapısıyla bilinir.",
+        "Jeolojik yapısı ve doğal güzelliği ile ziyaretçilerin ilgisini çeken önemli bir turizm noktasıdır."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Hazar Gölü",
+      "imageUrl": "/imgs/elazig/HazarGolu.png",
+      "description": [
+        "Doğu'nun gizli denizi olarak bilinen Hazar Gölü, mavi bayraklı plajları ve berrak suyu ile ünlüdür.",
+        "Su sporları ve kampçılık için ideal bir ortam sunan göl, aynı zamanda batık şehre ev sahipliği yapmaktadır."
+      ]
+    },
+    {
+      "id": 6,
+
+      "title": "Pertek Kalesi",
+      "imageUrl": "/imgs/elazig/PertekKalesi.webp",
+      "description": [
+        "Pertek Kalesi, Keban Gölü'nün ortasındaki heybetli kayalık bir adada yer alan Elazığ'ın en büyüleyici tarihi yapılarından biridir. Ortaçağ'da inşa edilen kale, Selçuklu ve Osmanlı medeniyetlerine tanıklık etmiştir.",
+        "Kale, 1974'te barajın inşasının ardından Keban Gölü sularının yükselmesiyle karadan yalıtılmış; bu durum ona efsanevi ve özgün bir karakter kazandırarak yakın ve uzaktan ziyaretçileri ve fotoğrafçıları buraya çekmektedir."
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Keban Barajı ve Gölü",
+      "imageUrl": "/imgs/elazig/keban-baraji.jpg",
+      "description": [
+        "Fırat Nehri üzerine inşa edilen Keban Barajı, 1974'te tamamlanan Türkiye'nin en büyük barajlarından biridir. Yapay gölü yaklaşık 675 kilometre karelik geniş bir alana yayılarak olağanüstü bir su yapısına dönüşmüştür.",
+        "Baraj, Türkiye'nin hidroelektrik enerji üretiminde temel bir dayanak noktasıdır. Kıyıları ise rekreasyon tesisleri, balıkçılık ve kamp olanakları ile popüler bir turizm destinasyonuna dönüşmüştür."
+      ]
+    }
+  ],
+  "enginesTitle": "Temel Ekonomik Motorlar",
+  "engines": [
+    {
+      "id": 1,
+      "title": "Madencilik ve Sanayi",
+      "content": [
+        "Elazığ, Türkiye'nin en önemli maden başkentlerinden biridir. Krom üretiminde önemli bir merkez olarak ulusal çapta tanınmaktadır.",
+        "Dağları ayrıca bakır, kurşun ve mermer gibi diğer önemli minerallerle doludur. Bu zenginliğe dayanarak 'Ferrokrom' fabrikaları ve çimento tesisleri gibi gelişmiş imalat sanayileri kurulmuştur."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Tarım ve Gıda İşleme",
+      "content": [
+        "Şehir, bölgenin gıda sepeti olarak kabul edilen verimli 'Uluova' ovasını kucaklamaktadır. Elazığ, özellikle uluslararası 'Öküzgözü' çeşidi olmak üzere en kaliteli üzüm türlerini üretmesiyle ünlüdür.",
+        "Kayısı, şeker pancarı ve tahıllara ek olarak. Bu tarımsal çeşitlilik, gıda işleme sektörünün refahına yol açmıştır."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Enerji",
+      "content": [
+        "Dicle ve Fırat nehirleri, üzerinde dev 'Keban' ve 'Karakaya' barajlarının inşa edildiği bölgenin can damarını temsil etmektedir.",
+        "Bu iki barajın önemi, sadece Türkiye'deki en büyük hidroelektrik enerji kaynakları arasında olmakla sınırlı değildir, aynı zamanda şehirdeki sanayi ve tarımı desteklemede hayati bir rol oynamaktadır."
+      ]
+    }
+  ],
+  "festivalsTitle": "Yıllık Etkinlikler ve Festivaller",
+  "festivals": [
+    {
+      "id": 1,
+      "title": "Üzüm Hasadı ve Orcik Festivali",
+      "description": "Geleneksel yöntemlerle üzüm hasadı ve pekmez yapımı; ünlü 'Orcik' tatlısının hazırlandığı sonbahar şenliği.",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdIfM5yQB5-xyK4HFd6gXCXEfKUJ86KuX0kw&s"
+    },
+    {
+      "id": 2,
+      "title": "Hazar Gölü Şiir Festivali",
+      "description": "Hazar Gölü kıyısında şairler ve doğanın buluştuğu yıllık edebi festival; şiir geceleri ve kültürel söyleşiler.",
+      "imageUrl": "https://elazig.ktb.gov.tr/Resim/46869,img2770kopyajpg.png?0"
+    },
+    {
+      "id": 3,
+      "title": "Harput Kültür ve Turizm Festivali",
+      "description": "Harput'un kadim mirasını yaşatan arkeolojik turlar, halk müziği gösterileri ve el sanatları atölyeleri.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Harput_-_panoramio.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Karakaya Su Sporları Festivali",
+      "description": "Karakaya Gölü'nde kürek, yelken ve tekne yarışlarının heyecanla buluştuğu yaz festivali.",
+      "imageUrl": "https://elazigsonhabercom.teimg.com/elazigsonhaber-com/uploads/2025/08/karakaya-baraj-golunde-kano-etkinligi-yapildi.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Elazığ Halk Kültürü Günleri",
+      "description": "Halk dansları, geleneksel müzik ve el sanatları sergileriyle Elazığ'ın özgün kültürel mirasını yaşatan günler.",
+      "imageUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQxhmLTobsOalOGho3Ji5_cBc2rAcYNXrgRsnTDUzVSIsevpj9"
+    }
+  ],
+  "activitiesTitle": "Açık Hava Etkinlikleri ve Maceralar",
+  "activities": [
+    {
+      "id": 1,
+      "title": "Hazar Gölü",
+      "description": "'İç Deniz'in sahillerinde yüzme, su sporları ve dinlence imkânları.",
+      "imageUrl": "https://www.firat.edu.tr/images/news/1750326599.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Harput Kalesi",
+      "description": "Tarihi kale yükseltisini tırmanın ve Elazığ ovasına eşsiz panoramik görünümün keyfini çıkarın.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Harput_-_panoramio.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Keban Barajı ve Kamp",
+      "description": "Keban Gölü'nün geniş kıyılarında balıkçılık, kamp ve doğa yürüyüşleri.",
+      "imageUrl": "/imgs/elazig/keban-baraji.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Buzluk Mağarası",
+      "description": "Yazın buz tutan, kışın sıcak hava üfleyen emsalsiz mağarayı keşfedin.",
+      "imageUrl": "/imgs/elazig/BuzlukMagara.png"
+    }
+  ],
+  "dishesTitle": "Yerel Mutfak ve Yemek Kültürü",
+  "dishOfTheMonth": "Öne Çıkan Yemek",
+  "dishes": [
+    {
+      "id": 1,
+      "title": "Harput Köftesi",
+      "description": "Bulgur ve kıyma karışımından yapılan köfteler tereyağı ve domates sosında pişirılır — Elazığ'ın simge yemeği.",
+      "imageUrl": "https://hasata.com.tr/Data/Blog/31.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Orcik",
+      "description": "Koyu üzüm pekmezine batırılarak güneşte kurutulan cevizlerden yapılan bölgeye özgü geleneksel tatlı.",
+      "imageUrl": "https://www.neyivar.com/upload/productsImage/1000x1000/0006584_cevizli-sucuk-orcik-1-kg_550-16.webp"
+    },
+    {
+      "id": 3,
+      "title": "Mantı",
+      "description": "Kıymalı küçük hamur şekilleri, sarımsaklı yoğurt ve tereyağı sosıyla servis edilir — klasik Türk lezzetı.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Manti.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Cacık",
+      "description": "Salatalık, sarımsak ve nane ile hazırlanan soğuk yoğurt meze — her yemeğin yanında sevilerek tüketilir.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cacik.jpg"
+    }
+  ],
+  "dailyLife": {
+    "title": "Günlük Yaşamın Doğası",
+    "modernLife": {
+      "title": "Modern Yaşamın Nabzı",
+      "paragraphs": [
+        "'Gazi Caddesi' gibi ana caddelerinde, yayaların hareketi ve gençlerin uğrak yeri olan modern kafeler aracılığıyla şehrin nabzını hissedersiniz. 'Park 23' gibi modern alışveriş merkezleri (AVM), sinemalar ve restoranların yanı sıra ünlü uluslararası ve yerel markaların yer aldığı eksiksiz bir alışveriş deneyimi sunar.",
+        "Yeni yerleşim mahalleleri ve büyük 'Fethi Sekin' Hastanesi gibi gelişmiş sağlık tesisleri, şehrin sakinlerine en yüksek yaşam kalitesini sağlama taahhüdünü yansıtmaktadır."
+      ]
+    },
+    "traditionalLife": {
+      "title": "Köklü Geleneklerin Ruhu",
+      "paragraphs": [
+        "Ancak Kapalı Çarşı'nın sokaklarında sadece birkaç adım ötede zaman yavaşlar. Burada atmosfer baharat ve ot kokularıyla doludur ve miras aldıkları zanaatları icra eden zanaatkarların sesleriyle yankılanır.",
+        "Sosyal ilişkiler, aile bağlarının ve komşulara saygının temel değerler olduğu şehrin kültürünün temel taşı olmaya devam etmektedir. Burada yaşam, güvenli ve birbirine bağlı bir sosyal ortam yaratarak sadeliğini ve sıcaklığını korumaktadır."
+      ]
+    }
+  }
+}

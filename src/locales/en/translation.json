@@ -1,0 +1,64 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "news": "News",
+    "events": "Events",
+    "programs": "Programs",
+    "aboutCity": "About City",
+    "aboutUniversity": "About University",
+    "resources": "Archive",
+    "contact": "Contact Us",
+    "volunteer": "Volunteer",
+    "faq": "FAQ"
+  },
+  "faq": {
+    "title": "Student Guide",
+    "description": "Your comprehensive guide to university and daily life in Turkey.",
+    "sectionTitle": "Browse Available Guides",
+    "sectionSubtitle": "Choose the guide that fits your needs",
+    "stillHaveQuestions": "Still have questions?",
+    "contactSupport": "Can't find what you're looking for? Contact us directly.",
+    "practicalSteps": "Practical Steps",
+    "illustrativeImages": "Illustrative Images",
+    "noResults": "No results found",
+    "trySearch": "Try adjusting your search query"
+  },
+  "footer": {
+    "rights": "All rights reserved © 2025",
+    "aboutText": "A voluntary student union representing the official umbrella for Yemeni students at Firat University.",
+    "logoAlt": "Yemeni Students Union Logo",
+    "quickLinksTitle": "Quick Links",
+    "contactTitle": "Contact Us",
+    "followUsTitle": "Follow Us",
+    "newsletterTitle": "Subscribe to our newsletter",
+    "newsletterDescription": "Stay updated with our latest news and events.",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterButtonAriaLabel": "Subscribe",
+    "copyrightText": "Yemeni Students Union. All rights reserved.",
+    "visitCountLabel": "Site visit count",
+    "address": "Turkey - Elazig - Merkez",
+    "quickLinks": [
+      { "href": "/", "label": "Home" },
+      { "href": "/about", "label": "About Us" },
+      { "href": "/programs", "label": "Programs" },
+      { "href": "/events", "label": "Events" },
+      { "href": "/volunteer", "label": "Volunteer" },
+      { "href": "/contact", "label": "Contact Us" }
+    ]
+  },
+  "buttons": {
+    "readMore": "Read More",
+    "submit": "Submit",
+    "viewArchive": "Browse Archive",
+    "viewSpecialties": "Show Specialties"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "success": "Operation successful",
+    "searchPlaceholder": "Search...",
+    "noResults": "No results found",
+    "trySearch": "Try adjusting your search query"
+  }
+}
