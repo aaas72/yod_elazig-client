@@ -1,6 +1,7 @@
-// In production (browser), uploads are served from the same origin (via nginx)
+// In production, uploads are served from the same origin (via nginx)
 // In development, they're served from localhost:5000
-const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+const isServer = typeof window === 'undefined';
+const isProduction = process.env.NODE_ENV === 'production';
 const API_URL = isProduction ? '' : 'http://localhost:5000';
 const UPLOAD_DIR = process.env.NEXT_PUBLIC_UPLOAD_DIR || 'uploads';
 

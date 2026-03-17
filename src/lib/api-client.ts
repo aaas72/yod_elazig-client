@@ -3,8 +3,8 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
-// In production (browser), use relative paths. In development, use localhost.
-const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+// In production, use relative paths. In development, use localhost.
+const isProduction = process.env.NODE_ENV === 'production';
 const API_BASE_URL = isProduction ? '/api/v1' : 'http://localhost:5000/api/v1';
 const UPLOAD_DIR = process.env.NEXT_PUBLIC_UPLOAD_DIR || 'uploads';
 const BASE_URL = isProduction ? '' : 'http://localhost:5000';
