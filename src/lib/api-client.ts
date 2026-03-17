@@ -3,9 +3,11 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
-const API_BASE_URL = `${process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000'}/api/v1`;
+// In production (browser), use relative paths. In development, use localhost.
+const isProduction = typeof window !== 'undefined' && window.location.hostname !== 'localhost';
+const API_BASE_URL = isProduction ? '/api/v1' : 'http://localhost:5000/api/v1';
 const UPLOAD_DIR = process.env.NEXT_PUBLIC_UPLOAD_DIR || 'uploads';
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:5000';
+const BASE_URL = isProduction ? '' : 'http://localhost:5000';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
