@@ -69,7 +69,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
     })
       .then((r) => r.json())
       .then((data) => {
-        const items = (data.data || []).map((item: any) => ({
+        const items = (data.data?.tickers || data.data || []).map((item: any) => ({
           id: item._id,
           title: item.text?.[lang] || item.text?.ar || "",
           date: item.startDate
