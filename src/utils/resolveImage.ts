@@ -1,4 +1,5 @@
-const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000').replace(/\/api(\/v1)?\/?$/, '');
+// In production, uploads are served from the same origin (via nginx)
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? (typeof window !== 'undefined' ? '' : 'http://localhost:5000');
 const UPLOAD_DIR = process.env.NEXT_PUBLIC_UPLOAD_DIR || 'uploads';
 
 const FALLBACK = '/imgs/HeroImgs/main-bg.jpg';
