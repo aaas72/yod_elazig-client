@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
                   <StaggerItem key={card.id}>
                     <div className="rounded-2xl border-2 border-[#BE141B] overflow-hidden">
                       {/* Header */}
-                      <div className="flex items-center gap-4 px-6 py-2 bg-gradient-to-br from-[#BE141B] to-[#a11015]">
+                      <div className="flex items-center gap-4 px-6 py-2 bg-linear-to-br from-[#BE141B] to-[#a11015]">
                         <div className="w-12 h-12 shrink-0 flex items-center justify-center bg-white text-gray-800 text-xl font-bold rounded-full shadow-lg">
                           {card.number}
                         </div>

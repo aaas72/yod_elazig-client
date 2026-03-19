@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: AboutUniversityPageProps): Pr
   const data = await getAboutUniversityData(locale);
 
   const descriptions: Record<Locale, string> = {
-    ar: "تعرّف على جامعة فرات في إلازيغ - أقسامها، كلياتها، المرافق المتاحة، وكل ما يحتاجه الطالب اليمني عن مقر دراسته.",
+    ar: "تعرّف على جامعة الفرات في إلازيغ - أقسامها، كلياتها، المرافق المتاحة، وكل ما يحتاجه الطالب اليمني عن مقر دراسته.",
     en: "Learn about Fırat University in Elazig - its departments, faculties, available facilities, and everything a Yemeni student needs about their university.",
     tr: "Elazığ'daki Fırat Üniversitesi hakkında bilgi edinin - bölümleri, fakülteleri, mevcut tesisler ve Yemenli bir öğrencinin üniversite hakkında bilmesi gerekenler.",
   };
@@ -146,7 +146,7 @@ export default async function AboutUniversityPage({ params }: AboutUniversityPag
           </section>
 
           {/* Research Section */}
-          <section className="rounded-2xl overflow-hidden bg-gradient-to-tr from-red-300 to-red-100">
+          <section className="rounded-2xl overflow-hidden bg-linear-to-tr from-red-300 to-red-100">
             <FadeIn direction="up">
               <div className="relative w-full h-72 md:h-96">
                 <img

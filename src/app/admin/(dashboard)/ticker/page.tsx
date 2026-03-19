@@ -82,7 +82,7 @@ export default function AdminTickerPage() {
     { key: 'order', label: '#', render: (item: TickerItem) => <span className="text-gray-400 text-sm">{item.order}</span> },
     { key: 'text', label: 'النص', render: (item: TickerItem) => <p className="font-medium text-gray-800 truncate max-w-sm">{item.text.ar || item.text.en}</p> },
     { key: 'isActive', label: 'الحالة', render: (item: TickerItem) => <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${item.isActive ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-400'}`}>{item.isActive ? 'فعال' : 'معطل'}</span> },
-    { key: 'link', label: 'الرابط', render: (item: TickerItem) => item.link ? <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-xs truncate max-w-[150px] block">{item.link}</a> : <span className="text-gray-400 text-xs">-</span> },
+    { key: 'link', label: 'الرابط', render: (item: TickerItem) => item.link ? <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-xs truncate max-w-37.5 block">{item.link}</a> : <span className="text-gray-400 text-xs">-</span> },
   ];
 
   return (

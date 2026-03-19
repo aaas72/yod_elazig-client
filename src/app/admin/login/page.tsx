@@ -34,7 +34,7 @@ function LoginForm() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-red-900 via-gray-800 to-gray-900 text-white" dir="rtl">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-red-900 via-gray-800 to-gray-900 text-white" dir="rtl">
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
@@ -49,7 +49,7 @@ function LoginForm() {
               className="w-24 h-24 mx-auto mb-4 object-contain"
             />
             <h1 className="text-2xl font-bold text-white">لوحة التحكم</h1>
-            <p className="text-gray-300 mt-1">اتحاد الطلاب اليمنيين - فرع الازيغ</p>
+            <p className="text-gray-300 mt-1">اتحاد الطلاب اليمنيين - فرع إلازيغ</p>
           </div>
 
           {error && (

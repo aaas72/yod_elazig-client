@@ -30,6 +30,7 @@ interface FaqClientProps {
   searchPlaceholder: string;
   noResultsTitle: string;
   noResultsText: string;
+  categoriesTitle: string;
 }
 
 export default function FaqClient({
@@ -38,6 +39,7 @@ export default function FaqClient({
   searchPlaceholder,
   noResultsTitle,
   noResultsText,
+  categoriesTitle,
 }: FaqClientProps) {
   const [activeCategory, setActiveCategory] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -128,13 +130,13 @@ export default function FaqClient({
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full ps-10 pe-4 py-3 sm:py-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-500 focus:border-transparent outline-none transition-all text-base"
                 />
-                <Search className="absolute start-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute inset-s-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               </div>
 
               {/* Categories Menu (Desktop) */}
               <nav className="hidden lg:block bg-white rounded-2xl border border-gray-200 p-4">
                 <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">
-                  Categories
+                  {categoriesTitle}
                 </h3>
                 <ul className="space-y-1">
                   {categories.map((category) => (
@@ -162,7 +164,7 @@ export default function FaqClient({
                     <button
                       key={category.id}
                       onClick={() => handleCategoryClick(category.id)}
-                      className={`flex-shrink-0 whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-medium transition-all border flex items-center gap-2 ${
+                      className={`shrink-0 whitespace-nowrap px-4 py-2.5 rounded-xl text-sm font-medium transition-all border flex items-center gap-2 ${
                         activeCategory === category.id
                           ? "bg-red-600 text-white border-red-600 shadow-lg shadow-red-200"
                           : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
@@ -220,13 +222,15 @@ export default function FaqClient({
                                 : ""
                             }`}
                           >
-                            <button
-                              onClick={() => toggleQuestion(q.id)}
-                              className="w-full text-start px-6 py-5 flex items-start justify-between gap-4 group"
-                            >
-                              <span className="font-semibold text-gray-800 group-hover:text-red-700 transition-colors pt-1 text-base sm:text-lg">
-                                {q.question}
-                              </span>
+                            <div className="w-full text-start px-6 py-5 flex items-start justify-between gap-4 group">
+                              <button
+                                onClick={() => toggleQuestion(q.id)}
+                                className="flex-1 text-start"
+                              >
+                                <span className="font-semibold text-gray-800 group-hover:text-red-700 transition-colors pt-1 text-base sm:text-lg">
+                                  {q.question}
+                                </span>
+                              </button>
                               <div className="flex items-center gap-1 shrink-0">
                                 <button
                                   onClick={(e) => {
@@ -242,7 +246,8 @@ export default function FaqClient({
                                     <Link2 className="w-4 h-4" />
                                   )}
                                 </button>
-                                <span
+                                <button
+                                  onClick={() => toggleQuestion(q.id)}
                                   className={`p-2 rounded-full transition-all duration-300 ${
                                     openQuestions[q.id]
                                       ? "bg-red-100 text-red-600 rotate-180"
@@ -250,9 +255,9 @@ export default function FaqClient({
                                   }`}
                                 >
                                   <ChevronDown className="w-5 h-5" />
-                                </span>
+                                </button>
                               </div>
-                            </button>
+                            </div>
                             <div
                               className={`grid transition-all duration-300 ease-in-out ${
                                 openQuestions[q.id]
@@ -366,7 +371,7 @@ export default function FaqClient({
       {/* File Preview Modal */}
       {previewUrl && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70"
+          className="fixed inset-0 z-9999 flex items-center justify-center bg-black/70"
           onClick={() => setPreviewUrl(null)}
         >
           <div

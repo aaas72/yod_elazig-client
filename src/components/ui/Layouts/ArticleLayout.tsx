@@ -40,7 +40,7 @@ export default function ArticleLayout({
               className="max-w-4xl text-start"
             >
               <h1
-                className="text-xl md:text-3xl font-bold mb-6 break-words"
+                className="text-xl md:text-3xl font-bold mb-6 wrap-break-word"
                 style={{
                   wordBreak: "break-word",
                   overflowWrap: "break-word",

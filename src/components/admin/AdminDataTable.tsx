@@ -108,7 +108,7 @@ export default function AdminDataTable<T extends { _id: string }>({
                   <tr key={item._id} className="hover:bg-gray-50/50 transition-colors block sm:table-row odd:bg-white even:bg-gray-50 border-b sm:border-none border-gray-400">
                     {columns.map((col) => (
                       <td key={col.key} data-label={col.label}
-                        className={`px-5 py-4 break-words whitespace-nowrap relative block sm:table-cell ${col.className || ''}`}
+                        className={`px-5 py-4 wrap-break-word whitespace-nowrap relative block sm:table-cell ${col.className || ''}`}
                       >
                         {col.render ? col.render(item) : (item as any)[col.key]}
                       </td>

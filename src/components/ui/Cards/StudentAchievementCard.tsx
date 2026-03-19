@@ -26,7 +26,7 @@ const StudentAchievementCard = ({ name, description, category, image, socialLink
   return (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_40px_rgba(190,20,27,0.15)] transition-all duration-500 hover:-translate-y-1">
       {/* الشريط العلوي المتدرج */}
-      <div className="h-40 bg-gradient-to-br from-[#BE141B] via-[#d4393f] to-[#a11015] relative overflow-hidden">
+      <div className="h-40 bg-linear-to-br from-[#BE141B] via-[#d4393f] to-[#a11015] relative overflow-hidden">
         {/* زخرفة خلفية */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-2 right-4 w-16 h-16 border-2 border-white rounded-full"></div>
@@ -34,7 +34,7 @@ const StudentAchievementCard = ({ name, description, category, image, socialLink
           <div className="absolute top-4 left-1/2 w-6 h-6 border border-white rounded-full"></div>
         </div>
         {/* أيقونة الإنجاز */}
-        <div className="absolute top-3 start-3 w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/20">
+        <div className="absolute top-3 inset-s-3 w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg border border-white/20">
           <Award size={20} className="text-white drop-shadow-md" />
         </div>
         {/* أيقونات السوشيال ميديا */}
@@ -89,9 +89,9 @@ const StudentAchievementCard = ({ name, description, category, image, socialLink
 
         {/* خط فاصل مزخرف */}
         <div className="flex items-center justify-center gap-2 mb-3">
-          <div className="w-6 h-[2px] bg-[#BE141B]/30 group-hover:w-8 transition-all duration-300"></div>
+          <div className="w-6 h-0.5 bg-[#BE141B]/30 group-hover:w-8 transition-all duration-300"></div>
           <div className="w-2 h-2 rounded-full bg-[#BE141B]/50"></div>
-          <div className="w-6 h-[2px] bg-[#BE141B]/30 group-hover:w-8 transition-all duration-300"></div>
+          <div className="w-6 h-0.5 bg-[#BE141B]/30 group-hover:w-8 transition-all duration-300"></div>
         </div>
 
         {/* الوصف */}
@@ -101,7 +101,7 @@ const StudentAchievementCard = ({ name, description, category, image, socialLink
       </div>
 
       {/* شريط سفلي */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#BE141B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="h-1 bg-linear-to-r from-transparent via-[#BE141B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
   );
 };

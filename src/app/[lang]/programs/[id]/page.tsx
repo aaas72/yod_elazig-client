@@ -128,7 +128,7 @@ export default async function ProgramDetailPage({ params }: ProgramDetailPagePro
       <div
         dir={dir}
         dangerouslySetInnerHTML={{ __html: description }}
-        className={`prose prose-sm md:prose-base lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:leading-relaxed ${dir === "rtl" ? "rtl" : "ltr"} break-words`}
+        className={`prose text-sm sm:text-base md:prose-base lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:leading-relaxed ${dir === "rtl" ? "rtl" : "ltr"} wrap-break-word`}
         style={{
           wordBreak: "break-word",
           overflowWrap: "break-word",
@@ -141,7 +141,7 @@ export default async function ProgramDetailPage({ params }: ProgramDetailPagePro
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
           {program.location && (
             <div
-              className="break-words"
+              className="wrap-break-word"
               style={{
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
@@ -154,7 +154,7 @@ export default async function ProgramDetailPage({ params }: ProgramDetailPagePro
           )}
           {program.category && (
             <div
-              className="break-words"
+              className="wrap-break-word"
               style={{
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
@@ -193,7 +193,7 @@ export default async function ProgramDetailPage({ params }: ProgramDetailPagePro
               (tag: string, idx: number) => (
                 <span
                   key={idx}
-                  className="text-xs bg-red-50 text-red-600 px-2 py-1 rounded-full break-words"
+                  className="text-xs bg-red-50 text-red-600 px-2 py-1 rounded-full wrap-break-word"
                   style={{
                     wordBreak: "break-word",
                     overflowWrap: "break-word",

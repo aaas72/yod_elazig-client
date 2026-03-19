@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   Facebook,
   Twitter,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
+import { settingsService } from "@/services/settingsService";
 
 interface FooterProps {
   lang: Locale;
@@ -26,8 +28,8 @@ const socialIcons = {
 };
 
 const defaultSocialLinks = {
-  facebook: "https://www.facebook.com/yod.elazig",
-  instagram: "https://www.instagram.com/yod.elazig",
+  facebook: "https://www.facebook.com/yodtelazig",
+  instagram: "https://www.instagram.com/yod_elazig",
 };
 
 const defaultContactInfo = {
@@ -37,9 +39,37 @@ const defaultContactInfo = {
 
 export default function Footer({ lang, dictionary }: FooterProps) {
   const quickLinks = dictionary.footer.quickLinks || [];
+  const [settings, setSettings] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const data = await settingsService.get();
+        setSettings(data);
+      } catch (error) {
+        console.error("Failed to fetch settings:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSettings();
+  }, []);
+
+  // Use dynamic settings if available, otherwise fall back to defaults
+  const contactInfo = {
+    email: settings?.contactInfo?.email || defaultContactInfo.email,
+    phone: settings?.contactInfo?.phone || defaultContactInfo.phone,
+  };
+
+  const socialLinks = {
+    facebook: settings?.socialLinks?.facebook || defaultSocialLinks.facebook,
+    instagram: settings?.socialLinks?.instagram || defaultSocialLinks.instagram,
+  };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-r from-[#181818] to-[#202020] text-white">
+    <footer className="relative overflow-hidden bg-linear-to-r from-[#181818] to-[#202020] text-white">
       {/* Background patterns */}
       <div className="absolute bottom-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden z-0">
         <img
@@ -58,7 +88,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
         {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and about */}
-          <div className="space-y-4 max-w-[200px]">
+          <div className="space-y-4 max-w-50">
             <div className="flex items-end gap-3">
               <img
                 src="/imgs/logos/yodellogo.webp"
@@ -101,16 +131,16 @@ export default function Footer({ lang, dictionary }: FooterProps) {
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-gray-300" />
                 <a
-                  href={`mailto:${defaultContactInfo.email}`}
+                  href={`mailto:${contactInfo.email}`}
                   className="text-gray-300 hover:text-white"
                 >
-                  {defaultContactInfo.email}
+                  {contactInfo.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-gray-300" />
                 <span className="text-gray-300" dir="ltr">
-                  {defaultContactInfo.phone}
+                  {contactInfo.phone}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -128,7 +158,7 @@ export default function Footer({ lang, dictionary }: FooterProps) {
             <div className="flex gap-4">
               {(["facebook", "instagram"] as const).map((platform) => {
                 const Icon = socialIcons[platform];
-                const url = defaultSocialLinks[platform];
+                const url = socialLinks[platform];
                 if (!Icon || !url) return null;
                 return (
                   <a

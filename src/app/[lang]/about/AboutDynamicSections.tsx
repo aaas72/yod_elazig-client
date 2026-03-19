@@ -30,6 +30,7 @@ interface AboutDynamicSectionsProps {
 export default function AboutDynamicSections({ lang, sections }: AboutDynamicSectionsProps) {
   const locale = lang as 'ar' | 'en' | 'tr';
   const { members: executiveMembers, loading: execLoading } = useBoardMembersData('executive', locale);
+  const { members: supervisoryMembers, loading: supLoading } = useBoardMembersData('supervisory', locale);
   const { members: orgMembers, loading: orgLoading } = useBoardMembersData('organizational', locale);
   const { achievements, loading: achLoading } = useAchievementsData(locale);
   const { achievements: studentAchievements, loading: stuLoading } = useStudentAchievementsData(locale);
@@ -48,12 +49,12 @@ export default function AboutDynamicSections({ lang, sections }: AboutDynamicSec
               />
             </FadeIn>
           </div>
-          {execLoading ? (
+          {(execLoading || supLoading) ? (
             <div className="flex justify-center py-12">
               <div className="w-10 h-10 border-4 border-red-200 border-t-red-600 rounded-full animate-spin"></div>
             </div>
           ) : (
-            <ExecutiveBoardSection members={executiveMembers} lang={lang} />
+            <ExecutiveBoardSection members={[...executiveMembers, ...supervisoryMembers]} lang={lang} />
           )}
         </div>
       </section>
@@ -100,8 +101,8 @@ export default function AboutDynamicSections({ lang, sections }: AboutDynamicSec
           )}
         </section>
 
-        {/* Student Achievements Section */}
-        <section className="w-full py-16 px-4">
+        {/* Student Achievements Section - TEMPORARILY HIDDEN */}
+        {/* <section className="w-full py-16 px-4">
           <div className="text-center mb-12">
             <FadeIn direction="up">
               <SectionTitle
@@ -117,7 +118,7 @@ export default function AboutDynamicSections({ lang, sections }: AboutDynamicSec
           ) : (
             <StudentAchievementsSection achievements={studentAchievements} lang={lang} />
           )}
-        </section>
+        </section> */}
       </div>
 
       {/* Join Us Section */}

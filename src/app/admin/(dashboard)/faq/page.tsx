@@ -2,12 +2,13 @@
 
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { faqService, type FaqItem, type FaqStep } from '@/services/faqService';
+import { faqCategoryService, type FaqCategory } from '@/services/faqCategoryService';
 import { uploadService } from '@/services/uploadService';
 import { resolveImage } from '@/utils/resolveImage';
 import AdminDataTable from '@/components/admin/AdminDataTable';
 import AdminModal from '@/components/admin/AdminModal';
 import RichTextEditor from '@/components/admin/RichTextEditor';
-import { Edit, Trash2, GripVertical, Plus, X, Upload, FileText, Loader2, Image as ImageIcon } from 'lucide-react';
+import { Edit, Trash2, GripVertical, Plus, X, Upload, FileText, Loader2, Image as ImageIcon, Settings } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 type Lang = 'ar' | 'en' | 'tr';
@@ -36,12 +37,16 @@ const initialFormData: FaqFormData = {
 
 export default function AdminFaqPage() {
   const [items, setItems] = useState<FaqItem[]>([]);
+  const [categories, setCategories] = useState<FaqCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<FaqItem | null>(null);
+  const [editingCategory, setEditingCategory] = useState<FaqCategory | null>(null);
   const [saving, setSaving] = useState(false);
   const [formData, setFormData] = useState<FaqFormData>(initialFormData);
+  const [categoryFormData, setCategoryFormData] = useState<{ name: { ar: string; en: string; tr: string }; slug: string }>({ name: { ar: '', en: '', tr: '' }, slug: '' });
   const [activeLang, setActiveLang] = useState<Lang>('ar');
   const [uploadingDoc, setUploadingDoc] = useState(false);
   const [uploadingStepFile, setUploadingStepFile] = useState<number | null>(null);
@@ -55,13 +60,17 @@ export default function AdminFaqPage() {
   const loadData = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await faqService.getAll({ search });
-      const faqsList: FaqItem[] = Array.isArray(data)
-        ? data
-        : Array.isArray(data?.data)
-        ? data.data
+      const [faqData, catData] = await Promise.all([
+        faqService.getAll({ search }),
+        faqCategoryService.getAll()
+      ]);
+      const faqsList: FaqItem[] = Array.isArray(faqData)
+        ? faqData
+        : Array.isArray(faqData?.data)
+        ? faqData.data
         : [];
       setItems(faqsList);
+      setCategories(Array.isArray(catData?.data) ? catData.data : []);
     } catch {
       toast.error('فشل التحميل');
     } finally {
@@ -281,10 +290,60 @@ export default function AdminFaqPage() {
     }));
   };
 
+  // Category Management
+  const openCategoryModal = (category?: FaqCategory) => {
+    if (category) {
+      setEditingCategory(category);
+      setCategoryFormData({
+        name: { ar: category.name.ar || '', en: category.name.en || '', tr: category.name.tr || '' },
+        slug: category.slug || ''
+      });
+    } else {
+      setEditingCategory(null);
+      setCategoryFormData({ name: { ar: '', en: '', tr: '' }, slug: '' });
+    }
+    setCategoryModalOpen(true);
+  };
+
+  const handleSaveCategory = async () => {
+    try {
+      setSaving(true);
+      if (editingCategory) {
+        await faqCategoryService.update(editingCategory._id, categoryFormData);
+        toast.success('تم تحديث التصنيف');
+      } else {
+        await faqCategoryService.create(categoryFormData);
+        toast.success('تم إنشاء التصنيف');
+      }
+      setCategoryModalOpen(false);
+      loadData();
+    } catch (err: any) {
+      toast.error(err.response?.data?.message || 'فشلت العملية');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDeleteCategory = async (id: string) => {
+    if (!confirm('هل أنت متأكد من حذف هذا التصنيف؟')) return;
+    try {
+      await faqCategoryService.delete(id);
+      toast.success('تم حذف التصنيف');
+      loadData();
+    } catch {
+      toast.error('فشل الحذف');
+    }
+  };
+
+  const getCategoryName = (slug: string) => {
+    const cat = categories.find(c => c.slug === slug);
+    return cat ? (cat.name.ar || cat.name.en || slug) : slug;
+  };
+
   const columns = [
     { key: 'order', label: '#', render: (item: FaqItem) => <span className="flex items-center gap-1 text-gray-400"><GripVertical size={14} />{item.order}</span> },
     { key: 'question', label: 'السؤال', render: (item: FaqItem) => <p className="font-medium text-gray-800 truncate max-w-sm">{item.question.ar || item.question.en}</p> },
-    { key: 'category', label: 'التصنيف', render: (item: FaqItem) => <span className="px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{item.category || '-'}</span> },
+    { key: 'category', label: 'التصنيف', render: (item: FaqItem) => <span className="px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{getCategoryName(item.category) || '-'}</span> },
   ];
 
   return (
@@ -316,47 +375,28 @@ export default function AdminFaqPage() {
           {/* Top Fields: Category & Order */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">التصنيف</label>
-              <div className="flex gap-2">
-                <select
-                  value={formData.category}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    if (val === 'new') {
-                      setFormData({ ...formData, category: '' });
-                    } else {
-                      setFormData({ ...formData, category: val });
-                    }
-                  }}
-                  className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500 bg-white"
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-sm font-medium text-gray-700">التصنيف</label>
+                <button
+                  type="button"
+                  onClick={() => openCategoryModal()}
+                  className="text-xs text-red-600 hover:text-red-700 flex items-center gap-1"
                 >
-                  <option value="">اختر التصنيف</option>
-                  <option value="general">أسئلة عامة (General)</option>
-                  <option value="residency">الإقامة والهجرة (Residency)</option>
-                  <option value="academic">الشؤون الأكاديمية (Academic)</option>
-                  <option value="living">المعيشة والسكن (Living)</option>
-                  <option value="membership">العضوية والانتخابات (Membership)</option>
-                  <option value="technical">دعم تقني (Technical)</option>
-
-                  {/* Dynamic categories from existing items */}
-                  {Array.from(new Set(items.map(i => i.category)))
-                    .filter(c => !['general', 'residency', 'academic', 'living', 'membership', 'technical'].includes(c))
-                    .map(c => (
-                      <option key={c} value={c}>{c}</option>
-                    ))
-                  }
-
-                  <option value="new" className="font-bold text-red-600">+ تصنيف جديد</option>
-                </select>
+                  <Settings size={12} /> إدارة التصنيفات
+                </button>
               </div>
-              {/* Show input if category is not one of the predefined ones (or if user wants to type new) - logic: if current value is not in standard list, show input to edit/view it */}
-              <input
-                 type="text"
-                 value={formData.category}
-                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                 className="mt-2 w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500"
-                 placeholder="أكتب اسم التصنيف الجديد (مثال: sports)"
-              />
+              <select
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500 bg-white"
+              >
+                <option value="">اختر التصنيف</option>
+                {categories.map((cat) => (
+                  <option key={cat._id} value={cat.slug}>
+                    {cat.name.ar || cat.name.en} ({cat.slug})
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">الترتيب</label>
@@ -463,7 +503,7 @@ export default function AdminFaqPage() {
                          {step.fileUrl ? (
                            <div className="flex items-center gap-2 bg-white px-2 py-1 rounded border border-gray-200 text-xs text-blue-600">
                              <ImageIcon size={14} />
-                             <button onClick={() => setPreviewUrl(resolveImage(step.fileUrl))} className="max-w-[150px] truncate hover:underline text-blue-600">
+                             <button onClick={() => setPreviewUrl(resolveImage(step.fileUrl))} className="max-w-37.5 truncate hover:underline text-blue-600">
                                {step.fileUrl.split('/').pop()}
                              </button>
                              <button onClick={() => removeStepFile(idx)} className="text-red-500 hover:bg-red-50 rounded p-0.5"><X size={12}/></button>
@@ -525,7 +565,7 @@ export default function AdminFaqPage() {
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <FileText size={16} />
-                      <button onClick={() => setPreviewUrl(resolveImage(doc.url))} className="hover:underline text-blue-600 truncate max-w-[200px]">
+                      <button onClick={() => setPreviewUrl(resolveImage(doc.url))} className="hover:underline text-blue-600 truncate max-w-50">
                         {doc.url.split('/').pop()}
                       </button>
                     </div>
@@ -579,7 +619,7 @@ export default function AdminFaqPage() {
 
       {/* Preview Modal */}
       {previewUrl && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70" onClick={() => setPreviewUrl(null)}>
+        <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/70" onClick={() => setPreviewUrl(null)}>
           <div className="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-hidden m-4" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between px-4 py-3 border-b">
               <span className="text-sm font-medium text-gray-700 truncate max-w-xs">{previewUrl.split('/').pop()}</span>
@@ -595,6 +635,99 @@ export default function AdminFaqPage() {
           </div>
         </div>
       )}
+
+      {/* Category Management Modal */}
+      <AdminModal
+        isOpen={categoryModalOpen}
+        onClose={() => setCategoryModalOpen(false)}
+        title={editingCategory ? 'تعديل التصنيف' : 'إضافة تصنيف جديد'}
+        size="md"
+      >
+        <div className="space-y-4">
+          {/* Categories List */}
+          {!editingCategory && categories.length > 0 && (
+            <div className="mb-4 border-b border-gray-100 pb-4">
+              <h4 className="text-sm font-medium text-gray-700 mb-2">التصنيفات الحالية</h4>
+              <div className="space-y-2 max-h-40 overflow-y-auto">
+                {categories.map((cat) => (
+                  <div key={cat._id} className="flex items-center justify-between bg-gray-50 px-3 py-2 rounded-lg">
+                    <span className="text-sm">{cat.name.ar || cat.name.en} <span className="text-gray-400">({cat.slug})</span></span>
+                    <div className="flex items-center gap-1">
+                      <button onClick={() => openCategoryModal(cat)} className="p-1 hover:bg-gray-200 rounded"><Edit size={14} className="text-blue-600" /></button>
+                      <button onClick={() => handleDeleteCategory(cat._id)} className="p-1 hover:bg-red-50 rounded"><Trash2 size={14} className="text-red-500" /></button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Category Form */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">المعرف (Slug)</label>
+            <input
+              type="text"
+              value={categoryFormData.slug}
+              onChange={(e) => setCategoryFormData({ ...categoryFormData, slug: e.target.value.toLowerCase().replace(/\s+/g, '-') })}
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="مثال: general, academic, living"
+              dir="ltr"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 gap-3">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">الاسم بالعربية</label>
+              <input
+                type="text"
+                value={categoryFormData.name.ar}
+                onChange={(e) => setCategoryFormData({ ...categoryFormData, name: { ...categoryFormData.name, ar: e.target.value } })}
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-red-500"
+                placeholder="أسئلة عامة"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">الاسم بالإنجليزية</label>
+              <input
+                type="text"
+                value={categoryFormData.name.en}
+                onChange={(e) => setCategoryFormData({ ...categoryFormData, name: { ...categoryFormData.name, en: e.target.value } })}
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-red-500"
+                placeholder="General Questions"
+                dir="ltr"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">الاسم بالتركية</label>
+              <input
+                type="text"
+                value={categoryFormData.name.tr}
+                onChange={(e) => setCategoryFormData({ ...categoryFormData, name: { ...categoryFormData.name, tr: e.target.value } })}
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-red-500"
+                placeholder="Genel Sorular"
+                dir="ltr"
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t">
+            <button
+              onClick={() => setCategoryModalOpen(false)}
+              className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-xl"
+            >
+              إلغاء
+            </button>
+            <button
+              onClick={handleSaveCategory}
+              disabled={saving || !categoryFormData.slug || !categoryFormData.name.ar}
+              className="px-4 py-2 text-sm bg-red-600 text-white rounded-xl hover:bg-red-700 disabled:opacity-50 flex items-center gap-2"
+            >
+              {saving && <Loader2 size={14} className="animate-spin" />}
+              {editingCategory ? 'تحديث' : 'إنشاء'}
+            </button>
+          </div>
+        </div>
+      </AdminModal>
     </>
   );
 }

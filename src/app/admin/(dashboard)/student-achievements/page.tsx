@@ -151,7 +151,7 @@ export default function AdminStudentAchievementsPage() {
     },
     { key: 'studentName', label: 'اسم الطالب', render: (item: StudentAchievementItem) => <p className="font-medium text-gray-800">{item.studentName.ar || item.studentName.en}</p> },
     { key: 'category', label: 'فئة الجائزة', render: (item: StudentAchievementItem) => <p className="text-gray-500 text-sm">{item.category?.ar || item.category?.en || '—'}</p> },
-    { key: 'description', label: 'الوصف', render: (item: StudentAchievementItem) => <p className="text-gray-500 text-sm truncate max-w-[200px]">{item.description.ar || item.description.en}</p> },
+    { key: 'description', label: 'الوصف', render: (item: StudentAchievementItem) => <p className="text-gray-500 text-sm truncate max-w-50">{item.description.ar || item.description.en}</p> },
     {
       key: 'isPublished',
       label: 'الحالة',
@@ -267,19 +267,19 @@ export default function AdminStudentAchievementsPage() {
           {/* روابط التواصل الاجتماعي */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
                 <Facebook size={16} className="text-[#1877F2]" /> Facebook
               </label>
               <input value={formData.socialFacebook} onChange={(e) => setFormData({ ...formData, socialFacebook: e.target.value })} placeholder="https://facebook.com/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
                 <Instagram size={16} className="text-[#E4405F]" /> Instagram
               </label>
               <input value={formData.socialInstagram} onChange={(e) => setFormData({ ...formData, socialInstagram: e.target.value })} placeholder="https://instagram.com/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5">
                 <Linkedin size={16} className="text-[#0A66C2]" /> LinkedIn
               </label>
               <input value={formData.socialLinkedin} onChange={(e) => setFormData({ ...formData, socialLinkedin: e.target.value })} placeholder="https://linkedin.com/in/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />

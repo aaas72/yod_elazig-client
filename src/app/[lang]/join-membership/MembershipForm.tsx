@@ -241,7 +241,7 @@ export default function MembershipForm({ lang }: MembershipFormProps) {
         <label className="block mb-1 font-medium">صورة الملف الشخصي</label>
         <label className="block w-full">
           <span
-            className={`inline-block w-full border border-gray-300 rounded-lg px-4 py-2 bg-white cursor-pointer text-start flex items-center ${
+            className={`w-full border border-gray-300 rounded-lg px-4 py-2 bg-white cursor-pointer text-start flex items-center ${
               profileFileName ? "text-green-700 font-bold" : "text-gray-400 text-[0.8rem]"
             }`}
           >
@@ -297,7 +297,7 @@ export default function MembershipForm({ lang }: MembershipFormProps) {
           value={form.address}
           onChange={handleChange}
           className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-800 bg-white placeholder:text-gray-400 placeholder:opacity-100"
-          placeholder="مثال: تركيا، إيلازيغ، منطقة X، حي Y، شارع Z، شقة 12"
+          placeholder="مثال: تركيا، إلازيغ، منطقة X، حي Y، شارع Z، شقة 12"
         />
       </div>
 
@@ -353,7 +353,7 @@ export default function MembershipForm({ lang }: MembershipFormProps) {
         <label className="block mb-1 font-medium">ورقة الطالب (أورنجي بلجسي)</label>
         <label className="block w-full">
           <span
-            className={`inline-block w-full border border-gray-300 rounded-lg px-4 py-2 bg-white cursor-pointer text-start flex items-center ${
+            className={`w-full border border-gray-300 rounded-lg px-4 py-2 bg-white cursor-pointer text-start flex items-center ${
               studentDocFileName ? "text-green-700 font-bold" : "text-gray-400 text-[0.8rem]"
             }`}
           >

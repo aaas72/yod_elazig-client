@@ -22,7 +22,7 @@ export default function PageDetailHeader({
 }: PageDetailHeaderProps) {
 
   return (
-    <section className="relative pt-24 pb-16 bg-gradient-to-br from-red-800 to-red-900 text-white">
+    <section className="relative pt-24 pb-16 bg-linear-to-br from-red-800 to-red-900 text-white">
       <div className="max-w-4xl mx-auto px-4">
         {/* Title Section */}
         <div className="mb-6">
@@ -38,7 +38,7 @@ export default function PageDetailHeader({
             <div key={index} className="flex items-center gap-2">
               {index > 0 && <span>/</span>}
               {index === breadcrumbs.length - 1 ? (
-                <span className="text-white truncate max-w-[200px]">{item.label}</span>
+                <span className="text-white truncate max-w-50">{item.label}</span>
               ) : (
                 <Link href={item.href} className="hover:text-white transition-colors">
                   {item.label}

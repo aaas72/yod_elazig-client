@@ -12,14 +12,14 @@ export interface BoardMemberItem {
     instagram?: string;
     linkedin?: string;
   };
-  type: 'executive' | 'organizational';
+  type: 'executive' | 'organizational' | 'supervisory';
   order: number;
   isPublished: boolean;
   createdAt: string;
 }
 
 export const boardMembersService = {
-  getPublished: async (type?: 'executive' | 'organizational'): Promise<BoardMemberItem[]> => {
+  getPublished: async (type?: 'executive' | 'organizational' | 'supervisory'): Promise<BoardMemberItem[]> => {
     const params = type ? { type } : {};
     const { data } = await api.get('/board-members', { params });
     return data.data.members || [];

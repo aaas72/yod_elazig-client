@@ -48,7 +48,7 @@ export default async function AccessPage({ params }: AccessPageProps) {
   const accessData = (await getAccessData(locale)) as any;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white">
+    <div className="relative min-h-screen overflow-hidden bg-linear-to-br from-red-900 via-red-800 to-red-900 text-white">
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>

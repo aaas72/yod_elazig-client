@@ -29,7 +29,28 @@ interface ApiFaqItem {
   isPublished: boolean;
 }
 
-function transformFaqsToCategories(faqs: ApiFaqItem[], locale: Locale) {
+interface ApiFaqCategory {
+  _id: string;
+  name: { ar: string; en?: string; tr?: string };
+  slug: string;
+  order: number;
+  isActive: boolean;
+}
+
+function transformFaqsToCategories(
+  faqs: ApiFaqItem[],
+  locale: Locale,
+  apiCategories: ApiFaqCategory[],
+  fallbackLabels: Record<string, string>
+) {
+  // Build category labels map from API categories
+  const categoryLabels: Record<string, string> = {};
+  for (const cat of apiCategories) {
+    categoryLabels[cat.slug] = cat.name?.[locale] || cat.name?.ar || cat.slug;
+  }
+  // Merge with fallback labels for any categories not in API
+  const mergedLabels = { ...fallbackLabels, ...categoryLabels };
+
   const grouped: Record<string, Array<{
     id: string;
     question: string;
@@ -37,6 +58,12 @@ function transformFaqsToCategories(faqs: ApiFaqItem[], locale: Locale) {
     steps?: Array<{ text: string; fileUrl?: string | null }>;
     documents?: Array<{ name: string; image: string; file?: string }>;
   }>> = {};
+
+  // Get category order map
+  const categoryOrderMap: Record<string, number> = {};
+  for (const cat of apiCategories) {
+    categoryOrderMap[cat.slug] = cat.order;
+  }
 
   for (const faq of faqs) {
     const catId = faq.category;
@@ -62,11 +89,15 @@ function transformFaqsToCategories(faqs: ApiFaqItem[], locale: Locale) {
     });
   }
 
-  return Object.entries(grouped).map(([catId, questions]) => ({
-    id: catId,
-    title: catId,
-    questions,
-  }));
+  // Sort by category order
+  return Object.entries(grouped)
+    .map(([catId, questions]) => ({
+      id: catId,
+      title: mergedLabels[catId] || catId,
+      order: categoryOrderMap[catId] ?? 999,
+      questions,
+    }))
+    .sort((a, b) => a.order - b.order);
 }
 
 export async function generateMetadata({ params }: FaqPageProps): Promise<Metadata> {
@@ -76,7 +107,7 @@ export async function generateMetadata({ params }: FaqPageProps): Promise<Metada
   const faqData = await getFaqData(locale);
 
   const descriptions: Record<Locale, string> = {
-    ar: "إجابات على أكثر الأسئلة شيوعاً حول الحياة في إلازيغ، الدراسة في جامعة فرات، والانضمام إلى الاتحاد.",
+    ar: "إجابات على أكثر الأسئلة شيوعاً حول الحياة في إلازيغ، الدراسة في جامعة الفرات، والانضمام إلى الاتحاد.",
     en: "Answers to the most frequently asked questions about life in Elazig, studying at Fırat University, and joining the union.",
     tr: "Elazığ'da yaşam, Fırat Üniversitesi'nde okuma ve birliğe katılma hakkında en sık sorulan sorulara cevaplar.",
   };
@@ -108,13 +139,22 @@ export default async function FaqPage({ params }: FaqPageProps) {
   const faqData = (await getFaqData(locale)) as any;
   const dictionary = await getDictionary(locale);
 
-  // Fetch FAQ data from API (with static JSON as fallback)
+  // Fetch FAQ data and categories from API (with static JSON as fallback)
   let categories = faqData.categories || [];
+  let apiCategories: ApiFaqCategory[] = [];
+
   try {
-    const result = await fetchApi<any>("/faq", { lang: locale });
-    const apiFaqs: ApiFaqItem[] = result?.faqs || result?.data || (Array.isArray(result) ? result : []);
+    // Fetch both FAQs and categories in parallel
+    const [faqResult, catResult] = await Promise.all([
+      fetchApi<any>("/faq", { lang: locale }),
+      fetchApi<any>("/faq-categories", { lang: locale }),
+    ]);
+
+    const apiFaqs: ApiFaqItem[] = faqResult?.faqs || faqResult?.data || (Array.isArray(faqResult) ? faqResult : []);
+    apiCategories = catResult?.categories || catResult?.data || (Array.isArray(catResult) ? catResult : []);
+
     if (apiFaqs.length > 0) {
-      categories = transformFaqsToCategories(apiFaqs, locale);
+      categories = transformFaqsToCategories(apiFaqs, locale, apiCategories, dictionary.faqCategories);
     }
   } catch {
     // Fallback to static JSON categories if API fails
@@ -137,6 +177,7 @@ export default async function FaqPage({ params }: FaqPageProps) {
         searchPlaceholder={dictionary.common.searchPlaceholder}
         noResultsTitle={dictionary.faq.noResults}
         noResultsText={dictionary.faq.trySearch}
+        categoriesTitle={dictionary.faq.categoriesTitle}
       />
     </div>
   );

@@ -26,6 +26,16 @@ export interface Dictionary {
     illustrativeImages: string;
     noResults: string;
     trySearch: string;
+    categoriesTitle: string;
+  };
+  faqCategories: {
+    general: string;
+    residency: string;
+    academic: string;
+    living: string;
+    membership: string;
+    technical: string;
+    [key: string]: string;
   };
   footer: {
     rights: string;

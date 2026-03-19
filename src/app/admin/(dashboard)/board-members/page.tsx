@@ -27,7 +27,7 @@ export default function AdminBoardMembersPage() {
     deptAr: '', deptEn: '', deptTr: '',
     image: '',
     facebook: '', instagram: '', linkedin: '',
-    type: 'executive' as 'executive' | 'organizational',
+    type: 'executive' as 'executive' | 'organizational' | 'supervisory',
     order: 0,
     isPublished: false,
   });
@@ -157,7 +157,7 @@ export default function AdminBoardMembersPage() {
       label: 'النوع',
       render: (item: BoardMemberItem) => (
         <span className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600">
-          {item.type === 'executive' ? 'هيئة تنفيذية' : 'هيكل تنظيمي'}
+          {item.type === 'executive' ? 'هيئة تنفيذية' : item.type === 'supervisory' ? 'هيئة رقابية' : 'هيكل تنظيمي'}
         </span>
       ),
     },
@@ -187,6 +187,12 @@ export default function AdminBoardMembersPage() {
           className={`px-4 py-2 text-sm rounded-xl transition-colors ${typeFilter === 'executive' ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
         >
           الهيئة التنفيذية
+        </button>
+        <button
+          onClick={() => setTypeFilter('supervisory')}
+          className={`px-4 py-2 text-sm rounded-xl transition-colors ${typeFilter === 'supervisory' ? 'bg-red-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+        >
+          الهيئة الرقابية
         </button>
         <button
           onClick={() => setTypeFilter('organizational')}
@@ -253,10 +259,11 @@ export default function AdminBoardMembersPage() {
               <label className="block text-sm font-medium text-gray-700 mb-1.5">النوع *</label>
               <select
                 value={formData.type}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value as 'executive' | 'organizational' })}
+                onChange={(e) => setFormData({ ...formData, type: e.target.value as 'executive' | 'organizational' | 'supervisory' })}
                 className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500"
               >
                 <option value="executive">هيئة تنفيذية</option>
+                <option value="supervisory">الهيئة الرقابية</option>
                 <option value="organizational">هيكل تنظيمي</option>
               </select>
             </div>
@@ -323,15 +330,15 @@ export default function AdminBoardMembersPage() {
           {/* روابط السوشيال ميديا */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Facebook size={14} className="text-[#1877F2]" /> Facebook</label>
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Facebook size={14} className="text-[#1877F2]" /> Facebook</label>
               <input value={formData.facebook} onChange={(e) => setFormData({ ...formData, facebook: e.target.value })} placeholder="https://facebook.com/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Instagram size={14} className="text-[#E4405F]" /> Instagram</label>
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Instagram size={14} className="text-[#E4405F]" /> Instagram</label>
               <input value={formData.instagram} onChange={(e) => setFormData({ ...formData, instagram: e.target.value })} placeholder="https://instagram.com/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Linkedin size={14} className="text-[#0A66C2]" /> LinkedIn</label>
+              <label className="text-sm font-medium text-gray-700 mb-1.5 flex items-center gap-1.5"><Linkedin size={14} className="text-[#0A66C2]" /> LinkedIn</label>
               <input value={formData.linkedin} onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })} placeholder="https://linkedin.com/in/..." className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-red-500" dir="ltr" />
             </div>
           </div>

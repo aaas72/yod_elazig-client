@@ -7,6 +7,7 @@ import SimplePageHero from "@/components/ui/Sections/SimplePageHero";
 import { Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import FadeIn from "@/components/animations/FadeIn";
+import ContactForm from "./ContactForm";
 
 interface ContactPageProps {
   params: Promise<{ lang: string }>;
@@ -59,13 +60,46 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const locale = lang as Locale;
   const contactData = await getContactData(locale);
 
+  // Fetch settings from API
+  let contactEmail = "";
+  let contactPhone = "";
+
+  try {
+    const apiBaseUrl = process.env.NODE_ENV === 'production' ? '/api/v1' : 'http://localhost:5000/api/v1';
+    const response = await fetch(`${apiBaseUrl}/settings`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: 3600 }, // Revalidate every hour
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const settings = data?.data?.settings;
+      if (settings?.contactInfo) {
+        contactEmail = settings.contactInfo.email || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+        contactPhone = settings.contactInfo.phone || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch contact settings:", error);
+    // Use fallback values from env
+    contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+    contactPhone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+  }
+
+  // If still empty, use env variables
+  if (!contactEmail) contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+  if (!contactPhone) contactPhone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+
   const breadcrumbs = [
     { label: locale === "ar" ? "الرئيسية" : locale === "tr" ? "Ana Sayfa" : "Home", href: "/" },
     { label: contactData.hero.title },
   ];
 
-  const contactEmail = "baroommaq@gmail.com";
-  const contactPhone = "0534 838 92 97";
+  // Clean and format email and phone
+  const cleanEmail = contactEmail.trim().toLowerCase();
+  const phoneNumber = contactPhone.replace(/[^0-9+]/g, "");
+  const whatsappNumber = phoneNumber.startsWith("+") ? phoneNumber.slice(1) : phoneNumber;
 
   return (
     <div>
@@ -100,10 +134,12 @@ export default async function ContactPage({ params }: ContactPageProps) {
                           {contactData.form?.fields?.email?.label || (locale === "ar" ? "البريد الإلكتروني" : "Email")}
                         </h3>
                         <p className="text-sm text-gray-500 mb-4 break-all">
-                          {contactEmail}
+                          {cleanEmail || (locale === "ar" ? "استخدم النموذج أدناه" : "Use the form below")}
                         </p>
                         <a
-                          href={`mailto:${contactEmail}`}
+                          href={`https://mail.google.com/mail/?to=${contactEmail}&subject=${locale === "ar" ? "رسالة%20من%20الموقع" : locale === "tr" ? "Web%20Sitesinden%20Mesaj" : "Message%20from%20Website"}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-red-900 text-white rounded-xl font-medium hover:bg-red-800 transition duration-300"
                         >
                           {contactData.options?.emailButton || (locale === "ar" ? "إرسال بريد إلكتروني" : locale === "tr" ? "E-posta Gönder" : "Send Email")}
@@ -126,7 +162,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
                           {contactPhone}
                         </p>
                         <a
-                          href={`https://wa.me/${contactPhone.replace(/[^0-9]/g, "")}`}
+                          href={`https://wa.me/${whatsappNumber}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-green-500 text-white rounded-xl font-medium hover:bg-green-600 transition duration-300"
@@ -140,6 +176,15 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 </div>
               </div>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Contact Form Section - Additional Contact Info */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-4">
+          <FadeIn direction="up" delay={0.3}>
+            <ContactForm lang={locale} />
           </FadeIn>
         </div>
       </section>

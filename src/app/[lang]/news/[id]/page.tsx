@@ -108,7 +108,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
     >
       {/* Content */}
       <div
-        className="prose prose-sm md:prose-base lg:prose-lg max-w-none text-gray-800 prose-headings:font-bold prose-p:leading-relaxed"
+        className="prose text-sm sm:text-base md:prose-base lg:prose-lg max-w-none text-gray-800 prose-headings:font-bold prose-p:leading-relaxed"
         dangerouslySetInnerHTML={{
           __html: content || "",
         }}
@@ -119,7 +119,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
         <div className="mt-8 pt-6 border-t border-gray-200 flex flex-wrap items-center gap-3">
           {category && (
             <span
-              className="text-sm text-gray-500 break-words"
+              className="text-sm text-gray-500 wrap-break-word"
               style={{
                 wordBreak: "break-word",
                 overflowWrap: "break-word",
@@ -134,7 +134,7 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
               {tags.map((tag: string, idx: number) => (
                 <span
                   key={idx}
-                  className="text-sm text-red-600 break-words"
+                  className="text-sm text-red-600 wrap-break-word"
                   style={{
                     wordBreak: "break-word",
                     overflowWrap: "break-word",

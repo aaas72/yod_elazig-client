@@ -22,86 +22,86 @@ interface Benefit {
 
 const defaultBenefitsByLang: Record<string, { title: string; description: string; buttonText: string; benefits: Benefit[] }> = {
   ar: {
-    title: "انضم إلى يود العائلة",
+    title: "انضم إلى اتحاد الطلاب اليمنيين",
     description:
-      "كن جزءاً من مجتمع متميز يسعى إلى التطوير والإبداع، وانضم إلى آلاف الأعضاء الذين يحققون أهدافهم معنا.",
+      "كن جزءاً من مجتمع طلابي متميز في إلازيغ، وانضم إلى الطلاب اليمنيين الذين يحققون أهدافهم الأكاديمية والمهنية معنا.",
     buttonText: "انضم الآن",
     benefits: [
       {
         id: 1,
-        title: "فرص التطوير",
-        description: "احصل على فرص تدريبية وتعليمية متميزة تساعدك على تطوير مهاراتك.",
+        title: "الدعم الأكاديمي",
+        description: "احصل على دعم مستمر في دراستك ومصادر تعليمية متنوعة للتفوق الأكاديمي.",
       },
       {
         id: 2,
-        title: "شبكة العلاقات",
-        description: "تواصل مع نخبة من الكفاءات والمحترفين في مختلف المجالات.",
+        title: "الأنشطة الثقافية",
+        description: "شارك في فعالياتنا الثقافية والاجتماعية التي تعزز الهوية اليمنية والثقافة العربية.",
       },
       {
         id: 3,
-        title: "المشاركة المجتمعية",
-        description: "ساهم في خدمة المجتمع من خلال مبادرات وبرامج متنوعة وهادفة.",
+        title: "شبكة الطلاب",
+        description: "تواصل مع زملائك الطلاب اليمنيين وبناء صداقات وعلاقات مهنية تدوم مدى الحياة.",
       },
       {
         id: 4,
-        title: "الدعم المستمر",
-        description: "استفد من دعم مستمر ومتابعة دائمة لضمان تحقيق أهدافك.",
+        title: "التوجيه والإرشاد",
+        description: "استفد من خبرات الطلاب الخريجين والتوجيه المهني لبناء مستقبلك بنجاح.",
       },
     ],
   },
   en: {
-    title: "Join the YOD Family",
+    title: "Join the Yemeni Students Union",
     description:
-      "Be part of a distinguished community striving for development and creativity. Join thousands of members achieving their goals with us.",
+      "Be part of a distinguished student community in Elazığ. Join Yemeni students achieving their academic and professional goals with us.",
     buttonText: "Join Now",
     benefits: [
       {
         id: 1,
-        title: "Development Opportunities",
-        description: "Access outstanding training and educational opportunities to develop your skills.",
+        title: "Academic Support",
+        description: "Get continuous support in your studies and diverse educational resources for academic excellence.",
       },
       {
         id: 2,
-        title: "Networking",
-        description: "Connect with a diverse network of professionals and experts across various fields.",
+        title: "Cultural Activities",
+        description: "Participate in our cultural and social events that promote Yemeni identity and Arab culture.",
       },
       {
         id: 3,
-        title: "Community Engagement",
-        description: "Contribute to the community through diverse and purposeful initiatives and programs.",
+        title: "Student Network",
+        description: "Connect with fellow Yemeni students and build lifelong friendships and professional relationships.",
       },
       {
         id: 4,
-        title: "Continuous Support",
-        description: "Benefit from ongoing support and guidance to ensure you achieve your goals.",
+        title: "Mentoring & Guidance",
+        description: "Benefit from graduate student experiences and career guidance to build your future successfully.",
       },
     ],
   },
   tr: {
-    title: "YOD Ailesine Katılın",
+    title: "Yemen Öğrenci Birliğine Katılın",
     description:
-      "Gelişim ve yaratıcılık için çabalayan seçkin bir topluluğun parçası olun. Bizimle hedeflerine ulaşan binlerce üyeye katılın.",
+      "Elazığ'daki seçkin öğrenci topluluğunun bir parçası olun. Bizimle akademik ve mesleki hedeflerine ulaşan Yemenli öğrencilere katılın.",
     buttonText: "Şimdi Katıl",
     benefits: [
       {
         id: 1,
-        title: "Gelişim Fırsatları",
-        description: "Becerilerinizi geliştirmek için olağanüstü eğitim ve öğretim fırsatlarından yararlanın.",
+        title: "Akademik Destek",
+        description: "Çalışmalarınızda sürekli destek ve akademik mükemmellik için çeşitli eğitim kaynakları alın.",
       },
       {
         id: 2,
-        title: "Ağ Kurma",
-        description: "Farklı alanlardaki profesyoneller ve uzmanlardan oluşan çeşitli bir ağla bağlantı kurun.",
+        title: "Kültürel Etkinlikler",
+        description: "Yemen kimliğini ve Arap kültürünü destekleyen kültürel ve sosyal etkinliklerimize katılın.",
       },
       {
         id: 3,
-        title: "Toplumsal Katılım",
-        description: "Çeşitli ve amaçlı girişimler ve programlar aracılığıyla topluma katkıda bulunun.",
+        title: "Öğrenci Ağı",
+        description: "Fellow Yemen öğrencilerle bağlantı kurun ve yaşam boyu sürecek dostluklar ve mesleki ilişkiler inşa edin.",
       },
       {
         id: 4,
-        title: "Sürekli Destek",
-        description: "Hedeflerinize ulaşmanızı sağlamak için sürekli destek ve rehberlikten yararlanın.",
+        title: "Mentorluk ve Rehberlik",
+        description: "Mezun öğrenci deneyimlerinden ve kariyer rehberliğinden yararlanarak geleceğinizi başarıyla inşa edin.",
       },
     ],
   },

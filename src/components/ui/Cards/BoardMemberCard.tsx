@@ -23,7 +23,7 @@ const BoardMemberCard = ({ name, position, department, image, socialLinks }: Boa
   ].filter((s) => s.url);
 
   return (
-    <div className="group relative flex flex-col items-center text-center">
+    <div className="group relative flex flex-col items-center text-center w-48">
       {/* الصورة مع إطار مزدوج */}
       <div className="relative mb-5">
         {/* حلقة خارجية متحركة */}
@@ -70,7 +70,7 @@ const BoardMemberCard = ({ name, position, department, image, socialLinks }: Boa
       )}
 
       {/* خط سفلي */}
-      <div className="mt-3 w-10 h-[2px] bg-[#BE141B]/40 group-hover:w-20 transition-all duration-500 rounded-full"></div>
+      <div className="mt-3 w-10 h-0.5 bg-[#BE141B]/40 group-hover:w-20 transition-all duration-500 rounded-full"></div>
     </div>
   );
 };

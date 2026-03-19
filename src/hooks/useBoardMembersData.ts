@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { boardMembersService, type BoardMemberItem } from '@/services/boardMembersService';
 
-export const useBoardMembersData = (type?: 'executive' | 'organizational', lang: 'ar' | 'en' | 'tr' = 'ar') => {
+export const useBoardMembersData = (type?: 'executive' | 'organizational' | 'supervisory', lang: 'ar' | 'en' | 'tr' = 'ar') => {
   const [members, setMembers] = useState<{
     id: string;
     name: string;

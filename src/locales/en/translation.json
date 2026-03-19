@@ -22,7 +22,16 @@
     "practicalSteps": "Practical Steps",
     "illustrativeImages": "Illustrative Images",
     "noResults": "No results found",
-    "trySearch": "Try adjusting your search query"
+    "trySearch": "Try adjusting your search query",
+    "categoriesTitle": "Categories"
+  },
+  "faqCategories": {
+    "general": "General Questions",
+    "residency": "Residency & Immigration",
+    "academic": "Academic Affairs",
+    "living": "Living & Housing",
+    "membership": "Membership & Elections",
+    "technical": "Technical Support"
   },
   "footer": {
     "rights": "All rights reserved © 2025",

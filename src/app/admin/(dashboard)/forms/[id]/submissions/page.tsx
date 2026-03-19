@@ -77,7 +77,7 @@ export default function AdminFormSubmissionsPage({ params }: { params: Promise<{
           // Otherwise link
           return <a href={resolveImage(val)} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline text-xs break-all">عرض الملف</a>;
         }
-        return <span className="text-sm truncate max-w-[150px] block" title={String(val || '')}>{String(val || '-')}</span>;
+        return <span className="text-sm truncate max-w-37.5 block" title={String(val || '')}>{String(val || '-')}</span>;
       }
     })) || [])
   ];
@@ -134,7 +134,7 @@ export default function AdminFormSubmissionsPage({ params }: { params: Promise<{
                     <label className="block text-sm font-bold text-gray-700 mb-2">
                       {field.label.ar || field.name}
                     </label>
-                    <div className="text-gray-900 break-words">
+                    <div className="text-gray-900 wrap-break-word">
                       {field.type === 'file' ? (
                         val && typeof val === 'string' ? (
                           /\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(val) ? (
@@ -170,7 +170,7 @@ export default function AdminFormSubmissionsPage({ params }: { params: Promise<{
                       <label className="block text-sm font-bold text-orange-800 mb-2">
                         {key} (حقل إضافي)
                       </label>
-                      <div className="text-gray-900 break-words">
+                      <div className="text-gray-900 wrap-break-word">
                         {typeof val === 'string' && /\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(val) ? (
                           <div className="mt-2">
                             <a href={resolveImage(val)} target="_blank" rel="noopener noreferrer" className="inline-block border rounded-lg overflow-hidden">

@@ -70,7 +70,7 @@ export default function PageHero({
         )}
 
         <FadeIn direction="up" delay={0.2}>
-          <h1 className="text-h1 font-extrabold mt-2 drop-shadow-lg whitespace-normal break-words">
+          <h1 className="text-h1 font-extrabold mt-2 drop-shadow-lg whitespace-normal wrap-break-word">
             {title}
           </h1>
         </FadeIn>

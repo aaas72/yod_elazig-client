@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "تركيا",
     "إلازيغ",
     "طلاب يمنيين",
-    "جامعة فرات",
+    "جامعة الفرات",
     "YOD Elazig",
     "Yemen Students Union Turkey",
     "Yemenli Öğrenciler Birliği",
