@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
@@ -47,21 +47,20 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
     return pathname.startsWith(path);
   };
 
-  // Show loading state
-  if (isLoading) {
+  // Redirect if not authenticated
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [isLoading, isAuthenticated, router]);
+
+  // Show loading state or redirect state
+  if (isLoading || !isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="w-10 h-10 border-4 border-red-200 border-t-red-600 rounded-full animate-spin" />
       </div>
     );
-  }
-
-  // Redirect if not authenticated
-  if (!isAuthenticated) {
-    if (typeof window !== 'undefined') {
-      router.push('/admin/login');
-    }
-    return null;
   }
 
   // Check if user has student role (no dashboard access)
