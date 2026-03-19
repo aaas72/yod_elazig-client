@@ -39,10 +39,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Dynamic content from API
+  // Dynamic content from API (skip if no API available during build)
+  const API_BASE = process.env.API_INTERNAL_URL;
+  if (!API_BASE) {
+    console.log("Sitemap: Skipping dynamic content (API_INTERNAL_URL not set)");
+    return entries;
+  }
+
   try {
-    const API_BASE =
-      process.env.API_INTERNAL_URL || "http://localhost:5000/api/v1";
 
     // News
     const newsRes = await fetch(`${API_BASE}/news?limit=200`, {

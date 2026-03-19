@@ -7,7 +7,6 @@ import SimplePageHero from "@/components/ui/Sections/SimplePageHero";
 import { Mail } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import FadeIn from "@/components/animations/FadeIn";
-import ContactForm from "./ContactForm";
 
 interface ContactPageProps {
   params: Promise<{ lang: string }>;
@@ -60,36 +59,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const locale = lang as Locale;
   const contactData = await getContactData(locale);
 
-  // Fetch settings from API
-  let contactEmail = "";
-  let contactPhone = "";
-
-  try {
-    const apiBaseUrl = process.env.NODE_ENV === 'production' ? '/api/v1' : 'http://localhost:5000/api/v1';
-    const response = await fetch(`${apiBaseUrl}/settings`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 3600 }, // Revalidate every hour
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      const settings = data?.data?.settings;
-      if (settings?.contactInfo) {
-        contactEmail = settings.contactInfo.email || process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
-        contactPhone = settings.contactInfo.phone || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
-      }
-    }
-  } catch (error) {
-    console.error("Failed to fetch contact settings:", error);
-    // Use fallback values from env
-    contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
-    contactPhone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
-  }
-
-  // If still empty, use env variables
-  if (!contactEmail) contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
-  if (!contactPhone) contactPhone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+  // Use environment variables for contact info (API fetch removed to avoid build issues)
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "";
+  const contactPhone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
 
   const breadcrumbs = [
     { label: locale === "ar" ? "الرئيسية" : locale === "tr" ? "Ana Sayfa" : "Home", href: "/" },
@@ -176,15 +148,6 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 </div>
               </div>
             </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Contact Form Section - Additional Contact Info */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-3xl mx-auto px-4">
-          <FadeIn direction="up" delay={0.3}>
-            <ContactForm lang={locale} />
           </FadeIn>
         </div>
       </section>
