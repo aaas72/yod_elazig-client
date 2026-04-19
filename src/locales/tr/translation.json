@@ -44,7 +44,7 @@
     "newsletterDescription": "En son haberlerimizden ve etkinliklerimizden haberdar olun.",
     "newsletterPlaceholder": "E-postanızı girin",
     "newsletterButtonAriaLabel": "Abone Ol",
-    "copyrightText": "Yemenli Öğrenciler Birliği. Tüm hakları saklıdır.",
+    "copyrightText": "Yemenli Öğrenciler Birliği Türkiye - Elazığ Şubesi. Tüm hakları saklıdır.",
     "visitCountLabel": "Site ziyaret sayısı",
     "address": "Türkiye - Elazığ - Merkez",
     "quickLinks": [
@@ -53,8 +53,109 @@
       { "href": "/programs", "label": "Programlar" },
       { "href": "/events", "label": "Etkinlikler" },
       { "href": "/volunteer", "label": "Gönüllü Ol" },
-      { "href": "/contact", "label": "İletişim" }
+      { "href": "/contact", "label": "İletişim" },
+      { "href": "/privacy-policy", "label": "Gizlilik Politikası" },
+      { "href": "/terms-of-use", "label": "Kullanım Şartları" }
     ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Gizlilik Politikası",
+      "introTitle": "Giriş",
+      "intro": "YOD Elazig olarak, bu web sitesini kullanırken kişisel verilerinizin gizliliğine saygı duyar ve korunmasını taahhüt ederiz.",
+      "updatedAt": "Son güncelleme: 19 Nisan 2026",
+      "sections": [
+        {
+          "title": "1) Topladığımız Veriler",
+          "points": [
+            "Ad, e-posta, telefon gibi doğrudan sağladığınız bilgiler ve form içerikleri.",
+            "Tarayıcı türü, IP adresi, ziyaret edilen sayfalar ve zaman gibi teknik veriler."
+          ]
+        },
+        {
+          "title": "2) Verileri Nasıl Kullanıyoruz",
+          "points": [
+            "Hizmet sunmak ve taleplerinizi yanıtlamak için.",
+            "Kullanıcı deneyimini ve site içeriğini iyileştirmek için.",
+            "Güvenlik, kötü kullanım ve dolandırıcılığı önlemek için."
+          ]
+        },
+        {
+          "title": "3) Veri Paylaşımı",
+          "points": [
+            "Kişisel verilerinizi üçüncü taraflara satmayız.",
+            "Yalnızca operasyonel gereklilik, güvenilir hizmet sağlayıcılar veya yasal zorunluluk durumunda paylaşabiliriz."
+          ]
+        },
+        {
+          "title": "4) Veri Güvenliği ve Saklama",
+          "points": [
+            "Uygun teknik ve idari güvenlik önlemleri uygularız.",
+            "Verileri yalnızca belirtilen amaçlar veya yasal gereklilikler süresince saklarız."
+          ]
+        },
+        {
+          "title": "5) Haklarınız",
+          "points": [
+            "Yürürlükteki mevzuata göre verilerinize erişim, düzeltme veya silme talep edebilirsiniz.",
+            "Gizlilikle ilgili talepleriniz için iletişim sayfasından bize ulaşabilirsiniz."
+          ]
+        },
+        {
+          "title": "6) Politika Güncellemeleri",
+          "points": [
+            "Bu politika zaman zaman güncellenebilir. En güncel sürüm her zaman bu sayfada yayınlanır."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Kullanım Şartları",
+      "introTitle": "Giriş",
+      "intro": "Bu web sitesini kullanarak aşağıdaki koşullara uymayı kabul etmiş olursunuz. Kabul etmiyorsanız lütfen siteyi kullanmayınız.",
+      "updatedAt": "Son güncelleme: 19 Nisan 2026",
+      "sections": [
+        {
+          "title": "1) Şartların Kabul Edilmesi",
+          "points": [
+            "Siteyi kullanmanız, bu şartları ve gelecekteki güncellemeleri kabul ettiğiniz anlamına gelir."
+          ]
+        },
+        {
+          "title": "2) İzin Verilen Kullanım",
+          "points": [
+            "Siteyi yasalara uygun ve sorumlu şekilde kullanmalısınız.",
+            "Yasal olmayan veya uygunsuz içerik yayımlamak ya da iletmek yasaktır."
+          ]
+        },
+        {
+          "title": "3) Fikri Mülkiyet",
+          "points": [
+            "Sitedeki içerik (metin, logo, görsel, tasarım) kuruma aittir veya lisanslıdır.",
+            "Önceden izin alınmadan ticari amaçla kopyalama veya yeniden yayınlama yapılamaz."
+          ]
+        },
+        {
+          "title": "4) Sorumluluğun Sınırlandırılması",
+          "points": [
+            "Doğru ve güncel bilgi sunmaya çalışsak da kesintisiz veya hatasız hizmet garantisi veremeyiz.",
+            "Site kullanımından doğabilecek dolaylı zararlardan sorumlu değiliz."
+          ]
+        },
+        {
+          "title": "5) Dış Bağlantılar",
+          "points": [
+            "Sitede dış bağlantılar bulunabilir; bu sitelerin içerik ve politikalarından sorumlu değiliz."
+          ]
+        },
+        {
+          "title": "6) Güncellemeler",
+          "points": [
+            "Bu şartlar her zaman güncellenebilir. Siteyi kullanmaya devam etmeniz güncel sürümü kabul ettiğiniz anlamına gelir."
+          ]
+        }
+      ]
+    }
   },
   "buttons": {
     "readMore": "Daha Fazla Oku",

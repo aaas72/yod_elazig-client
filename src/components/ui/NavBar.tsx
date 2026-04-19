@@ -62,11 +62,10 @@ function DesktopNav({ lang, dictionary }: NavBarProps) {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`xl:px-2 py-2 rounded-full text-sm xl:text-md font-medium transition-all duration-300 ${
-                  isActive
+                className={`xl:px-2 py-2 rounded-full text-sm xl:text-md font-medium transition-all duration-300 ${isActive
                     ? "bg-white text-red-700"
                     : "bg-transparent hover:bg-white/20"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -120,12 +119,14 @@ function MobileNavMenu({
 
   return (
     <div
-      className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-xl overflow-y-auto flex flex-col items-center pt-24 z-[999] transition-transform duration-300 ${
-        isMenuOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-xl overflow-y-auto flex flex-col items-center pt-20 z-[999] transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "ltr:translate-x-full rtl:-translate-x-full"
+        }`}
       onClick={() => setIsMenuOpen(false)}
     >
-      <ul className="flex flex-col items-center gap-y-10 list-none">
+      <ul className="flex flex-col items-center gap-y-6 list-none w-full">
+        <li className="pb-2" onClick={(e) => e.stopPropagation()}>
+          <LanguageSwitcher currentLang={lang} isMobile />
+        </li>
         {navLinks.map((link, idx) => {
           const isActive =
             link.href === `/${lang}`
@@ -137,20 +138,16 @@ function MobileNavMenu({
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-xl font-bold px-6 py-3 rounded-full transition-all ${
-                  isActive
+                className={`text-base md:text-lg font-bold px-6 py-2 rounded-full transition-all ${isActive
                     ? "bg-white text-black"
                     : "text-white hover:bg-white/20"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
             </li>
           );
         })}
-        <li className="pt-4" onClick={(e) => e.stopPropagation()}>
-          <LanguageSwitcher currentLang={lang} isMobile />
-        </li>
       </ul>
     </div>
   );
@@ -178,9 +175,8 @@ function DesktopHeader({ lang, dictionary }: NavBarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       <div className="container max-w-[1440px] h-[70px] m-auto flex justify-between items-center md:px-8">
         <Link href={`/${lang}`}>
@@ -219,20 +215,19 @@ function MobileHeader({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled || isMenuOpen
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMenuOpen
           ? "bg-black/40 backdrop-blur-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
-      <div className="flex justify-between items-center h-[100px] px-4 max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center h-[70px] px-4 max-w-[1440px] mx-auto">
         <Link href={`/${lang}`}>
           <img
             src="/imgs/logos/yodellogo.webp"
             alt="YOD Logo"
-            width={100}
-            height={40}
-            className="w-[100px] my-4 object-contain"
+            width={90}
+            height={36}
+            className="w-[90px] object-contain"
             style={{ background: "transparent" }}
           />
         </Link>

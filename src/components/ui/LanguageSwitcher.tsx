@@ -50,18 +50,18 @@ export default function LanguageSwitcher({
   // Mobile version - simple buttons
   if (isMobile) {
     return (
-      <div className="flex gap-3">
+      <div className="flex gap-1">
         {locales.map((lang) => (
           <button
             key={lang}
             onClick={() => changeLanguage(lang)}
-            className={`px-4 py-2 rounded-full font-bold transition-all ${
+            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all uppercase ${
               currentLang === lang
                 ? "bg-white text-red-700"
-                : "text-white border border-white hover:bg-white/20"
+                : "text-white/80 hover:bg-white/20 hover:text-white"
             }`}
           >
-            {localeNames[lang]}
+            {lang}
           </button>
         ))}
       </div>
@@ -73,9 +73,9 @@ export default function LanguageSwitcher({
     <div className="relative z-50 lang-switcher">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex items-center gap-2 text-white hover:text-red-200 transition-colors p-2"
+        className="flex items-center gap-1.5 text-white hover:text-red-200 transition-colors xl:px-2 py-2 text-sm xl:text-md font-medium"
       >
-        <Globe size={20} />
+        <Globe className="w-4 h-4 xl:w-[18px] xl:h-[18px]" />
         <span className="uppercase">{currentLang}</span>
       </button>
 

@@ -3,6 +3,7 @@ import api from '@/lib/api-client';
 export interface User {
   _id: string;
   name: string;
+  username: string;
   email: string;
   role: string;
   isActive: boolean;

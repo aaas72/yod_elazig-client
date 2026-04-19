@@ -6,7 +6,7 @@ import { Eye, EyeOff, LogIn } from 'lucide-react';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 
 function LoginForm() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -20,7 +20,7 @@ function LoginForm() {
     setIsLoading(true);
 
     try {
-      const user = await login(email, password);
+      const user = await login(username, password);
       if (user.role === 'student') {
         setError('ليس لديك صلاحية الوصول للوحة التحكم');
         return;
@@ -59,17 +59,17 @@ function LoginForm() {
           )}
 
           <div className="space-y-5">
-            {/* Email */}
+            {/* Username */}
             <div>
               <label className="flex items-center gap-1.5 text-xs font-bold text-white uppercase tracking-widest mb-2">
-                البريد الإلكتروني
+                اسم المستخدم
               </label>
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
-                placeholder="ادخل بريد"
+                placeholder="ادخل اسم المستخدم"
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 placeholder:text-sm focus:ring-2 focus:ring-red-400/60 focus:border-red-400/60 outline-none transition-all"
                 dir="rtl"
               />

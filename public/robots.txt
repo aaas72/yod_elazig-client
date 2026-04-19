@@ -1,17 +1,21 @@
 # Robots.txt for YOD Elazig - اتحاد الطلاب اليمنيين
-# https://yodelazig.org
+# Website: https://yodelazig.org
 
-# Allow all crawlers by default
+# =====================================================================
+# Default rules for all crawlers
+# =====================================================================
 User-agent: *
+
+# Allow full access by default
 Allow: /
 
-# Block admin and private areas
+# Disallow crawling of admin, API, and Next.js internal routes
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /login
 
-# Block private/member-only pages
+# Disallow crawling of private/member-only pages for all languages
 Disallow: /ar/access
 Disallow: /en/access
 Disallow: /tr/access
@@ -19,24 +23,28 @@ Disallow: /ar/archive
 Disallow: /en/archive
 Disallow: /tr/archive
 
+# =====================================================================
+# Rules for specific crawlers (if any special handling is needed)
+# =====================================================================
+
+# Googlebot uses the default rules. Crawl rate is managed in Google Search Console.
+User-agent: Googlebot
+
+# Bingbot
+User-agent: Bingbot
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /login
+Disallow: /ar/access
+Disallow: /en/access
+Disallow: /tr/access
+Disallow: /ar/archive
+Disallow: /en/archive
+Disallow: /tr/archive
+
+# =====================================================================
 # Sitemap location
+# =====================================================================
 Sitemap: https://yodelazig.org/sitemap.xml
 
-# Google - no crawl delay needed, handled via Search Console
-User-agent: Googlebot
-Allow: /
-Disallow: /admin/
-Disallow: /api/
-Disallow: /ar/access
-Disallow: /en/access
-Disallow: /tr/access
-Disallow: /ar/archive
-Disallow: /en/archive
-Disallow: /tr/archive
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 2
-Disallow: /admin/
-Disallow: /api/

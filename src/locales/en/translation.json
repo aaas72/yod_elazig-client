@@ -44,7 +44,7 @@
     "newsletterDescription": "Stay updated with our latest news and events.",
     "newsletterPlaceholder": "Enter your email",
     "newsletterButtonAriaLabel": "Subscribe",
-    "copyrightText": "Yemeni Students Union. All rights reserved.",
+    "copyrightText": "Yemeni Students Union in Turkey - Elazig Branch. All rights reserved.",
     "visitCountLabel": "Site visit count",
     "address": "Turkey - Elazig - Merkez",
     "quickLinks": [
@@ -53,8 +53,109 @@
       { "href": "/programs", "label": "Programs" },
       { "href": "/events", "label": "Events" },
       { "href": "/volunteer", "label": "Volunteer" },
-      { "href": "/contact", "label": "Contact Us" }
+      { "href": "/contact", "label": "Contact Us" },
+      { "href": "/privacy-policy", "label": "Privacy Policy" },
+      { "href": "/terms-of-use", "label": "Terms of Use" }
     ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "introTitle": "Introduction",
+      "intro": "At YOD Elazig, we respect your privacy and are committed to protecting your personal data when you use this website.",
+      "updatedAt": "Last updated: April 19, 2026",
+      "sections": [
+        {
+          "title": "1) Information We Collect",
+          "points": [
+            "Information you provide directly, such as name, email, phone number, and form submissions.",
+            "Technical data collected automatically, such as browser type, IP address, visited pages, and visit time."
+          ]
+        },
+        {
+          "title": "2) How We Use Information",
+          "points": [
+            "To provide services and respond to your requests.",
+            "To improve user experience and website content.",
+            "For security, abuse prevention, and fraud detection."
+          ]
+        },
+        {
+          "title": "3) Data Sharing",
+          "points": [
+            "We do not sell your personal data to third parties.",
+            "We may share data only when necessary for operations, with trusted providers, or when legally required."
+          ]
+        },
+        {
+          "title": "4) Data Security and Retention",
+          "points": [
+            "We apply appropriate technical and organizational safeguards.",
+            "We keep data only for as long as necessary for stated purposes or legal obligations."
+          ]
+        },
+        {
+          "title": "5) Your Rights",
+          "points": [
+            "You may request access, correction, or deletion of your data as applicable by law.",
+            "You can contact us through the contact page for any privacy-related request."
+          ]
+        },
+        {
+          "title": "6) Policy Updates",
+          "points": [
+            "We may update this policy from time to time. The latest version will always be published on this page."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "introTitle": "Introduction",
+      "intro": "By using this website, you agree to comply with the following terms. If you do not agree, please stop using the website.",
+      "updatedAt": "Last updated: April 19, 2026",
+      "sections": [
+        {
+          "title": "1) Acceptance of Terms",
+          "points": [
+            "Your use of this website means you accept these terms and any future updates."
+          ]
+        },
+        {
+          "title": "2) Permitted Use",
+          "points": [
+            "You must use the website lawfully and responsibly, without abuse or harm to services.",
+            "Publishing or transmitting unlawful or inappropriate content is prohibited."
+          ]
+        },
+        {
+          "title": "3) Intellectual Property",
+          "points": [
+            "Website content (text, logos, images, design) is owned by or licensed to the organization.",
+            "Commercial copying or republishing is not allowed without prior permission."
+          ]
+        },
+        {
+          "title": "4) Limitation of Liability",
+          "points": [
+            "We strive to provide accurate and updated information, but we do not guarantee uninterrupted or error-free service.",
+            "We are not liable for indirect damages resulting from website use."
+          ]
+        },
+        {
+          "title": "5) External Links",
+          "points": [
+            "The website may include links to external sites, and we are not responsible for their content or policies."
+          ]
+        },
+        {
+          "title": "6) Updates",
+          "points": [
+            "These terms may be updated at any time. Continued use indicates acceptance of the latest version."
+          ]
+        }
+      ]
+    }
   },
   "buttons": {
     "readMore": "Read More",

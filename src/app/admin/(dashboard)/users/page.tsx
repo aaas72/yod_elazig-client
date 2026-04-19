@@ -97,6 +97,15 @@ export default function AdminUsersPage() {
         data={users}
         columns={[
           { key: 'name', label: 'الاسم', render: (u: User) => <span className="font-medium">{u.name}</span> },
+          {
+            key: 'username',
+            label: 'اسم المستخدم',
+            render: (u: User) => (
+              <span className="font-mono text-xs bg-gray-100 px-2 py-1 rounded">
+                {u.username || '—'}
+              </span>
+            ),
+          },
           { key: 'email', label: 'البريد الإلكتروني' },
           { key: 'role', label: 'الدور', render: (u: User) => <span className="px-2 py-1 bg-gray-100 rounded text-xs">{u.role}</span> },
           { key: 'isActive', label: 'الحالة', render: (u: User) => <span className={`px-2 py-1 rounded-full text-xs ${u.isActive ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>{u.isActive ? 'نشط' : 'غير نشط'}</span> },
@@ -120,6 +129,20 @@ export default function AdminUsersPage() {
       >
         <div className="space-y-4">
           <FormInput label="الاسم" name="name" value={form.name || ''} onChange={e => handleChange('name', e.target.value)} />
+          <FormInput
+            label="اسم المستخدم"
+            name="username"
+            value={form.username || ''}
+            readOnly
+            className="bg-gray-100"
+            footer={
+              <span className="text-xs text-gray-500">
+                {editUser
+                  ? 'يتم توليد اسم المستخدم حسب الدور تلقائياً.'
+                  : 'سيتم توليد اسم مستخدم فريد تلقائياً حسب الدور.'}
+              </span>
+            }
+          />
           <FormInput label="البريد الإلكتروني" name="email" type="email" value={form.email || ''} onChange={e => handleChange('email', e.target.value)} />
           <FormInput label="كلمة المرور" name="password" type="password" value={form.password || ''} onChange={e => handleChange('password', e.target.value)} />
           <div>

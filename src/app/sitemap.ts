@@ -16,6 +16,8 @@ const staticPages = [
   { path: "/about-university", changeFreq: "monthly" as const, priority: 0.8 },
   { path: "/faq",       changeFreq: "monthly" as const, priority: 0.7 },
   { path: "/resources", changeFreq: "monthly" as const, priority: 0.7 },
+  { path: "/privacy-policy", changeFreq: "yearly" as const, priority: 0.5 },
+  { path: "/terms-of-use", changeFreq: "yearly" as const, priority: 0.4 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

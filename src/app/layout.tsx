@@ -79,19 +79,18 @@ export const metadata: Metadata = {
   // شعار الاتحاد كأيقونة التاب
   icons: {
     icon: [
-      { url: "/imgs/logos/yodellogo.png", type: "image/png" },
       { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/imgs/logos/yodellogo.png",
+    shortcut: "/favicon-32.png",
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
       {
         rel: "mask-icon",
-        url: "/imgs/logos/yodellogo.png",
+        url: "/imgs/logos/svg-logo.svg",
         color: "#991b1b",
       },
     ],

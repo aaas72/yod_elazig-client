@@ -151,7 +151,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
       {/* Description/Content */}
       <div
         dangerouslySetInnerHTML={{ __html: description }}
-        className="prose text-sm sm:text-base md:prose-base lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:leading-relaxed wrap-break-word"
+        className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-800 text-justify prose-headings:text-neutral-900 prose-p:text-neutral-800 prose-p:leading-relaxed wrap-break-word [&_p]:text-[14px] sm:[&_p]:text-[16px] [&_li]:text-[14px] sm:[&_li]:text-[16px] [&_div]:text-[14px] sm:[&_div]:text-[16px] [&_h1]:text-2xl sm:[&_h1]:text-4xl [&_h2]:text-xl sm:[&_h2]:text-2xl [&_h3]:text-lg sm:[&_h3]:text-xl [&_h4]:text-base sm:[&_h4]:text-lg"
         style={{
           wordBreak: "break-word",
           overflowWrap: "break-word",
@@ -188,7 +188,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
               {event.category}
             </div>
           )}
-          {event.capacity && (
+          {event.capacity ? (
             <div
               className="wrap-break-word"
               style={{
@@ -200,7 +200,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
               <span className="font-bold text-gray-900">{t.capacity}:</span>{" "}
               {event.capacity}
             </div>
-          )}
+          ) : null}
           {(event.startDate || event.eventDate) && (
             <div
               className="wrap-break-word"

@@ -6,6 +6,7 @@ import api from '@/lib/api-client';
 export interface User {
   _id: string;
   name: string;
+  username: string;
   email: string;
   role: 'super_admin' | 'admin' | 'editor' | 'student';
   isActive: boolean;
@@ -17,7 +18,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-  login: (email: string, password: string) => Promise<User>;
+  login: (username: string, password: string) => Promise<User>;
   logout: () => Promise<void>;
   checkAuth: () => Promise<void>;
   isAdmin: boolean;
@@ -55,8 +56,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     checkAuth();
   }, [checkAuth]);
 
-  const login = async (email: string, password: string): Promise<User> => {
-    const { data } = await api.post('/auth/login', { email, password });
+  const login = async (username: string, password: string): Promise<User> => {
+    const { data } = await api.post('/auth/login', { username, password });
     const { user: userData, accessToken, refreshToken } = data.data;
 
     localStorage.setItem('accessToken', accessToken);

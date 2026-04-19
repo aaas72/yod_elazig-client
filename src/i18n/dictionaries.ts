@@ -53,6 +53,22 @@ export interface Dictionary {
     address: string;
     quickLinks: Array<{ href: string; label: string }>;
   };
+  legal: {
+    privacy: {
+      title: string;
+      introTitle: string;
+      intro: string;
+      updatedAt: string;
+      sections: Array<{ title: string; points: string[] }>;
+    };
+    terms: {
+      title: string;
+      introTitle: string;
+      intro: string;
+      updatedAt: string;
+      sections: Array<{ title: string; points: string[] }>;
+    };
+  };
   buttons: {
     readMore: string;
     submit: string;

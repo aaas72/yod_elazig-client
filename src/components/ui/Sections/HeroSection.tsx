@@ -118,7 +118,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
       <div className="absolute inset-0 z-[1] bg-gradient-to-t from-[#BE141B]/80 to-[#940a0e]/70" />
 
-      <div className="relative z-10 p-8 md:p-12">
+      <div className="relative z-10 p-8 md:p-12 mb-16 md:mb-0">
         <FadeIn direction="up" delay={0.2}>
           <h1 className="text-white mb-4 mx-auto text-xl font-bold md:text-3xl">{t.title}</h1>
         </FadeIn>
@@ -133,7 +133,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
       </div>
 
       {tickerItems.length > 0 && (
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-6xl px-4">
+        <div className="absolute bottom-8 md:bottom-20 left-1/2 -translate-x-1/2 z-20 w-[95%] max-w-6xl px-4">
           <FadeIn direction="up" delay={0.5}>
             <div className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-md shadow-2xl max-h-[100px] overflow-hidden">
               <div className="flex animate-scroll-news">

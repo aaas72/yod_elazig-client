@@ -127,6 +127,7 @@ api.interceptors.response.use(
         'Access denied': 'تم رفض الوصول. الصلاحيات غير كافية.',
         'Duplicate value': 'يوجد عنصر آخر مسجل بنفس البيانات مسبقاً (قيمة مكررة).',
         'Invalid credentials': 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
+        'Invalid username or password': 'اسم المستخدم أو كلمة المرور غير صحيحة.',
         'Invalid input': 'البيانات المدخلة غير صحيحة.',
         'Internal Server Error': 'حدث خطأ داخلي في الخادم، يرجى المحاولة لاحقاً.',
         'Not Found': 'العنصر المطلوب غير موجود.',
